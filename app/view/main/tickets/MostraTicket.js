@@ -1,6 +1,6 @@
 Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     extend: 'Ext.tab.Panel',
-    xtype: 'maintabtickets',
+        xtype: 'maintabtickets',
     controller: 'ticketzz',
     requires: [
         'TrackIT.store.tickets.TicketSelected',

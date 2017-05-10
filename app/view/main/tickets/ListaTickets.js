@@ -67,7 +67,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
       success: function(response, opts) {
         Ext.MessageBox.updateProgress(1);
 Ext.MessageBox.hide();
-var grid = Ext.ComponentQuery.query('gridticket')[0]
+var grid = Ext.ComponentQuery.query('gridticket')[0];
 grid.getStore().load();
     }
     })
@@ -107,15 +107,28 @@ grid.getStore().load();
                         height: 550,
                         items: [{
                             xtype: 'maintabtickets'
-                        }]
+                        }],
+                        listeners: {
+                            afterrender: function() {
+                                    var store = Ext.getStore('ticketseleccionado2');
+                                    store.load({
+                                        callback: function(records, operation, success) {
+                                            var record=store.getAt(0);
+                                            var a =  Ext.getCmp('subject').setValue(record.data.subject);
+                                            var b = Ext.getCmp('body').setValue(record.data.body);
+                                        }
+                                    });
+
+                                }
+                            }
+
                     });
                     myWin.show();
-  // console.log(record);
  }
-    },
+    }/*,
     onGridAfterRender: function(gridticket){
        setInterval(function(){
           grid.store.load();
        }, 1);
-   }
+   }*/
 });

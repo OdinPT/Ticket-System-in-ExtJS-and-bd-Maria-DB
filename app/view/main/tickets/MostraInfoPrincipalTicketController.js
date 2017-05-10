@@ -1,7 +1,9 @@
 Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.infoticketprincipal',
+  
 
+  // ir a procura de quando a janela e aberta ele carrega esta funçção.
     onClickObterInfoPrincipalTicket: function() {
       var store = Ext.getStore('ticketseleccionado2');
       store.load({
@@ -13,7 +15,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
       });
 
 },
-
+//onClickObterInfoPrincipalTicket
 onClickMoveParaHistorico: function()
 {
   myRequest1 = Ext.Ajax.request({
@@ -21,7 +23,7 @@ onClickMoveParaHistorico: function()
 method: 'POST',
 success: function(response, opts) {
   Ext.MessageBox.alert('title','Sucesso');
-  var grid = Ext.ComponentQuery.query('gridticket')[0]
+  var grid = Ext.ComponentQuery.query('gridticket')[0];
   grid.getStore().load();
   Ext.getCmp('grid2').getStore().load();
 }
