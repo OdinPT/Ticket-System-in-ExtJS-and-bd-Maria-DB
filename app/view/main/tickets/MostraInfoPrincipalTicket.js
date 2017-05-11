@@ -66,19 +66,30 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
       dock: 'bottom',
       xtype: 'toolbar',
       items: [
-      /*{
-        text: 'Carregar Informações',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterInfoPrincipalTicket'
-        }
-
-      },*/
       {
-        text: 'Move p/ Historico',
+          text: 'M/ historico',
+          glyph: 43,
+          listeners: {
+              click: 'onClickMoveParaHistorico'
+          }
+
+      },
+      {
+        text: 'Responder',
         glyph: 43,
         listeners: {
-          click: 'onClickMoveParaHistorico'
+          click: function(){
+              var myWin = Ext.create("Ext.window.Window", {
+                  title: 'Resposta',
+                  modal: true,
+                  width: 1000,
+                  height: 500,
+                  bind: {
+                      html: '<iframe src="/testetrackit/app/php/showEmailAnswerForm.php" width="100%" height="100%" frameBorder="0"></iframe>'
+                  }
+              });
+              myWin.show();
+          }
         }
       }
     ]
