@@ -80,16 +80,8 @@ grid.getStore().load();
       var grid = Ext.ComponentQuery.query('gridticket')[0];
       grid.getStore().removeAll();
     }
-    }
+    }]
 
-//     {
-//       text: 'Reload Store',
-//       handler: function(){
-//             document.location.href = "app/php/example.php";
-//         }
-// }
-
-        ]
     },
 
     listeners: {
@@ -102,7 +94,6 @@ grid.getStore().load();
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
-                        // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
                         width: 1100,
                         height: 550,
                         items: [{
@@ -112,10 +103,15 @@ grid.getStore().load();
                             afterrender: function() {
                                     var store = Ext.getStore('ticketseleccionado2');
                                     store.load({
-                                        callback: function(records, operation, success) {
+                                        callback: function(records, operation, success) { // carrega dados para os respétivos campos
                                             var record=store.getAt(0);
                                             var a =  Ext.getCmp('subject').setValue(record.data.subject);
-                                            var b = Ext.getCmp('body').setValue(record.data.body);
+                                            var b = Ext.getCmp('fromaddress').setValue(record.data.fromaddress);
+                                            var c = Ext.getCmp('body').setValue(record.data.body);
+                                            var d =  Ext.getCmp('id').setValue(record.data.id);
+                                            var e = Ext.getCmp('datea').setValue(record.data.datea);
+                                            var f = Ext.getCmp('state').setValue(record.data.state);
+                                            var g = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
                                         }
                                     });
 
@@ -125,10 +121,5 @@ grid.getStore().load();
                     });
                     myWin.show();
  }
-    }/*,
-    onGridAfterRender: function(gridticket){
-       setInterval(function(){
-          grid.store.load();
-       }, 1);
-   }*/
+    }
 });

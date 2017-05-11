@@ -22,9 +22,9 @@ Ext.define('TrackIT.view.main.tickets.MostraOutrasInfoTicket', {
             margin: 20
         },
 
-    config:{stores: ['ticketseleccionado1']},
+        config:{stores: ['ticketseleccionado1']},
 
-    items: [{
+   /* items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
         id: 'id'
@@ -44,7 +44,7 @@ Ext.define('TrackIT.view.main.tickets.MostraOutrasInfoTicket', {
         fieldLabel: 'Departamento:',
         id: 'nome_departamento'
     }
-  ],
+  ],*/
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
