@@ -66,15 +66,29 @@ Ext.MessageBox.hide();
   Ext.util.Cookies.set('cookieIDhistorico', id);
     Ext.util.Cookies.set('cookieParticao','historico');
                     var myWin = Ext.create("Ext.window.Window", {
-                        title: 'Historico do Ticket',
-                        modal: true,
-                        width: 1100,
-                        height: 550,
-                        items: [{
-                            xtype: 'maintabsss'
-                        }]
-                    });
-                    myWin.show();
+                            title: 'Historico do Ticket',
+                            modal: true,
+                            width: 1100,
+                            height: 550,
+                            items: [{
+                                xtype: 'maintabsss'
+                            }], // add funcion ther
+                            listeners: {
+                                afterrender: function () {
+                                    var store = Ext.getStore('tickethistoricoseleccionado');
+                                    store.load({
+                                        callback: function (records, operation, success) {
+                                            var record = store.getAt(0);
+                                            var a = Ext.getCmp('subjectee').setValue(record.data.subject);
+                                            var b = Ext.getCmp('bodyyy').setValue(record.data.body);
+                                        }
+                                    });
+
+                                }
+                            }
+                        });
+     myWin.show();
+
 }
     }
 });

@@ -23,7 +23,7 @@ Ext.define('TrackIT.view.main.recuperados.MostraTicketRecuperado', {
         title: 'Conteúdo do Ticket',
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: {
-                  xtype: 'infoticketrecuperadoprincipal'
+                  //xtype: 'infoticketrecuperadoprincipal'
               }
 
     },
