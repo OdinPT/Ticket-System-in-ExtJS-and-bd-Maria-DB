@@ -27,7 +27,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'ide'
+        id: 'id_resp'
     },
     {
         xtype: 'textfield',

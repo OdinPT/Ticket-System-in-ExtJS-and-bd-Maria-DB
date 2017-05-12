@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.gridticket',
@@ -20,17 +17,22 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
 
     columns: [
-      {text: 'ID', xtype: 'rownumberer', flex: 1},
-      { text: 'DE',  dataIndex: 'fromaddress', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
+        { text: 'ID', dataIndex: 'id', flex: 1,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }},
+        { text: 'DE', dataIndex: 'fromaddress', flex: 1,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }},
       { text: 'ASSUNTO', dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
+
       { text: 'DATA', dataIndex: 'datea', flex: 1,
     editor: {
         allowBlank: false,
