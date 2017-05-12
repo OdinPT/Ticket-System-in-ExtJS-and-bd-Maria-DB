@@ -68,9 +68,8 @@ if($emails) {
         // echo "<br>";
         // echo "<br>";
 				    //save to MySQL
-				//mysqli_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
-        mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$date', '$message','$cookieEmail')");
-        //mysqli_query($conn, "Call InserirTickets('$from', '$subject', '$date', '$message')");
+
+        mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$message','$cookieEmail')");
 				mysqli_close($conn);
     }
 

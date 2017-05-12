@@ -22,7 +22,7 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     },
 
     columns: [
-      { text: 'ID',  dataIndex: 'ID', flex: 1,
+      { text: 'ID',  dataIndex: 'id_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49

@@ -7,10 +7,10 @@ Ext.define('TrackIT.view.main.historico.respostas.RespostaControllerHistorico', 
       store.load({
         callback: function(records, operation, success) {
          var record=store.getAt(0);
-         var a =  Ext.getCmp('ide').setValue(record.data.ID);
-         var b =Ext.getCmp('subjecte').setValue(record.data.body_resp);
-         var c = Ext.getCmp('answere').setValue(record.data.datea_resp);
-         var d = Ext.getCmp('IDtickete').setValue(record.data.id_email);
+            var a =  Ext.getCmp('id_resp').setValue(record.data.id_resp);
+            var b =Ext.getCmp('body_resp').setValue(record.data.body_resp);
+            var c = Ext.getCmp('datea_resp').setValue(record.data.datea_resp);
+            var d = Ext.getCmp('id_email').setValue(record.data.id_email);
        }
       });
 /*

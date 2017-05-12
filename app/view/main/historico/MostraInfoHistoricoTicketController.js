@@ -2,7 +2,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoHistoricoTicketController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.infotickethistorico',
 
-    onClickObterInfoHistorico: function() {
+    /*   onClickObterInfoHistorico: function() {
       var store = Ext.getStore('tickethistoricoseleccionado');
       store.load({
         callback: function(records, operation, success) {
@@ -12,7 +12,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoHistoricoTicketController', {
        }
       });
 
-},
+},*/
 
 onClickApagaTicketDoHistorico: function()
 {
@@ -26,9 +26,9 @@ success: function(response, opts) {
   Ext.getCmp('grid2').getStore().load();
 }
 })
-},
+}
 
-onClickMoveParaRecuperados: function()
+/*onClickMoveParaRecuperados: function()
 {
   myRequest1 = Ext.Ajax.request({
     url: 'app/php/Mover/AlterarEstado.php',
@@ -42,4 +42,5 @@ success: function(response, opts) {
 }
 })
 }
+*/
 });

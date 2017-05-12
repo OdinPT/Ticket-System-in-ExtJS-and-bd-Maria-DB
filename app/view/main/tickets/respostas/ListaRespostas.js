@@ -44,7 +44,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     }}
     ],
 
-    tbar: {
+    /*tbar: {
         defaultButtonUI: 'default',
 
         items: [
@@ -68,7 +68,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
       }
     }]
   },
-
+*/
     listeners: {
  itemclick: function(view, record, item, index, e) {
   var id = record.get('ID');

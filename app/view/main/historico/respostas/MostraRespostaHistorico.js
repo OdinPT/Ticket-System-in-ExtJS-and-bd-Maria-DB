@@ -27,15 +27,8 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'ide'
+        id: 'id_resp'
     },
-    /*
-    $row_array['ID_resp'] = $row['ID_resp'];
-    $row_array['body_resp'] = $row['body_resp'];
-    $row_array['datea_resp'] = $row['datea_resp'];
-    $row_array['IdEmail'] = $row['IdEmail'];
-
-    */
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',

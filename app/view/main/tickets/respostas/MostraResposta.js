@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
     ],
     id: 'staticPageForm',
     frame: true,
-    title: 'Resposta',
+    title: 'Resposta ',
     width: 1080,
     height: 450,
     bodyPadding: 10,
@@ -45,6 +45,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
         id: 'id_email'
     }
   ],
+
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
@@ -67,4 +68,5 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
       }
     ]
   }
+
   });

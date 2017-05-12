@@ -81,6 +81,10 @@ Ext.MessageBox.hide();
                                             var record = store.getAt(0);
                                             var a = Ext.getCmp('subjectee').setValue(record.data.subject);
                                             var b = Ext.getCmp('bodyyy').setValue(record.data.body);
+                                            var c =  Ext.getCmp('idee').setValue(record.data.id);
+                                            var d = Ext.getCmp('dateaaa').setValue(record.data.datea);
+                                            var e = Ext.getCmp('stateee').setValue(record.data.state);
+                                            var f = Ext.getCmp('departmenttt').setValue(record.data.nome_departamento);
                                         }
                                     });
 
