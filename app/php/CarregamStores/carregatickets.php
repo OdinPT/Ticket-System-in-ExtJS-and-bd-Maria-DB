@@ -1,6 +1,7 @@
 <?php
 include("config.php");
 $return_arr = array();
+
   $query = "Call VerTicket()";
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
