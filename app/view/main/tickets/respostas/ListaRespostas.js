@@ -44,7 +44,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     }}
     ],
 
-    /*tbar: {
+    tbar: {
         defaultButtonUI: 'default',
 
         items: [
@@ -54,7 +54,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     Ext.getCmp('grid4').store.reload();
 }
     },
-    {
+    /*{
       text: 'Apagar Respostas!',
       id: 'apagar',
       handler: function(){
@@ -66,9 +66,10 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
   }
         })
       }
-    }]
+    }*/
+    ]
   },
-*/
+
     listeners: {
  itemclick: function(view, record, item, index, e) {
   var id = record.get('ID');
@@ -84,7 +85,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
                         }]
                     });
                     myWin.show();
-  // console.log(record);
+
  }
     },
     onGridAfterRender: function(gridticket){

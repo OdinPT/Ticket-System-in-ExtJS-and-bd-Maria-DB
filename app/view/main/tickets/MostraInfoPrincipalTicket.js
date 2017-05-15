@@ -57,8 +57,9 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textareafield',
-            id: 'body',
-            fieldLabel: 'Corpo:'
+            fieldLabel: 'Corpo:',
+            id: 'body'
+
         }
 
   ],

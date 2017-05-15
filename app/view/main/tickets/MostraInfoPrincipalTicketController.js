@@ -3,7 +3,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
     alias: 'controller.infoticketprincipal',
   
 
-  // ir a procura de quando a janela e aberta ele carrega esta funçção.
+  /*// ir a procura de quando a janela e aberta ele carrega esta funçção.
     onClickObterInfoPrincipalTicket: function() {
       var store = Ext.getStore('ticketseleccionado2');
       store.load({
@@ -15,6 +15,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
       });
 
 },
+*/
 //onClickObterInfoPrincipalTicket
 onClickMoveParaHistorico: function()
 {

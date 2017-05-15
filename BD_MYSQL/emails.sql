@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Maio-2017 às 16:40
+-- Generation Time: 15-Maio-2017 às 15:27
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -362,12 +362,11 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(1, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'as', '2017-05-12 14:52:44', 'Ã¢Â€Â‹asabody\r\n', 'Fechado', 4, 2),
-(2, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'body', '2017-05-12 14:52:44', 'txt 2\r\n', 'Aberto', 4, 1),
+(2, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'body', '2017-05-12 14:52:44', 'txt 2\r\n', 'Fechado', 4, 2),
 (3, 'teste trackit <testetrackit@gmail.com>', 'Teste 123', '2017-05-12 14:52:45', 'Teste Teste Teste\r\n', 'Aberto', 4, 1),
 (4, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'testetr', '2017-05-12 14:52:46', 'asasÃ¢Â€Â‹aÃ¢Â€Â‹\r\n', 'Aberto', 4, 1),
 (5, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'msx', '2017-05-12 14:52:46', 'asasasas\r\n', 'Aberto', 4, 1),
-(6, 'teste trackit <testetrackit@gmail.com>', 'Teste Ticket', '2017-05-12 14:52:46', 'Ticket teste\r\n', 'Aberto', 4, 1),
+(6, 'teste trackit <testetrackit@gmail.com>', 'Teste Ticket', '2017-05-12 14:52:46', 'Ticket teste\r\n', 'Fechado', 4, 2),
 (7, 'Track IT Testes <testetrackit@gmail.com>', 'MS', '2017-05-12 14:52:47', 'asas', 'Aberto', 4, 1),
 (8, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'reunia?o 1', '2017-05-12 14:52:48', 'ReuniÃƒÂ£o\r\n', 'Aberto', 4, 1),
 (9, 'PHP Classes Newclasses <list-newclasses@phpclasses.org>', '[PHP Classes] New class daily digest of 2017-05-09', '2017-05-12 14:52:49', '\r\n\r\n\r\n\r\nNew class daily digest of 2017-05-09 - PHP Classes\r\n\r\n\r\n\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          New class daily digest of 2017-05-09\r\n        \r\n        Monitor your stack!Try Datadog for free and monitor all your data in one place! Servers, clouds, apps, and more.\r\n        teste you are getting this message as free service for being a user of the PHP Classes site to which you registered voluntarily using the email address testetrackit@gmail.com. If you wish to unsubscribe go to the unsubscribe page.\r\n2 new classes were added to &quot;PHP Classes&quot; repository.\r\n\r\n1. PHP Twitter Search PHP SDK - This class support forum\r\n\r\n\r\nShort description:\r\n\r\nSearch for tweets and users ', 'Aberto', 4, 1),
@@ -375,7 +374,7 @@ INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, 
 (11, 'teste trackit <testetrackit@gmail.com>', 'awdawdawd', '2017-05-12 14:52:49', 'adawdawdad\r\n', 'Aberto', 4, 1),
 (12, 'teste trackit <testetrackit@gmail.com>', '13123', '2017-05-12 14:52:50', '13123123\r\n', 'Aberto', 4, 1),
 (13, 'teste trackit <testetrackit@gmail.com>', '123123', '2017-05-12 14:52:50', '123131312\r\n', 'Aberto', 4, 1),
-(14, 'teste trackit <testetrackit@gmail.com>', '1dasd', '2017-05-12 14:52:51', 'awdawdawd\r\n', 'Aberto', 4, 1),
+(14, 'teste trackit <testetrackit@gmail.com>', '1dasd', '2017-05-12 14:52:51', 'awdawdawd\r\n', 'Aberto', 4, 3),
 (15, 'teste trackit <testetrackit@gmail.com>', 'er gerg erg e', '2017-05-12 14:52:52', 'ger gegererg\r\n', 'Aberto', 4, 1),
 (16, 'teste trackit <testetrackit@gmail.com>', 'dfgsdgsd', '2017-05-12 14:52:52', 'gds fgsd sdfgsdf\r\n', 'Aberto', 4, 1),
 (17, 'teste trackit <testetrackit@gmail.com>', '123123', '2017-05-12 14:52:52', '123123123123123123\r\n', 'Aberto', 4, 1),
@@ -425,15 +424,27 @@ INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, 
 (61, 'Rui Miguel <CacerFTW@hotmail.com>', 'daawdadadaw', '2017-05-12 14:53:03', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadadadadadadawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
 (62, 'Rui Miguel <CacerFTW@hotmail.com>', 'dgdfg', '2017-05-12 14:53:04', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfgdgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
 (63, 'Rui Miguel <CacerFTW@hotmail.com>', 'gdfgdf', '2017-05-12 14:53:04', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(64, 'Track IT Gmail <odinpt21@gmail.com>', 'as', '2017-05-12 14:53:05', 'asÂ ', 'Fechado', 4, 2),
 (65, 'Rui Miguel <CacerFTW@hotmail.com>', 'dawdawda', '2017-05-12 14:53:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadadawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
 (66, 'Rui Miguel <CacerFTW@hotmail.com>', 'a', '2017-05-12 14:53:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
 (67, 'odinpt21 <odinpt21@gmail.com>', 'teste', '2017-05-12 14:53:05', 'Data actual?Â ', 'Aberto', 4, 1),
-(69, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-12 15:12:05', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 1),
-(70, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-05-12 15:12:06', 'antes da filtragem por email do departamento\r\n\r\n', 'Aberto', 1, 1),
-(71, 'teste trackit <testetrackit@gmail.com>', 'PT', '2017-05-12 15:12:06', 'PT223\r\n', 'Aberto', 1, 1),
-(72, 'Microsoft Outlook <odinpt21@gmail.com>', 'Mensagem de Teste do Microsoft Outlook', '2017-05-12 15:12:07', 'Esta Ã© uma mensagem de e-mail enviada automaticamente pelo Microsoft Outlook ao testar as definiÃ§Ãµes da conta do utilizador.\r\n', 'Aberto', 1, 1),
-(73, 'Track IT Testes <testetrackit@gmail.com>', 'teste', '2017-05-12 15:12:08', 'testeasdasdasdasdas', 'Aberto', 1, 1);
+(69, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-12 15:12:05', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 3),
+(70, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-05-12 15:12:06', 'antes da filtragem por email do departamento\r\n\r\n', 'Aberto', 1, 3),
+(74, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'as', '2017-05-15 14:17:56', 'Ã¢Â€Â‹asabody\r\n', 'Aberto', 4, 1),
+(75, 'Rui Miguel <CacerFTW@hotmail.com>', 'ffggdfgdf', '2017-05-15 14:18:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdfgdfgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(76, 'Rui Miguel <CacerFTW@hotmail.com>', 'ffg', '2017-05-15 14:18:06', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfghfhfghfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(77, 'Rui Miguel <CacerFTW@hotmail.com>', 'fghfhfg', '2017-05-15 14:18:08', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfhfghfghfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(78, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawd', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdada\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(79, 'Rui Miguel <CacerFTW@hotmail.com>', 'GFHFGHFHGF', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdadadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(80, 'Rui Miguel <CacerFTW@hotmail.com>', 'awaw', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(81, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdaw', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\naawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(82, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawaw', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(83, 'Rui Miguel <CacerFTW@hotmail.com>', '12312', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n3123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(84, 'Rui Miguel <CacerFTW@hotmail.com>', '12312daw', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(85, 'Rui Miguel <CacerFTW@hotmail.com>', '2123', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(86, 'Rui Miguel <CacerFTW@hotmail.com>', '1', '2017-05-15 14:18:11', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n1\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(87, 'Rui Miguel <CacerFTW@hotmail.com>', '12313', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n12313\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(88, 'Rui Miguel <CacerFTW@hotmail.com>', 'fff', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nff\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
+(89, 'Rui Miguel <CacerFTW@hotmail.com>', '123', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n321\r\n\r\n\r\n\r\n', 'Aberto', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -479,8 +490,11 @@ INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUE
 (7, 'ss', '2017-05-12 10:06:13', 4),
 (8, 'tes', '2017-05-12 10:09:07', 57),
 (9, 'Aguenta la cm tretas!\r\n', '2017-05-12 12:02:02', 20),
-(10, 'teste', '2017-05-12 13:59:42', 1),
-(11, 'qwqw', '2017-05-12 15:11:12', 2);
+(11, 'qwqw', '2017-05-12 15:11:12', 2),
+(12, 'asasas', '15-05-2017', 70),
+(13, 'autoload!?', '2017-05-15 09:44:45', 3),
+(14, 'body', '2017-05-15 09:50:21', 3),
+(15, 'asdas', '2017-05-15 14:22:19', 3);
 
 --
 -- Indexes for dumped tables
@@ -539,7 +553,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -549,7 +563,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Constraints for dumped tables
 --
