@@ -3,8 +3,9 @@ Ext.define('TrackIT.view.main.recuperados.MostraTicketRecuperado', {
     xtype: 'maintabssss',
     controller: 'ticketzzzz',
     requires: [
-        'TrackIT.store.recuperados.TicketsSeleccionadosRecuperados',
-        'TrackIT.view.main.recuperados.TicketControllerRecuperado'
+      'TrackIT.store.recuperados.CarregaInfoTicketRecuperado',
+      'TrackIT.view.main.recuperados.MostraInfoPrincipalTicketRecuperadoController',
+      'TrackIT.view.main.recuperados.respostas.ListaRespostasRecuperadas'
     ],
     width: 1100,
     height: 500,
@@ -23,7 +24,7 @@ Ext.define('TrackIT.view.main.recuperados.MostraTicketRecuperado', {
         title: 'Conteúdo do Ticket',
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: {
-                  //xtype: 'infoticketrecuperadoprincipal'
+                  xtype: 'infoticketrecuperadoprincipal'
               }
 
     },
@@ -47,24 +48,4 @@ Ext.define('TrackIT.view.main.recuperados.MostraTicketRecuperado', {
           xtype: 'mainlistrespostas'
       }]
     }]
-    // ,
-    //
-    // dockedItems: {
-    //     dock: 'bottom',
-    //     xtype: 'toolbar',
-    //     items: [{
-    //         text: 'Responder',
-    //         glyph: 43
-    //
-    //     },
-    //     {
-    //       text: 'Apagar',
-    //       glyph: 43,
-    //       listeners: {
-    //          click: 'onClickDeleteForever'
-    //       }
-    //
-    //     }
-    //   ]
-    // }
 });

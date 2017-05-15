@@ -42,7 +42,7 @@ Ext.define('TrackIT.view.main.recuperados.MostraOutrasInfoTicketRecuperado', {
     {
         xtype: 'textfield',
         fieldLabel: 'Departamento:',
-        id: 'nome_departamento'
+        id: 'department'
     }
   ],
   dockedItems: {

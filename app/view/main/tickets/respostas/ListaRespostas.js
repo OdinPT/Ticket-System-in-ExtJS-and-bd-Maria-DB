@@ -22,22 +22,22 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     },
 
     columns: [
-      { text: 'ID Resposta :',  dataIndex: 'id_resp', flex: 1,
+      { text: 'ID',  dataIndex: 'ID', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'ASSUNTO :',  dataIndex: 'body_resp', flex: 1,
+      { text: 'ASSUNTO',  dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'DATA :', dataIndex: 'datea_resp', flex: 1,
+      { text: 'RESPOSTA', dataIndex: 'answer', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'ID TICKET:', dataIndex: 'id_email', flex: 1,
+      { text: 'IDTICKET', dataIndex: 'IDticket', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
@@ -54,7 +54,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     Ext.getCmp('grid4').store.reload();
 }
     },
-    /*{
+    {
       text: 'Apagar Respostas!',
       id: 'apagar',
       handler: function(){
@@ -66,8 +66,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
   }
         })
       }
-    }*/
-    ]
+    }]
   },
 
     listeners: {
@@ -85,7 +84,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
                         }]
                     });
                     myWin.show();
-
+  // console.log(record);
  }
     },
     onGridAfterRender: function(gridticket){

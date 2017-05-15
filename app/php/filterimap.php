@@ -10,7 +10,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM admin WHERE username='$cookieEmai
 while($res = mysqli_fetch_array($result))
 {
   $username = $res['username'];
-	$password = $res['pass'];
+	$password = $res['password'];
 }
 
 $inbox = imap_open($hostname,$username,$password, NULL, 1, array('DISABLE_AUTHENTICATOR' => 'GSSAPI')) or die('Cannot connect to server: ' . imap_last_error());
@@ -50,9 +50,6 @@ if($emails) {
         $subject = utf8_decode(imap_utf8($overview[0]->subject));
          $subject = str_replace('c?', 'ç', $subject);
          $subject = str_replace('C?', 'Ç', $subject);
-         $subject = str_replace('e?', 'é', $subject);
-         $subject = str_replace('u?', 'ú', $subject);
-          
         $conn= mysqli_connect("localhost","root","","emails");
         $message = strip_tags($message);
         $message = html_entity_decode($message);
@@ -63,13 +60,13 @@ if($emails) {
         $message = str_replace('Ãº', 'ú', $message);
         $message = str_replace('Â', ' ', $message);
         $message = str_replace('Ã', 'Ç', $message);
-        $message = str_replace('Ã©', 'é', $message);
+
         echo $message;
         // echo "<br>";
         // echo "<br>";
 				    //save to MySQL
+				mysqli_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
 
-        mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$message','$cookieEmail')");
 				mysqli_close($conn);
     }
 

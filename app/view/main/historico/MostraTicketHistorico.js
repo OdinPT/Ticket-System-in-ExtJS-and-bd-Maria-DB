@@ -28,17 +28,17 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
               }]
 
     },
-    /*{
+    {
         title: 'Outras Informações',
         items: {
                   xtype: 'infohistorico'
               }
 
-    },*/
+    },
   {
     title: 'Respostas',
     items: {
-      xtype: 'mainlistrespostashistorico'
+      xtype: 'mainlistrespostas'
     }
   }]
 });

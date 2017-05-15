@@ -22,34 +22,28 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     },
 
     columns: [
-      { text: 'ID',  dataIndex: 'id_resp', flex: 1,
+      { text: 'ID',  dataIndex: 'ID', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
+      { text: 'ASSUNTO',  dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'DATA', dataIndex: 'datea_resp', flex: 1,
+      { text: 'RESPOSTA', dataIndex: 'answer', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'IDTICKET', dataIndex: 'id_email', flex: 1,
+      { text: 'IDTICKET', dataIndex: 'IDticket', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }}
     ],
-    /*
-    $row_array['ID_resp'] = $row['ID_resp'];
-    $row_array['body_resp'] = $row['body_resp'];
-    $row_array['datea_resp'] = $row['datea_resp'];
-    $row_array['IdEmail'] = $row['IdEmail'];
 
-    */
     tbar: {
         defaultButtonUI: 'default',
 

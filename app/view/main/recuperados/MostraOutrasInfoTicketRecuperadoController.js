@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.recuperados.MostraOutrasInfoTicketRecuperadoContro
          var a =  Ext.getCmp('id').setValue(record.data.id);
          var b = Ext.getCmp('datea').setValue(record.data.datea);
          var c = Ext.getCmp('state').setValue(record.data.state);
-         var d = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
+         var d = Ext.getCmp('department').setValue(record.data.department);
        }
       });
 
@@ -21,7 +21,7 @@ onClickLimpaOutrasInfoTicketRecuperado: function()
   var aa =  Ext.getCmp('id').setValue("");
   var bb = Ext.getCmp('datea').setValue("");
   var cc = Ext.getCmp('state').setValue("");
-  var dd = Ext.getCmp('nome_departamento').setValue("");
+  var dd = Ext.getCmp('department').setValue("");
 }
 
 });

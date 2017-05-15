@@ -27,22 +27,22 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_resp'
+        id: 'ide'
     },
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'body_resp'
+        id: 'subjecte'
     },
     {
         xtype: 'textareafield',
         fieldLabel: 'Resposta:',
-        id: 'datea_resp'
+        id: 'answere'
     },
     {
         xtype: 'textfield',
         fieldLabel: 'IDTicket:',
-        id: 'id_email'
+        id: 'IDtickete'
     }
   ],
   dockedItems: {

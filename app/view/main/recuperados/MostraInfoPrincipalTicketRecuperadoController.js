@@ -24,22 +24,24 @@ success: function(response, opts) {
   var grid = Ext.ComponentQuery.query('grid3')[0]
   grid.getStore().load();
   Ext.getCmp('grid2').getStore().load();
+  Ext.getCmp('grid3').getStore().load();
 }
 })
 },
 
 onClickMoveParaHistoricoRecuperado: function()
 {
-  myRequest2 = Ext.Ajax.request({
+  myRequest3 = Ext.Ajax.request({
     url: 'app/php/Mover/MoveDeRecuperadosParaHistorico.php',
-    method: 'POST',
-    success: function(response, opts){
-      Ext.MessageBox.alert('title','Sucesso');
-      var grid = Ext.ComponentQuery.query('grid3')[0]
-      grid.getStore().load();
-      Ext.getCmp('grid2').getStore().load();
-    }
-  })
+method: 'POST',
+success: function(response, opts) {
+  Ext.MessageBox.alert('title','Sucesso');
+  var grid = Ext.ComponentQuery.query('grid3')[0];
+  grid.getStore().load();
+  Ext.getCmp('grid2').getStore().load();
+  Ext.getCmp('grid3').getStore().load();
+}
+})
 }
 
 });

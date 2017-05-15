@@ -1,3 +1,6 @@
+/**
+ * This view is an example list of people.
+ */
 Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.gridticket',
@@ -17,22 +20,17 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
 
     columns: [
-        { text: 'ID', dataIndex: 'id', flex: 1,
-            editor: {
-                allowBlank: false,
-                maxLength: 49
-            }},
-        { text: 'DE', dataIndex: 'fromaddress', flex: 1,
-            editor: {
-                allowBlank: false,
-                maxLength: 49
-            }},
+      {text: 'ID', xtype: 'rownumberer', flex: 1},
+      { text: 'DE',  dataIndex: 'fromaddress', flex: 1,
+    editor: {
+        allowBlank: false,
+        maxLength: 49
+    }},
       { text: 'ASSUNTO', dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-
       { text: 'DATA', dataIndex: 'datea', flex: 1,
     editor: {
         allowBlank: false,
@@ -48,7 +46,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
+      { text: 'DEPARTAMENTO', dataIndex: 'department', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
@@ -69,7 +67,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
       success: function(response, opts) {
         Ext.MessageBox.updateProgress(1);
 Ext.MessageBox.hide();
-var grid = Ext.ComponentQuery.query('gridticket')[0];
+var grid = Ext.ComponentQuery.query('gridticket')[0]
 grid.getStore().load();
     }
     })
@@ -83,8 +81,15 @@ grid.getStore().load();
       grid.getStore().removeAll();
     }
     }
-    ]
 
+//     {
+//       text: 'Reload Store',
+//       handler: function(){
+//             document.location.href = "app/php/example.php";
+//         }
+// }
+
+        ]
     },
 
     listeners: {
@@ -93,35 +98,24 @@ grid.getStore().load();
   Ext.util.Cookies.set('cookieID', id);
   var ide = index+1;
   Ext.util.Cookies.set('cookieIDe', ide);
+  Ext.util.Cookies.set('cookieParticao','ticket');
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
+                        // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
                         width: 1100,
                         height: 550,
                         items: [{
                             xtype: 'maintabtickets'
-                        }],
-                        listeners: {
-                            afterrender: function() {
-                                    var store = Ext.getStore('ticketseleccionado2');
-                                    store.load({
-                                        callback: function(records, operation, success) { // carrega dados para os respétivos campos
-                                            var record=store.getAt(0);
-                                            var a =  Ext.getCmp('subject').setValue(record.data.subject);
-                                            var b = Ext.getCmp('fromaddress').setValue(record.data.fromaddress);
-                                            var c = Ext.getCmp('body').setValue(record.data.body);
-                                            var d =  Ext.getCmp('id').setValue(record.data.id);
-                                            var e = Ext.getCmp('datea').setValue(record.data.datea);
-                                            var f = Ext.getCmp('state').setValue(record.data.state);
-                                            var g = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
-                                        }
-                                    });
-
-                                }
-                            }
-
+                        }]
                     });
                     myWin.show();
+  // console.log(record);
  }
-    }
+    },
+    onGridAfterRender: function(gridticket){
+       setInterval(function(){
+          grid.store.load();
+       }, 1);
+   }
 });

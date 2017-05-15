@@ -1,10 +1,10 @@
 <?php
 //Chama as definições patrão da BD utilizada.
 include("config.php");
-$id = $_COOKIE['cookieIDrecuperado'];
+$id = $_COOKIE['cookieIDrecovered'];
 //Através do ID coloca esse ticket novamente com o estado em aberto.
-/*$fechado = mysqli_query($mysqli, "UPDATE recuperados SET state='Fechado' WHERE id=$id");
-//
-$insert = mysqli_query($mysqli, "INSERT INTO historico SELECT * FROM recuperados WHERE id=$id");*/
-$kappa = mysqli_query($mysqli, "Call MudaGrupo($id)");
+$state = mysqli_query($mysqli, "UPDATE recovered SET state='Fechado' WHERE id=$id");
+$result = mysqli_query($mysqli, "INSERT INTO historico SELECT * FROM recovered WHERE id=$id");
+
+$kappa = mysqli_query($mysqli, "DELETE FROM recovered WHERE id=$id");
 ?>

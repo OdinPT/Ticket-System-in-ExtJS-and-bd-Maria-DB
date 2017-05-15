@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.main.historico.MostraOutraInfoHistorico', {
 
     config:{stores: ['historicoseleccionado1']},
 
-  /*  items: [{
+    items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
         id: 'idee'
@@ -44,7 +44,7 @@ Ext.define('TrackIT.view.main.historico.MostraOutraInfoHistorico', {
         fieldLabel: 'Departamento:',
         id: 'departmenttt'
     }
-  ],*/
+  ],
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',

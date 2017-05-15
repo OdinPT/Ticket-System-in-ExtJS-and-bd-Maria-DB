@@ -1,27 +1,27 @@
+/**
+ * This class is the controller for the main view for the application. It is specified as
+ * the "controller" of the Main view class.
+ *
+ * TODO - Replace this content of this view to suite the needs of your application.
+ */
 Ext.define('TrackIT.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
-    handler: function() {
-      var grid = Ext.ComponentQuery.query('gridticket')[0];
-      grid.getStore().removeAll();
-    },
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-        var grid = Ext.ComponentQuery.query('gridticket')[0];
-        grid.getStore().removeAll();
     },
 
     onConfirm: function (choice) {
         if (choice === 'yes') {
-          var grid = Ext.ComponentQuery.query('gridticket')[0];
-          grid.getStore().removeAll();
+            //
         }
     },
     onClickButton: function () {
-
         // Remove the localStorage key/value
         localStorage.removeItem('TrackITLoggedIn');
+
         // Remove Main View
         this.getView().destroy();
 
@@ -36,6 +36,5 @@ Ext.define('TrackIT.view.main.MainController', {
         Ext.util.Cookies.clear('cookieIDrecovered');
         Ext.util.Cookies.clear('cookieIDanswer');
         Ext.util.Cookies.clear('cookieIDemail');
-
     }
 });

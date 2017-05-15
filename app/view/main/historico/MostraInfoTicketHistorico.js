@@ -26,26 +26,6 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
 
     items: [{
         xtype: 'textfield',
-        fieldLabel: 'ID:',
-        id: 'idee'
-    },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Data:',
-            id: 'dateaaa'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Estado:',
-            id: 'stateee'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Departamento:',
-            id: 'departmenttt'
-        },
-        {
-        xtype: 'textfield',
         fieldLabel: 'Assunto:',
         id: 'subjectee'
     },
@@ -73,14 +53,14 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         listeners: {
           click: 'onClickApagaTicketDoHistorico'
         }
-      }
-      /*{
+      },
+      {
       text: 'Mover p/ Recuperados',
       glyph: 43,
       listeners: {
         click: 'onClickMoveParaRecuperados'
       }
-    }*/
+    }
     ]
   }
   });

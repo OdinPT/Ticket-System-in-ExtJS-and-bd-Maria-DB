@@ -20,30 +20,24 @@ Ext.define('TrackIT.view.main.recuperados.respostas.ListaRespostasRecuperadas', 
     store: {
         type: 'respostasrecuperadas'
     },
-/*
-/*
-$row_array['ID_resp'] = $row['ID_resp'];
-$row_array['body_resp'] = $row['body_resp'];
-$row_array['datea_resp'] = $row['datea_resp'];
-$row_array['IdEmail'] = $row['IdEmail'];
-*/
+
     columns: [
-      { text: 'ID',  dataIndex: 'ID_resp', flex: 1,
+      { text: 'ID',  dataIndex: 'ID', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
+      { text: 'ASSUNTO',  dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'RESPOSTA', dataIndex: 'datea_resp', flex: 1,
+      { text: 'RESPOSTA', dataIndex: 'answer', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'IDTICKET', dataIndex: 'IdEmail', flex: 1,
+      { text: 'IDTICKET', dataIndex: 'IDticket', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49

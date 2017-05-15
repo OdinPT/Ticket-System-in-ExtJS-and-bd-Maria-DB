@@ -70,16 +70,16 @@ Ext.define('TrackIT.view.login.Login', {
                           Ext.create({
                               xtype: 'app-main'
                           });
-                          Ext.Msg.alert('Sucesso!', 'Autenticado!');
+                          Ext.Msg.alert('Sucesso!', 'Autenticado! Seja bem-vindo.');
 function hide_message() {
     Ext.defer(function() {
         Ext.MessageBox.hide();
-    }, 500);
+    }, 2000);
 }
 hide_message();
                         }
                         else {
-                          Ext.Msg.alert('Erro!', 'Dados incorrectos, verifique as suas credenciais.');
+                          Ext.Msg.alert('Erro!', 'Dados incorrectos, por favor verifique as suas credenciais.');
                           function hide_message() {
                               Ext.defer(function() {
                                   Ext.MessageBox.hide();
@@ -89,7 +89,7 @@ hide_message();
                         }
 		         },
              failure: function() {
-               Ext.MessageBox.alert('Status!', 'Erro no servidor, tente mais tarde');
+               Ext.MessageBox.alert('Status!', 'Erro no servidor, por favor tente mais tarde');
              }
 
                   });

@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list',
+        iconCls: 'fa-cloud',
         items: [{
             xtype: 'button',
             text: 'Logout',
@@ -85,22 +85,22 @@ Ext.define('TrackIT.view.main.Main', {
 
     items: [{
         title: 'Tickets',
-        iconCls: 'fa-user',
+        iconCls: 'fa-eye',
         items: [{
             xtype: 'mainlisttickets'
         }]
     }, {
         title: 'Historico',
-        iconCls: 'fa-users',
+        iconCls: 'fa-eye',
         items: [{
             xtype: 'mainlisthistorico'
         }]
-    } /*{
+    }, {
         title: 'Recuperados',
-        iconCls: 'fa-cog',
+        iconCls: 'fa-eye',
         items: [{
             xtype: 'mainlistrecuperados'
         }]
-    }*/
+    }
   ]
 });
