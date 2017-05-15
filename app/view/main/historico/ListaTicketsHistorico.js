@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
     extend: 'Ext.grid.Panel',
     id: 'grid2',
@@ -19,7 +16,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
     },
 
     columns: [
-      {text: 'ID', xtype: 'rownumberer', flex: 1},
+      {text: 'ID', dataIndex: 'id', flex: 1},
       { text: 'DE',  dataIndex: 'fromaddress', flex:  1 },
       { text: 'ASSUNTO', dataIndex: 'subject', flex: 1 },
       { text: 'DATA', dataIndex: 'datea', flex: 1 },
@@ -79,12 +76,12 @@ Ext.MessageBox.hide();
                                     store.load({
                                         callback: function (records, operation, success) {
                                             var record = store.getAt(0);
+                                            var c =  Ext.getCmp('idee').setValue(record.data.id);
                                             var a = Ext.getCmp('subjectee').setValue(record.data.subject);
                                             var b = Ext.getCmp('bodyyy').setValue(record.data.body);
-                                            var c =  Ext.getCmp('idee').setValue(record.data.id);
                                             var d = Ext.getCmp('dateaaa').setValue(record.data.datea);
                                             var e = Ext.getCmp('stateee').setValue(record.data.state);
-                                            var f = Ext.getCmp('departmenttt').setValue(record.data.nome_departamento);
+                                            var d = Ext.getCmp('departmenttt').setValue(record.data.nome_departamento);
                                         }
                                     });
 
