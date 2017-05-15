@@ -6,8 +6,12 @@
           <option name="url" value="https://github.com/OdinPT/testetrackit.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:OdinPT/testetrackit.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\Users\Work\WebstormProjects" />
+    <option name="cloneParentDir" value="C:\xampp\htdocs\testetrackit" />
   </component>
 </application>
