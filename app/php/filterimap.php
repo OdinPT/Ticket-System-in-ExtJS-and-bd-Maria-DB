@@ -10,7 +10,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM admin WHERE username='$cookieEmai
 while($res = mysqli_fetch_array($result))
 {
   $username = $res['username'];
-	$password = $res['password'];
+	$password = $res['pass'];
 }
 
 $inbox = imap_open($hostname,$username,$password, NULL, 1, array('DISABLE_AUTHENTICATOR' => 'GSSAPI')) or die('Cannot connect to server: ' . imap_last_error());
@@ -65,8 +65,8 @@ if($emails) {
         // echo "<br>";
         // echo "<br>";
 				    //save to MySQL
-				mysqli_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
 
+                mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$message','$cookieEmail')");
 				mysqli_close($conn);
     }
 
