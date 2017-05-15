@@ -7,6 +7,7 @@ $query = "Call VerTicketHistorico()";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
   $row_array['id'] = $row['id'];
   $row_array['fromaddress'] = $row['fromaddress'];
   $row_array['subject'] = $row['subject'];

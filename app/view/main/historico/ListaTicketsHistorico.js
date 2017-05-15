@@ -25,7 +25,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
       { text: 'DATA', dataIndex: 'datea', flex: 1 },
       { text: 'CORPO', dataIndex: 'body', flex: 1 },
       { text: 'ESTADO', dataIndex: 'state', flex: 1 },
-      { text: 'DEPARTAMENTO', dataIndex: 'department', flex: 1 }
+      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1 }
     ],
 
     tbar: {

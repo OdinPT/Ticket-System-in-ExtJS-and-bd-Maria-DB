@@ -2,7 +2,10 @@
 include("config.php");
 $id = $_COOKIE['cookieIDrecovered'];
 $return_arr = array();
-$query = "SELECT * FROM recovered WHERE id=$id";
+
+$query = "Call ShowBody($id)";
+//$query = "SELECT * FROM recovered WHERE id=$id";
+
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {

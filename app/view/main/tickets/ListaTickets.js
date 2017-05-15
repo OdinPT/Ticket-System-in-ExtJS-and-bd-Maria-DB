@@ -98,7 +98,6 @@ grid.getStore().load();
   Ext.util.Cookies.set('cookieID', id);
   var ide = index+1;
   Ext.util.Cookies.set('cookieIDe', ide);
-  Ext.util.Cookies.set('cookieParticao','ticket');
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
