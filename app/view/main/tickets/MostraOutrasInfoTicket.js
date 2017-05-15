@@ -42,7 +42,7 @@ Ext.define('TrackIT.view.main.tickets.MostraOutrasInfoTicket', {
     {
         xtype: 'textfield',
         fieldLabel: 'Departamento:',
-        id: 'department'
+        id: 'nome_departamento'
     }
   ],
   dockedItems: {

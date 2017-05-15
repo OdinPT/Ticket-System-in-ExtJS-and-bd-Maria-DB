@@ -2,7 +2,7 @@
 include("config.php");
 $id = $_COOKIE['cookieID'];
 $return_arr = array();
-$query = "SELECT * FROM emails WHERE id=$id";
+$query = "Call ShowBody($id)";
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {

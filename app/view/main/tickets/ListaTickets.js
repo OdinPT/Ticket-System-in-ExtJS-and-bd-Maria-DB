@@ -46,7 +46,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'DEPARTAMENTO', dataIndex: 'department', flex: 1,
+      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
