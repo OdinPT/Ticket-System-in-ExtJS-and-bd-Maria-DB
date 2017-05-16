@@ -24,21 +24,8 @@ Ext.define('TrackIT.view.main.tickets.MostraOutrasInfoTicket', {
 
     config:{stores: ['ticketseleccionado1']},
 
-    items: [{
-        xtype: 'textfield',
-        fieldLabel: 'ID:',
-        id: 'id'
-    },
-    {
-        xtype: 'textfield',
-        fieldLabel: 'Data:',
-        id: 'datea'
-    },
-    {
-        xtype: 'textfield',
-        fieldLabel: 'Estado:',
-        id: 'state'
-    },
+    items: [
+
     {
         xtype: 'textfield',
         fieldLabel: 'Departamento:',

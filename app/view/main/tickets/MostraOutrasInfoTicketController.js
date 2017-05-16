@@ -7,9 +7,6 @@ Ext.define('TrackIT.view.main.tickets.MostraOutrasInfoTicketController', {
       store.load({
         callback: function(records, operation, success) {
          var record=store.getAt(0);
-         var a =  Ext.getCmp('id').setValue(record.data.id);
-         var b = Ext.getCmp('datea').setValue(record.data.datea);
-         var c = Ext.getCmp('state').setValue(record.data.state);
          var d = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
        }
       });

@@ -24,14 +24,35 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
 
     config:{stores: ['ticketseleccionado2']},
 
-    items: [{
+    items: [
+        {
+            xtype: 'textfield',
+            fieldLabel: 'ID:',
+            id: 'idd'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Data:',
+            id: 'dateaa'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Estado:',
+            id: 'statee'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Departamento:',
+            id: 'nome_departamentoo'
+        },
+        {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subject'
+        id: 'subjectt'
     },
     {
         xtype: 'textareafield',
-        id: 'body',
+        id: 'bodyy',
         fieldLabel: 'Corpo:'
     }
   ],
