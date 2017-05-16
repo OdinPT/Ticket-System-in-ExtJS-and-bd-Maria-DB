@@ -24,14 +24,20 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
 
     config:{stores: ['tickethistoricoseleccionado']},
 
-    items: [{
+    items: [
+        {
+            xtype: 'textfield',
+            fieldLabel: 'ID:',
+            id: 'idd'
+        },
+        {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subjectee'
+        id: 'subjectt'
     },
     {
         xtype: 'textareafield',
-        id: 'bodyyy',
+        id: 'bodyy',
         fieldLabel: 'Corpo:'
     }
   ],

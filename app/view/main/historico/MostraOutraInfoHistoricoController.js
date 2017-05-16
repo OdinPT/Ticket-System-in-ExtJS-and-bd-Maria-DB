@@ -2,7 +2,7 @@ Ext.define('TrackIT.view.main.historico.MostraOutraInfoHistoricoController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.outrainfohistorico',
 
-    onClickObterOutrasInfoHistorico: function() {
+   onClickObterOutrasInfoHistorico: function() {
       var store = Ext.getStore('historicoseleccionado1');
       store.load({
         callback: function(records, operation, success) {
