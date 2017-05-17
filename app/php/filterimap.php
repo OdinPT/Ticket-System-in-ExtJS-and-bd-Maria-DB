@@ -16,7 +16,7 @@ while($res = mysqli_fetch_array($result))
 
 $inbox = imap_open($hostname,$username,$password, NULL, 1, array('DISABLE_AUTHENTICATOR' => 'GSSAPI')) or die('Cannot connect to server: ' . imap_last_error());
 
-$emails = imap_search($inbox,'ALL');
+$emails = imap_search($inbox,'UNSEEN');
 
 if($emails) {
     $output = '';
