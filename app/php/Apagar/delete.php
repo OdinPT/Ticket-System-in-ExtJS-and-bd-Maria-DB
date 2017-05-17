@@ -1,3 +1,5 @@
+//Atualizado
+
 <?php
 //including the database connection file
 include("config.php");
@@ -25,21 +27,6 @@ $id = $_COOKIE['cookieID'];
 $state = mysqli_query($mysqli, "Call MudaGrupo($id)");
 
 $kappa = mysqli_query($mysqli, "Call ApagarEmails($ide)");
-
-
-
-$gridid = $_COOKIE['cookieIDe'];
-$mbox = imap_open("{imap.gmail.com:993/imap/ssl}INBOX", $username, $password)
-    or die("Can't connect: " . imap_last_error());
-
-$check = imap_mailboxmsginfo($mbox);
-
-imap_delete($mbox, $gridid);
-
-imap_expunge($mbox);
-
-imap_close($mbox);
-//redirecting to the display page (index.php in our case)
 ?>
 <!--
  <script>
