@@ -60,15 +60,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
       dock: 'bottom',
       xtype: 'toolbar',
       items: [
-      {
-        text: 'Carregar Informações',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterInfoPrincipalTicket'
-        }
-
-      },
-      {
+          {
         text: 'Move p/ Historico',
         glyph: 43,
         listeners: {
