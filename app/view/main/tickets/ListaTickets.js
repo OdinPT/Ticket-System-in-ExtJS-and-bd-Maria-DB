@@ -1,6 +1,5 @@
-/**
- * This view is an example list of people.
- */
+Ext.Loader.setPath('Ext.ux', '../ux/');
+
 Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.gridticket',
@@ -10,7 +9,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.MostraTicket',
-        'TrackIT.store.tickets.TicketSelected'
+        'TrackIT.store.tickets.TicketSelected',
+        'TrackIT.view.main.tickets.ProcuradorDaGrid'
     ],
 
     title: 'Tickets',
@@ -18,39 +18,63 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     store: {
         type: 'tickets'
     },
+    plugins: [{
+        ptype: 'gridfilters'
+    }],
 
     columns: [
-      {text: 'ID',  dataIndex: 'id', flex: 1},
+      {text: 'ID',  dataIndex: 'id', flex: 1,
+          filter: {
+              type: 'string'
+          }},
       { text: 'DE',  dataIndex: 'fromaddress', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }},
+    },
+          filter: {
+              type: 'string'
+          }},
       { text: 'ASSUNTO', dataIndex: 'subject', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }},
+    },
+          filter: {
+              type: 'string'
+          }},
       { text: 'DATA', dataIndex: 'datea', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }},
+    },
+          filter: {
+              type: 'string'
+          }},
       { text: 'CORPO', dataIndex: 'body', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }},
+    },
+          filter: {
+              type: 'string'
+          }},
       { text: 'ESTADO', dataIndex: 'state', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }},
+    },
+          filter: {
+              type: 'string'
+          }},
       { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
-    }}
+    },
+          filter: {
+              type: 'string'
+          }}
     ],
 
     tbar: {
