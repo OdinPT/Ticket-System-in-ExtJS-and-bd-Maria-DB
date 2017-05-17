@@ -89,10 +89,6 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-<<<<<<< HEAD
-    }
-=======
-
     }
         /*{
         title: 'Recuperados',
@@ -102,6 +98,5 @@ Ext.define('TrackIT.view.main.Main', {
         }]
     }*/
 
->>>>>>> 9f38da4a0f5947fe7b4fb3654e9b9a466452ef4e
   ]
 });
