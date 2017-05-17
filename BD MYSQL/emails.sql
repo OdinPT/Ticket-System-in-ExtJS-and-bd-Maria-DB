@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Maio-2017 às 23:54
+-- Generation Time: 17-Maio-2017 às 10:58
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -362,88 +362,15 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(2, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'body', '2017-05-12 14:52:44', 'txt 2\r\n', 'Fechado', 4, 2),
-(3, 'teste trackit <testetrackit@gmail.com>', 'Teste 123', '2017-05-12 14:52:45', 'Teste Teste Teste\r\n', 'Aberto', 4, 1),
-(4, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'testetr', '2017-05-12 14:52:46', 'asasÃ¢Â€Â‹aÃ¢Â€Â‹\r\n', 'Aberto', 4, 1),
-(5, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'msx', '2017-05-12 14:52:46', 'asasasas\r\n', 'Aberto', 4, 2),
-(6, 'teste trackit <testetrackit@gmail.com>', 'Teste Ticket', '2017-05-12 14:52:46', 'Ticket teste\r\n', 'Fechado', 4, 2),
-(7, 'Track IT Testes <testetrackit@gmail.com>', 'MS', '2017-05-12 14:52:47', 'asas', 'Aberto', 4, 1),
-(8, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'reunia?o 1', '2017-05-12 14:52:48', 'ReuniÃƒÂ£o\r\n', 'Aberto', 4, 1),
-(9, 'PHP Classes Newclasses <list-newclasses@phpclasses.org>', '[PHP Classes] New class daily digest of 2017-05-09', '2017-05-12 14:52:49', '\r\n\r\n\r\n\r\nNew class daily digest of 2017-05-09 - PHP Classes\r\n\r\n\r\n\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          New class daily digest of 2017-05-09\r\n        \r\n        Monitor your stack!Try Datadog for free and monitor all your data in one place! Servers, clouds, apps, and more.\r\n        teste you are getting this message as free service for being a user of the PHP Classes site to which you registered voluntarily using the email address testetrackit@gmail.com. If you wish to unsubscribe go to the unsubscribe page.\r\n2 new classes were added to &quot;PHP Classes&quot; repository.\r\n\r\n1. PHP Twitter Search PHP SDK - This class support forum\r\n\r\n\r\nShort description:\r\n\r\nSearch for tweets and users ', 'Aberto', 4, 1),
-(11, 'teste trackit <testetrackit@gmail.com>', 'awdawdawd', '2017-05-12 14:52:49', 'adawdawdad\r\n', 'Aberto', 4, 1),
-(12, 'teste trackit <testetrackit@gmail.com>', '13123', '2017-05-12 14:52:50', '13123123\r\n', 'Aberto', 4, 1),
-(13, 'teste trackit <testetrackit@gmail.com>', '123123', '2017-05-12 14:52:50', '123131312\r\n', 'Aberto', 4, 1),
-(14, 'teste trackit <testetrackit@gmail.com>', '1dasd', '2017-05-12 14:52:51', 'awdawdawd\r\n', 'Aberto', 4, 3),
-(15, 'teste trackit <testetrackit@gmail.com>', 'er gerg erg e', '2017-05-12 14:52:52', 'ger gegererg\r\n', 'Aberto', 4, 1),
-(16, 'teste trackit <testetrackit@gmail.com>', 'dfgsdgsd', '2017-05-12 14:52:52', 'gds fgsd sdfgsdf\r\n', 'Aberto', 4, 1),
-(17, 'teste trackit <testetrackit@gmail.com>', '123123', '2017-05-12 14:52:52', '123123123123123123\r\n', 'Aberto', 4, 1),
-(18, 'teste trackit <testetrackit@gmail.com>', 'hhh', '2017-05-12 14:52:53', 'fghfghfghfgh\r\n', 'Aberto', 4, 1),
-(19, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawdaw', '2017-05-12 14:52:53', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndawdawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(20, 'Rui Miguel <CacerFTW@hotmail.com>', 'gfgd', '2017-05-12 14:52:53', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(21, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawd', '2017-05-12 14:52:54', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(22, 'Rui Miguel <CacerFTW@hotmail.com>', 'dfgdfg', '2017-05-12 14:52:54', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ntawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(23, 'Rui Miguel <CacerFTW@hotmail.com>', '23123', '2017-05-12 14:52:54', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n123123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(24, 'Rui Miguel <CacerFTW@hotmail.com>', 'adawd', '2017-05-12 14:52:54', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdawdawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(25, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawda', '2017-05-12 14:52:54', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndsadsads\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(26, 'Rui Miguel <CacerFTW@hotmail.com>', '1aawda', '2017-05-12 14:52:55', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawaw\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(27, 'Rui Miguel <CacerFTW@hotmail.com>', '31231', '2017-05-12 14:52:55', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadad\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(28, 'Rui Miguel <CacerFTW@hotmail.com>', '13212', '2017-05-12 14:52:55', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n3123123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(29, 'Rui Miguel <CacerFTW@hotmail.com>', '11231212', '2017-05-12 14:52:55', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n1121121\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(30, 'Rui Miguel <CacerFTW@hotmail.com>', 'dfgdg', '2017-05-12 14:52:55', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfgdfgdf\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(31, 'Rui Miguel <CacerFTW@hotmail.com>', '44345 3sdf', '2017-05-12 14:52:56', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nsdsfds\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(32, 'Rui Miguel <CacerFTW@hotmail.com>', 'dfhfdfh', '2017-05-12 14:52:56', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfhhdfhdfdhfdfhfhd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(33, 'teste trackit <testetrackit@gmail.com>', '131231', '2017-05-12 14:52:57', '31231231\r\n', 'Aberto', 4, 1),
-(34, 'Rui Miguel <CacerFTW@hotmail.com>', '12312312', '2017-05-12 14:52:57', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n31312312313123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(35, 'Rui Miguel <CacerFTW@hotmail.com>', 'dgdg', '2017-05-12 14:52:58', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nsdgsgdsgdsdg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(36, 'Rui Miguel <CacerFTW@hotmail.com>', '123123', '2017-05-12 14:52:58', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n12312312\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(37, 'Track IT Testes <testetrackit@gmail.com>', 'xxx', '2017-05-12 14:52:58', 'Testeâ€¦Â ', 'Aberto', 4, 1),
-(38, 'Rui Miguel <CacerFTW@hotmail.com>', '221312', '2017-05-12 14:52:58', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n312312312123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(39, 'Rui Miguel <CacerFTW@hotmail.com>', 'dgsdg', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdgg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(40, 'Rui Miguel <CacerFTW@hotmail.com>', 'dhhh', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nhhhhgdfhdfghdfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(41, 'Rui Miguel <CacerFTW@hotmail.com>', 'gdfgdfgd', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdfgdfgdfgdf\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(42, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawd', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndawdadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(43, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawdawdawd', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdwd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(44, 'Rui Miguel <CacerFTW@hotmail.com>', '1312312', '2017-05-12 14:52:59', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n3123123123123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(45, 'Rui Miguel <CacerFTW@hotmail.com>', '23123', '2017-05-12 14:53:00', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n12312312313\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(46, 'Rui Miguel <CacerFTW@hotmail.com>', '1231231', '2017-05-12 14:53:00', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n312123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(47, 'Rui Miguel <CacerFTW@hotmail.com>', 'ddd', '2017-05-12 14:53:00', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nddd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(48, 'Ru?ben Dias <Rubendd@live.com.pt>', 'Na?o leias', '2017-05-12 14:53:00', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanda Rrrrrrrrrrrrrrix\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nSem vÃ­rus. \r\nwww.avast.com \r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(49, 'Diogo Banha <diogobanha97@gmail.com>', 'ERROU!', '2017-05-12 14:53:01', 'O rix Ã© o faustÃƒÂ£o\r\n', 'Aberto', 4, 1),
-(50, 'PHP Classes Newclasses <list-newclasses@phpclasses.org>', '[PHP Classes] Added a new class: Apple iOS build', '2017-05-12 14:53:01', '\r\n\r\n\r\n\r\nAdded a new class: Apple iOS build - PHP Classes\r\n\r\n\r\n\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          Added a new class: Apple iOS build\r\n        \r\n        Conquer the Data Layer in StyleHost a database with Compose and get a free t-shirt!\r\n        teste you are getting this message as free service for being a user of the PHP Classes site to which you registered voluntarily using the email address testetrackit@gmail.com. If you wish to unsubscribe go to the unsubscribe page.\r\n\r\n\r\n\r\nClass:\r\nApple iOS buildThis class support forum\r\nShort description:\r\n\r\nGet the version of a iOS build and version codes\r\nGroups:\r\n\r\nPHP 5, Mac OS, Parsers\r\n\r\n\r\n\r\n\r\nSupplied by:Peter Kahl\r\nDetailed descripti', 'Aberto', 4, 1),
-(51, 'Track IT Testes <testetrackit@gmail.com>', 'teste query', '2017-05-12 14:53:01', 'Select * from emails', 'Aberto', 4, 1),
-(52, 'Rui Miguel <CacerFTW@hotmail.com>', '1231231', '2017-05-12 14:53:01', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n2312313123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(53, 'Rui Miguel <CacerFTW@hotmail.com>', '123123', '2017-05-12 14:53:01', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n1231231\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(54, 'Rui Miguel <CacerFTW@hotmail.com>', '2412312', '2017-05-12 14:53:02', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n3123123123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(55, 'Rui Miguel <CacerFTW@hotmail.com>', '12312', '2017-05-12 14:53:02', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n31231313\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(56, 'Rui Miguel <CacerFTW@hotmail.com>', 'hgfhfh', '2017-05-12 14:53:02', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfghfghfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(57, 'Rui Miguel <CacerFTW@hotmail.com>', 'dfgdf', '2017-05-12 14:53:03', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdfgdgd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(58, 'Rui Miguel <CacerFTW@hotmail.com>', 'fhfgh', '2017-05-12 14:53:03', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfhfghfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(59, 'Tudosb Informa?tica <tudosbinformatica@gmail.com>', 'teste', '2017-05-12 14:53:03', 'Â Teste data auto-.', 'Aberto', 4, 1),
-(60, 'Rui Miguel <CacerFTW@hotmail.com>', 'sadawdawd', '2017-05-12 14:53:03', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdawadaaaaa\r\n\r\n\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(61, 'Rui Miguel <CacerFTW@hotmail.com>', 'daawdadadaw', '2017-05-12 14:53:03', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadadadadadadawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(62, 'Rui Miguel <CacerFTW@hotmail.com>', 'dgdfg', '2017-05-12 14:53:04', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfgdgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(63, 'Rui Miguel <CacerFTW@hotmail.com>', 'gdfgdf', '2017-05-12 14:53:04', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndfgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(65, 'Rui Miguel <CacerFTW@hotmail.com>', 'dawdawda', '2017-05-12 14:53:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadadawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(66, 'Rui Miguel <CacerFTW@hotmail.com>', 'a', '2017-05-12 14:53:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(67, 'odinpt21 <odinpt21@gmail.com>', 'teste', '2017-05-12 14:53:05', 'Data actual?Â ', 'Aberto', 4, 1),
-(69, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-12 15:12:05', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 3),
-(70, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-05-12 15:12:06', 'antes da filtragem por email do departamento\r\n\r\n', 'Aberto', 1, 3),
-(74, 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'as', '2017-05-15 14:17:56', 'Ã¢Â€Â‹asabody\r\n', 'Aberto', 4, 1),
-(75, 'Rui Miguel <CacerFTW@hotmail.com>', 'ffggdfgdf', '2017-05-15 14:18:05', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ngdfgdfgdfgdfg\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(76, 'Rui Miguel <CacerFTW@hotmail.com>', 'ffg', '2017-05-15 14:18:06', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfghfhfghfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(77, 'Rui Miguel <CacerFTW@hotmail.com>', 'fghfhfg', '2017-05-15 14:18:08', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nfhfghfghfgh\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(78, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawd', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdada\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(79, 'Rui Miguel <CacerFTW@hotmail.com>', 'GFHFGHFHGF', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdadadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(80, 'Rui Miguel <CacerFTW@hotmail.com>', 'awaw', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\ndadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(81, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdaw', '2017-05-15 14:18:09', '\r\n\r\n\r\n\r\n\r\n\r\n\r\naawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(82, 'Rui Miguel <CacerFTW@hotmail.com>', 'awdawaw', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nadawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(83, 'Rui Miguel <CacerFTW@hotmail.com>', '12312', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n3123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(84, 'Rui Miguel <CacerFTW@hotmail.com>', '12312daw', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nawdawdawdawd\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(85, 'Rui Miguel <CacerFTW@hotmail.com>', '2123', '2017-05-15 14:18:10', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n123\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(86, 'Rui Miguel <CacerFTW@hotmail.com>', '1', '2017-05-15 14:18:11', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n1\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(87, 'Rui Miguel <CacerFTW@hotmail.com>', '12313', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n12313\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(88, 'Rui Miguel <CacerFTW@hotmail.com>', 'fff', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\nff\r\n\r\n\r\n\r\n', 'Aberto', 4, 1),
-(89, 'Rui Miguel <CacerFTW@hotmail.com>', '123', '2017-05-15 14:18:12', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n321\r\n\r\n\r\n\r\n', 'Aberto', 4, 1);
+(1, 'Tudo Sobre Informa?tica <tudosbinformatica@gmail.com>', 'body', '2017-05-16 18:26:23', 'txt 2\r\n', 'Fechado', 4, 2),
+(4, 'odinpt21 <odinpt21@gmail.com>', 'vvvvvv', '2017-05-16 18:27:55', 'aaa', 'Aberto', 4, 1),
+(6, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-16 18:49:19', '312313123\r\n', 'Aberto', 4, 1),
+(7, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-16 19:36:57', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 1),
+(8, 'teste trackit <testetrackit@gmail.com>', 'PT', '2017-05-16 19:36:57', 'PT223\r\n', 'Aberto', 1, 1),
+(9, 'Microsoft Outlook <odinpt21@gmail.com>', 'Mensagem de Teste do Microsoft Outlook', '2017-05-16 19:36:58', 'Esta ÃƒÂ© uma mensagem de e-mail enviada automaticamente pelo Microsoft Outlook ao testar as definiÃ§Ãµes da conta do utilizador.\r\n', 'Aberto', 1, 1),
+(10, 'Track IT Testes <testetrackit@gmail.com>', 'teste', '2017-05-16 19:36:58', 'testeasdasdasdasdas', 'Fechado', 1, 2),
+(13, 'Track IT Testes <testetrackit@gmail.com>', 'dezasseis maio', '2017-05-16 22:14:55', 'Maio:PÂ ', 'Aberto', 4, 1),
+(14, 'teste trackit <testetrackit@gmail.com>', 'awdawd', '2017-05-17 09:49:39', 'awdawdawdawdaw\r\n', 'Aberto', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -483,17 +410,7 @@ CREATE TABLE `respostas` (
 --
 
 INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
-(4, 'testeando', '2017-05-12 10:03:35', 5),
-(5, 'as', '2017-05-12 10:04:32', 6),
-(6, 'asasa', '2017-05-12 10:04:50', 6),
-(7, 'ss', '2017-05-12 10:06:13', 4),
-(8, 'tes', '2017-05-12 10:09:07', 57),
-(9, 'Aguenta la cm tretas!\r\n', '2017-05-12 12:02:02', 20),
-(11, 'qwqw', '2017-05-12 15:11:12', 2),
-(12, 'asasas', '15-05-2017', 70),
-(13, 'autoload!?', '2017-05-15 09:44:45', 3),
-(14, 'body', '2017-05-15 09:50:21', 3),
-(15, 'asdas', '2017-05-15 14:22:19', 3);
+(1, 'as', '2017-05-16 18:21:23', 14);
 
 --
 -- Indexes for dumped tables
@@ -552,7 +469,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -562,7 +479,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
