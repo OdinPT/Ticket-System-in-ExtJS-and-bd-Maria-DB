@@ -1,3 +1,4 @@
+// Filtro Atualizado Dia 17
 <?php
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 include_once("config.php");
@@ -59,7 +60,7 @@ if($emails) {
         $message = str_replace('Ã§Ãµ', 'çõ', $message);
         $message = str_replace('Ãº', 'ú', $message);
         $message = str_replace('Â', ' ', $message);
-        $message = str_replace('Ã', 'Ç', $message);
+        $message = str_replace('Ã?', 'Ç', $message);
 
         echo $message;
         // echo "<br>";
