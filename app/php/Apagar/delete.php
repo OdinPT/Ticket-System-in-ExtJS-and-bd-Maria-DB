@@ -16,12 +16,9 @@ while($res = mysqli_fetch_array($result))
 $id = $_COOKIE['cookieID'];
 
 //deleting the row from table
-
 //$state = mysqli_query($mysqli, "UPDATE emails SET state='Fechado' WHERE id=$id");
 //$result = mysqli_query($mysqli, "INSERT INTO historico SELECT * FROM emails WHERE id=$id");
 //$kappa = mysqli_query($mysqli, "DELETE FROM emails WHERE id=$id");
-
-
 
 
 $state = mysqli_query($mysqli, "Call MudaGrupo($id)");

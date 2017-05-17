@@ -3,7 +3,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
     alias: 'controller.infoticketprincipal',
 
     onClickObterInfoPrincipalTicket: function() {
-      var store = Ext.getStore('ticketseleccionado2');
+      /*var store = Ext.getStore('ticketseleccionado2');
       store.load({
         callback: function(records, operation, success) {
          var record=store.getAt(0);
@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicketController', {
          var e = Ext.getCmp('statee').setValue(record.data.state);
          var f = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
        }
-      });
+      });*/
 
 },
 
