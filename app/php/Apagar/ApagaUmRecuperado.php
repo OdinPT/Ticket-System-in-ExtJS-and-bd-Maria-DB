@@ -6,6 +6,10 @@ include("config.php");
 $id = $_COOKIE['cookieIDrecovered'];
 
 //deleting the row from table
-$kappa = mysqli_query($mysqli, "DELETE FROM recovered WHERE id=$id");
+//$kappa = mysqli_query($mysqli, "DELETE FROM recovered WHERE id=$id");
 //redirecting to the display page (index.php in our case)
+
+kappa = mysqli_query($mysqli, "Call ApagaResposta($id)");
+
+
 ?>

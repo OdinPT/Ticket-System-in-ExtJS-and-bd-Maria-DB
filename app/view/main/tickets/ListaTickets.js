@@ -20,7 +20,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
 
     columns: [
-      {text: 'ID', xtype: 'rownumberer', flex: 1},
+      {text: 'ID',  dataIndex: 'id', flex: 1},
       { text: 'DE',  dataIndex: 'fromaddress', flex: 1,
     editor: {
         allowBlank: false,
