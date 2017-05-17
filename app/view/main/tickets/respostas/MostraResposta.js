@@ -32,17 +32,17 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subjecte'
+        id: 'body_resp'
     },
     {
         xtype: 'textareafield',
         fieldLabel: 'Resposta:',
-        id: 'answere'
+        id: 'datea_resp'
     },
     {
         xtype: 'textfield',
         fieldLabel: 'IDTicket:',
-        id: 'IDtickete'
+        id: 'id_email'
     }
   ],
   dockedItems: {

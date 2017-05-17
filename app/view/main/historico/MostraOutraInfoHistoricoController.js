@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.historico.MostraOutraInfoHistoricoController', {
          var a =  Ext.getCmp('idee').setValue(record.data.id);
          var b = Ext.getCmp('dateaaa').setValue(record.data.datea);
          var c = Ext.getCmp('stateee').setValue(record.data.state);
-         var d = Ext.getCmp('departmenttt').setValue(record.data.department);
+         var d = Ext.getCmp('departmenttt').setValue(record.data.nome_departamento);
        }
       });
 

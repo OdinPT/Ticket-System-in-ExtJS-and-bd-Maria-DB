@@ -24,14 +24,35 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
 
     config:{stores: ['ticketseleccionado2']},
 
-    items: [{
+    items: [
+        {
+            xtype: 'textfield',
+            fieldLabel: 'ID:',
+            id: 'idd'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Data:',
+            id: 'dateaa'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Estado:',
+            id: 'statee'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Departamento:',
+            id: 'nome_departamentoo'
+        },
+        {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subject'
+        id: 'subjectt'
     },
     {
         xtype: 'textareafield',
-        id: 'body',
+        id: 'bodyy',
         fieldLabel: 'Corpo:'
     }
   ],
@@ -53,7 +74,25 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         listeners: {
           click: 'onClickMoveParaHistorico'
         }
-      }
+      },
+          {
+              text: 'Responder',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Resposta',
+                          modal: true,
+                          width: 1000,
+                          height: 500,
+                          bind: {
+                              html: '<iframe src="/testetrackit/app/php/showEmailAnswerForm.php" width="100%" height="100%" frameBorder="0"></iframe>'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
+          }
     ]
   }
   });

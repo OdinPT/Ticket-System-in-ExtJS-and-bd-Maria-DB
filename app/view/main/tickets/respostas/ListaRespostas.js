@@ -22,22 +22,22 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     },
 
     columns: [
-      { text: 'ID',  dataIndex: 'ID', flex: 1,
+      { text: 'ID',  dataIndex: 'id_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'ASSUNTO',  dataIndex: 'subject', flex: 1,
+      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'RESPOSTA', dataIndex: 'answer', flex: 1,
+      { text: 'RESPOSTA', dataIndex: 'datea_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'IDTICKET', dataIndex: 'IDticket', flex: 1,
+      { text: 'ID TICKET', dataIndex: 'id_email', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49

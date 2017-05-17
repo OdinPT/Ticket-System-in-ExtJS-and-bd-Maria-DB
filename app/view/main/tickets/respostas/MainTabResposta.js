@@ -22,7 +22,6 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabResposta', {
 
     items: [{
         title: 'Conteúdo do Ticket',
-        // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: {
                   xtype: 'fieldresposta'
 }

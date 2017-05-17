@@ -20,7 +20,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
 
     columns: [
-      {text: 'ID', xtype: 'rownumberer', flex: 1},
+      {text: 'ID',  dataIndex: 'id', flex: 1},
       { text: 'DE',  dataIndex: 'fromaddress', flex: 1,
     editor: {
         allowBlank: false,
@@ -46,7 +46,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'DEPARTAMENTO', dataIndex: 'department', flex: 1,
+      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
@@ -98,7 +98,6 @@ grid.getStore().load();
   Ext.util.Cookies.set('cookieID', id);
   var ide = index+1;
   Ext.util.Cookies.set('cookieIDe', ide);
-  Ext.util.Cookies.set('cookieParticao','ticket');
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,

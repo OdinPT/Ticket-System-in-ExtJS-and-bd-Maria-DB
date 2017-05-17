@@ -28,18 +28,12 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
               }]
 
     },
-    {
-        title: 'Responder',
-        bind: {
-                  html: '<iframe src="/testetrackit/app/php/showEmailAnswerForm.php" width="100%" height="100%" frameBorder="0"></iframe>'
-              }
-    },
-  {
+  /*{
     title: 'Outras Informações',
     items: [{
         xtype: 'infoticket'
     }]
-  },
+  },*/
   {
     title: 'Respostas',
     items: [{

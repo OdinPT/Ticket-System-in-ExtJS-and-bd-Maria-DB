@@ -19,13 +19,13 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
     },
 
     columns: [
-      {text: 'ID', xtype: 'rownumberer', flex: 1},
+      {text: 'ID',  dataIndex: 'id', flex: 1},
       { text: 'DE',  dataIndex: 'fromaddress', flex:  1 },
       { text: 'ASSUNTO', dataIndex: 'subject', flex: 1 },
       { text: 'DATA', dataIndex: 'datea', flex: 1 },
       { text: 'CORPO', dataIndex: 'body', flex: 1 },
       { text: 'ESTADO', dataIndex: 'state', flex: 1 },
-      { text: 'DEPARTAMENTO', dataIndex: 'department', flex: 1 }
+      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1 }
     ],
 
     tbar: {
