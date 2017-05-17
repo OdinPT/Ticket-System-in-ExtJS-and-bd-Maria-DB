@@ -27,7 +27,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'Body',  dataIndex: 'body_resp', flex: 1,
+      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
@@ -76,7 +76,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Respostas',
                         modal: true,
-                        // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+
                         width: 1100,
                         height: 550,
                         items: [{
