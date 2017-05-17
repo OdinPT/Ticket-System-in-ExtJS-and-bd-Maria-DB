@@ -45,7 +45,7 @@ if($emails) {
                 $message = imap_qprint($message);
             }
         }
-        $from = utf8_decode(imap_utf8($overview[0]->from));
+        $from = quoted_printable_decode(imap_utf8($overview[0]->from));
         $date = utf8_decode(imap_utf8($overview[0]->date));
         $subject = utf8_decode(imap_utf8($overview[0]->subject));
          $subject = str_replace('c?', 'ç', $subject);
