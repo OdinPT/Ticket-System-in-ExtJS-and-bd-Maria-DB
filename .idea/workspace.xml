@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91d7fb00-caaf-4e43-a00b-18a53d073dd8" name="Default" comment="" />
+    <list default="true" id="91d7fb00-caaf-4e43-a00b-18a53d073dd8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -38,8 +41,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teste" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teste" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teste">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testee" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testee">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -51,9 +64,14 @@
       <file leaf-file-name="MostraInfoPrincipalTicket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="918">
+              <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+              <folding>
+                <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
+                <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
+                <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
+                <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +81,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
+                <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
+                <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
+                <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +96,38 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
+                <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
+                <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
+                <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
+                <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
+                <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
+                <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
+                <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
+                <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
+                <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
+                <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
+                <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
+                <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
+                <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
+                <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
+                <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
+                <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
+                <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
+                <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -237,7 +291,7 @@
       <workItem from="1494864772798" duration="1512000" />
       <workItem from="1494922865329" duration="17888000" />
       <workItem from="1494952759826" duration="15000" />
-      <workItem from="1495008735409" duration="942000" />
+      <workItem from="1495008735409" duration="1256000" />
     </task>
     <task id="LOCAL-00001" summary="nv">
       <created>1494865635784</created>
@@ -257,7 +311,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20357000" />
+    <option name="totallyTimeSpent" value="20671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,7 +324,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -345,7 +398,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
+            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -353,7 +411,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -361,7 +424,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
+            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
+            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
+            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
+            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
+            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
+            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
+            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -385,7 +479,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
+            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -393,7 +492,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -401,7 +505,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
+            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
+            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
+            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
+            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
+            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
+            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
+            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -439,15 +574,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
+            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
+            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
+            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
+            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
+            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
+            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
+            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
+            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
+            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
+            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
+            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
+            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="918">
+          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+          <folding>
+            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
+            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
+            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -455,7 +626,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
+            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -469,6 +645,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teste">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
