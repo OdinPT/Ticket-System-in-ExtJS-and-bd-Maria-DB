@@ -24,16 +24,37 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
 
     config:{stores: ['tickethistoricoseleccionado']},
 
-    items: [{
-        xtype: 'textfield',
-        fieldLabel: 'Assunto:',
-        id: 'subjectee'
-    },
-    {
-        xtype: 'textareafield',
-        id: 'bodyyy',
-        fieldLabel: 'Corpo:'
-    }
+    items: [
+        {
+            xtype: 'textfield',
+            fieldLabel: 'ID:',
+            id: 'idd'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Data:',
+            id: 'dateaaa'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Estado:',
+            id: 'stateee'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Departamento:',
+            id: 'departmenttt'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Assunto:',
+            id: 'subjectt'
+        },
+        {
+            xtype: 'textareafield',
+            id: 'bodyy',
+            fieldLabel: 'Corpo:'
+        },
   ],
   dockedItems: {
       dock: 'bottom',
