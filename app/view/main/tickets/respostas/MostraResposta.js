@@ -24,27 +24,28 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
 
     config:{stores: ['respostaseleccionada']},
 
+
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'ide'
+        id: 'id_resp'
     },
-    {
-        xtype: 'textfield',
-        fieldLabel: 'Assunto:',
-        id: 'body_resp'
-    },
-    {
-        xtype: 'textareafield',
-        fieldLabel: 'Resposta:',
-        id: 'datea_resp'
-    },
-    {
-        xtype: 'textfield',
-        fieldLabel: 'IDTicket:',
-        id: 'id_email'
-    }
-  ],
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Assunto:',
+            id: 'body_resp'
+        },
+        {
+            xtype: 'textareafield',
+            fieldLabel: 'Data:',
+            id: 'datea_resp'
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'ID Ticket:',
+            id: 'id_email'
+        }
+    ],
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
