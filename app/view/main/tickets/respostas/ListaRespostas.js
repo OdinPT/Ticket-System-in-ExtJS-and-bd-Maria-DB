@@ -27,12 +27,12 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
         allowBlank: false,
         maxLength: 49
     } },
-      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
+      { text: 'Body',  dataIndex: 'body_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
     }},
-      { text: 'RESPOSTA', dataIndex: 'datea_resp', flex: 1,
+      { text: 'DATA', dataIndex: 'datea_resp', flex: 1,
     editor: {
         allowBlank: false,
         maxLength: 49
