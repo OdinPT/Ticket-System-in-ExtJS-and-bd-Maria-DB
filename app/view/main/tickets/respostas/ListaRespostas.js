@@ -53,39 +53,25 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
               handler: function() {
     Ext.getCmp('grid4').store.reload();
 }
-    },
-    {
-      text: 'Apagar Respostas!',
-      id: 'apagar',
-      handler: function(){
-        myRequest = Ext.Ajax.request({
-          url: 'app/php/Limpar/limparespostas.php',
-          method: 'POST',
-          success: function(response, opts) {
-  Ext.getCmp('grid4').store.reload();
-  }
-        })
-      }
     }]
   },
-
     listeners: {
- itemclick: function(view, record, item, index, e) {
-  var id = record.get('ID');
-  Ext.util.Cookies.set('cookieIDanswer', id);
-                    var myWin = Ext.create("Ext.window.Window", {
-                        title: 'Respostas',
-                        modal: true,
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('ID');
+            Ext.util.Cookies.set('cookieIDanswer', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Respostas',
+                modal: true,
+                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+                width: 1100,
+                height: 550,
+                items: [{
+                    xtype: 'maintabresposta'
+                }]
+            });
+            myWin.show();
+        }
 
-                        width: 1100,
-                        height: 550,
-                        items: [{
-                            xtype: 'maintabresposta'
-                        }]
-                    });
-                    myWin.show();
-  // console.log(record);
- }
     },
     onGridAfterRender: function(gridticket){
        setInterval(function(){
