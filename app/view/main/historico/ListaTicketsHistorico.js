@@ -18,14 +18,39 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         type: 'ticketshistorico'
     },
 
+    plugins: [{
+        ptype: 'gridfilters'
+    }],
+
     columns: [
-      {text: 'ID',  dataIndex: 'id', flex: 1},
-      { text: 'DE',  dataIndex: 'fromaddress', flex:  1 },
-      { text: 'ASSUNTO', dataIndex: 'subject', flex: 1 },
-      { text: 'DATA', dataIndex: 'datea', flex: 1 },
-      { text: 'CORPO', dataIndex: 'body', flex: 1 },
-      { text: 'ESTADO', dataIndex: 'state', flex: 1 },
-      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1 }
+      {text: 'ID',  dataIndex: 'id', flex: 1,
+          filter: {
+              type: 'string'
+          }},
+      { text: 'DE',  dataIndex: 'fromaddress', flex:  1,
+          filter: {
+              type: 'string'
+          } },
+      { text: 'ASSUNTO', dataIndex: 'subject', flex: 1,
+          filter: {
+              type: 'string'
+          } },
+      { text: 'DATA', dataIndex: 'datea', flex: 1,
+          filter: {
+              type: 'string'
+          } },
+      { text: 'CORPO', dataIndex: 'body', flex: 1,
+          filter: {
+              type: 'string'
+          } },
+      { text: 'ESTADO', dataIndex: 'state', flex: 1,
+          filter: {
+              type: 'string'
+          } },
+      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
+          filter: {
+              type: 'string'
+          } }
     ],
 
     tbar: {

@@ -9,8 +9,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.MostraTicket',
-        'TrackIT.store.tickets.TicketSelected',
-        'TrackIT.view.main.tickets.ProcuradorDaGrid'
+        'TrackIT.store.tickets.TicketSelected'
     ],
 
     title: 'Tickets',

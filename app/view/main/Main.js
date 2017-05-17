@@ -89,16 +89,6 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-<<<<<<< HEAD
     }
-=======
-    } /*{
-        title: 'Recuperados',
-        iconCls: 'fa-eye',
-        items: [{
-            xtype: 'mainlistrecuperados'
-        }]
-    }*/
->>>>>>> refs/remotes/origin/master
   ]
 });
