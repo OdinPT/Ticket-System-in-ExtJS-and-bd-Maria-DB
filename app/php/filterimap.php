@@ -48,9 +48,7 @@ if($emails) {
         }
         $from = quoted_printable_decode(imap_utf8($overview[0]->from));
         $date = utf8_decode(imap_utf8($overview[0]->date));
-        $subject = utf8_decode(imap_utf8($overview[0]->subject));
-         $subject = str_replace('c?', 'ç', $subject);
-         $subject = str_replace('C?', 'Ç', $subject);
+        $subject = quoted_printable_decode(imap_utf8($overview[0]->subject));
         $conn= mysqli_connect("localhost","root","","emails");
         $message = strip_tags($message);
         $message = html_entity_decode($message);
