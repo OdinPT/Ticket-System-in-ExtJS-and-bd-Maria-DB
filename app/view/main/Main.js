@@ -95,7 +95,7 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-    }, /*{
+    } /*{
         title: 'Recuperados',
         iconCls: 'fa-eye',
         items: [{
