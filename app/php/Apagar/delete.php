@@ -1,5 +1,3 @@
-//Atualizado
-
 <?php
 //including the database connection file
 include("config.php");
@@ -24,8 +22,5 @@ $id = $_COOKIE['cookieID'];
 $state = mysqli_query($mysqli, "Call MudaGrupo($id)");
 
 $kappa = mysqli_query($mysqli, "Call ApagarEmails($ide)");
+
 ?>
-<!--
- <script>
-    window.history.back();
-</script> -->
