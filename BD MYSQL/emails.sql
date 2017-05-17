@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Maio-2017 às 15:06
+-- Generation Time: 17-Maio-2017 às 15:48
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -158,16 +158,6 @@ SET id_grupo_emails = MudaGrupoTicket(`id_grupo_emails`), state = MudaEstado(`st
 
 
    END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `PesquisaTicket` (IN `_p` VARCHAR(30))  NO SQL
-Begin
-select `id`,`fromaddress`,`subject`,`datea`,`body`, `state`,`nome_departamento`
-from emails, departamento, grupo
-where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo='Ticket') 
-and (subject like _p)
-order by id asc;
-
-End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
 SELECT id,fromaddress,body,subject,datea,state,nome_departamento
@@ -380,9 +370,15 @@ INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, 
 (13, 'Track IT Testes <testetrackit@gmail.com>', 'dezasseis maio', '2017-05-16 22:14:55', 'Maio:PÂ ', 'Fechado', 4, 2),
 (14, 'teste trackit <testetrackit@gmail.com>', 'awdawd', '2017-05-17 09:49:39', 'awdawdawdawdaw\r\n', 'Aberto', 4, 3),
 (15, 'teste trackit <testetrackit@gmail.com>', 'Ã§a?dÃ§awdaÃ§da?wÃ§dawÃ§dadw', '2017-05-17 10:19:50', '~Ã§awdÃ£wÃ§dawÃ§dawd~ad~wÃ§daw~daÃ§wda\r\n', 'Aberto', 4, 1),
-(16, 'teste trackit <testetrackit@gmail.com>', '1231', '2017-05-17 11:06:03', '2312313\r\n', 'Aberto', 4, 1),
+(16, 'teste trackit <testetrackit@gmail.com>', '1231', '2017-05-17 11:06:03', '2312313\r\n', 'Fechado', 4, 2),
 (17, 'teste trackit <testetrackit@gmail.com>', '12312313', '2017-05-17 11:06:04', '\r\n', 'Aberto', 4, 1),
-(18, 'teste trackit <testetrackit@gmail.com>', 'adawd', '2017-05-17 11:07:03', 'awdawd\r\n', 'Aberto', 4, 3);
+(18, 'teste trackit <testetrackit@gmail.com>', 'adawd', '2017-05-17 11:07:03', 'awdawd\r\n', 'Aberto', 4, 3),
+(19, 'teste trackit <testetrackit@gmail.com>', 'awdawdawd', '2017-05-17 14:21:18', 'dawdad\r\n', 'Aberto', 4, 1),
+(20, 'teste trackit <testetrackit@gmail.com>', 'dadawdad', '2017-05-17 14:21:19', 'awdawdawdawd\r\n', 'Aberto', 4, 1),
+(21, 'teste trackit <testetrackit@gmail.com>', 'awd', '2017-05-17 14:21:19', 'awdawdawd\r\n', 'Aberto', 4, 1),
+(22, 'teste trackit <testetrackit@gmail.com>', 'dawdawdawd', '2017-05-17 14:21:19', 'wadawdaw\r\n', 'Aberto', 4, 1),
+(23, 'teste trackit <testetrackit@gmail.com>', 'awdawda', '2017-05-17 14:21:20', 'wawdawda\r\n', 'Aberto', 4, 1),
+(24, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-17 14:21:20', '121\r\n', 'Aberto', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -482,7 +478,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

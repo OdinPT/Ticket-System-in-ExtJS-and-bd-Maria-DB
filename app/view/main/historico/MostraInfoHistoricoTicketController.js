@@ -2,23 +2,6 @@ Ext.define('TrackIT.view.main.historico.MostraInfoHistoricoTicketController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.infotickethistorico',
 
-    onClickObterInfoHistorico: function() {
-      var store = Ext.getStore('tickethistoricoseleccionado');
-      store.load({
-        callback: function(records, operation, success) {
-         var record=store.getAt(0);
-            var a =  Ext.getCmp('idd').setValue(record.data.id);
-            var b = Ext.getCmp('dateaa').setValue(record.data.datea);
-            var c = Ext.getCmp('statee').setValue(record.data.state);
-            var d = Ext.getCmp('departmentt').setValue(record.data.nome_departamento);
-            var e =  Ext.getCmp('subjectt').setValue(record.data.subject);
-            var f = Ext.getCmp('bodyy').setValue(record.data.body);
-
-       }
-      });
-
-},
-
 onClickApagaTicketDoHistorico: function()
 {
   myRequest1 = Ext.Ajax.request({

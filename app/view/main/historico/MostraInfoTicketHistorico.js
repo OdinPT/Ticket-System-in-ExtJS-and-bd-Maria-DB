@@ -60,14 +60,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
       dock: 'bottom',
       xtype: 'toolbar',
       items: [
-      {
-        text: 'Carregar Informações',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterInfoHistorico'
-        }
 
-      },
       {
         text: 'Apagar',
         glyph: 43,
