@@ -8,9 +8,9 @@ Ext.define('TrackIT.view.main.historico.MostraInfoHistoricoTicketController', {
         callback: function(records, operation, success) {
          var record=store.getAt(0);
             var a =  Ext.getCmp('idd').setValue(record.data.id);
-            var b = Ext.getCmp('dateaaa').setValue(record.data.datea);
-            var c = Ext.getCmp('stateee').setValue(record.data.state);
-            var d = Ext.getCmp('departmenttt').setValue(record.data.nome_departamento);
+            var b = Ext.getCmp('dateaa').setValue(record.data.datea);
+            var c = Ext.getCmp('statee').setValue(record.data.state);
+            var d = Ext.getCmp('departmentt').setValue(record.data.nome_departamento);
             var e =  Ext.getCmp('subjectt').setValue(record.data.subject);
             var f = Ext.getCmp('bodyy').setValue(record.data.body);
 

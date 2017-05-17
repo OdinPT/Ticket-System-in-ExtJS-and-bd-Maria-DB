@@ -33,17 +33,17 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'dateaaa'
+            id: 'dateaa'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'stateee'
+            id: 'statee'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
-            id: 'departmenttt'
+            id: 'departmentt'
         },
         {
             xtype: 'textfield',
@@ -54,7 +54,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
             xtype: 'textareafield',
             id: 'bodyy',
             fieldLabel: 'Corpo:'
-        },
+        }
   ],
   dockedItems: {
       dock: 'bottom',

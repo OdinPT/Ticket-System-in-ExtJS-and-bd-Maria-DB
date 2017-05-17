@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$id = $_COOKIE['cookieID'];
+$id = $_COOKIE['cookieIDhistorico'];
 $return_arr = array();
 
 $query = "Call ShowBody($id)";
