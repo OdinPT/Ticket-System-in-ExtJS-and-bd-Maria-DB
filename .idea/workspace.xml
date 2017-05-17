@@ -8,8 +8,11 @@
     <list default="true" id="ef32546f-4932-408d-b598-a02fa6a94ff8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/Main.js" afterPath="$PROJECT_DIR$/app/view/main/Main.js" />
+<<<<<<< HEAD
+=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js" afterPath="$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js" />
 >>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -170,8 +173,8 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+            <state relative-caret-position="323">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -274,32 +277,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testetrackit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testetrackit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="historico" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,15 +502,26 @@
       <option name="project" value="LOCAL" />
       <updated>1495010193447</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto">
+      <created>1495015490441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1495015490441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="26064000" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="25245000" />
 =======
     <option name="totallyTimeSpent" value="24575000" />
 >>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,7 +623,8 @@
     <MESSAGE value="dia 16 rui" />
     <MESSAGE value="dia 17 rui" />
     <MESSAGE value="dia 17 rui v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="dia 17 rui v3" />
+    <MESSAGE value="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto" />
+    <option name="LAST_COMMIT_MESSAGE" value="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1021,9 +1010,14 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/view/main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="323">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+=======
         <state relative-caret-position="425">
           <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
 >>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
           <folding />
         </state>
       </provider>
