@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Maio-2017 às 15:48
+-- Generation Time: 18-Maio-2017 às 10:27
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -362,7 +362,7 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(4, 'odinpt21 <odinpt21@gmail.com>', 'vvvvvv', '2017-05-16 18:27:55', 'aaa', 'Aberto', 4, 1),
+(4, 'odinpt21 <odinpt21@gmail.com>', 'vvvvvv', '2017-05-16 18:27:55', 'aaa', 'Fechado', 4, 2),
 (6, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-16 18:49:19', '312313123\r\n', 'Fechado', 4, 2),
 (7, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-16 19:36:57', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 1),
 (8, 'teste trackit <testetrackit@gmail.com>', 'PT', '2017-05-16 19:36:57', 'PT223\r\n', 'Aberto', 1, 1),
@@ -419,7 +419,12 @@ CREATE TABLE `respostas` (
 
 INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
 (1, 'as', '2017-05-16 18:21:23', 14),
-(2, 'teste', '17-04-2017', 4);
+(2, 'teste', '17-04-2017', 4),
+(3, 'aaa', '17-04-2017', 4),
+(4, 'ssssas', '17-04-2017', 15),
+(5, 'w', '2017-05-17 15:56:21', 8),
+(6, 'xc', '2017-05-17 15:58:05', 7),
+(7, 'x', '2017-05-17 16:00:01', 21);
 
 --
 -- Indexes for dumped tables
@@ -488,7 +493,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Constraints for dumped tables
 --
