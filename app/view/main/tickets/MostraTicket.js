@@ -5,7 +5,8 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     requires: [
         'TrackIT.store.tickets.TicketSelected',
         'TrackIT.view.main.tickets.respostas.ListaRespostas',
-        'TrackIT.view.main.tickets.TicketController'
+        'TrackIT.view.main.tickets.TicketController',
+        'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
     width: 1100,
     height: 700,

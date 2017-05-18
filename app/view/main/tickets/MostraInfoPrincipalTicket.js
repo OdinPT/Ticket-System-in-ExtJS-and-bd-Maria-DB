@@ -77,8 +77,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                           modal: true,
                           width: 1000,
                           height: 500,
-                          bind: {
-                              html: '<iframe src="/testetrackit/app/php/showEmailAnswerForm.php" width="100%" height="100%" frameBorder="0"></iframe>'
+                          items: {
+                              xtype: 'enviaresposta'
                           }
                       });
                       myWin.show();
