@@ -6,7 +6,7 @@ include_once("config.php");
 $cookieEmail = $_COOKIE['cookieEmail'];
 echo $id;
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM admin WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))
 {
