@@ -1,6 +1,10 @@
 ﻿<?php
 require 'class.smtp.php';
 require 'class.phpmailer.php';
+require 'config.php';
+$assunto = $_POST['assuntoresposta'];
+$conteudo = $_POST['conteudoresposta'];
+
 $PHPMailer = new PHPMailer();
 
 // define que será usado SMTP
@@ -28,18 +32,25 @@ $PHPMailer->From = 'testetrackit@gmail.com';
 $PHPMailer->FromName = 'teste trackit';
 
 // assunto da mensagem
-$PHPMailer->Subject = 'aaa';
+$PHPMailer->Subject = $assunto;
 
 // corpo da mensagem
-$PHPMailer->Body = '<p>Mensagem em HTML</p>';
+$PHPMailer->Body = $conteudo;
 
 // corpo da mensagem em modo texto
 $PHPMailer->AltBody = 'Mensagem em texto';
 
+$cookieID = $_COOKIE['cookieID'];
+//selecting data associated with this particular id
+$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(mysqli_error($mysqli));
 
+while($res = mysqli_fetch_array($result))
+{
+  $fromaddress = $res['fromaddress'];
+}
 // adiciona destinatário (pode ser chamado inúmeras vezes)
-$PHPMailer->AddReplyTo('cacerftw@hotmail.com', 'Nome do visitante');
-$PHPMailer->AddAddress( 'cacerftw@hotmail.com' );
+$PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
+$PHPMailer->AddAddress( $fromaddress );
 
 
 // verifica se enviou corretamente

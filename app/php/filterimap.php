@@ -1,10 +1,8 @@
-// Filtro Atualizado Dia 17
 <?php
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 include_once("config.php");
 //getting id from url
 $cookieEmail = $_COOKIE['cookieEmail'];
-echo $id;
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
@@ -24,7 +22,11 @@ if($emails) {
     foreach($emails as $email_number) {
         $overview = imap_fetch_overview($inbox,$email_number,0);
         $structure = imap_fetchstructure($inbox, $email_number);
-
+        $header = imap_header($inbox, $email_number);
+        $frome = $header->from;
+        foreach ($frome as $ide => $object) {
+            $fromaddress = $object->mailbox . "@" . $object->host;
+        }
         if(isset($structure->parts) && is_array($structure->parts) && isset($structure->parts[1])) {
             $part = $structure->parts[1];
             $message = imap_fetchbody($inbox,$email_number,2);
@@ -60,13 +62,8 @@ if($emails) {
         $message = str_replace('Â', ' ', $message);
         $message = str_replace('Ã?', 'Ç', $message);
 
-        echo $message;
-        // echo "<br>";
-        // echo "<br>";
-				    //save to MySQL
-
-                mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$message','$cookieEmail')");
-				mysqli_close($conn);
+        mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
+	    mysqli_close($conn);
     }
 
     echo $output;
@@ -74,7 +71,3 @@ if($emails) {
 
 imap_close($inbox);
 ?>
-
-<script>
-   window.history.back();
-</script>
