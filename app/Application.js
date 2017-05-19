@@ -9,8 +9,9 @@ Ext.define('TrackIT.Application', {
     name: 'TrackIT',
 
     stores: [
-        'TrackIT.store.respostas.RespostaSeleccionadaHistorico',
+
         'TrackIT.store.respostas.RespostaSeleccionadaRecuperada',
+        'TrackIT.store.respostas.RespostaSeleccionadaHistorico',
         'TrackIT.store.respostas.RespostaSeleccionada',
         'TrackIT.store.respostas.RespostasHistorico',
         'TrackIT.store.respostas.RespostasRecuperadas',
