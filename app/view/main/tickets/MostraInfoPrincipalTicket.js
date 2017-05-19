@@ -1,4 +1,3 @@
-
 Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     extend: 'Ext.form.Panel',
     xtype: 'infoticketprincipal',
@@ -11,15 +10,17 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     frame: true,
     title: 'Informação Principal',
     width: 1080,
-    height: 400,
-    bodyPadding: 10,
+    height: 440,
+
+
+
     layout: {
             type: 'form',
             align: 'stretch'
         },
         defaults: {
             layout: 'form',
-            margin: 20
+            margin: 0
         },
 
     config:{stores: ['ticketseleccionado2']},
@@ -28,7 +29,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         {
             xtype: 'textfield',
             fieldLabel: 'ID:',
-            id: 'idd'
+            id: 'idd',
+
         },
         {
             xtype: 'textfield',

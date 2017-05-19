@@ -4,6 +4,7 @@ $id = $_COOKIE['cookieIDhistorico'];
 
 $return_arr = array();
 $query = "Call ShowRespostasTicket($id)";
+
 //$query = "SELECT * FROM respostas WHERE id=$id";
 
 $result = mysqli_query($mysqli, $query);

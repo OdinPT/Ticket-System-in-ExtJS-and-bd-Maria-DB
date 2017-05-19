@@ -22,55 +22,28 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     }],
 
     columns: [
-      {text: 'ID ',  dataIndex: 'id', flex: 0.5,
+      {text: 'ID ',  dataIndex: 'id', flex: 0.5},
+      { text: 'DE',  dataIndex: 'fromaddress', flex: 1.2,
           filter: {
               type: 'string'
           }},
-      { text: 'DE',  dataIndex: 'fromaddress', flex: 1.5,
-    editor: {
-        allowBlank: false,
-        maxLength: 1
-    },
+      { text: 'ASSUNTO', dataIndex: 'subject', flex: 1.5,
           filter: {
               type: 'string'
           }},
-      { text: 'ASSUNTO', dataIndex: 'subject', flex: 2.5,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    },
+      { text: 'DATA', dataIndex: 'datea', flex: 1.5,
           filter: {
               type: 'string'
           }},
-      { text: 'DATA', dataIndex: 'datea', flex: 1.8,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    },
+      { text: 'Corpo', dataIndex: 'body', flex: 5,
           filter: {
               type: 'string'
           }},
-      { text: 'CORPO', dataIndex: 'body', flex: 5,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    },
+      { text: 'Estado', dataIndex: 'state',flex: 1.5,
           filter: {
               type: 'string'
           }},
-      { text: 'ESTADO', dataIndex: 'state', flex: 1.5,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    },
-          filter: {
-              type: 'string'
-          }},
-      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 2,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    },
+      { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
           filter: {
               type: 'string'
           }}
