@@ -4,8 +4,10 @@ include("config.php");
 $id = $_COOKIE['cookieIDhistorico'],
 $return_arr = array();
 
-$id = $_COOKIE['cookieIDhistorico'];
-//$query = "SELECT * FROM historico WHERE id=$id";
+
+$query = "Call TicketSelecHistorico($id)";
+
+
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 

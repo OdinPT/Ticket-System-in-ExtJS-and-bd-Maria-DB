@@ -21,36 +21,32 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
     plugins: [{
         ptype: 'gridfilters'
     }],
-
     columns: [
-      {text: 'ID',  dataIndex: 'id', flex: 1,
-          filter: {
-              type: 'string'
-          }},
-      { text: 'DE',  dataIndex: 'fromaddress', flex:  1,
-          filter: {
-              type: 'string'
-          } },
-      { text: 'ASSUNTO', dataIndex: 'subject', flex: 1,
-          filter: {
-              type: 'string'
-          } },
-      { text: 'DATA', dataIndex: 'datea', flex: 1,
-          filter: {
-              type: 'string'
-          } },
-      { text: 'CORPO', dataIndex: 'body', flex: 1,
-          filter: {
-              type: 'string'
-          } },
-      { text: 'ESTADO', dataIndex: 'state', flex: 1,
-          filter: {
-              type: 'string'
-          } },
-      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1,
-          filter: {
-              type: 'string'
-          } }
+        {text: 'ID ',  dataIndex: 'id', flex: 0.5},
+        { text: 'DE',  dataIndex: 'fromaddress', flex: 1.2,
+            filter: {
+                type: 'string'
+            }},
+        { text: 'ASSUNTO', dataIndex: 'subject', flex: 1.5,
+            filter: {
+                type: 'string'
+            }},
+        { text: 'DATA', dataIndex: 'datea', flex: 1.5,
+            filter: {
+                type: 'string'
+            }},
+        { text: 'Corpo', dataIndex: 'body', flex: 5,
+            filter: {
+                type: 'string'
+            }},
+        { text: 'Estado', dataIndex: 'state',flex: 1.5,
+            filter: {
+                type: 'string'
+            }},
+        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
+            filter: {
+                type: 'string'
+            }}
     ],
 
     tbar: {
