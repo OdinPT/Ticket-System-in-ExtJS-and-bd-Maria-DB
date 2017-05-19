@@ -1,6 +1,8 @@
 <?php
 include("config.php");
-$id = $_COOKIE['cookieIDanswer'];
+//$id = $_COOKIE['cookieIDanswer'];
+$id = $_COOKIE['cookieID'];
+
 $return_arr = array();
 
 $query = "Call ShowRespostasTicket($id)";
