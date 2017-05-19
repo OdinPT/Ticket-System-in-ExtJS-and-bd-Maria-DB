@@ -4,7 +4,16 @@ require 'class.phpmailer.php';
 require 'config.php';
 $assunto = $_POST['assuntoresposta'];
 $conteudo = $_POST['conteudoresposta'];
+$cookieEmail = $_COOKIE['cookieEmail'];
 
+//selecting data associated with this particular id
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+{
+  $username = $res['username'];
+	$password = $res['pass'];
+}
 $PHPMailer = new PHPMailer();
 
 // define que será usado SMTP
@@ -21,8 +30,8 @@ $PHPMailer->SMTPAuth = true;
 $PHPMailer->SMTPSecure = 'TLS';
 $PHPMailer->Host = 'smtp.gmail.com';
 $PHPMailer->Port = 587;
-$PHPMailer->Username = 'testetrackit@gmail.com';
-$PHPMailer->Password = 'testetrackit123';
+$PHPMailer->Username = $username;
+$PHPMailer->Password = $password;
 
 // E-Mail do remetente (deve ser o mesmo de quem fez a autenticação
 // nesse caso seu_login@gmail.com)
@@ -52,7 +61,9 @@ while($res = mysqli_fetch_array($result))
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress( $fromaddress );
 
+$insereresposta = mysqli_query($mysqli, "Call InserirRespostas('$conteudo', '$cookieID')");
 
+mysqli_close($mysqli);
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )
 {
