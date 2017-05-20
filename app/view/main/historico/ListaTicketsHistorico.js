@@ -101,6 +101,7 @@ Ext.MessageBox.hide();
                             callback: function(records, operation, success) {
                                 var record=store.getAt(0);
                                 var a =  Ext.getCmp('idd').setValue(record.data.id);
+                                var a =  Ext.getCmp('emaill').setValue(record.data.email);
                                 var b = Ext.getCmp('dateaa').setValue(record.data.datea);
                                 var c = Ext.getCmp('statee').setValue(record.data.state);
                                 var d = Ext.getCmp('departmentt').setValue(record.data.nome_departamento);

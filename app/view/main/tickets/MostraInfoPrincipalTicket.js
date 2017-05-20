@@ -34,6 +34,12 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
+            fieldLabel: 'Email:',
+            id: 'emaill',
+
+        },
+        {
+            xtype: 'textfield',
             fieldLabel: 'Data:',
             id: 'dateaa'
         },
