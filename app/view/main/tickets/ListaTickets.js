@@ -43,6 +43,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
           filter: {
               type: 'string'
           }},
+<<<<<<< HEAD
       { text: 'ESTADO', dataIndex: 'state', flex: 1.5,
     editor: {
         allowBlank: false,
@@ -56,6 +57,9 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         allowBlank: false,
         maxLength: 49
     }},
+=======
+
+>>>>>>> 415f8ae9db0ba51b8b35f7573ba7fd22baa13556
       { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
           filter: {
               type: 'string'
@@ -115,6 +119,7 @@ grid.getStore().load();
                             callback: function(records, operation, success) {
                                 var record=store.getAt(0);
                                 var a =  Ext.getCmp('idd').setValue(record.data.id);
+                                var b =  Ext.getCmp('emaill').setValue(record.data.email);
                                 var b =  Ext.getCmp('subjectt').setValue(record.data.subject);
                                 var c = Ext.getCmp('bodyy').setValue(record.data.body);
                                 var d = Ext.getCmp('dateaa').setValue(record.data.datea);

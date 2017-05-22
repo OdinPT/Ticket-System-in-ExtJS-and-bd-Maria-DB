@@ -14,6 +14,7 @@ $connection = mysqli_connect("localhost", "root", "", "emails");
 
 $username = stripslashes($username);
 $password = stripslashes($password);
+
 $username = mysqli_real_escape_string($connection, $username);
 $password = mysqli_real_escape_string($connection, $password);
 

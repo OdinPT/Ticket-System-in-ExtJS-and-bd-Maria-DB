@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Maio-2017 às 13:21
+-- Generation Time: 22-Maio-2017 às 10:08
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -101,12 +101,14 @@ BEGIN
         _message) ; 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHAR(100), IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
 
 
     INSERT INTO emails
          (
+              email,
            fromaddress,
+            
            subject,
            datea,
            body,
@@ -114,9 +116,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_from` VARCHA
            
     VALUES 
          ( 
-           
+          _mail, 
         _from, 
-        _subject, 
+             _subject, 
           Now(),
         _message,
         MostraIdDepartamento(_user)) ; 
@@ -159,8 +161,17 @@ SET id_grupo_emails = MudaGrupoTicket(`id_grupo_emails`), state = MudaEstado(`st
 
    END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RespostaSelecionada` (IN `_id` INT(11))  NO SQL
+Begin
+
+SELECT `id_resp`,`body_resp`,`datea_resp`,`id_email`
+FROM `respostas` 
+WHERE `id_email`=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
-SELECT id,fromaddress,body,subject,datea,state,nome_departamento
+SELECT id,email,fromaddress,body,subject,datea,state,nome_departamento
 FROM emails,departamento,grupo 
 WHERE id_departamento_emails=id_departamento and id_grupo_emails=id_grupo and id=_id;
 
@@ -177,7 +188,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `showBodyDetailsRec` (IN `_id` INT) 
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBodyDetailsTicket` (IN `_id` INT)  BEGIN
-	SELECT `id`,`fromaddress`,`subject`,`datea`,`state`,`nome_departamento` 
+	SELECT `id`,`email`,`fromaddress`,`subject`,`datea`,`state`,`nome_departamento` 
 		FROM emails,grupo, departamento 
 	where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Ticket" and  (id=_id); 
    END$$
@@ -217,7 +228,12 @@ BEGIN
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT)  BEGIN
- SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo FROM emails,grupo, departamento where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Historico" and  (id=_id); 
+ SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo 
+ 
+ FROM emails,grupo, departamento
+ 
+ where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Historico" and  (id=_id); 
+ 
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT)  BEGIN
@@ -229,7 +245,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` ()  BEGIN
 
-select `id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
 
 from emails, departamento, grupo
 
@@ -346,7 +362,8 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 
 CREATE TABLE `emails` (
   `id` int(11) NOT NULL,
-  `fromaddress` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `fromaddress` varchar(230) NOT NULL,
   `subject` varchar(250) NOT NULL,
   `datea` datetime NOT NULL,
   `body` varchar(700) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -359,25 +376,14 @@ CREATE TABLE `emails` (
 -- Extraindo dados da tabela `emails`
 --
 
-INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(4, 'odinpt21 <odinpt21@gmail.com>', 'vvvvvv', '2017-05-16 18:27:55', 'aaa', 'Fechado', 4, 2),
-(6, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-16 18:49:19', '312313123\r\n', 'Fechado', 4, 2),
-(7, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-16 19:36:57', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 1),
-(8, 'teste trackit <testetrackit@gmail.com>', 'PT', '2017-05-16 19:36:57', 'PT223\r\n', 'Aberto', 1, 1),
-(9, 'Microsoft Outlook <odinpt21@gmail.com>', 'Mensagem de Teste do Microsoft Outlook', '2017-05-16 19:36:58', 'Esta ÃƒÂ© uma mensagem de e-mail enviada automaticamente pelo Microsoft Outlook ao testar as definiÃ§Ãµes da conta do utilizador.\r\n', 'Aberto', 1, 1),
-(13, 'Track IT Testes <testetrackit@gmail.com>', 'dezasseis maio', '2017-05-16 22:14:55', 'Maio:PÂ ', 'Fechado', 4, 2),
-(14, 'teste trackit <testetrackit@gmail.com>', 'awdawd', '2017-05-17 09:49:39', 'awdawdawdawdaw\r\n', 'Aberto', 4, 3),
-(15, 'teste trackit <testetrackit@gmail.com>', 'Ã§a?dÃ§awdaÃ§da?wÃ§dawÃ§dadw', '2017-05-17 10:19:50', '~Ã§awdÃ£wÃ§dawÃ§dawd~ad~wÃ§daw~daÃ§wda\r\n', 'Aberto', 4, 1),
-(16, 'teste trackit <testetrackit@gmail.com>', '1231', '2017-05-17 11:06:03', '2312313\r\n', 'Fechado', 4, 2),
-(17, 'teste trackit <testetrackit@gmail.com>', '12312313', '2017-05-17 11:06:04', '\r\n', 'Aberto', 4, 1),
-(18, 'teste trackit <testetrackit@gmail.com>', 'adawd', '2017-05-17 11:07:03', 'awdawd\r\n', 'Aberto', 4, 3),
-(19, 'teste trackit <testetrackit@gmail.com>', 'awdawdawd', '2017-05-17 14:21:18', 'dawdad\r\n', 'Aberto', 4, 1),
-(20, 'teste trackit <testetrackit@gmail.com>', 'dadawdad', '2017-05-17 14:21:19', 'awdawdawdawd\r\n', 'Aberto', 4, 1),
-(21, 'teste trackit <testetrackit@gmail.com>', 'awd', '2017-05-17 14:21:19', 'awdawdawd\r\n', 'Aberto', 4, 1),
-(22, 'teste trackit <testetrackit@gmail.com>', 'dawdawdawd', '2017-05-17 14:21:19', 'wadawdaw\r\n', 'Aberto', 4, 1),
-(23, 'teste trackit <testetrackit@gmail.com>', 'awdawda', '2017-05-17 14:21:20', 'wawdawda\r\n', 'Aberto', 4, 1),
-(24, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-17 14:21:20', '121\r\n', 'Aberto', 4, 1),
-(25, 'teste trackit <testetrackit@gmail.com>', 'Here is the subject', '2017-05-18 10:26:55', 'This is the HTML message body in bold!\r\n\r\n\r\n', 'Aberto', 4, 1);
+INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+(1, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'agora', '2017-05-19 15:05:30', 'ss\r\n\r\n\r\n', 'Aberto', 4, 1),
+(2, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'awawawaw', '2017-05-19 15:05:30', 'awwaaw\r\n', 'Aberto', 4, 1),
+(3, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'awawaw', '2017-05-19 15:05:31', 'awawawaw\r\n', 'Aberto', 4, 1),
+(4, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'aw', '2017-05-19 15:05:31', 'aw\r\n', 'Aberto', 4, 1),
+(5, 'teste', 'pgpmyadmun', 'as', '0000-00-00 00:00:00', '231', 'Fechado', 3, 2),
+(6, '22@gmail.. om', '222', '22', '2017-05-01 00:00:00', 'ss', 'Fechado', 3, 2),
+(7, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'z', '2017-05-21 15:24:33', 'Ã¢Â€Â‹zÃ¢Â€Â‹-- __Leonardo Almeida\r\n\r\n', 'Aberto', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -470,7 +476,7 @@ CREATE TABLE `historicoestados` (
 CREATE TABLE `respostas` (
   `id_resp` int(11) NOT NULL,
   `body_resp` varchar(700) NOT NULL,
-  `datea_resp` varchar(100) NOT NULL,
+  `datea_resp` date NOT NULL,
   `id_email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -479,15 +485,9 @@ CREATE TABLE `respostas` (
 --
 
 INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
-(1, 'as', '2017-05-16 18:21:23', 14),
-(2, 'teste', '17-04-2017', 4),
-(3, 'aaa', '17-04-2017', 4),
-(4, 'ssssas', '17-04-2017', 15),
-(5, 'w', '2017-05-17 15:56:21', 8),
-(6, 'xc', '2017-05-17 15:58:05', 7),
-(7, 'x', '2017-05-17 16:00:01', 21),
-(8, 'ddd', '2017-05-18 10:27:18', 7),
-(9, 'ssss', '2017-05-18 10:27:46', 7);
+(1, 'teste', '2017-05-01', 1),
+(2, 'teste', '2017-05-22', 6),
+(3, 'resposta 1640', '2017-05-21', 2);
 
 -- --------------------------------------------------------
 
@@ -599,7 +599,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -629,7 +629,7 @@ ALTER TABLE `historicoestados`
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tipoutilizador`
 --
@@ -670,7 +670,7 @@ ALTER TABLE `historicoestados`
 -- Limitadores para a tabela `respostas`
 --
 ALTER TABLE `respostas`
-  ADD CONSTRAINT `respostas_FK_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `respostas_FK_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

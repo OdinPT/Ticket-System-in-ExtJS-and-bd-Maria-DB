@@ -5,7 +5,10 @@ $id = $_COOKIE['cookieID'];
 
 $return_arr = array();
 
-$query = "Call ShowRespostasTicket($id)";
+$query = "call RespostaSelecionada($id)";
+
+//call RespostaSelecionada(2)
+
 //$query = "SELECT * FROM respostas WHERE id=$id";
 
 $result = mysqli_query($mysqli, $query);

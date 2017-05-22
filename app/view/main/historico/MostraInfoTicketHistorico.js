@@ -32,6 +32,11 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         },
         {
             xtype: 'textfield',
+            fieldLabel: 'Email:',
+            id: 'emaill'
+        },
+        {
+            xtype: 'textfield',
             fieldLabel: 'Data:',
             id: 'dateaa'
         },

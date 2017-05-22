@@ -1,12 +1,14 @@
 <?php
 include("config.php");
 error_reporting('0');
+
 //$id = $_COOKIE['cookieIDanswer'];
+
 $id = $_COOKIE['cookieIDhistorico'];
 
 $return_arr = array();
 
-$query = "Call ShowRespostasTicket($id)";
+//$query = "Call ShowRespostasHistorico($id)";
 
 //$query = "SELECT * FROM respostas WHERE id=$id";
 
