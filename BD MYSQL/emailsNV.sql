@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Maio-2017 às 10:08
+-- Generation Time: 22-Maio-2017 às 18:31
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -63,6 +63,26 @@ TRUNCATE table emails;
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirCliente` (IN `_NC` VARCHAR(150), IN `_EC` VARCHAR(100), IN `_DNC` DATE, IN `_CC` INT(10))  NO SQL
+BEGIN 
+
+
+    INSERT INTO cliente
+         (
+           Nome_Cliente,
+           Email_Cliente,
+           DataNasc_Cliente,
+           Contribuinte_Cliente)
+           
+    VALUES 
+         ( 
+           
+        _NC, 
+        _EC, 
+       _DNC,
+        _CC) ; 
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_body` VARCHAR(700), IN `_id_email` INT(11))  NO SQL
 BEGIN 
 
@@ -79,26 +99,6 @@ BEGIN
         _body, 
         Now(),
         _id_email) ; 
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets` (IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_date` VARCHAR(100), IN `_message` VARCHAR(700))  NO SQL
-BEGIN 
-
-
-    INSERT INTO emails
-         (
-           fromaddress,
-           subject,
-           datea,
-           body)
-           
-    VALUES 
-         ( 
-           
-        _from, 
-        _subject, 
-        _date,   
-        _message) ; 
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHAR(100), IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
@@ -243,6 +243,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT
 	where (id_departamento_emails=id_departamento) and nome_grupo="Recuperado" and  (id=_id); 
    END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClientes` ()  NO SQL
+BEGIN
+select * from cliente;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClienteSelecionado` (IN `mail` VARCHAR(100))  NO SQL
+BEGIN
+
+select `Nome_Cliente`,`Email_Cliente`,`DataNasc_Cliente`,`Contribuinte_Cliente`
+from cliente 
+where (`Email_Cliente`=mail);
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` ()  BEGIN
 
 select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
@@ -288,9 +302,15 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `MudaEstado` (`_estado` VARCHAR(12)) 
     DECLARE a varchar(10);
  
     IF (_estado = 'Aberto')  THEN
- 		SET a = 'Fechado';
-    ELSEIF (_estado = 'Fechado') THEN
-        SET a = 'Aberto';
+ 		SET a = 'Lido';
+    ELSEIF (_estado = 'Lido') THEN
+        SET a = 'Atribuido';
+     ELSEIF (_estado = 'Atribuido') THEN
+       SET a = 'Fechado';
+     ELSEIF (_estado = 'Fechado') THEN
+       SET a = 'Reaberto'; 
+     ELSEIF (_estado = 'Reaberto') THEN
+       SET a = 'Fechado';
     END IF;
  RETURN (a);
 END$$
@@ -310,6 +330,19 @@ BEGIN
  
 END$$
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `VerificaClienteExiste` (`_email` VARCHAR(100)) RETURNS TINYINT(1) NO SQL
+Begin
+declare temp bool;
+SET temp = 0;
+
+ 
+    SELECT EXISTS(SELECT `Email_Cliente`, `email` FROM `cliente`,`emails` where `Email_Cliente`=_email)
+    INTO temp ;
+    RETURN temp;
+
+return temp;
+End$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -323,7 +356,7 @@ CREATE TABLE `cliente` (
   `Nome_Cliente` varchar(100) NOT NULL,
   `Email_Cliente` varchar(100) NOT NULL,
   `DataNasc_Cliente` date NOT NULL,
-  `Contribuinte_Cliente` int(11) NOT NULL
+  `Contribuinte_Cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -331,7 +364,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`Id_Cliente`, `Nome_Cliente`, `Email_Cliente`, `DataNasc_Cliente`, `Contribuinte_Cliente`) VALUES
-(1, 'Teste Track IT', 'testetrackit@gmail.com', '2017-05-09', 123456);
+(1, 'Teste', 'trackit@gmail.com', '2017-05-15', 123);
 
 -- --------------------------------------------------------
 
@@ -377,13 +410,10 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(1, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'agora', '2017-05-19 15:05:30', 'ss\r\n\r\n\r\n', 'Aberto', 4, 1),
-(2, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'awawawaw', '2017-05-19 15:05:30', 'awwaaw\r\n', 'Aberto', 4, 1),
-(3, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'awawaw', '2017-05-19 15:05:31', 'awawawaw\r\n', 'Aberto', 4, 1),
-(4, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'aw', '2017-05-19 15:05:31', 'aw\r\n', 'Aberto', 4, 1),
-(5, 'teste', 'pgpmyadmun', 'as', '0000-00-00 00:00:00', '231', 'Fechado', 3, 2),
-(6, '22@gmail.. om', '222', '22', '2017-05-01 00:00:00', 'ss', 'Fechado', 3, 2),
-(7, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'z', '2017-05-21 15:24:33', 'Ã¢Â€Â‹zÃ¢Â€Â‹-- __Leonardo Almeida\r\n\r\n', 'Aberto', 4, 1);
+(1, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'hoje', '2017-05-22 11:20:55', 'teste\r\n\r\n\r\n', 'Aberto', 4, 1),
+(2, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'asa', '2017-05-22 11:23:05', 'asasdas', 'Aberto', 4, 1),
+(3, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'xx', '2017-05-22 11:23:06', 'gggggg', 'Lido', 4, 2),
+(4, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP Wscript.shell Exec', '2017-05-22 15:30:11', '\r\n\r\n\r\n\r\nNotable PHP package: PHP Wscript.shell Exec - PHP Classes\r\n\r\n\r\n\r\nWScript is an environment for executing scripts that takes advantage of objects running on Windows that provide several types of services.\r\n\r\nThis class provides means to execute actions from PHP using WScript that can be useful, like for instance running Windows applications and simulating keyboard typing events.\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          Notable PHP package: PHP Wscript.shell Exec\r\n        \r\n        Know when and why code breaksUsers finding bugs? Searching logs for errors? Find + fix broken code fast!\r\n        \r\n\r\nteste, a PHP package is considered Notable when it does something different that is ', 'Aberto', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -393,8 +423,19 @@ INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, 
 
 CREATE TABLE `estado` (
   `ID_Estado` int(11) NOT NULL,
-  `Descricao_Estado` int(11) NOT NULL
+  `Descricao_Estado` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`ID_Estado`, `Descricao_Estado`) VALUES
+(1, 'Aberto'),
+(2, 'Lido'),
+(3, 'Atribuido'),
+(4, 'Fechado '),
+(5, 'Reaberto ');
 
 -- --------------------------------------------------------
 
@@ -487,7 +528,14 @@ CREATE TABLE `respostas` (
 INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
 (1, 'teste', '2017-05-01', 1),
 (2, 'teste', '2017-05-22', 6),
-(3, 'resposta 1640', '2017-05-21', 2);
+(3, 'resposta 1640', '2017-05-21', 2),
+(4, 'testetetete', '2017-05-22', 4),
+(5, 'teste', '2017-05-22', 2),
+(6, 'ontem', '2017-05-22', 1),
+(7, 'ontem', '2017-05-22', 1),
+(8, 'hoje', '2017-05-22', 8),
+(9, 'hoje', '2017-05-22', 8),
+(10, 'teste', '2017-05-22', 9);
 
 -- --------------------------------------------------------
 
@@ -566,7 +614,8 @@ ALTER TABLE `grupo`
 --
 ALTER TABLE `historicoestados`
   ADD PRIMARY KEY (`id_historicoTicket`),
-  ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`);
+  ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`),
+  ADD KEY `historicoEstados_FK_Utilizadores` (`id_funcionario`);
 
 --
 -- Indexes for table `respostas`
@@ -599,12 +648,12 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `ID_Estado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `ficheiro`
 --
@@ -629,7 +678,7 @@ ALTER TABLE `historicoestados`
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tipoutilizador`
 --
@@ -663,6 +712,7 @@ ALTER TABLE `funcionario`
 -- Limitadores para a tabela `historicoestados`
 --
 ALTER TABLE `historicoestados`
+  ADD CONSTRAINT `historicoEstados_FK_Utilizadores` FOREIGN KEY (`id_funcionario`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoestados_fk_emails` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoestados_fk_estado` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 

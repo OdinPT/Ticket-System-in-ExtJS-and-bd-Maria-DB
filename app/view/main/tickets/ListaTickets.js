@@ -43,7 +43,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
           filter: {
               type: 'string'
           }},
-<<<<<<< HEAD
+
       { text: 'ESTADO', dataIndex: 'state', flex: 1.5,
     editor: {
         allowBlank: false,
@@ -51,15 +51,9 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
           filter: {
               type: 'string'
-          }},
-      { text: 'DEPARTAMENTO', dataIndex: 'nome_departamento', flex: 1.7,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
-=======
+          }
+          },
 
->>>>>>> 415f8ae9db0ba51b8b35f7573ba7fd22baa13556
       { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
           filter: {
               type: 'string'

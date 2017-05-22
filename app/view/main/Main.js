@@ -89,14 +89,14 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-    }
-        /*{
-        title: 'Recuperados',
+    },
+        {
+        title: 'Lista Clientes',
         iconCls: 'fa-eye',
         items: [{
-            xtype: 'mainlistrecuperados'
+            xtype: 'mainlistCliente'
         }]
-    }*/
+    }
 
   ]
 });

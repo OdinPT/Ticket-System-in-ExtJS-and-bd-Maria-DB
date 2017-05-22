@@ -43,10 +43,7 @@ Ext.define('TrackIT.view.login.Login', {
 
               var user = Ext.getCmp('username').getValue();
                 var pass = Ext.getCmp('password').getValue();
-<<<<<<< HEAD
-=======
 
->>>>>>> 415f8ae9db0ba51b8b35f7573ba7fd22baa13556
                 Ext.Ajax.request({
                     url: 'app/view/login/LoginValidate.php',
                       params: {
