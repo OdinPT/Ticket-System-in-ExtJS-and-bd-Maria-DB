@@ -55,8 +55,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or 
 
 while($res = mysqli_fetch_array($result))
 {
-  $fromaddress = $res['fromaddress'];
+  $fromaddress = $res['email'];
 }
+echo $fromaddress;
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress( $fromaddress );
