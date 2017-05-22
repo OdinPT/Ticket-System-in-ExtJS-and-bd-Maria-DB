@@ -14,7 +14,9 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
         'TrackIT.store.respostas.RespostaSeleccionada'
         // 'TrackIT.view.main.AnswerController'
     ],
-
+    config: {
+        autoLoad: true
+    },
     title: 'Respostas',
 
     store: {

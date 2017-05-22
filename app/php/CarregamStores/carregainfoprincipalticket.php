@@ -3,6 +3,7 @@ error_reporting(0);
 include("config.php");
 $id = $_COOKIE['cookieID'];
 $return_arr = array();
+
 $query = "Call ShowBody($id)";
 
 $result = mysqli_query($mysqli, $query);
