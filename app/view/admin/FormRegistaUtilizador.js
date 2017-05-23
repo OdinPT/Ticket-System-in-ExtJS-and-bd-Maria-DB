@@ -25,7 +25,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'username',
+            id: 'user',
             name: 'username'
 
         },
