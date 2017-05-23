@@ -20,11 +20,11 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
     },
 
     columns: [
-      {text: 'ID ',  dataIndex: 'ID_Cliente', flex: 0.5},
+      {text: 'ID Cliente',  dataIndex: 'Id_Cliente', flex: 0.5},
       { text: 'Nome Cliente',  dataIndex: 'Nome_Cliente', flex: 1.2},
-      { text: 'ASSUNTO', dataIndex: 'Email_Cliente', flex: 1.5},
-      { text: 'DATA', dataIndex: 'DataNasc_Cliente', flex: 1.5},
-      { text: 'Corpo', dataIndex: 'Contribuinte_Cliente', flex: 5}
+      { text: 'Email Cliente', dataIndex: 'Email_Cliente', flex: 1.5},
+      { text: 'DATA ANscimento', dataIndex: 'DataNasc_Cliente', flex: 1.5},
+      { text: 'Contribuinte', dataIndex: 'Contribuinte_Cliente', flex: 5}
     ],
 
     tbar: {
