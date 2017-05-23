@@ -1,10 +1,10 @@
 <?php
 //error_reporting(0);
 include("config.php");
-$id = $_COOKIE['cookieIDCliente'];
+//$id = $_COOKIE['cookieIDCliente'];
 $return_arr = array();
 
-$query = "call VerClientes())";
+$query = "call VerClientes()";
 
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

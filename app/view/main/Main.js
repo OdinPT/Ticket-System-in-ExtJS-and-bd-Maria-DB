@@ -91,21 +91,26 @@ Ext.define('TrackIT.view.main.Main', {
         }]
     },
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 59f722f47391f9fdf27bd44d13c7204886bac3a2
             title: 'Administração',
             iconCls: 'fa-eye',
-            items : [
+            items: [
                 Ext.widget('tabpanel', {
                     activeTab: 0,
-                    items : [{
+                    items: [{
                         bodyPadding: 10,
                         title: 'Painel Principal de Administração',
                         xtype: 'adminprincipal'
-                    },{
+                    }, {
                         title: 'Child Tab 2',
                         bodyPadding: 10,
-                        html : "My content of Child Tab 2 here"
+                        html: "My content of Child Tab 2 here"
                     }]
                 })
+<<<<<<< HEAD
             ]
         },
         {
@@ -116,4 +121,19 @@ Ext.define('TrackIT.view.main.Main', {
             }]
         }
         ]
+=======
+
+            ],
+        },
+        {
+        title: 'Lista Clientes',
+        iconCls: 'fa-eye',
+        items: [{
+            xtype: 'mainlistCliente'
+        }]
+    }
+
+  ]
+
+>>>>>>> 59f722f47391f9fdf27bd44d13c7204886bac3a2
 });
