@@ -91,7 +91,6 @@ Ext.define('TrackIT.view.main.Main', {
         }]
     },
         {
-<<<<<<< HEAD
             title: 'Administração',
             iconCls: 'fa-eye',
             items : [
@@ -108,16 +107,13 @@ Ext.define('TrackIT.view.main.Main', {
                     }]
                 })
             ]
+        },
+        {
+            title: 'Lista Clientes',
+            iconCls: 'fa-eye',
+            items: [{
+                xtype: 'mainlistCliente'
+            }]
         }
         ]
-=======
-        title: 'Lista Clientes',
-        iconCls: 'fa-eye',
-        items: [{
-            xtype: 'mainlistCliente'
-        }]
-    }
-
-  ]
->>>>>>> 53ea0d90ec19f61b19d916e1eda6355c93465f5f
 });

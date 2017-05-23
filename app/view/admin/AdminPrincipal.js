@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.admin.AdminPrincipal', {
     items: [
         {
             title: 'Formulário de Registo',
-            flex: 2,
+            flex: 1,
             margin: '0 10 0 0',
             items: [{
                 xtype: 'registautilizador'
@@ -34,17 +34,12 @@ Ext.define('TrackIT.view.admin.AdminPrincipal', {
         },
         {
             title: 'Lista de funcionários',
-            flex: 2,
+            flex: 1,
             margin: '0 10 0 0',
             autoScroll: true,
             items: [{
                 xtype: 'mainlistfuncionarios'
             }]
-        },
-        {
-            title: 'Panel 3',
-            flex: 2,
-            margin: '0 10 0 0'
         }
     ]
 
