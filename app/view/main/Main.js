@@ -89,14 +89,24 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-    }
-        /*{
-        title: 'Recuperados',
-        iconCls: 'fa-eye',
-        items: [{
-            xtype: 'mainlistrecuperados'
-        }]
-    }*/
-
-  ]
+    },
+        {
+            title: 'Administração',
+            iconCls: 'fa-eye',
+            items : [
+                Ext.widget('tabpanel', {
+                    activeTab: 0,
+                    items : [{
+                        bodyPadding: 10,
+                        title: 'Painel Principal de Administração',
+                        xtype: 'adminprincipal'
+                    },{
+                        title: 'Child Tab 2',
+                        bodyPadding: 10,
+                        html : "My content of Child Tab 2 here"
+                    }]
+                })
+            ]
+        }
+        ]
 });

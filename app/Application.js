@@ -23,7 +23,9 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.recuperados.TicketsSeleccionadosRecuperados',
         'TrackIT.store.recuperados.TicketsRecuperados',
         'TrackIT.store.recuperados.CarregaInfoPrincipalTicketRecuperado',
-        'TrackIT.store.recuperados.CarregaInfoPrincipalTicketRecuperado'
+        'TrackIT.store.recuperados.CarregaInfoPrincipalTicketRecuperado',
+        'TrackIT.store.admin.FuncionarioSeleccionado',
+        'TrackIT.store.admin.Funcionarios'
     ],
     views: [
       'TrackIT.view.login.Login',
