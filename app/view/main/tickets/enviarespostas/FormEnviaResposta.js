@@ -28,7 +28,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
         },
         {
             xtype: 'textareafield',
-            fieldLabel: 'Conteúdo:',
+            fieldLabel: 'Corpo:',
             id: 'conteudoresposta'
         }
     ],

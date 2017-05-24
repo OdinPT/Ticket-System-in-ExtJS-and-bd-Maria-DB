@@ -35,7 +35,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
 
         items: [
             {
-              text: 'Refresh!',
+              text: 'Atualizar',
               handler: function() {
     Ext.getCmp('grid4').store.reload();
 }

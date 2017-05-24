@@ -63,6 +63,14 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
                     click: 'onClickApagarFuncionario'
                 }
 
+            },
+            {
+                text: 'Editar Dados',
+                glyph: 43,
+                listeners: {
+                    click: 'onClickEditaFuncionario'
+                }
+
             }
         ]
     }
