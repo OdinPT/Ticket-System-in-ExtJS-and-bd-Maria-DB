@@ -36,5 +36,6 @@ Ext.define('TrackIT.view.main.MainController', {
         Ext.util.Cookies.clear('cookieIDrecovered');
         Ext.util.Cookies.clear('cookieIDanswer');
         Ext.util.Cookies.clear('cookieIDemail');
+
     }
 });

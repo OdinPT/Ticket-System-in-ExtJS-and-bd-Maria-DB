@@ -2,7 +2,6 @@
 Ext.define('TrackIT.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
@@ -11,7 +10,8 @@ Ext.define('TrackIT.view.main.Main', {
         'TrackIT.view.main.MainModel',
         'TrackIT.view.main.tickets.ListaTickets',
         'TrackIT.view.main.historico.ListaTicketsHistorico',
-        'TrackIT.view.main.recuperados.ListaTicketsRecuperados'
+        'TrackIT.view.main.recuperados.ListaTicketsRecuperados',
+        'TrackIT.view.main.MainWidget'
     ],
 
     controller: 'main',
@@ -91,49 +91,24 @@ Ext.define('TrackIT.view.main.Main', {
         }]
     },
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> 59f722f47391f9fdf27bd44d13c7204886bac3a2
             title: 'Administração',
-            iconCls: 'fa-eye',
-            items: [
-                Ext.widget('tabpanel', {
-                    activeTab: 0,
-                    items: [{
-                        bodyPadding: 10,
-                        title: 'Painel Principal de Administração',
-                        xtype: 'adminprincipal'
-                    }, {
-                        title: 'Child Tab 2',
-                        bodyPadding: 10,
-                        html: "My content of Child Tab 2 here"
-                    }]
-                })
-<<<<<<< HEAD
-            ]
-        },
-        {
-            title: 'Lista Clientes',
+            id: 'admin',
             iconCls: 'fa-eye',
             items: [{
-                xtype: 'mainlistCliente'
+                xtype: 'mainwidget'
             }]
+}],
+    listeners: {
+        'afterrender': function () {
+            {
+                method:'POST',
+                    myRequest1 = Ext.Ajax.request({
+                        url: 'app/php/Admin/verificaadmin.php',
+                        success: function (response, opts){Ext.getCmp('admin').setDisabled(false);},
+                        failure: function (){Ext.getCmp('admin').setDisabled(true);}
+                    });
+            }
+
         }
-        ]
-=======
-
-            ],
-        },
-        {
-        title: 'Lista Clientes',
-        iconCls: 'fa-eye',
-        items: [{
-            xtype: 'mainlistCliente'
-        }]
     }
-
-  ]
-
->>>>>>> 59f722f47391f9fdf27bd44d13c7204886bac3a2
 });

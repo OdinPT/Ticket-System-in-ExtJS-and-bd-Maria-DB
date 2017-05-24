@@ -43,10 +43,8 @@ Ext.define('TrackIT.view.login.Login', {
 
               var user = Ext.getCmp('username').getValue();
                 var pass = Ext.getCmp('password').getValue();
-<<<<<<< HEAD
-=======
-
->>>>>>> 59f722f47391f9fdf27bd44d13c7204886bac3a2
+                console.log(user);
+                console.log(pass);
                 Ext.Ajax.request({
                     url: 'app/view/login/LoginValidate.php',
                       params: {
@@ -72,16 +70,16 @@ Ext.define('TrackIT.view.login.Login', {
                           Ext.create({
                               xtype: 'app-main'
                           });
-                          Ext.Msg.alert('Sucesso!', 'Autenticado! Seja bem-vindo.');
+                          Ext.Msg.alert('Sucesso!', 'Autenticado!');
 function hide_message() {
     Ext.defer(function() {
         Ext.MessageBox.hide();
-    }, 2000);
+    }, 500);
 }
 hide_message();
                         }
                         else {
-                          Ext.Msg.alert('Erro!', 'Dados incorrectos, por favor verifique as suas credenciais.');
+                          Ext.Msg.alert('Erro!', 'Dados incorrectos, verifique as suas credenciais.');
                           function hide_message() {
                               Ext.defer(function() {
                                   Ext.MessageBox.hide();
@@ -91,7 +89,7 @@ hide_message();
                         }
 		         },
              failure: function() {
-               Ext.MessageBox.alert('Status!', 'Erro no servidor, por favor tente mais tarde');
+               Ext.MessageBox.alert('Status!', 'Erro no servidor, tente mais tarde');
              }
 
                   });
