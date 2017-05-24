@@ -51,7 +51,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
       xtype: 'toolbar',
       items: [
       {
-        text: 'Carregar Resposta',
+        text: 'Carregar',
         glyph: 43,
         listeners: {
            click: 'onClickObterResposta'
@@ -59,7 +59,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
 
       },
       {
-        text: 'Apagar Resposta',
+        text: 'Apagar',
         glyph: 43,
         listeners: {
           click: 'onClickApagarResposta'

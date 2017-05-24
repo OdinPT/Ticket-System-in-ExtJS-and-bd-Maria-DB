@@ -25,6 +25,20 @@ Ext.define('TrackIT.view.admin.MostraFuncionarioController', {
                 Ext.getCmp('gridfuncionarios').getStore().load();
             }
         })
+    },
+    onClickEditaFuncionario: function()
+    {
+        var myWin2 = Ext.create("Ext.window.Window", {
+            title: 'Funcionário',
+            modal: true,
+            // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+            width: 500,
+            height: 345,
+            items: [{
+                xtype: 'editautilizador'
+            }]
+        });
+        myWin2.show();
     }
 
 });

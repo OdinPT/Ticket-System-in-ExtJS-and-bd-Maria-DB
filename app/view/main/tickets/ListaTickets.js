@@ -56,7 +56,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
 
         items: [
             {
-              text: 'Refresh!',
+              text: 'Atualizar',
               handler: function() {
                 Ext.MessageBox.wait('A carregar tickets...');
           myRequest = Ext.Ajax.request({
@@ -72,7 +72,7 @@ grid.getStore().load();
 }
     },
     {
-      text: 'Limpar!',
+      text: 'Limpar',
       renderTo: Ext.getBody(),
     handler: function() {
       var grid = Ext.ComponentQuery.query('gridticket')[0];

@@ -13,6 +13,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
     width: 1080,
     height: 400,
     bodyPadding: 10,
+    autoScroll: true,
     layout: {
             type: 'form',
             align: 'stretch'
@@ -74,7 +75,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         }
       },
       {
-      text: 'Mover p/ Recuperados',
+      text: 'Recuperar',
       glyph: 43,
       listeners: {
         click: 'onClickMoveParaRecuperados'

@@ -54,7 +54,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
 
         items: [
             {
-              text: 'Refresh!',
+              text: 'Atualizar',
               handler: function() {
                 Ext.MessageBox.wait('A carregar tickets...');
           myRequest = Ext.Ajax.request({
@@ -69,7 +69,7 @@ Ext.MessageBox.hide();
 }
     },
     {
-      text: 'Limpar!',
+      text: 'Limpar',
       handler: function(){
         myRequest = Ext.Ajax.request({
           url: 'app/php/Limpar/limpaticketshistorico.php',

@@ -1,13 +1,14 @@
-Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
+Ext.define('TrackIT.view.admin.EditaUtilizador', {
     extend: 'Ext.form.Panel',
-    xtype: 'registautilizador',
-    controller: 'registautilizador',
+    xtype: 'editautilizador',
+    controller: 'editautilizador',
     requires: [
-        'TrackIT.view.admin.FormRegistaUtilizadorController'
+        'TrackIT.view.admin.EditaUtilizadorController'
     ],
-    id: 'formregistautilizador',
-    frame: false,
-    height: 320,
+    id: 'formeditautilizador',
+    frame: true,
+    width: 500,
+    height: 300,
     border: false,
 
 
@@ -25,32 +26,27 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-<<<<<<< HEAD
-            id: 'user',
-            name: 'user'
-=======
-            id: 'username',
-            name: 'username'
->>>>>>> a6a4fdd9abaeff79e5b6ab4f2fd3c9ccd07d6901
+            id: 'user2',
+            name: 'user2'
 
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Password:',
-            inputType: 'password',
-            id: 'pass',
-            name: 'pass'
+            inputType: 'password2',
+            id: 'password2',
+            name: 'pass2'
 
         },
         {
             xtype: 'textfield',
             fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento'
+            id: 'id_departamento2'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
-            id: 'tipo_funcionario'
+            id: 'tipo_funcionario2'
         }
     ],
     dockedItems: {
@@ -58,10 +54,10 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
         xtype: 'toolbar',
         items: [
             {
-                text: 'Registar',
+                text: 'Editar',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickRegistarUtilizador'
+                    click: 'onClickEditaUtilizador'
                 }
             }
         ]

@@ -11,7 +11,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     title: 'Informação Principal',
     width: 1080,
     height: 440,
-
+    autoScroll: true,
 
 
     layout: {
@@ -68,7 +68,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
       xtype: 'toolbar',
       items: [
           {
-        text: 'Move p/ Historico',
+        text: 'Reciclar',
         glyph: 43,
         listeners: {
           click: 'onClickMoveParaHistorico'
@@ -83,7 +83,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                           title: 'Resposta',
                           modal: true,
                           width: 1000,
-                          height: 500,
+                          height: 440,
                           items: {
                               xtype: 'enviaresposta'
                           }
