@@ -3,7 +3,7 @@ Ext.define('TrackIT.store.cliente.Clientes', {
     model: 'TrackIT.model.Clientes',
     alias: 'store.clientes',
 
-	autoLoad: false,
+	autoLoad: true,
 	proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/carregaClientes.php',
