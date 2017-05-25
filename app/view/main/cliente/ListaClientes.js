@@ -51,9 +51,42 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
                         }
                     })
                 }
+            },
+            {
+                text: 'Criar Cliente',
+                glyph: 43,
+                listeners: {
+                    click: function(){
+                        var myWin = Ext.create("Ext.window.Window", {
+                            title: 'Resposta',
+                            modal: true,
+                            width: 1000,
+                            height: 440,
+                            items: {
+                                xtype: 'registaClientes'
+                            }
+                        });
+                        myWin.show();
+                    }
+                }
 
-            }]
+
+            }
+            ]
     },
+
+    dockedItems: {
+        dock: 'bottom',
+        xtype: 'toolbar',
+        items: [
+            {
+                text: 'Carregar Funcionário',
+                glyph: 43,
+                listeners: {
+                    click: 'onClickRegistarClientes'
+                }
+
+            }]},
 
     onGridAfterRender: function(gridCliente){
        setInterval(function(){

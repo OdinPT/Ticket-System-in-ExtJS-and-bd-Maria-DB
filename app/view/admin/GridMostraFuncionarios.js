@@ -58,6 +58,10 @@ Ext.define('TrackIT.view.admin.GridMostraFuncionarios', {
         }
 
     },
+
+
+
+
     onGridAfterRender: function(gridticket){
         setInterval(function(){
             grid.store.load();
