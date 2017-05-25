@@ -12,7 +12,11 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
         'TrackIT.view.main.cliente.ListaClientes'
         //'TrackIT.store.tickets.TicketSelected'
     ],
-
+    config: {
+        autoLoad: true,
+        scroll:true,
+        style:{overflow: 'auto',overflowX: 'hidden'}
+    },
     title: 'Clientes',
 
     store: {
