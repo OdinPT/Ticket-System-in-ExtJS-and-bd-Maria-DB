@@ -22,7 +22,7 @@ Ext.define('TrackIT.store.TicketsHistorico', {
     model: 'TrackIT.model.Ticket',
     alias: 'store.ticketshistorico',
 	storeId: 'StagingHistorico',
-	autoLoad: true,
+	autoLoad: false,
 	proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/carregaticketshistorico.php',

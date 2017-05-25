@@ -91,24 +91,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       myWin.show();
                   }
               }
-          },
-          {
-              text: 'Registar Cliente ',
-              glyph: 43,
-              listeners: {
-                  click: function(){
-                      var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Resposta',
-                          modal: true,
-                          width: 1000,
-                          height: 500,
-                          items: {
-                              xtype: ' '
-                          }
-                      });
-                      myWin.show();
-                  }
-              }
           }
     ]
   }

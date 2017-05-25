@@ -8,10 +8,9 @@ Ext.define('TrackIT.view.main.MainWidget', {
         title: 'Painel Principal de Administração',
         xtype: 'adminprincipal'
     }, {
-        title: 'Lista de Clientes',
+        title: 'Child Tab 2',
         bodyPadding: 10,
-        xtype: 'mainlistCliente'
-
+        html: "My content of Child Tab 2 here"
     }]
 
 });

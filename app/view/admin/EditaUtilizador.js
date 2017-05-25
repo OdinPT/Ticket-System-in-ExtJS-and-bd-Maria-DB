@@ -26,8 +26,8 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'username2',
-            name: 'usename2'
+            id: 'user2',
+            name: 'user2'
 
         },
         {

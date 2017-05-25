@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
       { text: 'Nome Cliente',  dataIndex: 'Nome_Cliente', flex: 1.2},
       { text: 'Email Cliente', dataIndex: 'Email_Cliente', flex: 1.5},
       { text: 'DATA ANscimento', dataIndex: 'DataNasc_Cliente', flex: 1.5},
-      { text: 'Contribuinte', dataIndex: 'Contribuinte_Cliente', flex: 3}
+      { text: 'Contribuinte', dataIndex: 'Contribuinte_Cliente', flex: 5}
     ],
 
     tbar: {
