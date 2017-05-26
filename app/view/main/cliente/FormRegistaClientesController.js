@@ -9,40 +9,10 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaClientesController', {
                 url: 'app/php/CarregamStores/registarClientes.php',
                 success: function (response, opts){Ext.MessageBox.alert('Sucesso','Utilizador Registado!');},
                 failure: function (){alert('Erro...');},
-                params: { user4: Ext.getCmp('user').getValue(), email3: Ext.getCmp('email').getValue()/*, DataNasc: Ext.getCmp('DataNasc').getValue(), contribuinte: Ext.getCmp('contribuinte').getValue()*/}
+                params: { Nome_Cliente: Ext.getCmp('Nome_Cliente').getValue(), Email_Cliente: Ext.getCmp('Email_Cliente').getValue(), DataNasc_Cliente: Ext.getCmp('DataNasc_Cliente').getValue(), Contribuinte_Cliente: Ext.getCmp('Contribuinte_Cliente').getValue()}
             });
 
     }
-/*
 
- {
- xtype: 'textfield',
- fieldLabel: 'Username:',
- id: 'user',
- name: 'user'
-
- },
- {
- xtype: 'textfield',
- fieldLabel: 'email:',
- //inputType: 'email',
- id: 'email',
- name: 'email'
-
- },
- {
- xtype: 'textfield',
- fieldLabel: 'Data de Nascimento',
- id: 'DataNasc'
- },
- {
- xtype: 'textfield',
- fieldLabel: 'Contruibuinte:',
- id: 'contribuinte'
- }
-
-
-
- */
 });
 

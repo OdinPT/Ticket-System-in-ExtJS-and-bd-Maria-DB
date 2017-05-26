@@ -21,32 +21,35 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaClientes', {
         border: 'false'
     },
 
+
     items: [
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'user4',
-            name: 'user'
-
-},
-        {
-            xtype: 'textfield',
-            fieldLabel: 'email:',
-            id: 'email4',
+            id: 'Nome_Cliente',
             name: 'user'
 
         },
-/*{
-    xtype: 'textfield',
-        fieldLabel: 'ID do Departamento:',
-    id: 'id_departamento4'
-},
-{
-    xtype: 'textfield',
-        fieldLabel: 'Tipo de funcionário:',
-    id: 'tipo_funcionario'
-}
-*/
+        {
+            xtype: 'textfield',
+            fieldLabel: 'email:',
+            id: 'Email_Cliente',
+            name: 'mail'
+
+        },
+        {
+        xtype: 'datefield',
+            format: 'Y/m/d',
+            submitFormat: 'Y/m/d ',
+        fieldLabel: 'Data Nascimento:',
+        id: 'DataNasc_Cliente'
+        },
+        {
+        xtype: 'textfield',
+        fieldLabel: 'Contribuinte do Cliente',
+        id: 'Contribuinte_Cliente'
+        }
+
 ],
     dockedItems: {
         dock: 'bottom',
