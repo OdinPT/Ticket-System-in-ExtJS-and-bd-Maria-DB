@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Maio-2017 às 10:27
+-- Generation Time: 22-Maio-2017 às 18:31
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -63,6 +63,26 @@ TRUNCATE table emails;
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirCliente` (IN `_NC` VARCHAR(150), IN `_EC` VARCHAR(100), IN `_DNC` DATE, IN `_CC` INT(10))  NO SQL
+BEGIN 
+
+
+    INSERT INTO cliente
+         (
+           Nome_Cliente,
+           Email_Cliente,
+           DataNasc_Cliente,
+           Contribuinte_Cliente)
+           
+    VALUES 
+         ( 
+           
+        _NC, 
+        _EC, 
+       _DNC,
+        _CC) ; 
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_body` VARCHAR(700), IN `_id_email` INT(11))  NO SQL
 BEGIN 
 
@@ -81,32 +101,14 @@ BEGIN
         _id_email) ; 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets` (IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_date` VARCHAR(100), IN `_message` VARCHAR(700))  NO SQL
-BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHAR(100), IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
 
 
     INSERT INTO emails
          (
+              email,
            fromaddress,
-           subject,
-           datea,
-           body)
-           
-    VALUES 
-         ( 
-           
-        _from, 
-        _subject, 
-        _date,   
-        _message) ; 
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
-
-
-    INSERT INTO emails
-         (
-           fromaddress,
+            
            subject,
            datea,
            body,
@@ -114,9 +116,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_from` VARCHA
            
     VALUES 
          ( 
-           
+          _mail, 
         _from, 
-        _subject, 
+             _subject, 
           Now(),
         _message,
         MostraIdDepartamento(_user)) ; 
@@ -145,7 +147,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Login` (IN `_username` VARCHAR(100)
 BEGIN
 
 select * 
-from admin 
+from funcionario 
 where username = _username and pass = _password;
 
 End$$
@@ -159,8 +161,17 @@ SET id_grupo_emails = MudaGrupoTicket(`id_grupo_emails`), state = MudaEstado(`st
 
    END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RespostaSelecionada` (IN `_id` INT(11))  NO SQL
+Begin
+
+SELECT `id_resp`,`body_resp`,`datea_resp`,`id_email`
+FROM `respostas` 
+WHERE `id_email`=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
-SELECT id,fromaddress,body,subject,datea,state,nome_departamento
+SELECT id,email,fromaddress,body,subject,datea,state,nome_departamento
 FROM emails,departamento,grupo 
 WHERE id_departamento_emails=id_departamento and id_grupo_emails=id_grupo and id=_id;
 
@@ -177,7 +188,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `showBodyDetailsRec` (IN `_id` INT) 
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBodyDetailsTicket` (IN `_id` INT)  BEGIN
-	SELECT `id`,`fromaddress`,`subject`,`datea`,`state`,`nome_departamento` 
+	SELECT `id`,`email`,`fromaddress`,`subject`,`datea`,`state`,`nome_departamento` 
 		FROM emails,grupo, departamento 
 	where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Ticket" and  (id=_id); 
    END$$
@@ -217,7 +228,12 @@ BEGIN
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT)  BEGIN
- SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo FROM emails,grupo, departamento where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Historico" and  (id=_id); 
+ SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo 
+ 
+ FROM emails,grupo, departamento
+ 
+ where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Historico" and  (id=_id); 
+ 
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT)  BEGIN
@@ -227,9 +243,23 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT
 	where (id_departamento_emails=id_departamento) and nome_grupo="Recuperado" and  (id=_id); 
    END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClientes` ()  NO SQL
+BEGIN
+select * from cliente;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClienteSelecionado` (IN `mail` VARCHAR(100))  NO SQL
+BEGIN
+
+select `Nome_Cliente`,`Email_Cliente`,`DataNasc_Cliente`,`Contribuinte_Cliente`
+from cliente 
+where (`Email_Cliente`=mail);
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` ()  BEGIN
 
-select `id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
 
 from emails, departamento, grupo
 
@@ -263,7 +293,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `MostraIdDepartamento` (`_Nome` VARCH
 Begin
 declare temp int(11);
 
-SELECT `id_departamento_funcionarios` INTO temp FROM `admin` WHERE username=_Nome;
+SELECT `id_departamento_funcionarios` INTO temp FROM funcionario WHERE username=_Nome;
 return temp;
 
 End$$
@@ -272,9 +302,15 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `MudaEstado` (`_estado` VARCHAR(12)) 
     DECLARE a varchar(10);
  
     IF (_estado = 'Aberto')  THEN
- 		SET a = 'Fechado';
-    ELSEIF (_estado = 'Fechado') THEN
-        SET a = 'Aberto';
+ 		SET a = 'Lido';
+    ELSEIF (_estado = 'Lido') THEN
+        SET a = 'Atribuido';
+     ELSEIF (_estado = 'Atribuido') THEN
+       SET a = 'Fechado';
+     ELSEIF (_estado = 'Fechado') THEN
+       SET a = 'Reaberto'; 
+     ELSEIF (_estado = 'Reaberto') THEN
+       SET a = 'Fechado';
     END IF;
  RETURN (a);
 END$$
@@ -294,30 +330,41 @@ BEGIN
  
 END$$
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `VerificaClienteExiste` (`_email` VARCHAR(100)) RETURNS TINYINT(1) NO SQL
+Begin
+declare temp bool;
+SET temp = 0;
+
+ 
+    SELECT EXISTS(SELECT `Email_Cliente`, `email` FROM `cliente`,`emails` where `Email_Cliente`=_email)
+    INTO temp ;
+    RETURN temp;
+
+return temp;
+End$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `admin`
+-- Estrutura da tabela `cliente`
 --
 
-CREATE TABLE `admin` (
-  `id_funcionario` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `pass` varchar(100) NOT NULL,
-  `id_departamento_funcionarios` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+CREATE TABLE `cliente` (
+  `Id_Cliente` int(11) NOT NULL,
+  `Nome_Cliente` varchar(100) NOT NULL,
+  `Email_Cliente` varchar(100) NOT NULL,
+  `DataNasc_Cliente` date NOT NULL,
+  `Contribuinte_Cliente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `admin`
+-- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `admin` (`id_funcionario`, `username`, `pass`, `id_departamento_funcionarios`) VALUES
-(1, 'odinpt21@gmail.com', 'abcd1995', 1),
-(2, 'testetrackit@gmail.com', 'testetrackit123', 4),
-(3, 'testetrackit2@gmail.com', 'testetrackit123', 4),
-(4, 'no-reply@trackit.pt', 'tr4ck1t', 1);
+INSERT INTO `cliente` (`Id_Cliente`, `Nome_Cliente`, `Email_Cliente`, `DataNasc_Cliente`, `Contribuinte_Cliente`) VALUES
+(1, 'Teste', 'trackit@gmail.com', '2017-05-15', 123);
 
 -- --------------------------------------------------------
 
@@ -348,7 +395,8 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 
 CREATE TABLE `emails` (
   `id` int(11) NOT NULL,
-  `fromaddress` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `fromaddress` varchar(230) NOT NULL,
   `subject` varchar(250) NOT NULL,
   `datea` datetime NOT NULL,
   `body` varchar(700) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -361,24 +409,69 @@ CREATE TABLE `emails` (
 -- Extraindo dados da tabela `emails`
 --
 
-INSERT INTO `emails` (`id`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(4, 'odinpt21 <odinpt21@gmail.com>', 'vvvvvv', '2017-05-16 18:27:55', 'aaa', 'Fechado', 4, 2),
-(6, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-16 18:49:19', '312313123\r\n', 'Fechado', 4, 2),
-(7, 'Track IT Gmail <testetrackit@gmail.com>', 'as', '2017-05-16 19:36:57', 'TestTesteTasdasdasdasdasDasdAsdAsdAsDaSdASAasÂ ', 'Aberto', 1, 1),
-(8, 'teste trackit <testetrackit@gmail.com>', 'PT', '2017-05-16 19:36:57', 'PT223\r\n', 'Aberto', 1, 1),
-(9, 'Microsoft Outlook <odinpt21@gmail.com>', 'Mensagem de Teste do Microsoft Outlook', '2017-05-16 19:36:58', 'Esta ÃƒÂ© uma mensagem de e-mail enviada automaticamente pelo Microsoft Outlook ao testar as definiÃ§Ãµes da conta do utilizador.\r\n', 'Aberto', 1, 1),
-(13, 'Track IT Testes <testetrackit@gmail.com>', 'dezasseis maio', '2017-05-16 22:14:55', 'Maio:PÂ ', 'Fechado', 4, 2),
-(14, 'teste trackit <testetrackit@gmail.com>', 'awdawd', '2017-05-17 09:49:39', 'awdawdawdawdaw\r\n', 'Aberto', 4, 3),
-(15, 'teste trackit <testetrackit@gmail.com>', 'Ã§a?dÃ§awdaÃ§da?wÃ§dawÃ§dadw', '2017-05-17 10:19:50', '~Ã§awdÃ£wÃ§dawÃ§dawd~ad~wÃ§daw~daÃ§wda\r\n', 'Aberto', 4, 1),
-(16, 'teste trackit <testetrackit@gmail.com>', '1231', '2017-05-17 11:06:03', '2312313\r\n', 'Fechado', 4, 2),
-(17, 'teste trackit <testetrackit@gmail.com>', '12312313', '2017-05-17 11:06:04', '\r\n', 'Aberto', 4, 1),
-(18, 'teste trackit <testetrackit@gmail.com>', 'adawd', '2017-05-17 11:07:03', 'awdawd\r\n', 'Aberto', 4, 3),
-(19, 'teste trackit <testetrackit@gmail.com>', 'awdawdawd', '2017-05-17 14:21:18', 'dawdad\r\n', 'Aberto', 4, 1),
-(20, 'teste trackit <testetrackit@gmail.com>', 'dadawdad', '2017-05-17 14:21:19', 'awdawdawdawd\r\n', 'Aberto', 4, 1),
-(21, 'teste trackit <testetrackit@gmail.com>', 'awd', '2017-05-17 14:21:19', 'awdawdawd\r\n', 'Aberto', 4, 1),
-(22, 'teste trackit <testetrackit@gmail.com>', 'dawdawdawd', '2017-05-17 14:21:19', 'wadawdaw\r\n', 'Aberto', 4, 1),
-(23, 'teste trackit <testetrackit@gmail.com>', 'awdawda', '2017-05-17 14:21:20', 'wawdawda\r\n', 'Aberto', 4, 1),
-(24, 'teste trackit <testetrackit@gmail.com>', '12312', '2017-05-17 14:21:20', '121\r\n', 'Aberto', 4, 1);
+INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+(1, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'hoje', '2017-05-22 11:20:55', 'teste\r\n\r\n\r\n', 'Aberto', 4, 1),
+(2, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'asa', '2017-05-22 11:23:05', 'asasdas', 'Aberto', 4, 1),
+(3, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'xx', '2017-05-22 11:23:06', 'gggggg', 'Lido', 4, 2),
+(4, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP Wscript.shell Exec', '2017-05-22 15:30:11', '\r\n\r\n\r\n\r\nNotable PHP package: PHP Wscript.shell Exec - PHP Classes\r\n\r\n\r\n\r\nWScript is an environment for executing scripts that takes advantage of objects running on Windows that provide several types of services.\r\n\r\nThis class provides means to execute actions from PHP using WScript that can be useful, like for instance running Windows applications and simulating keyboard typing events.\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          Notable PHP package: PHP Wscript.shell Exec\r\n        \r\n        Know when and why code breaksUsers finding bugs? Searching logs for errors? Find + fix broken code fast!\r\n        \r\n\r\nteste, a PHP package is considered Notable when it does something different that is ', 'Aberto', 4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estado`
+--
+
+CREATE TABLE `estado` (
+  `ID_Estado` int(11) NOT NULL,
+  `Descricao_Estado` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`ID_Estado`, `Descricao_Estado`) VALUES
+(1, 'Aberto'),
+(2, 'Lido'),
+(3, 'Atribuido'),
+(4, 'Fechado '),
+(5, 'Reaberto ');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ficheiro`
+--
+
+CREATE TABLE `ficheiro` (
+  `ID_File` int(10) NOT NULL,
+  `F_File` binary(200) NOT NULL,
+  `Email_File` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionario`
+--
+
+CREATE TABLE `funcionario` (
+  `id_funcionario` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `id_departamento_funcionarios` int(11) NOT NULL,
+  `Tipo_Funcionario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departamento_funcionarios`, `Tipo_Funcionario`) VALUES
+(1, 'odinpt21@gmail.com', 'abcd1995', 1, 1),
+(2, 'testetrackit@gmail.com', 'testetrackit123', 4, 1),
+(3, 'testetrackit2@gmail.com', 'testetrackit123', 4, 2),
+(4, 'no-reply@trackit.pt', 'tr4ck1t', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -403,13 +496,28 @@ INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `historicoestados`
+--
+
+CREATE TABLE `historicoestados` (
+  `id_historicoTicket` int(11) NOT NULL,
+  `HoraAtribuicao_Estado` datetime NOT NULL,
+  `ID_Ticket` int(11) NOT NULL,
+  `ID_EstadoTicket` int(11) NOT NULL,
+  `Data_AlteracaoEstado` date NOT NULL,
+  `id_funcionario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `respostas`
 --
 
 CREATE TABLE `respostas` (
   `id_resp` int(11) NOT NULL,
   `body_resp` varchar(700) NOT NULL,
-  `datea_resp` varchar(100) NOT NULL,
+  `datea_resp` date NOT NULL,
   `id_email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -418,24 +526,46 @@ CREATE TABLE `respostas` (
 --
 
 INSERT INTO `respostas` (`id_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
-(1, 'as', '2017-05-16 18:21:23', 14),
-(2, 'teste', '17-04-2017', 4),
-(3, 'aaa', '17-04-2017', 4),
-(4, 'ssssas', '17-04-2017', 15),
-(5, 'w', '2017-05-17 15:56:21', 8),
-(6, 'xc', '2017-05-17 15:58:05', 7),
-(7, 'x', '2017-05-17 16:00:01', 21);
+(1, 'teste', '2017-05-01', 1),
+(2, 'teste', '2017-05-22', 6),
+(3, 'resposta 1640', '2017-05-21', 2),
+(4, 'testetetete', '2017-05-22', 4),
+(5, 'teste', '2017-05-22', 2),
+(6, 'ontem', '2017-05-22', 1),
+(7, 'ontem', '2017-05-22', 1),
+(8, 'hoje', '2017-05-22', 8),
+(9, 'hoje', '2017-05-22', 8),
+(10, 'teste', '2017-05-22', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipoutilizador`
+--
+
+CREATE TABLE `tipoutilizador` (
+  `ID_TipoUtilizador` int(11) NOT NULL,
+  `Descricao_TipoUtilizador` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipoutilizador`
+--
+
+INSERT INTO `tipoutilizador` (`ID_TipoUtilizador`, `Descricao_TipoUtilizador`) VALUES
+(1, 'Normal'),
+(2, 'Admin'),
+(3, 'Super User');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `cliente`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_funcionario`),
-  ADD KEY `funcionarios_fk_departamentos` (`id_departamento_funcionarios`);
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`Id_Cliente`);
 
 --
 -- Indexes for table `departamento`
@@ -453,10 +583,39 @@ ALTER TABLE `emails`
   ADD KEY `emails_FK_grupos` (`id_grupo_emails`);
 
 --
+-- Indexes for table `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`ID_Estado`);
+
+--
+-- Indexes for table `ficheiro`
+--
+ALTER TABLE `ficheiro`
+  ADD PRIMARY KEY (`ID_File`),
+  ADD KEY `file_fk_email` (`Email_File`);
+
+--
+-- Indexes for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`id_funcionario`),
+  ADD KEY `funcionarios_fk_departamentos` (`id_departamento_funcionarios`),
+  ADD KEY `funcionario_fk_TP` (`Tipo_Funcionario`);
+
+--
 -- Indexes for table `grupo`
 --
 ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id_grupo`);
+
+--
+-- Indexes for table `historicoestados`
+--
+ALTER TABLE `historicoestados`
+  ADD PRIMARY KEY (`id_historicoTicket`),
+  ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`),
+  ADD KEY `historicoEstados_FK_Utilizadores` (`id_funcionario`);
 
 --
 -- Indexes for table `respostas`
@@ -466,14 +625,20 @@ ALTER TABLE `respostas`
   ADD KEY `respostas_FK_emails` (`id_email`);
 
 --
+-- Indexes for table `tipoutilizador`
+--
+ALTER TABLE `tipoutilizador`
+  ADD PRIMARY KEY (`ID_TipoUtilizador`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `cliente`
 --
-ALTER TABLE `admin`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `cliente`
+  MODIFY `Id_Cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `departamento`
 --
@@ -483,26 +648,45 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `estado`
+--
+ALTER TABLE `estado`
+  MODIFY `ID_Estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `ficheiro`
+--
+ALTER TABLE `ficheiro`
+  MODIFY `ID_File` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
 ALTER TABLE `grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `historicoestados`
+--
+ALTER TABLE `historicoestados`
+  MODIFY `id_historicoTicket` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `tipoutilizador`
+--
+ALTER TABLE `tipoutilizador`
+  MODIFY `ID_TipoUtilizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
-
---
--- Limitadores para a tabela `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_fk_departamento` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `emails`
@@ -512,10 +696,31 @@ ALTER TABLE `emails`
   ADD CONSTRAINT `emails_FK_grupos` FOREIGN KEY (`id_grupo_emails`) REFERENCES `grupo` (`id_grupo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Limitadores para a tabela `ficheiro`
+--
+ALTER TABLE `ficheiro`
+  ADD CONSTRAINT `file_fk_email` FOREIGN KEY (`Email_File`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `historicoestados`
+--
+ALTER TABLE `historicoestados`
+  ADD CONSTRAINT `historicoEstados_FK_Utilizadores` FOREIGN KEY (`id_funcionario`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoestados_fk_emails` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoestados_fk_estado` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Limitadores para a tabela `respostas`
 --
 ALTER TABLE `respostas`
-  ADD CONSTRAINT `respostas_FK_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `respostas_FK_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

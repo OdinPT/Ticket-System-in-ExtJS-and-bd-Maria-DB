@@ -3,7 +3,7 @@ Ext.define('TrackIT.store.admin.Funcionarios', {
     model: 'TrackIT.model.Funcionario',
     alias: 'store.funcionarios',
     storeId: 'Staging',
-    autoLoad: false,
+    autoLoad: true,
     proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/loadfuncionarios.php',

@@ -33,7 +33,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Password:',
-            inputType: 'password2',
+            inputType: 'password',
             id: 'password2',
             name: 'pass2'
 

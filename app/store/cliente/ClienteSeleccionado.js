@@ -1,14 +1,14 @@
 
-Ext.define('TrackIT.store.admin.FuncionarioSeleccionado', {
+Ext.define('TrackIT.store.cliente.ClienteSeleccionado', {
     extend: 'Ext.data.Store',
-    model: 'TrackIT.model.Funcionario',
-    alias: 'store.funcionarioseleccionado',
-    xtype: 'funcionarioseleccionado',
-    storeId: 'funcionarioseleccionado',
+    model: 'TrackIT.model.Clientes',
+    alias: 'store.clienteoseleccionado',
+    xtype: 'ClienteSeleccionado',
+    storeId: 'Clienteseleccionado',
     autoLoad: true,
     proxy: {
         type: 'ajax',
-        url: 'app/php/CarregamStores/loadfuncionarioseleccionado.php',
+        url: 'app/php/CarregamStores/loadClienteseleccionado.php',
         reader: {
             type: 'json',
             rootProperty: 'data'
