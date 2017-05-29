@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.MainWidget', {
     }, {
         title: 'Lista de Clientes',
         bodyPadding: 10,
-        xtype: 'mainlistCliente'
+        xtype: 'Clienteprincipal'
 
     }]
 

@@ -1,6 +1,6 @@
 Ext.define('TrackIT.store.cliente.Clientes', {
     extend: 'Ext.data.Store',
-    model: 'TrackIT.model.Clientes',
+    model: 'TrackIT.model.Cliente',
     alias: 'store.clientes',
 
 	autoLoad: true,

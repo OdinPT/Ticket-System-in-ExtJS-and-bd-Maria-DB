@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$id = $_COOKIE['cookieIDfuncionario'];
+$id = $_COOKIE['cookieIDCliente'];
 
 $return_arr = array();
 

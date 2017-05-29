@@ -20,33 +20,33 @@ Ext.define('TrackIT.view.main.cliente.MostraCliente', {
         margin: 20
     },
 
-    config:{stores: ['clienteseleccionado']},
+    config:{stores: ['ClienteSeleccionado']},
 
 
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'Id_Cliente'
+        id: 'Id_Clientee'
     },
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'Nome_Cliente'
+            id: 'Nome_Clientee'
         },
         {
             xtype: 'textareafield',
             fieldLabel: 'Email:',
-            id: 'Email_Cliente'
+            id: 'Email_Clientee'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data de Nascimento:',
-            id: 'DataNasc_Cliente'
+            id: 'DataNasc_Clientee'
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Contribuinte:',
-            id: 'Contribuinte_Cliente'
+            id: 'Contribuinte_Clientee'
         }
     ],
     dockedItems: {

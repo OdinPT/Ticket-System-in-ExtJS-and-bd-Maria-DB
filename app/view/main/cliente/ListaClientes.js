@@ -17,7 +17,7 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
-    title: 'Clientes',
+    title: 'Cliente',
 
     store: {
         type: 'clientes'
@@ -64,7 +64,7 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
                             height: 440,
                             items: {
                                 xtype: 'registaCliente'
-                            },
+                            }
 
                         });
                         myWin.show();

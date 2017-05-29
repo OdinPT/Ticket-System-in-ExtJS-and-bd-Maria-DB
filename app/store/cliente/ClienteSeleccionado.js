@@ -1,10 +1,10 @@
 
 Ext.define('TrackIT.store.cliente.ClienteSeleccionado', {
     extend: 'Ext.data.Store',
-    model: 'TrackIT.model.Clientes',
-    alias: 'store.clienteoseleccionado',
-    xtype: 'ClienteSeleccionado',
-    storeId: 'Clienteseleccionado',
+    model: 'TrackIT.model.Cliente',
+    alias: 'store.clienteseleccionado',
+    xtype: 'clienteseleccionado',
+    storeId: 'clienteseleccionado',
     autoLoad: true,
     proxy: {
         type: 'ajax',
