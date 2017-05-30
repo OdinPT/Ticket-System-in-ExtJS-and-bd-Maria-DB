@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaCliente', {
         },
         {
         xtype: 'datefield',
-            format: 'Y/m/d',
+            format: 'd/m/Y',
             submitFormat: 'Y/m/d ',
         fieldLabel: 'Data Nascimento:',
         id: 'DataNasc_Cliente'

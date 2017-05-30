@@ -38,7 +38,9 @@ Ext.define('TrackIT.view.main.cliente.EditaCliente', {
 
         },
         {
-            xtype: 'textfield',
+            xtype: 'datefield',
+            format: 'd/m/Y',
+            submitFormat: 'Y/m/d ',
             fieldLabel: 'Data Nascimento:',
             id: 'DataNasc_Cliente2'
         },

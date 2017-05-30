@@ -1,11 +1,11 @@
-Ext.define('TrackIT.view.main.cliente.FormRegistaClientes', {
+Ext.define('TrackIT.view.main.tickets.FormRegistaClienteTicket', {
     extend: 'Ext.form.Panel',
-    xtype: 'registaCliente',
-    controller: 'registaCliente',
+    xtype: 'registaClienteTicket',
+    controller: 'registaClienteTicket',
     requires: [
-        'TrackIT.view.main.cliente.FormRegistaClienteController'
+        'TrackIT.view.main.tickets.FormRegistaClienteTicketController'
     ],
-    id: 'formregistCliente',
+    id: 'formregistClienteTicket',
     frame: false,
     height: 320,
     border: false,
@@ -26,14 +26,14 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaClientes', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'Nome_Clientee',
+            id: 'Nome_Clientet',
             name: 'user'
 
         },
         {
             xtype: 'textfield',
             fieldLabel: 'email:',
-            id: 'Email_Clientee',
+            id: 'Email_Clientet',
             name: 'mail'
 
         },
@@ -42,12 +42,12 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaClientes', {
             format: 'Y/m/d',
             submitFormat: 'Y/m/d ',
         fieldLabel: 'Data Nascimento:',
-        id: 'DataNasc_Clientee'
+        id: 'DataNasc_Clientet'
         },
         {
         xtype: 'textfield',
         fieldLabel: 'Contribuinte do Cliente',
-        id: 'Contribuinte_Clientee'
+        id: 'Contribuinte_Clientet'
         }
 
 ],
@@ -59,7 +59,7 @@ Ext.define('TrackIT.view.main.cliente.FormRegistaClientes', {
                 text: 'Registar',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickRegistarClientes'
+                    click: 'onClickRegistarClienteTicket'
                 }
             }
         ]

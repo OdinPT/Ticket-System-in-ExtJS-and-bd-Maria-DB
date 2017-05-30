@@ -103,7 +103,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                           width: 1000,
                           height: 440,
                           items: {
-                              xtype: 'registaCliente'
+                              xtype: 'registaClienteTicket'
                           }
                       });
                       myWin.show();
