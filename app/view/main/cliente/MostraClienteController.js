@@ -29,16 +29,16 @@ Ext.define('TrackIT.view.main.cliente.MostraClienteController', {
             }
         })
     },
-    onClickEditaFuncionario: function()
+    onClickEditacliente: function()
     {
         var myWin2 = Ext.create("Ext.window.Window", {
-            title: 'Funcionário',
+            title: 'cliente',
             modal: true,
-            // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+
             width: 500,
             height: 345,
             items: [{
-                xtype: 'editautilizador'
+                xtype: 'editacliente'
             }]
         });
         myWin2.show();

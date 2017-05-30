@@ -1,21 +1,18 @@
-Ext.define('TrackIT.view.admin.EditaUtilizadorController', {
+Ext.define('TrackIT.view.main.cliente.EditaClienteController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.editautilizador',
+    alias: 'controller.editacliente',
 
 
-    onClickEditaUtilizador: function() {
+    onClickEditaclientes: function() {
         method:'POST',
             myRequest1 = Ext.Ajax.request({
-                url: 'app/php/Editar/editautilizador.php',
+                url: 'app/php/Editar/editacliente.php',
                 success: function (response, opts){Ext.MessageBox.alert('Sucesso','Utilizador Editado!');},
                 failure: function (){alert('Erro...');},
-                params: { user: Ext.getCmp('user2').getValue(), pass: Ext.getCmp('password2').getValue(), id_departamento: Ext.getCmp('id_departamento2').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario2').getValue()}
+                params: { Nome_Cliente: Ext.getCmp('Nome_Cliente2').getValue(), Email_Cliente: Ext.getCmp('Email_Cliente2').getValue(),DataNasc_Cliente: Ext.getCmp('DataNasc_Cliente2').getValue(),Contribuinte_Cliente: Ext.getCmp('Contribuinte_Cliente2').getValue()}
             });
 
-        /*
 
-
-        */
     }
 
 });

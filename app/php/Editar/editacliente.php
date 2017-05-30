@@ -1,45 +1,15 @@
 <?php
 include("config.php");
-$id = $_COOKIE['cookieIDfuncionario'];
+$id = $_COOKIE['cookieIDCliente'];
 
-$username = $_POST['Nome_Clientee2'];
-$password = $_POST['Email_Clientee2'];
-$id_departamento = $_POST['id_departamento'];
-$tipo_funcionario = $_POST['tipo_funcionario'];
+$nome = $_POST['Nome_Cliente'];
+$email = $_POST['Email_Cliente'];
+$datanasc = $_POST['Email_Cliente'];
+$contribuinte = $_POST['DataNasc_Cliente'];
 
-$kappa = mysqli_query($mysqli, "UPDATE funcionario SET username='$username', pass='$password', id_departamento_funcionarios='$id_departamento', Tipo_Funcionario='$tipo_funcionario' WHERE id_funcionario=$id");
+$kappa = mysqli_query($mysqli, "UPDATE cliente SET Nome_Cliente='$nome', Email_Cliente='$email', DataNasc_Cliente='$datanasc', Contribuinte_Cliente='$contribuinte' WHERE Id_Cliente=$id");
+
 mysqli_close($mysqli);
 ?>
 
-/*
- {
-            xtype: 'textfield',
-            fieldLabel: 'Username:',
-            id: 'Nome_Clientee',
-            name: 'Nome_Clientee2'
-
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Email:',
-            inputType: 'password',
-            id: 'Email_Clientee',
-            name: 'Email_Clientee2'
-
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'ID do Departamento:',
-            id: 'DataNasc_Clientee2'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Contribuinte',
-            id: 'Contribuinte_Clientee2'
-        }
-
-
-
-
-*/
 

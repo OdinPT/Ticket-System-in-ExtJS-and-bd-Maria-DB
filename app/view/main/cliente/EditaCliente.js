@@ -1,11 +1,11 @@
-Ext.define('TrackIT.view.admin.EditaUtilizador', {
+Ext.define('TrackIT.view.main.cliente.EditaCliente', {
     extend: 'Ext.form.Panel',
-    xtype: 'editautilizador',
-    controller: 'editautilizador',
+    xtype: 'editacliente',
+    controller: 'editacliente',
     requires: [
-        'TrackIT.view.admin.EditaUtilizadorController'
+        'TrackIT.view.main.cliente.EditaClienteController'
     ],
-    id: 'formeditautilizador',
+    id: 'formeditcliente',
     frame: true,
     width: 500,
     height: 300,
@@ -26,27 +26,26 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'user2',
-            name: 'user2'
+            id: 'Nome_Cliente2',
+            name: 'Nome_Cliente2'
 
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Password:',
-            inputType: 'password',
-            id: 'password2',
-            name: 'pass2'
+            fieldLabel: 'email:',
+            id: 'Email_Cliente2',
+            name: 'Email_Cliente2'
 
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento2'
+            fieldLabel: 'Data Nascimento:',
+            id: 'DataNasc_Cliente2'
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Tipo de funcionário:',
-            id: 'tipo_funcionario2'
+            fieldLabel: 'Contribuinte:',
+            id: 'Contribuinte_Cliente2'
         }
     ],
     dockedItems: {
@@ -57,7 +56,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
                 text: 'Editar',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickEditaUtilizador'
+                    click: 'onClickEditaclientes'
                 }
             }
         ]

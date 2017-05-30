@@ -68,16 +68,16 @@ Ext.define('TrackIT.view.main.cliente.MostraCliente', {
                     click: 'onClickApagarCliente'
                 }
 
-            }
-            /*{
+            },
+            {
                 text: 'Editar Dados',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickEditaFuncionario'
+                    click: 'onClickEditacliente'
                 }
 
             }
-            */
+
         ]
     }
 });
