@@ -33,7 +33,7 @@ Ext.define('TrackIT.view.main.cliente.ClientePrincipal', {
             }]
         },
         {
-            title: 'Lista de funcionários',
+            title: 'Lista de Clientes',
             flex: 1,
             margin: '0 10 0 0',
             autoScroll: true,

@@ -80,7 +80,24 @@ grid.getStore().load();
       var grid = Ext.ComponentQuery.query('gridticket')[0];
       grid.getStore().removeAll();
     }
-    }
+    },
+            {
+                text: 'Lista de clientes',
+                glyph: 43,
+                listeners: {
+                    click: function(){
+                        var myWin = Ext.create("Ext.window.Window", {
+                            modal: true,
+                            width: 1000,
+                            height: 440,
+                            items: {
+                                xtype: 'mainlistCliente'
+                            }
+                        });
+                        myWin.show();
+                    }
+                }
+            }
 
         ]
     },

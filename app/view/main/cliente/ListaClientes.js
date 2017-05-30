@@ -17,7 +17,7 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
-    title: 'Cliente',
+    title: 'Lista de Clientes',
 
     store: {
         type: 'clientes'
@@ -27,7 +27,7 @@ Ext.define('TrackIT.view.main.cliente.ListaClientes', {
       {text: 'ID Cliente',  dataIndex: 'Id_Cliente', flex: 0.5},
       { text: 'Nome Cliente',  dataIndex: 'Nome_Cliente', flex: 1.2},
       { text: 'Email Cliente', dataIndex: 'Email_Cliente', flex: 1.5},
-      { text: 'DATA ANscimento', dataIndex: 'DataNasc_Cliente', flex: 1.5},
+      { text: 'Data de Nascimento', dataIndex: 'DataNasc_Cliente', flex: 1.5},
       { text: 'Contribuinte', dataIndex: 'Contribuinte_Cliente', flex: 5}
     ],
 
