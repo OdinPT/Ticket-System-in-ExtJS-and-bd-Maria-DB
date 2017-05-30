@@ -18,14 +18,14 @@ Ext.define('TrackIT.view.main.cliente.MostraClienteController', {
     },
 
 
-    onClickApagarFuncionario: function()
+    onClickApagarCliente: function()
     {
         myRequest1 = Ext.Ajax.request({
-            url: 'app/php/Apagar/apagarfuncionario.php',
+            url: 'app/php/Apagar/apagarcliente.php',
             method: 'POST',
             success: function(response, opts) {
                 Ext.MessageBox.alert('title','Sucesso');
-                Ext.getCmp('gridfuncionarios').getStore().load();
+                Ext.getCmp('gridCliente').getStore().load();
             }
         })
     },

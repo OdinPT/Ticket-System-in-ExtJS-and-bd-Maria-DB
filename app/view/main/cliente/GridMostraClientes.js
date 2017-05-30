@@ -50,7 +50,7 @@ Ext.define('TrackIT.view.main.cliente.GridMostraClientes', {
                 modal: true,
                 // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
                 width: 500,
-                height: 345,
+                height: 505,
                 items: [{
                     xtype: 'fieldCliente'
                 }]

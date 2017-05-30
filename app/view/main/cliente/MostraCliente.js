@@ -8,8 +8,8 @@ Ext.define('TrackIT.view.main.cliente.MostraCliente', {
     ],
     id: 'staticClienteForm',
     frame: true,
-    width: 500,
-    height: 300,
+    width: 620,
+    height: 460,
     bodyPadding: 10,
     layout: {
         type: 'form',
@@ -60,16 +60,16 @@ Ext.define('TrackIT.view.main.cliente.MostraCliente', {
                     click: 'onClickObterCliente'
                 }
 
-            }
-            /*{
+            },
+            {
                 text: 'Apagar Funcionário',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickApagarFuncionario'
+                    click: 'onClickApagarCliente'
                 }
 
-            },
-            {
+            }
+            /*{
                 text: 'Editar Dados',
                 glyph: 43,
                 listeners: {
