@@ -91,25 +91,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       myWin.show();
                   }
               }
-          },
-          {
-              text: 'Adicionar Cliente',
-              glyph: 43,
-              listeners: {
-                  click: function(){
-                      var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Add clientes',
-                          modal: true,
-                          width: 1000,
-                          height: 440,
-                          items: {
-                              xtype: 'registaClienteTicket'
-                          }
-                      });
-                      myWin.show();
-                  }
-              }
           }
+
     ]
   }
   });
