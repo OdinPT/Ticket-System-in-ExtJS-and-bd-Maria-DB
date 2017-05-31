@@ -26,7 +26,8 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             xtype: 'textfield',
             fieldLabel: 'Username:',
             id: 'user',
-            name: 'user'
+            name: 'user',
+            emptyText : 'Insira o nome de utilizador',
 
         },
         {
@@ -34,15 +35,18 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             fieldLabel: 'Password:',
             inputType: 'password',
             id: 'pass',
-            name: 'pass'
+            name: 'pass',
+            emptyText : 'Insira a password',
 
         },
         {
+            emptyText : 'Insira o departamento',
             xtype: 'textfield',
             fieldLabel: 'ID do Departamento:',
             id: 'id_departamento'
         },
         {
+            emptyText : 'Insira o tipo de funcionario',
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
             id: 'tipo_funcionario'
