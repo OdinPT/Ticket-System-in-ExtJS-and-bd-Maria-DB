@@ -1,12 +1,12 @@
 Ext.define('TrackIT.store.TipoFuncionario.TipoF', {
-    extend: 'Ext.data.Store',
+    extend: 'Ext.data.ArrayStore',
     model: 'TrackIT.model.TipoF',
-    alias: 'store.TipoFunc',
-    storeId: 'funcionario',
+    alias: 'store.TipoF',
+    storeId: 'Tipofuncionario',
 
     data: [
-        [1, 'teste'],
-        [2, 'teste']
+        [1, "teste"],
+        [2, 'teste32']
     ]
 });
 
