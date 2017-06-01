@@ -10,7 +10,6 @@ Ext.define('TrackIT.store.TipoFuncionario.TipoF', {
     ]
 });
 
-
     //fields: ['ID_TipoUtilizador', 'Descricao_TipoUtilizador']
 
 /*var tipo = new Ext.data.JsonStore({

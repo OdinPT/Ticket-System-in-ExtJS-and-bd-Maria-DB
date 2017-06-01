@@ -51,29 +51,28 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
 
 
         {
-
             xtype: 'combobox',
-            fieldLabel: 'Descricao',
-            name: 'Descricao_TipoUtilizador',
+            fieldLabel: 'Tipo de funcionario',
             store: {
                 type: 'TipoF'
             },
-            valueField: 'abbr',
+            valueField: 'tipo_funcionario',
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Select a state...'
+            emptyText: 'Select a state...',
+            id: 'tipo_funcionario',
+            submitValue:true,
+            hiddenName : 'tipo_funcionario'
 
           /*  emptyText : 'Insira o tipo de funcionario',
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
             id: 'tipo_funcionario'
 
-
             /*fieldLabel: 'ID Tipo utilizador:',
             displayField: 'Descricao_TipoUtilizador',
-
-            store: {
+           store: {
                 type: 'TipoF'
             },
 
