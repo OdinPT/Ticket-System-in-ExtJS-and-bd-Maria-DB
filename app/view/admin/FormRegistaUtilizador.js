@@ -48,15 +48,20 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             store: {
                 type: 'TipoD'
             },
-            valueField: 'ID_TipoUtilizador',
+            valueField: 'id_departamento',
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Selecione o departamento...',
-            id: 'ID_TipoUtilizador',
+            emptyText: 'Select a state...',
+            id: 'id_departamento',
             submitValue:true,
-            hiddenName : 'ID_TipoUtilizador'
+            hiddenName : 'id_departamento'
 
+
+            /*  emptyText : 'Insira o departamento',
+            xtype: 'textfield',
+            fieldLabel: 'ID do Departamento:',
+            id: 'id_departamento'*/
         },
 
 
@@ -70,7 +75,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Selecione o tipo de funcionário...',
+            emptyText: 'Select a state...',
             id: 'tipo_funcionario',
             submitValue:true,
             hiddenName : 'tipo_funcionario'
