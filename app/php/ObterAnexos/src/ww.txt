@@ -1,0 +1,58 @@
+var notifier = require('mail-notifier');
+var mimelib = require("mimelib");
+var inlineCss = require('inline-css');
+var jade = require('jade');
+var fs = require('fs');
+var nodemailer = require('nodemailer');
+var iconv = require('iconv-lite');
+var text2 = 'Existe um novo ticket para o seu departamento, por favor o verifique';
+var text1 = 'O seu ticket foi enviado com sucesso!';
+var html = fs.readFileSync('action.html',{encoding:'utf-8'});
+var html2 = fs.readFileSync('alert.html',{encoding:'utf-8'});
+
+
+const transport = nodemailer.createTransport({
+ service: 'Gmail',
+    auth: {
+        user: 'testetrackit@gmail.com',
+        pass: 'testetrackit123',
+    },
+});
+
+var imap = {
+      user: "testetrackit@gmail.com",
+      password: "testetrackit123",
+      host: "imap.gmail.com",
+      port: 993,
+      tls: true,
+      tlsOptions: { rejectUnauthorized: false }
+};
+
+notifier(imap).on('mail',function(mail){
+         const mailOptions = {
+    from: 'testetrackit@gmail.com',
+    to: mail.from,
+    subject: 'O seu ticket foi enviado com sucesso! -TrackIT',
+    html: html
+};
+transport.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log(`Message sent: ${info.response}`);
+console.log(mail.from);
+});
+         const mailOptions2 = {
+    from: 'testetrackit@gmail.com',
+    to: 'cacerftw@hotmail.com',
+    subject: 'Ticket recebido para o seu departamento! -TrackIT',
+    html: html2
+};
+transport.sendMail(mailOptions2, (error, info) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log(`Message sent: ${info.response}`);
+console.log(mail.from);
+});
+}).start();

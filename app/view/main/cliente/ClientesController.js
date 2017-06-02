@@ -1,7 +1,7 @@
 Ext.define('TrackIT.view.main.cliente.ClientesController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.clientezz'
-/*
+    alias: 'controller.clientezz',
+
     onClickObterCliente: function() {
         var store = Ext.getStore('mainlistCliente');
         store.load({

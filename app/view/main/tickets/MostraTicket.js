@@ -26,7 +26,14 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: [{
                   xtype: 'infoticketprincipal'
-              }]
+              },
+            {
+                xtype: 'mainlistanexos'
+
+            },
+            {
+
+            }]
 
     },
   /*{

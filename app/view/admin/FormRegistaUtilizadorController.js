@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizadorController', {
                 url: 'app/php/Registar/registarutilizador.php',
                 success: function (response, opts){Ext.MessageBox.alert('Sucesso','Utilizador Registado!');},
                 failure: function (){alert('Erro...');},
-                params: { username: Ext.getCmp('username').getValue(), pass: Ext.getCmp('pass').getValue(), id_departamento: Ext.getCmp('id_departamento').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario').getValue()}
+                params: { user: Ext.getCmp('user').getValue(), pass: Ext.getCmp('pass').getValue(), id_departamento: Ext.getCmp('id_departamento').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario').getValue()}
             });
 
     }
