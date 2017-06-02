@@ -29,37 +29,44 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         {
             xtype: 'textfield',
             fieldLabel: 'ID:',
-            id: 'idd'
+            id: 'idd',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Email:',
-            id: 'emaill'
+            id: 'emaill',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'dateaa'
+            id: 'dateaa',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'statee'
+            id: 'statee',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
-            id: 'departmentt'
+            id: 'departmentt',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Assunto:',
-            id: 'subjectt'
+            id: 'subjectt',
+            readOnly: true
         },
         {
             xtype: 'textareafield',
             id: 'bodyy',
-            fieldLabel: 'Corpo:'
+            fieldLabel: 'Corpo:',
+            readOnly: true
         }
   ],
   dockedItems: {

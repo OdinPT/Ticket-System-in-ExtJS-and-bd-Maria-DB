@@ -11,7 +11,11 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         'TrackIT.view.main.historico.MostraTicketHistorico',
         'TrackIT.view.main.historico.TicketControllerHistorico'
     ],
-
+    config: {
+        autoLoad: true,
+        scroll:true,
+        style:{overflow: 'auto',overflowX: 'hidden'}
+    },
     title: 'Tickets Historico',
 
     store: {

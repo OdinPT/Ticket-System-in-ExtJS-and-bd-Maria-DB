@@ -26,7 +26,14 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             xtype: 'textfield',
             fieldLabel: 'Username:',
             id: 'user',
+<<<<<<< HEAD
             name: 'user'
+=======
+            name: 'user',
+            emptyText : 'Insira o nome de utilizador',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
+>>>>>>> a2c9ddbb2da01c57ede24ad8a2a037112ec37c4d
 
         },
         {
@@ -34,19 +41,43 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             fieldLabel: 'Password:',
             inputType: 'password',
             id: 'pass',
-            name: 'pass'
-
+            name: 'pass',
+            emptyText : 'Insira a password',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
         },
         {
+            emptyText : 'Insira o departamento',
             xtype: 'textfield',
             fieldLabel: 'ID do Departamento:',
             id: 'id_departamento'
         },
+
+
         {
+
+            emptyText : 'Insira o tipo de funcionario',
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
             id: 'tipo_funcionario'
+            /*fieldLabel: 'ID Tipo utilizador:',
+            displayField: 'Descricao_TipoUtilizador',
+
+            store: {
+                type: 'TipoF'
+            },
+
+            minChars: 0,
+            queryMode: 'local',
+            typeAhead: true,
+            id: 'tipo_funcionario'*/
         }
+
+            /*  emptyText : 'Insira o tipo de funcionario',
+              xtype: 'textfield',
+              fieldLabel: 'Tipo de funcionário:',
+              id: 'tipo_funcionario'*/
+
     ],
     dockedItems: {
         dock: 'bottom',
@@ -55,6 +86,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             {
                 text: 'Registar',
                 glyph: 43,
+                formBind: true,
                 listeners: {
                     click: 'onClickRegistarUtilizador'
                 }

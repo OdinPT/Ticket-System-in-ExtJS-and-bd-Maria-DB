@@ -11,6 +11,7 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
     width: 500,
     height: 300,
     bodyPadding: 10,
+
     layout: {
         type: 'form',
         align: 'stretch'
@@ -26,24 +27,30 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_funcionario'
+        id: 'id_funcionario',
+        readOnly: true
     },
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'usernamefunc'
+            id: 'usernamefunc',
+            readOnly: true
         },
         {
             xtype: 'textareafield',
             fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento_funcionarios'
+            id: 'id_departamento_funcionarios',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
-            id: 'Tipo_Funcionario'
+            id: 'Tipo_Funcionario',
+            readOnly: true
         }
     ],
+
+
     dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
