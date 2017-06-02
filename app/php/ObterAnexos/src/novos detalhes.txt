@@ -1,0 +1,41 @@
+O sistema está sempre à escuta de emails.
+Utilizadores associados a departamento recebem alerta
+
+
+Emails de suporte, alterações a ser percorridos no servidor, que serão depois distribuidos, gerar alerta, estando tambem identificados por departamento.
+
+Horas chegou,
+Horas de atribuição,
+Hora de fecho,
+Reabertura de tickets(informação).
+
+auto expand grid fields
+
+Identificação de pessoas através do email, dentro da janela.
+
+Não apagar emails / Ler os lidos apenas.
+
+Parte de lado com opções para quem está autenticado como administrador(Registar utilizadores para entrar no sistema, etc).
+Resposta quando ticket recebido através da aplicação no servidor.
+
+Aberto Lido Atribuido Fechado Reaberto (Estados)
+
+Campos de procura rapidos na grid principal.
+
+Informação nos botoes mais intuitiva.
+
+AfterRender da window em vez de butoes.
+
+Anexos na window dos tickets.
+
+Tudo no conteudo do ticket em vez de outras informações.
+
+Enviar email por SMTP.
+
+Html encode e html escape
+
+Se cliente não ersponder a email de resposta é que o ticket será fechado.
+
+Respostas em dataview.
+
+Perfis com tres identificações, utilizador, admin e super user.

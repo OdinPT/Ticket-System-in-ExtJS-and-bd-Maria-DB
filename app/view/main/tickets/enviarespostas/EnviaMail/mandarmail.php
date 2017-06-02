@@ -5,6 +5,20 @@ require 'config.php';
 $assunto = $_POST['assuntoresposta'];
 $conteudo = $_POST['conteudoresposta'];
 $cookieEmail = $_COOKIE['cookieEmail'];
+$id = $_COOKIE['cookieID'];
+$fileName = $_FILES['anexo']['name'];
+$tmpName  = $_FILES['anexo']['tmp_name'];
+$fileSize = $_FILES['anexo']['size'];
+$fileType = $_FILES['anexo']['type'];
+$fp      = fopen($tmpName, 'r');
+    $content = fread($fp, filesize($tmpName));
+    $content = addslashes($content);
+    fclose($fp);
+    if(!get_magic_quotes_gpc()){
+        $fileName = addslashes($fileName);
+    }
+    $insee = mysqli_query($mysqli, "INSERT INTO upload(nome, content) VALUES ('$fileName', '$content')");
+
 
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
@@ -60,10 +74,10 @@ while($res = mysqli_fetch_array($result))
 echo $fromaddress;
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
-$PHPMailer->AddAddress( $fromaddress );
+$PHPMailer->AddAddress($fromaddress);
 
-$insereresposta = mysqli_query($mysqli, "Call InserirRespostas('$conteudo', '$cookieID')");
 
+mysqli_query($mysqli, "INSERT INTO respostas (subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo','$id')");
 mysqli_close($mysqli);
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )

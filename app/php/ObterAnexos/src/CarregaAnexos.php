@@ -1,16 +1,28 @@
 <?php
-
+include("config.php");
+$id = $_COOKIE['cookieID'];
 set_time_limit(3000);
-
 /* connect to gmail with your credentials */
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
-$username = 'testetrackit@gmail.com';
-$password = 'testetrackit123';
-$teste = '123';
+$cookieEmail = $_COOKIE['cookieEmail'];
+//selecting data associated with this particular id
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+{
+  $username = $res['username'];
+	$password = $res['pass'];
+}
+$buscaassunto = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
+while($res = mysqli_fetch_array($buscaassunto))
+{
+ 	$subject = $res['subject'];
+ }
+
 /* try to connect */
 $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
 
-$emails = imap_search($inbox, 'SUBJECT '.$teste.'');
+$emails = imap_search($inbox, 'SUBJECT '.$subject.'');
 /* if any emails found, iterate through each email */
 if($emails) {
 
@@ -101,17 +113,17 @@ if($emails) {
                 {
                      mkdir($folder);
                 }
-                $fp = fopen("./". $folder ."/". $email_number . "-" . $filename, "w+");
+                $fp = fopen("./". $folder ."/". $filename, "w+");
                 fwrite($fp, $attachment['attachment']);
                 fclose($fp);
+                $fp = fopen($filename, 'r');
+        $data = fread($fp, filesize($filename));
+        $data = addslashes($data);
+        fclose($fp);
+        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
             }
         }
     }
 }
-
-/* close the connection */
 imap_close($inbox);
-
-echo "all attachment Downloaded";
-
 ?>

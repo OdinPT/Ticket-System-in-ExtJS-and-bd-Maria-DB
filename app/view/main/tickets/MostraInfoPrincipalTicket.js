@@ -4,10 +4,10 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     controller: 'infoticketprincipal',
     requires: [
       'TrackIT.store.tickets.CarregaInfoPrincipalTicket',
-      'TrackIT.view.main.tickets.MostraInfoPrincipalTicketController'
+      'TrackIT.view.main.tickets.MostraInfoPrincipalTicketController',
+        'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
     id: 'paginainfoprincipalticket',
-    frame: true,
     title: 'Informação Principal',
     width: 1080,
     height: 440,
@@ -87,10 +87,10 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Resposta',
+                          title: 'Responder',
                           modal: true,
-                          width: 1000,
-                          height: 440,
+                          width: 700,
+                          height: 270,
                           items: {
                               xtype: 'enviaresposta'
                           }

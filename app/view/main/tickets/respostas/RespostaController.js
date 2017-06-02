@@ -11,6 +11,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
                 var b = Ext.getCmp('body_resp').setValue(record.data.body_resp);
                 var c = Ext.getCmp('datea_resp').setValue(record.data.datea_resp);
                 var d = Ext.getCmp('id_email').setValue(record.data.id_email);
+                var e = Ext.getCmp('subject_resp').setValue(record.data.subject_resp);
             }
         });
     },
@@ -48,6 +49,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
                                 var b = Ext.getCmp('body_resp').setValue(record.data.body_resp);
                                 var c = Ext.getCmp('datea_resp').setValue(record.data.datea_resp);
                                 var d = Ext.getCmp('id_email').setValue(record.data.id_email);
+                                var e = Ext.getCmp('subject_resp').setValue(record.data.subject_resp);
 
                             }
                         });

@@ -6,18 +6,20 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
         'TrackIT.view.main.tickets.enviarespostas.FormEnviaRespostaController'
     ],
     id: 'formenviaresposta',
-    frame: true,
-    title: 'Formulário de envio de respostas',
-    width: 1080,
-    height: 400,
-    bodyPadding: 10,
+    frame: false,
+    width: 700,
+    height: 220,
+    border: false,
+
+
     layout: {
         type: 'form',
-        align: 'stretch'
+        align: 'fit'
     },
     defaults: {
         layout: 'form',
-        margin: 20
+        margin: 0,
+        border: 'false'
     },
 
     items: [
@@ -29,7 +31,16 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
         {
             xtype: 'textareafield',
             fieldLabel: 'Corpo:',
-            id: 'conteudoresposta'
+            id: 'conteudoresposta',
+            autoScroll: true
+        },
+        {
+            xtype: 'fileuploadfield',
+            name: 'anexo',
+            emptyText: 'Select a document to upload...',
+            fieldLabel: 'File',
+            buttonOnly: true,
+            hideLabel: true
         }
     ],
     dockedItems: {
@@ -39,10 +50,18 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
             {
                 text: 'Enviar',
                 glyph: 43,
-                listeners: {
-                    click: 'onClickEnviaResposta'
-                }
-            }
+                    handler: function(){
+                            form_action=1;
+                            Ext.getCmp('formenviaresposta').getForm().submit({
+                                url: 'app/view/main/tickets/enviarespostas/EnviaMail/mandarmail.php',
+                                waitMsg: 'Enviando...',
+                                params: {
+                            assuntoresposta: Ext.getCmp('assuntoresposta').getValue(),
+                                conteudoresposta: Ext.getCmp('conteudoresposta').getValue()
+                        }});
+                        Ext.MessageBox.alert('Sucesso','Enviado!');
+                        }
+                    }
         ]
     }
 });

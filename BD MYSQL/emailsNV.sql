@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: 02-Jun-2017 às 12:16
+=======
 -- Generation Time: 26-Maio-2017 às 18:12
+>>>>>>> a2c9ddbb2da01c57ede24ad8a2a037112ec37c4d
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -20,6 +24,8 @@ SET time_zone = "+00:00";
 -- Database: `emails`
 --
 
+<<<<<<< HEAD
+=======
 DELIMITER $$
 --
 -- Procedures
@@ -464,6 +470,7 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (3, 'N/D'),
 (4, 'Devellopers');
 
+>>>>>>> a2c9ddbb2da01c57ede24ad8a2a037112ec37c4d
 -- --------------------------------------------------------
 
 --
@@ -487,6 +494,10 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+<<<<<<< HEAD
+(9, 'testetrackit2@gmail.com', 'teste trackit <testetrackit2@gmail.com>', 'ddd', '2017-06-02 10:28:17', 'ddd\r\n', 'Aberto', 2, 1),
+(10, 'testetrackit@gmail.com', 'Teste TrackIT <testetrackit@gmail.com>', 'estes', '2017-06-02 10:28:35', '', 'Aberto', 1, 1);
+=======
 (1, 'testetrackit@gmail.com', 'teste trackit <testetrackit@gmail.com>', 'hoje', '2017-05-22 11:20:55', 'teste\r\n\r\n\r\n', 'Aberto', 4, 1),
 (2, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'asa', '2017-05-22 11:23:05', 'asasdas', 'Aberto', 4, 1),
 (3, 'odinpt21@gmail.com', 'odinpt21 <odinpt21@gmail.com>', 'xx', '2017-05-22 11:23:06', 'gggggg', 'Fechado', 4, 2),
@@ -639,22 +650,11 @@ INSERT INTO `tipoutilizador` (`ID_TipoUtilizador`, `Descricao_TipoUtilizador`) V
 (1, 'Normal'),
 (2, 'Admin'),
 (3, 'Super User');
+>>>>>>> a2c9ddbb2da01c57ede24ad8a2a037112ec37c4d
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`Id_Cliente`);
-
---
--- Indexes for table `departamento`
---
-ALTER TABLE `departamento`
-  ADD PRIMARY KEY (`id_departamento`);
 
 --
 -- Indexes for table `emails`
@@ -666,58 +666,16 @@ ALTER TABLE `emails`
   ADD KEY `emails_FK_grupos` (`id_grupo_emails`);
 
 --
--- Indexes for table `estado`
---
-ALTER TABLE `estado`
-  ADD PRIMARY KEY (`ID_Estado`);
-
---
--- Indexes for table `ficheiro`
---
-ALTER TABLE `ficheiro`
-  ADD PRIMARY KEY (`ID_File`),
-  ADD KEY `file_fk_email` (`Email_File`);
-
---
--- Indexes for table `funcionario`
---
-ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`id_funcionario`),
-  ADD KEY `funcionarios_fk_departamentos` (`id_departamento_funcionarios`),
-  ADD KEY `funcionario_fk_TP` (`Tipo_Funcionario`);
-
---
--- Indexes for table `grupo`
---
-ALTER TABLE `grupo`
-  ADD PRIMARY KEY (`id_grupo`);
-
---
--- Indexes for table `historicoestados`
---
-ALTER TABLE `historicoestados`
-  ADD PRIMARY KEY (`id_historicoTicket`),
-  ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`),
-  ADD KEY `historicoEstados_FK_Utilizadores` (`id_funcionario`);
-
---
--- Indexes for table `respostas`
---
-ALTER TABLE `respostas`
-  ADD PRIMARY KEY (`id_resp`),
-  ADD KEY `respostas_FK_emails` (`id_email`);
-
---
--- Indexes for table `tipoutilizador`
---
-ALTER TABLE `tipoutilizador`
-  ADD PRIMARY KEY (`ID_TipoUtilizador`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+<<<<<<< HEAD
+-- AUTO_INCREMENT for table `emails`
+--
+ALTER TABLE `emails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+=======
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
@@ -767,6 +725,7 @@ ALTER TABLE `respostas`
 --
 ALTER TABLE `tipoutilizador`
   MODIFY `ID_TipoUtilizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> a2c9ddbb2da01c57ede24ad8a2a037112ec37c4d
 --
 -- Constraints for dumped tables
 --
@@ -777,33 +736,6 @@ ALTER TABLE `tipoutilizador`
 ALTER TABLE `emails`
   ADD CONSTRAINT `emails_FK_Departamento` FOREIGN KEY (`id_departamento_emails`) REFERENCES `departamento` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `emails_FK_grupos` FOREIGN KEY (`id_grupo_emails`) REFERENCES `grupo` (`id_grupo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `ficheiro`
---
-ALTER TABLE `ficheiro`
-  ADD CONSTRAINT `file_fk_email` FOREIGN KEY (`Email_File`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `funcionario`
---
-ALTER TABLE `funcionario`
-  ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `historicoestados`
---
-ALTER TABLE `historicoestados`
-  ADD CONSTRAINT `historicoEstados_FK_Utilizadores` FOREIGN KEY (`id_funcionario`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoestados_fk_emails` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoestados_fk_estado` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `respostas`
---
-ALTER TABLE `respostas`
-  ADD CONSTRAINT `respostas_FK_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
