@@ -8,7 +8,7 @@ Ext.define('TrackIT.store.TipoDepartamento.TipoD', {
         [1, "Call Center"],
         [2, 'Operações'],
         [3, 'ND'],
-        [4, 'Devellopers'],
+        [4, 'Devellopers']
     ]
 });
 
