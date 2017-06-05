@@ -11,7 +11,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     config: {
         autoLoad: true
     },
-
+    title: 'Anexos',
     store: {
         type: 'anexos'
     },
