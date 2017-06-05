@@ -30,6 +30,10 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             emptyText : 'Insira o nome de utilizador',
             allowBlank: false,
             blankText: 'Campo obrigatório'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83065482215da4116a5f11e6f801f93ef7eb5155
 
         },
         {
@@ -43,36 +47,46 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             blankText: 'Campo obrigatório'
         },
         {
-            emptyText : 'Insira o departamento',
+            xtype: 'combobox',
+            fieldLabel: 'Tipo de departamento',
+            store: {
+                type: 'TipoD'
+            },
+            valueField: 'id_departamento',
+            displayField: 'Descricao_TipoUtilizador',
+            typeAhead: true,
+            queryMode: 'local',
+            emptyText: 'Select a state...',
+            id: 'id_departamento',
+            submitValue:true,
+            hiddenName : 'id_departamento'
+
+
+            /*  emptyText : 'Insira o departamento',
             xtype: 'textfield',
             fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento'
+            id: 'id_departamento'*/
         },
 
 
         {
-
-            emptyText : 'Insira o tipo de funcionario',
-            xtype: 'textfield',
-            fieldLabel: 'Tipo de funcionário:',
-            id: 'tipo_funcionario'
-            /*fieldLabel: 'ID Tipo utilizador:',
-            displayField: 'Descricao_TipoUtilizador',
-
+            xtype: 'combobox',
+            fieldLabel: 'Tipo de funcionario',
             store: {
                 type: 'TipoF'
             },
-
-            minChars: 0,
-            queryMode: 'local',
+            valueField: 'tipo_funcionario',
+            displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
-            id: 'tipo_funcionario'*/
+            queryMode: 'local',
+            emptyText: 'Select a state...',
+            id: 'tipo_funcionario',
+            submitValue:true,
+            hiddenName : 'tipo_funcionario'
+
+
         }
 
-            /*  emptyText : 'Insira o tipo de funcionario',
-              xtype: 'textfield',
-              fieldLabel: 'Tipo de funcionário:',
-              id: 'tipo_funcionario'*/
 
     ],
     dockedItems: {
