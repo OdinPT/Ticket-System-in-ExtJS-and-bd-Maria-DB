@@ -17,16 +17,20 @@ $fp      = fopen($tmpName, 'r');
     if(!get_magic_quotes_gpc()){
         $fileName = addslashes($fileName);
     }
-    $insee = mysqli_query($mysqli, "INSERT INTO upload(nome, content) VALUES ('$fileName', '$content')");
 
-
-//selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))
 {
+  $departamento = $res['id_departamento_funcionarios'];
+}
+//selecting data associated with this particular id
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+{
   $username = $res['username'];
-	$password = $res['pass'];
+  $password = $res['pass'];
 }
 $PHPMailer = new PHPMailer();
 
@@ -49,10 +53,10 @@ $PHPMailer->Password = $password;
 
 // E-Mail do remetente (deve ser o mesmo de quem fez a autenticação
 // nesse caso seu_login@gmail.com)
-$PHPMailer->From = 'testetrackit@gmail.com';
+$PHPMailer->From = $username;
 
 // Nome do rementente
-$PHPMailer->FromName = 'teste trackit';
+$PHPMailer->FromName = 'TrackIT';
 
 // assunto da mensagem
 $PHPMailer->Subject = $assunto;
@@ -75,7 +79,7 @@ echo $fromaddress;
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
-
+$PHPMailer->addAttachment($tmpName, $fileName);
 
 mysqli_query($mysqli, "INSERT INTO respostas (subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo','$id')");
 mysqli_close($mysqli);
