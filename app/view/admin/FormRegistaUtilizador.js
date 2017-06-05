@@ -56,15 +56,11 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             emptyText: 'Select a state...',
             id: 'id_departamento',
             submitValue:true,
-            hiddenName : 'id_departamento'
+            hiddenName : 'id_departamento',
+            allowBlank: false,
+            blankText: 'Selecione um departamento'
 
-
-            /*  emptyText : 'Insira o departamento',
-            xtype: 'textfield',
-            fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento'*/
         },
-
 
         {
             xtype: 'combobox',
@@ -79,8 +75,9 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             emptyText: 'Select a state...',
             id: 'tipo_funcionario',
             submitValue:true,
-            hiddenName : 'tipo_funcionario'
-
+            hiddenName : 'tipo_funcionario',
+            allowBlank: false,
+            blankText: 'Selecione um departamento',
 
         }
 
