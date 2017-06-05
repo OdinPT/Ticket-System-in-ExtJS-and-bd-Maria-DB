@@ -30,10 +30,6 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             emptyText : 'Insira o nome de utilizador',
             allowBlank: false,
             blankText: 'Campo obrigatório'
-<<<<<<< HEAD
-=======
-
->>>>>>> 83065482215da4116a5f11e6f801f93ef7eb5155
 
         },
         {
