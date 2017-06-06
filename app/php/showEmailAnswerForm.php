@@ -1,4 +1,4 @@
- <?php
+<?php
 include_once("config.php");
 $id = $_COOKIE['cookieID'];
 $query = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");

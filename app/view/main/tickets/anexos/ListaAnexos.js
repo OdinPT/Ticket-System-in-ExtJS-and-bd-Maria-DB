@@ -3,8 +3,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     id: 'gridanexos',
     xtype: 'mainlistanexos',
     width: 1080,
-    height: 250,
-//    layout: 'fit',
+    height: 350,
     requires: [
         'TrackIT.store.anexos.Anexos',
         'Ext.toolbar.Paging'
@@ -12,7 +11,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     config: {
         autoLoad: true
     },
-    title: 'Anexos',
+
     store: {
         type: 'anexos'
     },

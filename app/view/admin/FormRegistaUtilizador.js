@@ -43,43 +43,36 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             blankText: 'Campo obrigatório'
         },
         {
-            xtype: 'combobox',
-            fieldLabel: 'Tipo de departamento',
-            store: {
-                type: 'TipoD'
-            },
-            valueField: 'id_departamento',
-            displayField: 'Descricao_TipoUtilizador',
-            typeAhead: true,
-            queryMode: 'local',
-            emptyText: 'Select a state...',
-            id: 'id_departamento',
-            submitValue:true,
-            hiddenName : 'id_departamento',
-            allowBlank: false,
-            blankText: 'Selecione um departamento'
-
+            emptyText : 'Insira o departamento',
+            xtype: 'textfield',
+            fieldLabel: 'ID do Departamento:',
+            id: 'id_departamento'
         },
 
+
         {
-            xtype: 'combobox',
-            fieldLabel: 'Tipo de funcionario',
+
+            emptyText : 'Insira o tipo de funcionario',
+            xtype: 'textfield',
+            fieldLabel: 'Tipo de funcionário:',
+            id: 'tipo_funcionario'
+            /*fieldLabel: 'ID Tipo utilizador:',
+            displayField: 'Descricao_TipoUtilizador',
+
             store: {
                 type: 'TipoF'
             },
-            valueField: 'tipo_funcionario',
-            displayField: 'Descricao_TipoUtilizador',
-            typeAhead: true,
-            queryMode: 'local',
-            emptyText: 'Select a state...',
-            id: 'tipo_funcionario',
-            submitValue:true,
-            hiddenName : 'tipo_funcionario',
-            allowBlank: false,
-            blankText: 'Selecione um departamento'
 
+            minChars: 0,
+            queryMode: 'local',
+            typeAhead: true,
+            id: 'tipo_funcionario'*/
         }
 
+            /*  emptyText : 'Insira o tipo de funcionario',
+              xtype: 'textfield',
+              fieldLabel: 'Tipo de funcionário:',
+              id: 'tipo_funcionario'*/
 
     ],
     dockedItems: {
