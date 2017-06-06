@@ -52,7 +52,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Select a state...',
+            emptyText: 'Seleciona  departamento...',
             id: 'id_departamento',
             submitValue:true,
             hiddenName : 'id_departamento',
@@ -89,9 +89,11 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
                 text: 'Registar',
                 glyph: 43,
                 formBind: true,
+
                 listeners: {
                     click: 'onClickRegistarUtilizador'
-                }
+                },
+
             }
         ]
     }

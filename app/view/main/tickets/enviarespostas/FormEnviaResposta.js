@@ -26,13 +26,17 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
         {
             xtype: 'textfield',
             fieldLabel: 'Assunto:',
-            id: 'assuntoresposta'
+            id: 'assuntoresposta',
+            allowBlank: false,
+            blankText: 'Insira um assunto'
         },
         {
             xtype: 'textareafield',
             fieldLabel: 'Corpo:',
             id: 'conteudoresposta',
-            autoScroll: true
+            autoScroll: true,
+            allowBlank: false,
+            blankText: 'Insira  a resposta '
         },
         {
             xtype: 'fileuploadfield',
@@ -50,6 +54,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
             {
                 text: 'Enviar',
                 glyph: 43,
+                formBind: true,
                     handler: function(){
                             form_action=1;
                             Ext.getCmp('formenviaresposta').getForm().submit({
