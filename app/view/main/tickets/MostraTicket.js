@@ -20,25 +20,36 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         scrollable: true,
         closable: true
     },
+    items: [
+        {
+            title: 'Conteúdo do Ticket',
+            flex: 1,
+            margin: '0 10 0 0',
+
+            items: [{
+                xtype: 'infoticketprincipal'
+            },
+                {
+                    xtype: 'mainlistanexos'
+
+                },
+                {
+                    xtype: 'mainlistrespostas'
+                }]
+
+        },
+        {
+            title: 'Lista de funcionários',
+            flex: 1,
+            margin: '0 10 0 0',
+            autoScroll: true,
+            items: [{
+                //xtype: 'mainlistCliente',
+            }]
+        }
+    ],
+
 /*
- {
- title: 'Formulário de Registo',
- flex: 1,
- margin: '0 10 0 0',
- items: [{
- xtype: 'registautilizador'
- }]
- },
- {
- title: 'Lista de funcionários',
- flex: 1,
- margin: '0 10 0 0',
- autoScroll: true,
- items: [{
- xtype: 'mainlistfuncionarios'
- }]
- }
-    */
     items: [{
         title: 'Conteúdo do Ticket',
         items: [{
@@ -53,14 +64,14 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             }]
 
     },
-
+*/
   /*{
     title: 'Respostas',
     items: [{
         xtype: 'mainlistrespostas'
     }]
   }*/
-],
+///*],
 
     dockedItems: {
         dock: 'bottom',

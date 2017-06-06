@@ -76,7 +76,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             submitValue:true,
             hiddenName : 'tipo_funcionario',
             allowBlank: false,
-            blankText: 'Selecione um departamento',
+            blankText: 'Selecione um departamento'
 
         }
 
