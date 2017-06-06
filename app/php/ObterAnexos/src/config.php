@@ -1,5 +1,4 @@
 <?php
-error_reporting(0);
 /*
 // mysql_connect("database-host", "username", "password")
 $conn = mysql_connect("localhost","root","root")

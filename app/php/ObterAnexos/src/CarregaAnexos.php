@@ -10,8 +10,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cook
 
 while($res = mysqli_fetch_array($result))
 {
-  $username = $res['username'];
-	$password = $res['pass'];
+  $iddepartamento = $res['id_departamento_funcionarios'];
+}
+$escolhe = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(mysqli_error($mysqli));
+while($rese = mysqli_fetch_array($escolhe))
+{
+  $username = $rese['username'];
+  $password = $rese['pass'];
 }
 $buscaassunto = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
 while($res = mysqli_fetch_array($buscaassunto))
@@ -120,6 +125,7 @@ if($emails) {
         $data = fread($fp, filesize($filename));
         $data = addslashes($data);
         fclose($fp);
+        $filename = quoted_printable_decode(imap_utf8($filename));
         $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
             }
         }
