@@ -106,7 +106,17 @@ grid.getStore().load();
                 height: 550,
                 items: [{
                     xtype: 'maintabtickets'
-                }],
+                },
+                    {
+                        title: 'Lista de funcionários',
+                        flex: 1,
+                        margin: '0 5 0 0',
+                        autoScroll: true,
+                        items: [{
+                            // xtype: 'mainlistfuncionarios'
+                        }]
+                    }
+                ],
                 listeners: {
                     afterrender: function() {
                         var store = Ext.getStore('ticketseleccionado2');
