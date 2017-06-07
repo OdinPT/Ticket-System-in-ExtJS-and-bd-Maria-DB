@@ -39,14 +39,41 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
 
         },
         {
-            xtype: 'textfield',
-            fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento2'
+            xtype: 'combobox',
+            fieldLabel: 'Tipo de departamento',
+            store: {
+                type: 'TipoD'
+            },
+            valueField: 'id_departamento',
+            displayField: 'Descricao_TipoUtilizador',
+            typeAhead: true,
+            queryMode: 'local',
+            emptyText: 'Seleciona  departamento...',
+            id: 'id_departamento2',
+            submitValue:true,
+            hiddenName : 'id_departamento',
+            allowBlank: false,
+            blankText: 'Selecione um departamento'
+
         },
+
         {
-            xtype: 'textfield',
-            fieldLabel: 'Tipo de funcionário:',
-            id: 'tipo_funcionario2'
+            xtype: 'combobox',
+            fieldLabel: 'Tipo :',
+            store: {
+                type: 'TipoF'
+            },
+            valueField: 'ID_TipoUtilizador',
+            displayField: 'Descricao_TipoUtilizador',
+            typeAhead: true,
+            queryMode: 'local',
+            emptyText: 'Select a state...',
+            id: 'tipo_funcionario2',
+            submitValue:true,
+            hiddenName : 'ID_TipoUtilizador',
+            allowBlank: false,
+            blankText: 'Selecione um departamento'
+
         }
     ],
     dockedItems: {
