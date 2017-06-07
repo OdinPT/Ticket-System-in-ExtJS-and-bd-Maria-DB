@@ -9,8 +9,8 @@ Ext.define('TrackIT.view.admin.MostraFuncionarioController', {
                 var record=store.getAt(0);
                 var a = Ext.getCmp('id_funcionario').setValue(record.data.id_funcionario);
                 var b = Ext.getCmp('usernamefunc').setValue(record.data.usernamefunc);
-                var c = Ext.getCmp('id_departamento_funcionarios').setValue(record.data.id_departamento_funcionarios);
-                var d = Ext.getCmp('Tipo_Funcionario').setValue(record.data.Tipo_Funcionario);
+                var c = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
+                var d = Ext.getCmp('Descricao_TipoUtilizador').setValue(record.data.Descricao_TipoUtilizador);
             }
         });
 

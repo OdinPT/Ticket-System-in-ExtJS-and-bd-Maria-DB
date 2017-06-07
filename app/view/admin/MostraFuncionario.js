@@ -37,15 +37,15 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
             readOnly: true
         },
         {
-            xtype: 'textareafield',
+            xtype: 'textfield',
             fieldLabel: 'ID do Departamento:',
-            id: 'id_departamento_funcionarios',
+            id: 'nome_departamento',
             readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Tipo de funcionário:',
-            id: 'Tipo_Funcionario',
+            id: 'Descricao_TipoUtilizador',
             readOnly: true
         }
     ],
