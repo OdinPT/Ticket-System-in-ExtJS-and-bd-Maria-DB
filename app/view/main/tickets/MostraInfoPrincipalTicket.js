@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     ],
     id: 'paginainfoprincipalticket',
     title: 'Informação Principal',
-    width: 1080,
+    width: 1380,
     height: 440,
     autoScroll: true,
 

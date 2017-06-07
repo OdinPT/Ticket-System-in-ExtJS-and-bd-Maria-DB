@@ -6,7 +6,7 @@ Ext.define('TrackIT.store.TipoDepartamento.TipoD', {
 
     data: [
         [1, "Call Center"],
-        [2, 'Operações'],
+        [2, 'Operations'],
         [3, 'ND'],
         [4, 'Devellopers']
     ]

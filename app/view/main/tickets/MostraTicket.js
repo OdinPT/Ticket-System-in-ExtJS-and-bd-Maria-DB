@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         'TrackIT.view.main.tickets.TicketController',
         'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
-    width: 1100,
+    width: 900,
     height: 700,
 
     store: {
