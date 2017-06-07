@@ -1,10 +1,12 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 include("config.php");
-$return_arr = array();
-$cookieEmail = $_COOKIE['cookieEmail'];
-//selecting data associated with this particular id
 
+$return_arr = array();
+
+$cookieEmail = $_COOKIE['cookieEmail'];
+
+//selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))
@@ -22,11 +24,11 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $row_array['datea'] = $row['datea'];
   $row_array['body'] = $row['body'];
   $row_array['state'] = $row['state'];
-  $row_array['nome_departamento'] = $row['nome_departamento'];
+  //$row_array['nome_departamento'] = $row['nome_departamento'];
 
     array_push($return_arr,$row_array);
 }
 
 echo json_encode($return_arr);
-
+echo($result);
 ?>

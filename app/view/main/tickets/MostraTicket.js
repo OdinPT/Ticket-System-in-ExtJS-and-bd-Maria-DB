@@ -36,18 +36,8 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             }]
 
     },
-  /*{
-    title: 'Outras Informações',
-    items: [{
-        xtype: 'infoticket'
-    }]
-  },
-  {
-    title: 'Respostas',
-    items: [{
-        xtype: 'mainlistrespostas'
-    }]
-  }*/
+
+
 ],
 
     dockedItems: {
