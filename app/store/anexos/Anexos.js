@@ -3,7 +3,7 @@ Ext.define('TrackIT.store.anexos.Anexos', {
     model: 'TrackIT.model.Anexos',
     alias: 'store.anexos',
     storeId: 'StagingAnexos',
-    autoLoad: true,
+    autoLoad: false,
     proxy: {
         type: 'ajax',
         url: 'app/php/ObterAnexos/src/loadanexos.php',

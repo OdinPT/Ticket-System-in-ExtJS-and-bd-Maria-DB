@@ -4,6 +4,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     xtype: 'mainlistanexos',
     width: 1080,
     height: 250,
+
     requires: [
         'TrackIT.store.anexos.Anexos',
         'Ext.toolbar.Paging'

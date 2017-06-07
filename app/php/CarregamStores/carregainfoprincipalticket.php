@@ -4,7 +4,7 @@ include("config.php");
 $id = $_COOKIE['cookieID'];
 $return_arr = array();
 
-$query = "SELECT `id`,`email`,`fromaddress`,`subject`,`datea`,`body`,`state`,nome_departamento FROM emails,departamento WHERE `id_departamento_emails`=id_departamento and  id=$id";
+$query = "SELECT `id`,`email`,`fromaddress`,`subject`,`datea`,`body`,`state`,nome_departamento FROM `emails`, departamento WHERE `id_departamento_emails`=id_departamento and id=$id";
 
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -16,6 +16,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
   $row_array['nome_departamento'] = $row['nome_departamento'];
   $row_array['subject'] = $row['subject'];
   $row_array['body'] = $row['body'];
+
 
   array_push($return_arr,$row_array);
 }

@@ -47,7 +47,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
           filter: {
               type: 'string'
           },
-        editor: {
+    editor: {
         allowBlank: false,
         maxLength: 49
     }},
@@ -104,23 +104,8 @@ grid.getStore().load();
                 modal: true,
                 width: 1100,
                 height: 550,
-                items: [
-                    {
-                        flex: 1,
-                        margin: '0 4 0 0',
-                        items: [{
-                            xtype: 'maintabtickets'
-                        }]
-                    },
-                    {
-                        title: 'Lista de funcionários',
-                        flex: 1,
-                        margin: '0 5 0 0',
-                        autoScroll: true,
-                        items: [{
-                           // xtype: 'mainlistfuncionarios'
-                        }]
-
+                items: [{
+                    xtype: 'maintabtickets'
                 }],
                 listeners: {
                     afterrender: function() {

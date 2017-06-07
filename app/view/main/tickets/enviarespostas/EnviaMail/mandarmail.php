@@ -3,11 +3,7 @@ require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
 $assunto = $_POST['assuntoresposta'];
-$conteudo = nl2br(htmlspecialchars($_POST['conteudoresposta']));
-echo $assunto;
-echo $conteudo;
-$assunto = quoted_printable_decode(utf8_decode($assunto));
-$conteudo= quoted_printable_decode(utf8_decode($conteudo));
+$conteudo = $_POST['conteudoresposta'];
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
 $fileName = $_FILES['anexo']['name'];
@@ -69,7 +65,7 @@ $PHPMailer->Subject = $assunto;
 $PHPMailer->Body = $conteudo;
 
 // corpo da mensagem em modo texto
-$PHPMailer->AltBody = $conteudo;
+$PHPMailer->AltBody = 'Mensagem em texto';
 
 $cookieID = $_COOKIE['cookieID'];
 //selecting data associated with this particular id

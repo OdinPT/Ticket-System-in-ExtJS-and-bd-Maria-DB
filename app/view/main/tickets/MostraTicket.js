@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         'TrackIT.view.main.tickets.TicketController',
         'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
-    width: 830,
+    width: 1100,
     height: 700,
 
     store: {
@@ -35,7 +35,19 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 xtype: 'mainlistrespostas'
             }]
 
-    }
+    },
+  /*{
+    title: 'Outras Informações',
+    items: [{
+        xtype: 'infoticket'
+    }]
+  },
+  {
+    title: 'Respostas',
+    items: [{
+        xtype: 'mainlistrespostas'
+    }]
+  }*/
 ],
 
     dockedItems: {

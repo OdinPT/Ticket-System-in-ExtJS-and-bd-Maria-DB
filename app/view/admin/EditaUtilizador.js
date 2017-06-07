@@ -27,9 +27,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             xtype: 'textfield',
             fieldLabel: 'Username:',
             id: 'user2',
-            name: 'user2',
-            emptyText : 'Insira o nome de utilizador',
-            allowBlank: false
+            name: 'user2'
 
         },
         {
@@ -37,49 +35,19 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             fieldLabel: 'Password:',
             inputType: 'password',
             id: 'password2',
-            name: 'pass2',
-            emptyText : 'Insira a password',
-            allowBlank: false
+            name: 'pass2'
 
         },
         {
-            xtype: 'combobox',
-            fieldLabel: 'Tipo de departamento',
-            store: {
-                type: 'TipoD'
-            },
-            valueField: 'id_departamento',
-            displayField: 'Descricao_TipoUtilizador',
-            typeAhead: true,
-            queryMode: 'local',
-            emptyText: 'Select a state...',
-            id: 'id_departamento2',
-            submitValue:true,
-            hiddenName : 'id_departamento',
-            allowBlank: false,
-            blankText: 'Selecione um departamento'
-
+            xtype: 'textfield',
+            fieldLabel: 'ID do Departamento:',
+            id: 'id_departamento2'
         },
-
         {
-            xtype: 'combobox',
-            fieldLabel: 'Tipo :',
-            store: {
-                type: 'TipoF'
-            },
-            valueField: 'tipo_funcionario',
-            displayField: 'Descricao_TipoUtilizador',
-            typeAhead: true,
-            queryMode: 'local',
-            emptyText: 'Seleciona tipo utilizador...',
-            id: 'tipo_funcionario2',
-            submitValue:true,
-            hiddenName : 'tipo_funcionario',
-            allowBlank: false,
-            blankText: 'Selecione um departamento'
-
+            xtype: 'textfield',
+            fieldLabel: 'Tipo de funcionário:',
+            id: 'tipo_funcionario2'
         }
-
     ],
     dockedItems: {
         dock: 'bottom',
@@ -88,7 +56,6 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             {
                 text: 'Editar',
                 glyph: 43,
-                formBind: true,
                 listeners: {
                     click: 'onClickEditaUtilizador'
                 }
