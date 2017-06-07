@@ -29,7 +29,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             id: 'user2',
             name: 'user2',
             emptyText : 'Insira o nome de utilizador',
-            allowBlank: false,
+            allowBlank: false
 
         },
         {
@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             id: 'password2',
             name: 'pass2',
             emptyText : 'Insira a password',
-            allowBlank: false,
+            allowBlank: false
 
         },
         {

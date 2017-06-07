@@ -8,7 +8,7 @@ Ext.define('TrackIT.store.TipoFuncionario.TipoF', {
         [1, "Normal"],
         [2, 'Admin'],
         [3, 'SuperUser'],
-        [4, 'Email Departamento'],
+        [4, 'Email Departamento']
     ]
 });
 
