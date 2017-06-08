@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-
+//add hisEstado
 $horaAtribuicao = $_POST['HoraAtribuicaoEstado'];
 $IdTicketEstado = $_POST['IdTicketEstado'];
 $DataAlteracaoEstado = $_POST['DataAlteracaoEstado'];
