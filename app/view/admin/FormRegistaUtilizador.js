@@ -92,7 +92,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
                 formBind: true,
                 listeners: {
                     click: 'onClickRegistarUtilizador'
-                },
+                }
 
             }
         ]

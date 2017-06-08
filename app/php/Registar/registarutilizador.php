@@ -1,6 +1,6 @@
 <?php include("config.php");
 
-$username = $_POST['user'];
+$username = $_POST['teste'];
 $password = $_POST['pass'];
 $id_departamento = $_POST['id_departamento'];
 $tipo_funcionario = $_POST['tipo_funcionario'];
