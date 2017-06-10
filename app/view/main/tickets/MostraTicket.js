@@ -7,8 +7,14 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         'TrackIT.view.main.tickets.respostas.ListaRespostas',
         'TrackIT.view.main.tickets.TicketController',
         'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
+
+        //'TrackIT.layout.container.Border'
+
     ],
-    width: 900,
+
+    layout: 'border',
+
+   // width: 1100,
     height: 700,
 
     store: {
@@ -18,24 +24,36 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     defaults: {
         bodyPadding: 10,
         scrollable: true,
-        closable: true
+        closable: true,
+
     },
 
     items: [{
         title: 'Conteúdo do Ticket',
-        // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
-        items: [{
-                  xtype: 'infoticketprincipal'
-              },
+        items: [
+            {
+                xtype: 'infoticketprincipal'
+            },
+
             {
                 xtype: 'mainlistanexos'
-
             },
             {
                 xtype: 'mainlistrespostas'
             }]
 
-    }
+    },
+
+         {
+            title: 'Respostas',
+            items: [
+                {
+
+                    xtype: 'registahisestado'
+                }
+            ]
+        }
+
 
 
 ],

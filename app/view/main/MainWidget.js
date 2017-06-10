@@ -10,7 +10,10 @@ Ext.define('TrackIT.view.main.MainWidget', {
     }, {
         title: 'Child Tab 2',
         bodyPadding: 10,
-        html: "My content of Child Tab 2 here"
-    }]
+            /*items: [{
+                xtype: 'registahisestado'
+            }]*/
+        }
+    ]
 
 });
