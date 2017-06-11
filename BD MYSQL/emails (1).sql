@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Jun-2017 às 00:08
+-- Generation Time: 11-Jun-2017 às 16:37
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -101,6 +101,30 @@ INSERT INTO funcionario
             _idDepar,
             _TP);
 End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `hora` DATE, IN `IdTicket` INT, IN `IDEstado` INT, IN `DataAlt` INT, IN `IDNEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
+
+    INSERT INTO historicoestados2
+         (
+			HoraAtribuicaoEstado,
+         	IdTicketEstado,
+         	IDEstadoEstado,
+             DataAlteracaoEstado,
+			IDNovoEstado,
+			IDFuncEstado)
+          
+          
+    VALUES 
+         ( 
+          Now(),
+         IdTicket,
+         IDEstado,
+         DataAlt,
+         IDNEstado,
+        retornaIdMail(IDFuncEst)) ; 
+
+
+END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_body` VARCHAR(700), IN `_id_email` INT(11))  NO SQL
 BEGIN 
@@ -303,19 +327,13 @@ End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
-
-
 select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
 
-from emails, departamento
+from emails, departamento, grupo
 
-where (id_departamento_emails = _iddep) and (id_departamento_emails = id_departamento)
+where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Ticket') and (id_departamento_emails=_iddep)
 
 order by id asc;
-
-
-
-
 
 END$$
 
@@ -380,14 +398,13 @@ BEGIN
  
 END$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `teste` (`_id` INT(11)) RETURNS VARCHAR(20) CHARSET latin1 NO SQL
-Begin
-declare temp varchar(11);
+CREATE DEFINER=`root`@`localhost` FUNCTION `retornaIdMail` (`mail` VARCHAR(100)) RETURNS INT(100) BEGIN
+declare temp int(11);
 
-SELECT `nome_departamento` INTO temp FROM departamento WHERE id_departamento=_id;
+SELECT `id_funcionario` INTO temp FROM funcionario WHERE username like mail;
 return temp;
 
-End$$
+END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `VerificaClienteExiste` (`_email` VARCHAR(100)) RETURNS TINYINT(1) NO SQL
 Begin
@@ -443,9 +460,11 @@ CREATE TABLE `departamento` (
 
 INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (1, 'Call Center'),
-(2, 'Operacoes'),
+(2, 'Operations'),
 (3, 'N/D'),
-(4, 'Devellopers');
+(4, 'Devellopers'),
+(19, 'awd'),
+(20, 'waawaawa');
 
 -- --------------------------------------------------------
 
@@ -470,23 +489,12 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(1, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'awdaw', '2017-06-07 09:49:45', 'awdawdadw\r\n', 'Aberto', 2, 1),
-(2, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'ddd', '2017-06-07 09:49:46', 'ddd\r\n', 'Aberto', 2, 1),
-(3, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'wawaw', '2017-06-07 09:50:47', 'dawawdawawwaawaw\r\n', 'Aberto', 1, 1),
-(4, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'ddd', '2017-06-07 09:50:47', 'ddddd\r\n', 'Aberto', 1, 1),
-(5, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'awaw', '2017-06-07 09:50:47', 'awawawwa\r\n', 'Aberto', 1, 1),
-(6, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'dwdawda', '2017-06-07 09:51:14', 'dawadadawd\r\n', 'Aberto', 1, 1),
-(7, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'awdawd', '2017-06-07 09:53:24', 'awdawdawdawdwad\r\n', 'Aberto', 2, 1),
-(8, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'awa', '2017-06-07 10:01:44', 'awawawawaw\r\n', 'Aberto', 2, 1),
-(9, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'hoje', '2017-06-07 10:08:59', 'serÃƒÂ¡?\r\n\r\n-- \r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 1, 1),
-(10, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste11', '2017-06-07 11:23:05', '1122\r\n\r\n--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 1, 1),
-(11, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'test2', '2017-06-07 11:23:40', 'Ã¢Â€Â‹1122Ã¢Â€Â‹\r\n\r\n-- \r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 2, 1),
-(12, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-06-07 11:38:45', 'depois de parecer departamento dentro do ticekt\r\n\r\n--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 2, 1),
-(13, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP PostgreSQL Session Handler', '2017-06-07 14:16:22', '\r\n\r\n\r\n\r\nNotable PHP package: PHP PostgreSQL Session Handler - PHP Classes\r\n\r\n\r\n\r\nPHP usually stores session data in files but it also allows to define custom session handler classes that can store session data in other types of container.\r\n\r\nThis class implements a session handler that stores data in a database. Despite the most used database with PHP is MySQL, PostgreSQL is also very popular.\r\n\r\nThis class supports storing session data in PostgreSQL database using PDO.\r\n\r\n\r\n\r\n   \r\n    \r\n      \r\n        \r\n          Notable PHP package: PHP PostgreSQL Session Handler\r\n        \r\n        Find Top DevelopersWe help companies like Airbnb, Pfizer, and Artsy find great developers. Let us find your ', 'Aberto', 1, 1),
-(14, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'aaa', '2017-06-07 15:15:56', 'abc\r\n\r\n--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 1, 1),
-(15, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'fgh', '2017-06-07 15:16:23', 'Ã¢Â€Â‹gasdasÃ¢Â€Â‹\r\n\r\n-- \r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Aberto', 2, 1),
-(16, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'awdawd', '2017-06-07 15:16:24', 'adawdawdawd\r\n', 'Aberto', 2, 1),
-(17, 'ruinascimento1996@gmail.com', 'Rui Nascimento <ruinascimento1996@gmail.com>', 'dd', '2017-06-07 22:22:02', 'dwdwwd\r\n', 'Aberto', 2, 1);
+(1, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sabado', '2017-06-11 03:24:34', 'sabado\r\n\r\n', 'Sendo Lido', 1, 1),
+(2, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 's', '2017-06-11 03:24:35', '231231~\r\n\r\n\r\n\r\nasasdas\r\n\r\n', 'Sendo Lido', 1, 1),
+(3, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', '1531', '2017-06-11 03:24:35', '1531\r\n\r\n', 'Sendo Lido', 1, 1),
+(4, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-06-11 03:24:36', '--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Sendo Lido', 1, 1),
+(5, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sexta2', '2017-06-11 03:24:36', 'Serxta12\r\n\r\n', 'Lido', 1, 1),
+(6, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sexta', '2017-06-11 03:24:37', 'Sexta feira\r\n\r\ntestetrackit\r\n\r\n', 'Sendo Lido', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -546,8 +554,7 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
-(42, '1', '1', 2, 1),
-(43, 'tes', 'tes', 1, 1);
+(41, '2', '2', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -572,10 +579,39 @@ INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `historicoestados`
+-- Estrutura da tabela `historicoestados2`
 --
 
-CREATE TABLE `historicoestados` (
+CREATE TABLE `historicoestados2` (
+  `idHistoricoEstados` int(11) NOT NULL,
+  `HoraAtribuicaoEstado` date DEFAULT NULL,
+  `IdTicketEstado` int(11) DEFAULT NULL,
+  `IDEstadoEstado` int(11) DEFAULT NULL,
+  `DataAlteracaoEstado` int(11) DEFAULT NULL,
+  `IDFuncEstado` int(30) DEFAULT NULL,
+  `IDNovoEstado` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `historicoestados2`
+--
+
+INSERT INTO `historicoestados2` (`idHistoricoEstados`, `HoraAtribuicaoEstado`, `IdTicketEstado`, `IDEstadoEstado`, `DataAlteracaoEstado`, `IDFuncEstado`, `IDNovoEstado`) VALUES
+(1, '0000-00-00', 16, 2, 2, 39, 2),
+(3, '0000-00-00', 4, 1231, 1231, 37, 1231),
+(4, '0000-00-00', 6, 42, 4131, 37, 23423),
+(5, '0000-00-00', 1, 23, 232323, 37, 123),
+(6, '2017-06-11', 1, 10000, 212, 37, 3123123),
+(7, '2017-06-11', 1, 2, 1231232, 37, 123),
+(8, '2017-06-11', 2, 0, 34, 37, 32);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `historicoestadosantiga`
+--
+
+CREATE TABLE `historicoestadosantiga` (
   `id_historicoTicket` int(11) NOT NULL,
   `HoraAtribuicao_Estado` datetime NOT NULL,
   `ID_Ticket` int(11) NOT NULL,
@@ -597,17 +633,6 @@ CREATE TABLE `respostas` (
   `datea_resp` datetime DEFAULT CURRENT_TIMESTAMP,
   `id_email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `respostas`
---
-
-INSERT INTO `respostas` (`id_resp`, `subject_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
-(1, 'rx', 'xr', '2017-06-07 10:59:05', 5),
-(2, 's', 's', '2017-06-07 11:08:49', 9),
-(3, 'teste', 'teste', '2017-06-07 15:27:40', 11),
-(4, 'teste', 'teste', '2017-06-07 15:28:15', 11),
-(5, 'teste', 'teste', '2017-06-07 15:28:24', 11);
 
 -- --------------------------------------------------------
 
@@ -696,9 +721,19 @@ ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id_grupo`);
 
 --
--- Indexes for table `historicoestados`
+-- Indexes for table `historicoestados2`
 --
-ALTER TABLE `historicoestados`
+ALTER TABLE `historicoestados2`
+  ADD PRIMARY KEY (`idHistoricoEstados`),
+  ADD KEY `IdTicketEstado_idx` (`IdTicketEstado`),
+  ADD KEY `IDEstadoEstado_idx` (`IDEstadoEstado`),
+  ADD KEY `IDNovoEstado_idx` (`IDNovoEstado`),
+  ADD KEY `IDFuncEstado_idx` (`IDFuncEstado`);
+
+--
+-- Indexes for table `historicoestadosantiga`
+--
+ALTER TABLE `historicoestadosantiga`
   ADD PRIMARY KEY (`id_historicoTicket`),
   ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`),
   ADD KEY `historicoEstados_FK_Utilizadores` (`id_funcionario`);
@@ -735,12 +770,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -755,22 +790,27 @@ ALTER TABLE `ficheiro`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
 ALTER TABLE `grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `historicoestados`
+-- AUTO_INCREMENT for table `historicoestados2`
 --
-ALTER TABLE `historicoestados`
+ALTER TABLE `historicoestados2`
+  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `historicoestadosantiga`
+--
+ALTER TABLE `historicoestadosantiga`
   MODIFY `id_historicoTicket` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tipoutilizador`
 --
@@ -804,14 +844,6 @@ ALTER TABLE `ficheiro`
 ALTER TABLE `funcionario`
   ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `historicoestados`
---
-ALTER TABLE `historicoestados`
-  ADD CONSTRAINT `historicoEstados_FK_Utilizadores` FOREIGN KEY (`id_funcionario`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoestados_fk_emails` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoestados_fk_estado` FOREIGN KEY (`ID_EstadoTicket`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `respostas`

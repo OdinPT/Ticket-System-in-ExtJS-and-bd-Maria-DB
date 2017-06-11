@@ -15,8 +15,6 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstadoController', {
                     alert('Erro...');
                 },
                 params: {
-                    horaatribuicao: Ext.getCmp('horaatribuicao').getValue(),
-
                     IDEstadoEstado: Ext.getCmp('IDEstadoEstado').getValue(),
                     DataAlteracaoEstado: Ext.getCmp('DataAlteracaoEstado').getValue(),
                     IDNovoEstado: Ext.getCmp('IDNovoEstado').getValue()

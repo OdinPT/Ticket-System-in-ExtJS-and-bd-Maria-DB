@@ -1,5 +1,6 @@
 Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     extend: 'Ext.form.Panel',
+    extend:'Ext.panel.Panel',
     xtype: 'registahisestado',
     controller: 'registahisestado',
     requires: [
@@ -9,10 +10,9 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     id: 'formregistahisEstado',
     frame: false,
 
-    height: 400,
-
+    height: 230,
     border: false,
-    title: 'Alterar Estado ',
+    //title: 'Alterar Estado ',
 
     layout: {
         type: 'form',
@@ -20,27 +20,18 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     },
     defaults: {
         layout: 'form',
-        margin: 0,
-        border: 'false'
+        margin: 20,
+        border: 'true'
     },
-/*
- horaatribuicao: Ext.getCmp('horaatribuicao').getValue(),
- IdTicketEstado: Ext.getCmp('IdTicketEstado').getValue(),
- IDEstadoEstado: Ext.getCmp('IDEstadoEstado').getValue(),
- DataAlteracaoEstado: Ext.getCmp('DataAlteracaoEstado').getValue(),
- IDNovoEstado: Ext.getCmp('IDNovoEstado').getValue(),
- IDFuncEstado: Ext.getCmp('$IDFuncEstado').getValue()
-
- */
 
     items: [
-        {
+       /* {
             xtype: 'textfield',
             fieldLabel: 'Hora atribuicao:',
             id: 'horaatribuicao',
             name: 'horaatribuicao'
 
-        },
+        },*/
 
         {
             xtype: 'textfield',
