@@ -11,7 +11,7 @@ while($res = mysqli_fetch_array($result))
 	$state = $res['state'];
 }
 
-if($state == "Aberto" || $state == "Lido")
+if($state == "1" || $state == "Lido")
 {
     $insere = mysqli_query($mysqli, "UPDATE emails SET state='Sendo Lido' WHERE id='$id'");
     echo "Sucesso";

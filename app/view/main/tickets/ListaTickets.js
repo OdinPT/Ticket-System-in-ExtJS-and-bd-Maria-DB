@@ -46,7 +46,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'state',flex: 1.2,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.2,
             filter: {
                 type: 'string'
             },

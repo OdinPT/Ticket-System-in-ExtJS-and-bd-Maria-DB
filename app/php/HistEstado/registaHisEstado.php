@@ -2,20 +2,17 @@
 include("config.php");
 //IdTicketEstado
 
-$horaatribuicao = $_POST['horaatribuicao'];
+/*
+IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst`
+
+*/
 
 $IdTicketEstado = $_COOKIE['cookieID'];
-$state = $_COOKIE['state'];
-
 $IDEstadoEstado = $_POST['IDEstadoEstado'];
-$DataAlteracaoEstado = $_POST['DataAlteracaoEstado'];
-
-$IDNovoEstado = $_POST['IDNovoEstado'];
-
 $IDFuncEstado =  $_COOKIE['cookieEmail'];
 
 
-$insere = mysqli_query($mysqli, "call inserirhistoricoestados('$horaatribuicao','$IdTicketEstado','$state','$DataAlteracaoEstado','$IDNovoEstado','$IDFuncEstado');");
+$insere = mysqli_query($mysqli, "call inserirhistoricoestados('$IdTicketEstado','$IDEstadoEstado','$IDFuncEstado');");
 mysqli_close($mysqli);
 
 ?>

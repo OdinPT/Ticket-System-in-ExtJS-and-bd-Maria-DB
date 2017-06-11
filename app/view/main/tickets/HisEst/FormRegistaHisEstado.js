@@ -40,20 +40,6 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             name: 'IDEstadoEstado'
 
         },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Data Alteração :',
-            id: 'DataAlteracaoEstado',
-            name: 'DataAlteracaoEstado'
-
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Novo estado :',
-            id: 'IDNovoEstado',
-            name: 'IDNovoEstado'
-
-        },
 
     ],
     dockedItems: {
