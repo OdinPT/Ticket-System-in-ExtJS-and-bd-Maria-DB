@@ -35,9 +35,9 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             {
                 xtype: 'infoticketprincipal'
             },
-            /*{
+            {
                 xtype: 'registahisestado'
-            },*/
+            },
             {
                 xtype: 'mainlistanexos'
             },
@@ -49,10 +49,6 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             ]
 
     },
-
-
-
-
 
 ],
 

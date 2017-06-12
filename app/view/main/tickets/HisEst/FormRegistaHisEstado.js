@@ -25,21 +25,33 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     },
 
     items: [
-       /* {
-            xtype: 'textfield',
-            fieldLabel: 'Hora atribuicao:',
-            id: 'horaatribuicao',
-            name: 'horaatribuicao'
-
-        },*/
 
         {
-            xtype: 'textfield',
+         /*   xtype: 'textfield',
             fieldLabel: 'id  estado :',
             id: 'IDEstadoEstado',
-            name: 'IDEstadoEstado'
+            name: 'IDEstadoEstado'*/
 
-        },
+
+            xtype: 'combobox',
+            fieldLabel: 'Tipo de departamento',
+            store: {
+                type: 'TipoEstado'
+            },
+            valueField: 'ID_Estado',
+            displayField: 'Descricao_Estado',
+            typeAhead: true,
+            queryMode: 'local',
+            emptyText: 'Seleciona  departamento...',
+            id: 'ID_Estado',
+            submitValue:true,
+            hiddenName : 'ID_Estado',
+            allowBlank: false,
+            blankText: 'Selecione um departamento'
+
+
+
+        }
 
     ],
     dockedItems: {

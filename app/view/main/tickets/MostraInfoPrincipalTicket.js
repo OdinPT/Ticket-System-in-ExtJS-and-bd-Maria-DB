@@ -83,28 +83,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         },
       },
 
-          //  xtype: 'registahisestado'
-
-          {
-              text: 'Alterar Estado',
-              glyph: 43,
-              listeners: {
-                  click: function(){
-                      var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Alterar Estado do ticket',
-                          modal: true,
-                          width: 700,
-                          height: 270,
-                          items: {
-                              xtype: 'registahisestado'
-                          }
-                      });
-                      myWin.show();
-                  }
-              }
-          },
-
-
 
 
 

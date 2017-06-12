@@ -2,8 +2,10 @@
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 include_once("config.php");
 //getting id from url
+
 $cookieEmail = $_COOKIE['cookieEmail'];
 //selecting data associated with this particular id
+
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))

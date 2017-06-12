@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Jun-2017 às 16:37
+-- Generation Time: 12-Jun-2017 às 15:28
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -62,6 +62,8 @@ SET GLOBAL FOREIGN_KEY_CHECKS= 0;
 TRUNCATE table emails;
 truncate table upload;
 truncate table respostas;
+truncate TABLE historicoestados;
+
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
 
@@ -102,15 +104,13 @@ INSERT INTO funcionario
             _TP);
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `hora` DATE, IN `IdTicket` INT, IN `IDEstado` INT, IN `DataAlt` INT, IN `IDNEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
 
-    INSERT INTO historicoestados2
+    INSERT INTO historicoestados
          (
 			HoraAtribuicaoEstado,
          	IdTicketEstado,
          	IDEstadoEstado,
-             DataAlteracaoEstado,
-			IDNovoEstado,
 			IDFuncEstado)
           
           
@@ -119,9 +119,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `hora`
           Now(),
          IdTicket,
          IDEstado,
-         DataAlt,
-         IDNEstado,
-        retornaIdMail(IDFuncEst)) ; 
+        retornaIdMail(IDFuncEst));
+        
+update  emails set emails.state=IDEstado where id=IdTicket;
 
 
 END$$
@@ -327,11 +327,11 @@ End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
-select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `state`,`nome_departamento`
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `Descricao_Estado`,`nome_departamento`
 
-from emails, departamento, grupo
+from emails, departamento, grupo, estado
 
-where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Ticket') and (id_departamento_emails=_iddep)
+where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Ticket') and (id_departamento_emails=_iddep) and (`state`=ID_Estado)
 
 order by id asc;
 
@@ -479,22 +479,10 @@ CREATE TABLE `emails` (
   `subject` varchar(250) NOT NULL,
   `datea` datetime NOT NULL,
   `body` varchar(700) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `state` varchar(10) NOT NULL DEFAULT 'Aberto',
+  `state` int(10) NOT NULL DEFAULT '1',
   `id_departamento_emails` int(11) DEFAULT '3',
   `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `emails`
---
-
-INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(1, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sabado', '2017-06-11 03:24:34', 'sabado\r\n\r\n', 'Sendo Lido', 1, 1),
-(2, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 's', '2017-06-11 03:24:35', '231231~\r\n\r\n\r\n\r\nasasdas\r\n\r\n', 'Sendo Lido', 1, 1),
-(3, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', '1531', '2017-06-11 03:24:35', '1531\r\n\r\n', 'Sendo Lido', 1, 1),
-(4, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'teste', '2017-06-11 03:24:36', '--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 'Sendo Lido', 1, 1),
-(5, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sexta2', '2017-06-11 03:24:36', 'Serxta12\r\n\r\n', 'Lido', 1, 1),
-(6, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sexta', '2017-06-11 03:24:37', 'Sexta feira\r\n\r\ntestetrackit\r\n\r\n', 'Sendo Lido', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -514,9 +502,10 @@ CREATE TABLE `estado` (
 INSERT INTO `estado` (`ID_Estado`, `Descricao_Estado`) VALUES
 (1, 'Aberto'),
 (2, 'Lido'),
-(3, 'Atribuido'),
-(4, 'Fechado '),
-(5, 'Reaberto ');
+(3, 'Sendo Lido'),
+(4, 'Atibuido'),
+(5, 'Fechado'),
+(6, 'Reaberto');
 
 -- --------------------------------------------------------
 
@@ -554,7 +543,7 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
-(41, '2', '2', 4, 3);
+(41, 'callcenter', 'callcenter', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -579,45 +568,15 @@ INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `historicoestados2`
+-- Estrutura da tabela `historicoestados`
 --
 
-CREATE TABLE `historicoestados2` (
+CREATE TABLE `historicoestados` (
   `idHistoricoEstados` int(11) NOT NULL,
-  `HoraAtribuicaoEstado` date DEFAULT NULL,
+  `HoraAtribuicaoEstado` datetime DEFAULT NULL,
   `IdTicketEstado` int(11) DEFAULT NULL,
   `IDEstadoEstado` int(11) DEFAULT NULL,
-  `DataAlteracaoEstado` int(11) DEFAULT NULL,
-  `IDFuncEstado` int(30) DEFAULT NULL,
-  `IDNovoEstado` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `historicoestados2`
---
-
-INSERT INTO `historicoestados2` (`idHistoricoEstados`, `HoraAtribuicaoEstado`, `IdTicketEstado`, `IDEstadoEstado`, `DataAlteracaoEstado`, `IDFuncEstado`, `IDNovoEstado`) VALUES
-(1, '0000-00-00', 16, 2, 2, 39, 2),
-(3, '0000-00-00', 4, 1231, 1231, 37, 1231),
-(4, '0000-00-00', 6, 42, 4131, 37, 23423),
-(5, '0000-00-00', 1, 23, 232323, 37, 123),
-(6, '2017-06-11', 1, 10000, 212, 37, 3123123),
-(7, '2017-06-11', 1, 2, 1231232, 37, 123),
-(8, '2017-06-11', 2, 0, 34, 37, 32);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `historicoestadosantiga`
---
-
-CREATE TABLE `historicoestadosantiga` (
-  `id_historicoTicket` int(11) NOT NULL,
-  `HoraAtribuicao_Estado` datetime NOT NULL,
-  `ID_Ticket` int(11) NOT NULL,
-  `ID_EstadoTicket` int(11) NOT NULL,
-  `Data_AlteracaoEstado` date NOT NULL,
-  `id_funcionario` int(11) NOT NULL
+  `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -691,7 +650,8 @@ ALTER TABLE `emails`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `emails` (`body`),
   ADD KEY `emails_FK_Departamento` (`id_departamento_emails`),
-  ADD KEY `emails_FK_grupos` (`id_grupo_emails`);
+  ADD KEY `emails_FK_grupos` (`id_grupo_emails`),
+  ADD KEY `emails_FK_estados` (`state`);
 
 --
 -- Indexes for table `estado`
@@ -721,22 +681,13 @@ ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id_grupo`);
 
 --
--- Indexes for table `historicoestados2`
+-- Indexes for table `historicoestados`
 --
-ALTER TABLE `historicoestados2`
+ALTER TABLE `historicoestados`
   ADD PRIMARY KEY (`idHistoricoEstados`),
   ADD KEY `IdTicketEstado_idx` (`IdTicketEstado`),
   ADD KEY `IDEstadoEstado_idx` (`IDEstadoEstado`),
-  ADD KEY `IDNovoEstado_idx` (`IDNovoEstado`),
   ADD KEY `IDFuncEstado_idx` (`IDFuncEstado`);
-
---
--- Indexes for table `historicoestadosantiga`
---
-ALTER TABLE `historicoestadosantiga`
-  ADD PRIMARY KEY (`id_historicoTicket`),
-  ADD KEY `historicoestados_fk_emails` (`ID_EstadoTicket`),
-  ADD KEY `historicoEstados_FK_Utilizadores` (`id_funcionario`);
 
 --
 -- Indexes for table `respostas`
@@ -755,7 +706,8 @@ ALTER TABLE `tipoutilizador`
 -- Indexes for table `upload`
 --
 ALTER TABLE `upload`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `upload_fk_emails` (`id_ticket`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -775,12 +727,12 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `ID_Estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_Estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `ficheiro`
 --
@@ -797,15 +749,10 @@ ALTER TABLE `funcionario`
 ALTER TABLE `grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `historicoestados2`
+-- AUTO_INCREMENT for table `historicoestados`
 --
-ALTER TABLE `historicoestados2`
-  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `historicoestadosantiga`
---
-ALTER TABLE `historicoestadosantiga`
-  MODIFY `id_historicoTicket` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `historicoestados`
+  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `respostas`
 --
@@ -830,6 +777,7 @@ ALTER TABLE `upload`
 --
 ALTER TABLE `emails`
   ADD CONSTRAINT `emails_FK_Departamento` FOREIGN KEY (`id_departamento_emails`) REFERENCES `departamento` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `emails_FK_estados` FOREIGN KEY (`state`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `emails_FK_grupos` FOREIGN KEY (`id_grupo_emails`) REFERENCES `grupo` (`id_grupo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -844,6 +792,14 @@ ALTER TABLE `ficheiro`
 ALTER TABLE `funcionario`
   ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `historicoestados`
+--
+ALTER TABLE `historicoestados`
+  ADD CONSTRAINT `historicoestados_FK_funcionario` FOREIGN KEY (`IDFuncEstado`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoestados_ibfk_1` FOREIGN KEY (`IdTicketEstado`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoestados_ibfk_2` FOREIGN KEY (`IDEstadoEstado`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `respostas`
