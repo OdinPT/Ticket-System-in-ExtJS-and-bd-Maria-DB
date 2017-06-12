@@ -10,7 +10,15 @@ Ext.define('TrackIT.view.main.MainWidget', {
     }, {
         title: 'Administração de Departamentos',
         bodyPadding: 10,
+<<<<<<< HEAD
         xtype: 'departamentoprincipal'
     }]
+=======
+            /*items: [{
+                xtype: 'registahisestado'
+            }]*/
+        }
+    ]
+>>>>>>> af3e644f43ab66531f9497bbfd5ac9cf4b8a9c82
 
 });

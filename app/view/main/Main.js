@@ -10,7 +10,6 @@ Ext.define('TrackIT.view.main.Main', {
         'TrackIT.view.main.MainModel',
         'TrackIT.view.main.tickets.ListaTickets',
         'TrackIT.view.main.historico.ListaTicketsHistorico',
-        'TrackIT.view.main.recuperados.ListaTicketsRecuperados',
         'TrackIT.view.main.MainWidget'
     ],
 

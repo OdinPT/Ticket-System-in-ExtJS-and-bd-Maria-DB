@@ -10,20 +10,14 @@ Ext.define('TrackIT.Application', {
 
     stores: [
 
-        'TrackIT.store.respostas.RespostaSeleccionadaRecuperada',
         'TrackIT.store.respostas.RespostaSeleccionadaHistorico',
         'TrackIT.store.respostas.RespostaSeleccionada',
         'TrackIT.store.respostas.RespostasHistorico',
-        'TrackIT.store.respostas.RespostasRecuperadas',
         'TrackIT.store.respostas.Respostas',
         'TrackIT.store.tickets.CarregaInfoTicket',
         'TrackIT.store.tickets.CarregaInfoPrincipalTicket',
         'TrackIT.store.historico.CarregaInfoHistoricoTicket',
         'TrackIT.store.historico.CarregaInfoHistorico',
-        'TrackIT.store.recuperados.TicketsSeleccionadosRecuperados',
-        'TrackIT.store.recuperados.TicketsRecuperados',
-        'TrackIT.store.recuperados.CarregaInfoPrincipalTicketRecuperado',
-        'TrackIT.store.recuperados.CarregaInfoPrincipalTicketRecuperado',
         'TrackIT.store.admin.FuncionarioSeleccionado',
         'TrackIT.store.admin.Funcionarios',
         'TrackIT.store.anexos.Anexos',
