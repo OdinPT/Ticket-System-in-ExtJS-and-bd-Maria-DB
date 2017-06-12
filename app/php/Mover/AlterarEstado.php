@@ -3,6 +3,6 @@
 include("config.php");
 $id = $_COOKIE['cookieIDhistorico'];
 
-
-$kappa = mysqli_query($mysqli, "Call MudaGrupo($id)");
+$state = mysqli_query($mysqli, "UPDATE emails SET state='Aberto' WHERE id=$id");
+$mudagrupo = mysqli_query($mysqli, "UPDATE emails SET id_grupo_emails=1 WHERE id=$id");
 ?>

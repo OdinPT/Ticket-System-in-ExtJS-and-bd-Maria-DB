@@ -20,7 +20,9 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.historico.CarregaInfoHistorico',
         'TrackIT.store.admin.FuncionarioSeleccionado',
         'TrackIT.store.admin.Funcionarios',
-        'TrackIT.store.anexos.Anexos'
+        'TrackIT.store.anexos.Anexos',
+        'TrackIT.store.admin.DepartamentoSeleccionado',
+        'TrackIT.store.TipoDepartamento.TipoD'
     ],
     views: [
       'TrackIT.view.login.Login',

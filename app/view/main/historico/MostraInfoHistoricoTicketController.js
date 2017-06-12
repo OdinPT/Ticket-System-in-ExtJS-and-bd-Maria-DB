@@ -16,7 +16,7 @@ success: function(response, opts) {
 })
 },
 
-onClickMoveParaRecuperados: function()
+onClickMoveParaTickets: function()
 {
   myRequest1 = Ext.Ajax.request({
     url: 'app/php/Mover/AlterarEstado.php',

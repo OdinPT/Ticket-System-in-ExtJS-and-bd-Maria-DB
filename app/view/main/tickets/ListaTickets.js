@@ -28,7 +28,9 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     }],
 
     columns: [
-        {text: 'ID ',  dataIndex: 'id', flex: 0.4},
+        {text: 'ID ',  dataIndex: 'id', flex: 0.4,filter: {
+            type: 'string'
+        }},
         { text: 'DE',  dataIndex: 'fromaddress', flex: 1.4,
             filter: {
                 type: 'string'

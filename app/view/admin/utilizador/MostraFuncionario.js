@@ -1,10 +1,10 @@
-Ext.define('TrackIT.view.admin.MostraFuncionario', {
+Ext.define('TrackIT.view.admin.utilizador.MostraFuncionario', {
     extend: 'Ext.form.Panel',
     xtype: 'fieldfuncionario',
     controller: 'funcionariocont',
     requires: [
         'TrackIT.store.admin.FuncionarioSeleccionado',
-        'TrackIT.view.admin.MostraFuncionarioController'
+        'TrackIT.view.admin.utilizador.MostraFuncionarioController'
     ],
     id: 'staticFuncionarioForm',
     frame: true,
@@ -56,14 +56,6 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
         xtype: 'toolbar',
         items: [
             {
-                text: 'Carregar Funcionário',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickObterResposta'
-                }
-
-            },
-            {
                 text: 'Apagar Funcionário',
                 glyph: 43,
                 listeners: {
@@ -80,5 +72,20 @@ Ext.define('TrackIT.view.admin.MostraFuncionario', {
 
             }
         ]
+    },
+    listeners: {
+        afterrender: function () {
+            var store = Ext.getStore('funcionarioseleccionado');
+            store.load({
+                callback: function (records, operation, success) {
+                    var record = store.getAt(0);
+                    var a = Ext.getCmp('id_funcionario').setValue(record.data.id_funcionario);
+                    var b = Ext.getCmp('usernamefunc').setValue(record.data.usernamefunc);
+                    var c = Ext.getCmp('nome_departamento').setValue(record.data.nome_departamento);
+                    var d = Ext.getCmp('Descricao_TipoUtilizador').setValue(record.data.Descricao_TipoUtilizador);
+                }
+            });
+        }
     }
+
 });

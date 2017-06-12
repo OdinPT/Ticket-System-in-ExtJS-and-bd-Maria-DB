@@ -1,4 +1,4 @@
-Ext.define('TrackIT.view.admin.EditaUtilizadorController', {
+Ext.define('TrackIT.view.admin.utilizador.EditaUtilizadorController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.editautilizador',
 
@@ -7,7 +7,7 @@ Ext.define('TrackIT.view.admin.EditaUtilizadorController', {
         method:'POST',
             myRequest1 = Ext.Ajax.request({
                 url: 'app/php/Editar/editautilizador.php',
-                success: function (response, opts){Ext.MessageBox.alert('Sucesso','Utilizador Editado!');},
+                success: function (response, opts){Ext.MessageBox.alert('Sucesso','Utilizador Editado!');Ext.getCmp('gridfuncionarios').getStore().load();},
                 failure: function (){alert('Erro...');},
                 params: { user: Ext.getCmp('user2').getValue(), pass: Ext.getCmp('password2').getValue(), id_departamento: Ext.getCmp('id_departamento2').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario2').getValue()}
             });
