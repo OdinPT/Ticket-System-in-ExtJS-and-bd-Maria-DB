@@ -3,12 +3,18 @@ Ext.define('TrackIT.store.TipoFuncionario.TipoF', {
     model: 'TrackIT.model.TipoF',
     alias: 'store.TipoF',
     storeId: 'Tipofuncionario',
-
-    data: [
-        [1, "Normal"],
-        [2, 'Admin'],
-        [3, 'SuperUser'],
-        [4, 'Email Departamento']
-    ]
+    autoLoad: true,
+    proxy: {
+        type: 'ajax',
+        url: 'app/php/carregamStores/carregatipofuncionarios.php',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
+        }
+    },
+    listeners: {
+        load: function(){
+            console.log('loaded');
+        }
+    }
 });
-

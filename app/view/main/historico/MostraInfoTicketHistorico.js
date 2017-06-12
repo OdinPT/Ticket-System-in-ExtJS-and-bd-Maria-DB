@@ -8,20 +8,18 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
       'TrackIT.view.main.historico.MostraInfoHistoricoTicketController'
     ],
     id: 'paginainfohistoricoticket',
-    frame: true,
     title: 'Informação Principal',
-    width: 1080,
-    height: 400,
-    bodyPadding: 10,
+    width: 1380,
+    height: 440,
     autoScroll: true,
     layout: {
-            type: 'form',
-            align: 'stretch'
-        },
-        defaults: {
-            layout: 'form',
-            margin: 20
-        },
+        type: 'form',
+        align: 'stretch'
+    },
+    defaults: {
+        layout: 'form',
+        margin: 0
+    },
 
     config:{stores: ['tickethistoricoseleccionado']},
 
@@ -85,7 +83,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
       text: 'Recuperar',
       glyph: 43,
       listeners: {
-        click: 'onClickMoveParaRecuperados'
+        click: 'onClickMoveParaTickets'
       }
     }
     ]

@@ -1,4 +1,4 @@
 Ext.define('TrackIT.model.TipoD', {
 extend: 'Ext.data.Model',
-fields: ['id_departamento', 'Descricao_TipoUtilizador']
+fields: ['id_departamento', 'nome_departamento']
 });

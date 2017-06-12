@@ -1,13 +1,14 @@
-Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
+Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
     extend: 'Ext.form.Panel',
-    xtype: 'registautilizador',
-    controller: 'registautilizador',
+    xtype: 'editautilizador',
+    controller: 'editautilizador',
     requires: [
-        'TrackIT.view.admin.FormRegistaUtilizadorController'
+        'TrackIT.view.admin.utilizador.EditaUtilizadorController'
     ],
-    id: 'formregistautilizador',
-    frame: false,
-    height: 320,
+    id: 'formeditautilizador',
+    frame: true,
+    width: 500,
+    height: 300,
     border: false,
 
 
@@ -25,22 +26,17 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'user',
-            name: 'user',
-            emptyText : 'Insira o nome de utilizador',
-            allowBlank: false,
-            blankText: 'Campo obrigatório'
+            id: 'user2',
+            name: 'user2'
 
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Password:',
             inputType: 'password',
-            id: 'pass',
-            name: 'pass',
-            emptyText : 'Insira a password',
-            allowBlank: false,
-            blankText: 'Campo obrigatório'
+            id: 'password2',
+            name: 'pass2'
+
         },
         {
             xtype: 'combobox',
@@ -53,7 +49,7 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             typeAhead: true,
             queryMode: 'local',
             emptyText: 'Seleciona  departamento...',
-            id: 'id_departamento',
+            id: 'id_departamento2',
             submitValue:true,
             hiddenName : 'id_departamento',
             allowBlank: false,
@@ -72,28 +68,24 @@ Ext.define('TrackIT.view.admin.FormRegistaUtilizador', {
             typeAhead: true,
             queryMode: 'local',
             emptyText: 'Select a state...',
-            id: 'tipo_funcionario',
+            id: 'tipo_funcionario2',
             submitValue:true,
             hiddenName : 'ID_TipoUtilizador',
             allowBlank: false,
             blankText: 'Selecione um departamento'
 
         }
-
-
     ],
     dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
         items: [
             {
-                text: 'Registar',
+                text: 'Editar',
                 glyph: 43,
-                formBind: true,
                 listeners: {
-                    click: 'onClickRegistarUtilizador'
-                },
-
+                    click: 'onClickEditaUtilizador'
+                }
             }
         ]
     }

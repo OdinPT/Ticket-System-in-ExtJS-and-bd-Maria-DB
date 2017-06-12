@@ -1,4 +1,4 @@
-Ext.define('TrackIT.view.admin.FormRegistaUtilizadorController', {
+Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizadorController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.registautilizador',
 
