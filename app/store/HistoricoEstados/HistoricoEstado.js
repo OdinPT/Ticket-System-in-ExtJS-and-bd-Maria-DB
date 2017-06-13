@@ -4,7 +4,7 @@ Ext.define('TrackIT.store.tickets.Tickets', {
     model: 'TrackIT.model.Ticket',
     alias: 'store.tickets',
 	storeId: 'Staging',
-	autoLoad: true,
+	autoLoad: false,
 	proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/carregatickets.php',

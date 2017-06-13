@@ -1,5 +1,7 @@
 Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     extend: 'Ext.tab.Panel',
+    //extend: 'Ext.tab.Panel',
+
     xtype: 'maintabtickets',
     controller: 'ticketzz',
     requires: [
@@ -8,7 +10,10 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         'TrackIT.view.main.tickets.TicketController',
         'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
-    width: 900,
+
+    layout: 'border',
+
+    width: 1100,
     height: 700,
 
     store: {
@@ -18,25 +23,36 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     defaults: {
         bodyPadding: 10,
         scrollable: true,
-        closable: true
+        closable: true,
+        collapsible: true,
+        split: true,
+
     },
 
     items: [{
         title: 'Conteúdo do Ticket',
-        // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
-        items: [{
-                  xtype: 'infoticketprincipal'
-              },
+        items: [
             {
-                xtype: 'mainlistanexos'
-
+                xtype: 'infoticketprincipal'
             },
             {
+                xtype: 'registahisestado'
+            },
+            {
+                xtype: 'mainlistanexos'
+            },
+            {
+
                 xtype: 'mainlistrespostas'
-            }]
+            }
+
+<<<<<<< HEAD
+    }
+=======
+            ]
+>>>>>>> 195d47738d652f31ee7bc90ca076db67ebf91b99
 
     }
-
 
 ],
 

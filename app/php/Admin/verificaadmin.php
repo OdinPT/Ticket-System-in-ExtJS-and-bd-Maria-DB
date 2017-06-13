@@ -1,9 +1,11 @@
 <?php
 include_once("config.php");
 //getting id from url
+
 $email = $_COOKIE['cookieEmail'];
 
 //selecting data associated with this particular id
+
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$email'");
 
 while($res = mysqli_fetch_array($result))

@@ -4,6 +4,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.gridticket',
     xtype: 'mainlisttickets',
+
     height: 600,
     requires: [
         'TrackIT.store.tickets.Tickets',
@@ -16,6 +17,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
+
     title: 'Tickets',
 
     store: {
@@ -46,7 +48,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'state',flex: 1.2,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.2,
             filter: {
                 type: 'string'
             },

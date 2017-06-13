@@ -2,6 +2,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     extend: 'Ext.form.Panel',
     xtype: 'infoticketprincipal',
     controller: 'infoticketprincipal',
+
     requires: [
       'TrackIT.store.tickets.CarregaInfoPrincipalTicket',
       'TrackIT.view.main.tickets.MostraInfoPrincipalTicketController',
@@ -9,8 +10,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     ],
     id: 'paginainfoprincipalticket',
     title: 'Informação Principal',
-    width: 1380,
-    height: 440,
+    //width: 1100,
+    height: 450,
     autoScroll: true,
 
 
@@ -79,8 +80,12 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         glyph: 43,
         listeners: {
           click: 'onClickMoveParaHistorico'
-        }
+        },
       },
+
+
+
+
           {
               text: 'Responder',
               glyph: 43,
