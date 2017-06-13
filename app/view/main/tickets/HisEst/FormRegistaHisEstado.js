@@ -14,11 +14,13 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     border: false,
     //title: 'Alterar Estado ',
 
+
     layout: {
         type: 'form',
         align: 'fit'
     },
     defaults: {
+
         layout: 'form',
         margin: 20,
         border: 'true'
@@ -41,8 +43,11 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             submitValue:true,
             hiddenName : 'ID_Estado',
             allowBlank: false,
-            blankText: 'Selecione um Estado',
-            emptyText: 'Seleciona o novo Estado...'
+
+            emptyText: 'Seleciona o novo Estado...',
+
+
+
 
 
         }
@@ -57,6 +62,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
                 glyph: 43,
                 formBind: true,
                 listeners: {
+
                     click: 'onClickRegistarEstado'
                 }
 
@@ -64,3 +70,15 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
         ]
     }
 });
+
+/*
+
+ listeners: {
+ load: function () {
+ //this sets the default value to USA after the store loads
+ var combo = Ext.getCmp('countrySearchBox');
+ combo.setValue("USA");
+ }
+ }
+
+ */

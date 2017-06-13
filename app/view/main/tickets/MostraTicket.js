@@ -47,8 +47,19 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             }
             ]
 
-    }
+    },
+        {
+            title: 'Historico do ticket',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoest'
+                },
 
+
+            ]
+
+        }
+//*/
 ],
 
     dockedItems: {

@@ -11,4 +11,6 @@ Ext.define('TrackIT.store.TipoEstado.TipoEstado', {
         [5, 'Fechado'],
         [5, 'Reaberto']
     ]
+
+
 });

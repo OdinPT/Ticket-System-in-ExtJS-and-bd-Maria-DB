@@ -1,13 +1,13 @@
 
-Ext.define('TrackIT.store.tickets.Tickets', {
+Ext.define('TrackIT.store.HistoricoEstados.HistoricoEstado', {
     extend: 'Ext.data.Store',
-    model: 'TrackIT.model.Ticket',
-    alias: 'store.tickets',
+    model: 'TrackIT.model.HistoricoEstados',
+    alias: 'store.HistoricoEstados',
 	storeId: 'Staging',
-	autoLoad: false,
+	autoLoad: true,
 	proxy: {
         type: 'ajax',
-        url: 'app/php/CarregamStores/carregatickets.php',
+        url: 'app/php/CarregamStores/carregahistoricoestado.php',
         reader: {
         	type: 'json',
         	rootProperty: 'data'
@@ -15,7 +15,7 @@ Ext.define('TrackIT.store.tickets.Tickets', {
     },
     listeners: {
     	load: function(){
-    		console.log('loaded');
+    		console.log('loaded historico estado');
     	}
     }
 });

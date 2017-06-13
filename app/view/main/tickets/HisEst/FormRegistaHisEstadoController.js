@@ -7,9 +7,13 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstadoController', {
         method:'POST',
             myRequest1 = Ext.Ajax.request({
                 url: 'app/php/HistEstado/registaHisEstado.php',
+
                 success: function (response, opts) {
                     Ext.MessageBox.alert('Sucesso', 'Utilizador Registado!');
+                    Ext.getCmp('gridhisest').getStore().load();
                 },
+
+
 
                 failure: function () {
                     alert('Erro...');
