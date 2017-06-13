@@ -26,7 +26,9 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         ptype: 'gridfilters'
     }],
     columns: [
-        {text: 'ID ',  dataIndex: 'id', flex: 0.5},
+        {text: 'ID ',  dataIndex: 'id', flex: 0.5,filter: {
+            type: 'string'
+        }},
         { text: 'DE',  dataIndex: 'fromaddress', flex: 1.2,
             filter: {
                 type: 'string'

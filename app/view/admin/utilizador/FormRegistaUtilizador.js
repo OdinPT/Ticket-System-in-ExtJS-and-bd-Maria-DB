@@ -1,14 +1,13 @@
-Ext.define('TrackIT.view.admin.EditaUtilizador', {
+Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizador', {
     extend: 'Ext.form.Panel',
-    xtype: 'editautilizador',
-    controller: 'editautilizador',
+    xtype: 'registautilizador',
+    controller: 'registautilizador',
     requires: [
-        'TrackIT.view.admin.EditaUtilizadorController'
+        'TrackIT.view.admin.utilizador.FormRegistaUtilizadorController'
     ],
-    id: 'formeditautilizador',
-    frame: true,
-    width: 500,
-    height: 300,
+    id: 'formregistautilizador',
+    frame: false,
+    height: 320,
     border: false,
 
 
@@ -26,17 +25,22 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
         {
             xtype: 'textfield',
             fieldLabel: 'Username:',
-            id: 'user2',
-            name: 'user2'
+            id: 'user',
+            name: 'user',
+            emptyText : 'Insira o nome de utilizador',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
 
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Password:',
             inputType: 'password',
-            id: 'password2',
-            name: 'pass2'
-
+            id: 'pass',
+            name: 'pass',
+            emptyText : 'Insira a password',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
         },
         {
             xtype: 'combobox',
@@ -45,11 +49,11 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
                 type: 'TipoD'
             },
             valueField: 'id_departamento',
-            displayField: 'Descricao_TipoUtilizador',
+            displayField: 'nome_departamento',
             typeAhead: true,
             queryMode: 'local',
             emptyText: 'Seleciona  departamento...',
-            id: 'id_departamento2',
+            id: 'id_departamento',
             submitValue:true,
             hiddenName : 'id_departamento',
             allowBlank: false,
@@ -68,24 +72,28 @@ Ext.define('TrackIT.view.admin.EditaUtilizador', {
             typeAhead: true,
             queryMode: 'local',
             emptyText: 'Select a state...',
-            id: 'tipo_funcionario2',
+            id: 'tipo_funcionario',
             submitValue:true,
             hiddenName : 'ID_TipoUtilizador',
             allowBlank: false,
             blankText: 'Selecione um departamento'
 
         }
+
+
     ],
     dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
         items: [
             {
-                text: 'Editar',
+                text: 'Registar',
                 glyph: 43,
+                formBind: true,
                 listeners: {
-                    click: 'onClickEditaUtilizador'
+                    click: 'onClickRegistarUtilizador'
                 }
+
             }
         ]
     }

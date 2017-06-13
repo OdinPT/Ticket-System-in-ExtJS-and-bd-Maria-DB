@@ -1,12 +1,12 @@
-Ext.define('TrackIT.view.admin.AdminPrincipal', {
+Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
     extend: 'Ext.panel.Panel',
     requires: [
         'Ext.layout.container.HBox',
-        'TrackIT.view.admin.FormRegistaUtilizador',
-        'TrackIT.view.admin.GridMostraFuncionarios'
+        'TrackIT.view.admin.departamento.FormRegistaDepartamento',
+        'TrackIT.view.admin.departamento.GridMostraDepartamentos'
 
     ],
-    xtype: 'adminprincipal',
+    xtype: 'departamentoprincipal',
     width: 500,
     height: 400,
 
@@ -25,20 +25,20 @@ Ext.define('TrackIT.view.admin.AdminPrincipal', {
 
     items: [
         {
-            title: 'Formulário de Registo',
+            title: 'Registo de Departamento',
             flex: 1,
             margin: '0 10 0 0',
             items: [{
-                xtype: 'registautilizador'
+                xtype: 'registadepartamento'
             }]
         },
         {
-            title: 'Lista de funcionários',
+            title: 'Lista de Departamentos',
             flex: 1,
             margin: '0 10 0 0',
             autoScroll: true,
             items: [{
-                xtype: 'mainlistfuncionarios'
+                xtype: 'mainlistdepartamentos'
             }]
         }
     ]

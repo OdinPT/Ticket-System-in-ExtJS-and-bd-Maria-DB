@@ -1,12 +1,12 @@
 
-Ext.define('TrackIT.view.admin.GridMostraFuncionarios', {
+Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
     extend: 'Ext.grid.Panel',
     id: 'gridfuncionarios',
     xtype: 'mainlistfuncionarios',
     requires: [
         'TrackIT.store.admin.Funcionarios',
         'Ext.toolbar.Paging',
-        'TrackIT.view.admin.MostraFuncionario',
+        'TrackIT.view.admin.utilizador.MostraFuncionario',
         'TrackIT.store.admin.FuncionarioSeleccionado'
     ],
     config: {

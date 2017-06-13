@@ -48,7 +48,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
             buttonOnly: true,
             hideLabel: true,
             glyph: 43,
-            formBind: true,
+            formBind: true
         }
     ],
     dockedItems: {
