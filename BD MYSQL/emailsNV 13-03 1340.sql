@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Jun-2017 às 15:28
+-- Generation Time: 13-Jun-2017 às 13:39
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -199,8 +199,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `MudaGrupo` (IN `_id` INT(11))  BEGI
 
 UPDATE emails 
 
-SET id_grupo_emails = MudaGrupoTicket(`id_grupo_emails`), state = MudaEstado(`state`) where id=_id;
-
+SET id_grupo_emails = MudaGrupoTicket(id_grupo_emails), state = MudaEstado(`state`) where id=_id;
 
    END$$
 
@@ -366,31 +365,31 @@ return temp;
 
 End$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `MudaEstado` (`_estado` VARCHAR(12)) RETURNS VARCHAR(10) CHARSET latin1 BEGIN
-    DECLARE a varchar(10);
+CREATE DEFINER=`root`@`localhost` FUNCTION `MudaEstado` (`_estado` INT(11)) RETURNS INT(12) BEGIN
+    DECLARE a int (10);
  
-    IF (_estado = 'Aberto')  THEN
- 		SET a = 'Lido';
-    ELSEIF (_estado = 'Lido') THEN
-        SET a = 'Atribuido';
-     ELSEIF (_estado = 'Atribuido') THEN
-       SET a = 'Fechado';
-     ELSEIF (_estado = 'Fechado') THEN
-       SET a = 'Reaberto'; 
-     ELSEIF (_estado = 'Reaberto') THEN
-       SET a = 'Fechado';
+    IF (_estado = 1)  THEN
+ 		SET a = 2;
+    ELSEIF (_estado = 2) THEN
+        SET a = 4;
+     ELSEIF (_estado = 4) THEN
+       SET a = 5;
+     ELSEIF (_estado = 5) THEN
+       SET a = 6; 
+     ELSEIF (_estado = 6) THEN
+       SET a = 5;
     END IF;
  RETURN (a);
 END$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `MudaGrupoTicket` (`_id_grupo` INT) RETURNS INT(2) NO SQL
+CREATE DEFINER=`root`@`localhost` FUNCTION `MudaGrupoTicket` (`_id_grupo` INT) RETURNS INT(11) NO SQL
 BEGIN
     DECLARE a int (1);
  
     IF (_id_grupo = 1)  THEN
  		SET a = 2;
     ELSEIF (_id_grupo = 2 ) THEN
-        SET a = 3;
+        SET a = 1;
      Else 
      set a = 2;
     END IF;
@@ -463,8 +462,11 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(19, 'awd'),
-(20, 'waawaawa');
+(5, 'asas'),
+(6, 'teste'),
+(7, 'teste13'),
+(22, '0153'),
+(33, 'teste13');
 
 -- --------------------------------------------------------
 
@@ -543,7 +545,8 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
-(41, 'callcenter', 'callcenter', 1, 3);
+(41, 'callcenter', 'callcenter', 1, 3),
+(43, '21', '12', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -722,7 +725,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -742,7 +745,7 @@ ALTER TABLE `ficheiro`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
