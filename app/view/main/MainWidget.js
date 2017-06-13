@@ -12,10 +12,6 @@ Ext.define('TrackIT.view.main.MainWidget', {
         bodyPadding: 10,
         xtype: 'departamentoprincipal'
     }]
-            /*items: [{
-                xtype: 'registahisestado'
-            }]*/
-        //}
-    //]
+
 
 });

@@ -5,7 +5,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     alias: 'widget.gridticket',
     xtype: 'mainlisttickets',
 
-    height: 700,
+    height: 600,
     requires: [
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
