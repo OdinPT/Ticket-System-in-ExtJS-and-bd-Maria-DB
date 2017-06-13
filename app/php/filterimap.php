@@ -74,6 +74,7 @@ if($emails) {
         $message = strip_tags($message);
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
+        $message = nl2br($message);
     echo $message;
     $conn= mysqli_connect("localhost","root","","emails");
     mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");

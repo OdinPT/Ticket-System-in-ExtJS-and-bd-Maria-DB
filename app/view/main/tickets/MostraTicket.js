@@ -25,7 +25,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         scrollable: true,
         closable: true,
         collapsible: true,
-        split: true,
+        split: true
 
     },
 
@@ -45,12 +45,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
 
                 xtype: 'mainlistrespostas'
             }
-
-<<<<<<< HEAD
-    }
-=======
             ]
->>>>>>> 195d47738d652f31ee7bc90ca076db67ebf91b99
 
     }
 

@@ -44,14 +44,6 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
         xtype: 'toolbar',
         items: [
             {
-                text: 'Carregar Departamento',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickObterDepartamento'
-                }
-
-            },
-            {
                 text: 'Apagar Departamento',
                 glyph: 43,
                 listeners: {

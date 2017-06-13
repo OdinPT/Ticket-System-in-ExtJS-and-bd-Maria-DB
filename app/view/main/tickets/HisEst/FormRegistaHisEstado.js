@@ -4,7 +4,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     xtype: 'registahisestado',
     controller: 'registahisestado',
     requires: [
-        'TrackIT.view.admin.FormRegistaHisEstadoController',
+        'TrackIT.view.admin.FormRegistaHisEstadoController'
 
     ],
     id: 'formregistahisEstado',

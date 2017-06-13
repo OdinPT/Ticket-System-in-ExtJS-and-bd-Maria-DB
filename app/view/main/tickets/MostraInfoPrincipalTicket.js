@@ -80,7 +80,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         glyph: 43,
         listeners: {
           click: 'onClickMoveParaHistorico'
-        },
+        }
       },
 
 
