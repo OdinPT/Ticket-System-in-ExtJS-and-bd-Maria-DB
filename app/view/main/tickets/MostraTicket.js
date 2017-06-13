@@ -54,8 +54,13 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 {
                     xtype: 'mainlisthistoricoest'
                 },
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 9cea7d60a246a7683db999bc95fce41261893965
             ]
 
         }
