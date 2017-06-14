@@ -80,7 +80,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         }
       },
       {
-      text: 'Recuperar',
+      text: 'Mover para Ticket',
       glyph: 43,
       listeners: {
         click: 'onClickMoveParaTickets'
