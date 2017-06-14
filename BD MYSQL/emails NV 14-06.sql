@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Jun-2017 às 13:39
+-- Generation Time: 14-Jun-2017 às 15:52
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -38,6 +38,16 @@ DELETE FROM respostas where id_resp=_id;
 
 End$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaHistoricoEstado` (IN `_id` INT)  NO SQL
+Begin
+
+SELECT `idHistoricoEstados`,`HoraAtribuicaoEstado`,`IdTicketEstado`,`Descricao_Estado`,`username`
+FROM historicoestados, estado, funcionario
+
+where IDEstadoEstado=ID_Estado  and IDFuncEstado=id_funcionario and   IdTicketEstado = _id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaInfo` (IN `_id` INT(11))  NO SQL
 Begin
 
@@ -63,6 +73,8 @@ TRUNCATE table emails;
 truncate table upload;
 truncate table respostas;
 truncate TABLE historicoestados;
+TRUNCATE table historicodepartamentos;
+
 
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
@@ -104,6 +116,24 @@ INSERT INTO funcionario
             _TP);
 End$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirHistoricoDepartamentos` (IN `IdTicket` INT(11), IN `IDDepart` INT(11), IN `IDFunc` INT(11))  NO SQL
+BEGIN
+
+    INSERT INTO historicodepartamentos 
+    			( 
+        `IdTicketDep`,
+		`HoraAtribuicaoDep`,
+		`IDDepartamentoDep`,
+		`IDFuncEstado`) 
+    
+    VALUES ( 
+        IdTicket,
+        Now(),
+        IDDepart,
+        IDFunc);
+        
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
 
     INSERT INTO historicoestados
@@ -126,19 +156,20 @@ update  emails set emails.state=IDEstado where id=IdTicket;
 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_body` VARCHAR(700), IN `_id_email` INT(11))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_subject` VARCHAR(100), IN `_body` VARCHAR(230), IN `_id_email` INT(11))  NO SQL
 BEGIN 
 
 
     INSERT INTO respostas
          (
+           subject_resp,
            body_resp,
            datea_resp,
-           id_email)
-           
+         	id_email)   
+          
     VALUES 
          ( 
-           
+           _subject,
         _body, 
         Now(),
         _id_email) ; 
@@ -263,10 +294,11 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelec` (IN `_id` INT(11))  NO SQL
 BEGIN
  
- SELECT `body`,fromaddress FROM emails,grupo, departamento 
- 
- where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Ticket" and  (id=_id); 
-   END$$
+SELECT `id`,`fromaddress`,`subject`,`datea`,`body`,`Descricao_Estado`,`email`,nome_departamento
+FROM emails, departamento , estado
+WHERE `id_departamento_emails`=id_departamento and (`state`=ID_Estado) and (id=_id); 
+  
+ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT)  BEGIN
  SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo 
@@ -571,6 +603,20 @@ INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `historicodepartamentos`
+--
+
+CREATE TABLE `historicodepartamentos` (
+  `idHistoricoDep` int(11) NOT NULL,
+  `IdTicketDep` int(11) DEFAULT NULL,
+  `HoraAtribuicaoDep` datetime DEFAULT NULL,
+  `IDDepartamentoDep` int(11) DEFAULT NULL,
+  `IDFuncEstado` int(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `historicoestados`
 --
 
@@ -684,6 +730,16 @@ ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id_grupo`);
 
 --
+-- Indexes for table `historicodepartamentos`
+--
+ALTER TABLE `historicodepartamentos`
+  ADD PRIMARY KEY (`idHistoricoDep`),
+  ADD KEY `IdTicketEstado_idx` (`IdTicketDep`),
+  ADD KEY `IDEstadoEstado_idx` (`IDDepartamentoDep`),
+  ADD KEY `IDFuncEstado_idx` (`IDFuncEstado`),
+  ADD KEY `IDFuncEstado` (`IDFuncEstado`);
+
+--
 -- Indexes for table `historicoestados`
 --
 ALTER TABLE `historicoestados`
@@ -751,6 +807,11 @@ ALTER TABLE `funcionario`
 --
 ALTER TABLE `grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `historicodepartamentos`
+--
+ALTER TABLE `historicodepartamentos`
+  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `historicoestados`
 --

@@ -10,11 +10,6 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     id: 'formregistahisEstado',
     frame: false,
 
-    height: 130,
-    border: false,
-    //title: 'Alterar Estado ',
-
-
     layout: {
         type: 'form',
         align: 'fit'
@@ -31,7 +26,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
         {
 
             xtype: 'combobox',
-            fieldLabel: 'Alterar Estado',
+            fieldLabel: 'Atribuir novo Estado',
             store: {
                 type: 'TipoEstado'
             },
@@ -43,12 +38,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             submitValue:true,
             hiddenName : 'ID_Estado',
             allowBlank: false,
-
             emptyText: 'Seleccione um novo estado...'
-
-
-
-
 
         }
 

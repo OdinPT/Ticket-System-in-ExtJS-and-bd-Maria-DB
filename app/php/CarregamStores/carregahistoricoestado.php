@@ -7,7 +7,7 @@ $id = $_COOKIE['cookieID'];
 
 $return_arr = array();
 
-    $query = "SELECT `idHistoricoEstados`,`HoraAtribuicaoEstado`,`IdTicketEstado`,`IDEstadoEstado`,`IDFuncEstado` FROM historicoestados where IdTicketEstado = $id" ;
+    $query = "call CarregaHistoricoEstado($id)" ;
 
 
 $result = mysqli_query($mysqli, $query);
@@ -16,8 +16,8 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 $row_array['idHistoricoEstados'] = $row['idHistoricoEstados'];
 $row_array['HoraAtribuicaoEstado'] = $row['HoraAtribuicaoEstado'];
 $row_array['IdTicketEstado'] = $row['IdTicketEstado'];
-$row_array['IDEstadoEstado'] = $row['IDEstadoEstado'];
-$row_array['IDFuncEstado'] = $row['IDFuncEstado'];
+$row_array['Descricao_Estado'] = $row['Descricao_Estado'];
+$row_array['username'] = $row['username'];
 
 
     array_push($return_arr,$row_array);
