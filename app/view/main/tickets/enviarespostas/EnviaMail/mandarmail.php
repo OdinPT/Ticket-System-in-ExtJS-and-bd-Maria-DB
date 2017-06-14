@@ -1,4 +1,5 @@
 ﻿<?php
+error_reporting(0);
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
@@ -10,10 +11,10 @@ $fileName = $_FILES['anexo']['name'];
 $tmpName  = $_FILES['anexo']['tmp_name'];
 $fileSize = $_FILES['anexo']['size'];
 $fileType = $_FILES['anexo']['type'];
-$fp = fopen($tmpName, 'r');
+$fp= fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
-    fclose($fp);
+  fclose($fp);
     if(!get_magic_quotes_gpc()){
         $fileName = addslashes($fileName);
     }
@@ -82,11 +83,6 @@ $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
 mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
-
-
-
-
-
 mysqli_close($mysqli);
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )
