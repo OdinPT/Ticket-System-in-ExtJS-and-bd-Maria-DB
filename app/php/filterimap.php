@@ -70,11 +70,11 @@ if($emails) {
     }
     $from = quoted_printable_decode(imap_utf8($overview[0]->from));
         $date = utf8_decode(imap_utf8($overview[0]->date));
+        $message = nl2br($message);
         $subject = quoted_printable_decode(imap_utf8($overview[0]->subject));
         $message = strip_tags($message);
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
-        $message = nl2br($message);
     echo $message;
     $conn= mysqli_connect("localhost","root","","emails");
     mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");

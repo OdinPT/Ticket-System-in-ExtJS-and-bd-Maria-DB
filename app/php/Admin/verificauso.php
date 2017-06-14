@@ -13,7 +13,6 @@ while($res = mysqli_fetch_array($result))
 {
 	$state = $res['state'];
 }
-
 if($state != 3 )
 {
     $insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");

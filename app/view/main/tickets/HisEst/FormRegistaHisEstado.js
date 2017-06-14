@@ -44,7 +44,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             hiddenName : 'ID_Estado',
             allowBlank: false,
 
-            emptyText: 'Seleciona o novo Estado...',
+            emptyText: 'Seleccione um novo estado...'
 
 
 
