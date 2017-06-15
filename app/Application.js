@@ -22,7 +22,7 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.admin.Funcionarios',
         'TrackIT.store.anexos.Anexos',
         'TrackIT.store.admin.DepartamentoSeleccionado',
-        'TrackIT.store.TipoDepartamento.TipoD'
+        'TrackIT.store.TipoDepartamento.TipoD',
     ],
     views: [
       'TrackIT.view.login.Login',

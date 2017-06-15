@@ -112,11 +112,23 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       var myWin = Ext.create("Ext.window.Window", {
                           title: 'Mudar estado',
                           modal: true,
-
-
-
                           items: {
                               xtype: 'registahisestado'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
+          },{
+              text: 'Mudar Departamento',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar Departamento',
+                          modal: true,
+                          items: {
+                              xtype: 'registahisDep'
                           }
                       });
                       myWin.show();
