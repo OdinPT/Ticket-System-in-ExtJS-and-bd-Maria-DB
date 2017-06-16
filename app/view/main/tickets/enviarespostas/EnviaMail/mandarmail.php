@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
@@ -32,6 +32,14 @@ while($res = mysqli_fetch_array($result))
   $username = $res['username'];
   $password = $res['pass'];
 }
+
+$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'") or die(mysqli_error($mysqli));
+
+
+while($res = mysqli_fetch_array($result))
+{
+    $sender = $res['fromaddress'];
+}
 $PHPMailer = new PHPMailer();
 
 // define que será usado SMTP
@@ -57,9 +65,11 @@ $PHPMailer->From = $username;
 
 // Nome do rementente
 $PHPMailer->FromName = 'TrackIT';
-
+$conteudo2 = $conteudo;
 // assunto da mensagem
 $PHPMailer->Subject = $assunto;
+
+$conteudo = str_replace('%conteudo2%', $conteudo2, file_get_contents('action.html'));
 
 // corpo da mensagem
 $PHPMailer->Body = $conteudo;

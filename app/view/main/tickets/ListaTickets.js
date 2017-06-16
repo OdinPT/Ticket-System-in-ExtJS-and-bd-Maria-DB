@@ -10,7 +10,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.MostraTicket',
-        'TrackIT.store.tickets.TicketSelected'
+        'TrackIT.store.tickets.TicketSelected',
+        'TrackIT.view.main.tickets.enviaemail.FormEnviaEmail'
     ],
     config: {
         autoLoad: true,
@@ -93,6 +94,24 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                 handler: function() {
                     var grid = Ext.ComponentQuery.query('gridticket')[0];
                     grid.getStore().removeAll();
+                }
+            },
+            {
+                text: 'Escrever Email',
+                glyph: 43,
+                listeners: {
+                    click: function(){
+                        var myWin = Ext.create("Ext.window.Window", {
+                            title: 'Escrever Email',
+                            modal: true,
+                            width: 700,
+                            height: 320,
+                            items: {
+                                xtype: 'enviaemail'
+                            }
+                        });
+                        myWin.show();
+                    }
                 }
             }
 
