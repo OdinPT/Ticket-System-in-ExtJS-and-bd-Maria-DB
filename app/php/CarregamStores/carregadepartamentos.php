@@ -1,6 +1,9 @@
 <?php
 error_reporting(0);
 include("config.php");
+
+
+
 $return_arr = array();
 
     $query = "SELECT * FROM departamento ORDER BY id_departamento";
