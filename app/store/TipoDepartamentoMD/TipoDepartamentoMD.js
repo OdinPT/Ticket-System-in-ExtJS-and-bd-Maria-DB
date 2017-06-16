@@ -3,13 +3,19 @@ Ext.define('TrackIT.store.TipoDepartamentoMD.TipoDepartamentoMD', {
     model: 'TrackIT.model.TipoDepartamento',
     alias: 'store.TipoDepartamentoMD',
     storeId: 'TipoDepartamentoMD',
-
-    data: [
-        [1, "call center"],
-        [2, 'Operations']
-
-
-    ]
-
-
+    autoLoad: true,
+    autoSync: true,
+    proxy: {
+        type: 'ajax',
+        url: 'app/php/carregamStores/carregadepartamentos.php',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
+        }
+    },
+    listeners: {
+        load: function(){
+            console.log('loaded');
+        }
+    }
 });

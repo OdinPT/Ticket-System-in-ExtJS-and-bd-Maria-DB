@@ -42,6 +42,8 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
 
         }
 
+
+
     ],
     dockedItems: {
         dock: 'bottom',

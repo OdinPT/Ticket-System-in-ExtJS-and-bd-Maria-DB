@@ -2,7 +2,7 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
     extend: 'Ext.form.Panel',
     extend:'Ext.panel.Panel',
     xtype: 'registahisDep',
-    controller: 'registahisDep',
+    controller: 'TipoDepartamentoMD',
     requires: [
         'TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController'
     ],
@@ -33,13 +33,23 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
             displayField: 'nome_departamentos',
             typeAhead: true,
             queryMode: 'local',
-            id: 'id_departamentos',
+            id: 'id_departamento2',
             submitValue:true,
             hiddenName : 'id_departamentos',
             allowBlank: false,
             emptyText: 'Seleccione um novo estado...'
 
         }
+        /*{
+            xtype: 'textfield',
+            fieldLabel: 'ID departamento:',
+
+            id: 'id_departamentos',
+            name: 'pass',
+            emptyText : 'Insira a password',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
+        },*/
 
     ],
     dockedItems: {
