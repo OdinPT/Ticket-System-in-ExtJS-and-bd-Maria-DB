@@ -5,8 +5,12 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     extend: 'Ext.grid.Panel',
     id: 'grid4',
     xtype: 'mainlistrespostas',
+
     width: 1074,
-    height: 600,
+    height: 500,
+
+
+
     requires: [
         'TrackIT.store.respostas.Respostas',
         'Ext.toolbar.Paging',

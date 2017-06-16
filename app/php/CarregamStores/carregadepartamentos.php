@@ -4,11 +4,7 @@ include("config.php");
 $return_arr = array();
 
     $query = "SELECT * FROM departamento ORDER BY id_departamento";
-<<<<<<< HEAD
-  //$query = "SELECT * FROM respostas WHERE IDticket=$id";
-=======
 
->>>>>>> 195d47738d652f31ee7bc90ca076db67ebf91b99
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

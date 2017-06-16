@@ -1,8 +1,8 @@
 
-Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
+Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
     extend: 'Ext.grid.Panel',
-    id: 'gridhisest',
-    xtype: 'mainlisthistoricoest',
+    id: 'gridhisdep',
+    xtype: 'mainlisthistoricoDep',
     requires: [
         'TrackIT.store.HistoricoEstados.HistoricoEstado',
         'Ext.toolbar.Paging'],

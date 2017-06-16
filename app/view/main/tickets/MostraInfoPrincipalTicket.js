@@ -10,7 +10,10 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     ],
     id: 'paginainfoprincipalticket',
     title: 'Informação Principal',
+
     //width: 1100,
+
+    width: 1000,
     height: 450,
     autoScroll: true,
 
@@ -49,7 +52,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'statee',
+            id: 'Descricao_Estado',
             readOnly: true
         },
         {
@@ -83,9 +86,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         }
       },
 
-
-
-
           {
               text: 'Responder',
               glyph: 43,
@@ -103,8 +103,40 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       myWin.show();
                   }
               }
+          },
+          {
+              text: 'Mudar estado',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar estado',
+                          modal: true,
+                          items: {
+                              xtype: 'registahisestado'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
+          },{
+              text: 'Mudar Departamento',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar Departamento',
+                          modal: true,
+                          items: {
+                              xtype: 'registahisDep'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
           }
 
-    ]
+
+      ]
   }
   });

@@ -1,5 +1,5 @@
 
-Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
+Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraEstados', {
     extend: 'Ext.grid.Panel',
     id: 'gridhisest',
     xtype: 'mainlisthistoricoest',
