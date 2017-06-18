@@ -7,10 +7,6 @@ $return_arr = array();
 
 $query = "call RespostaSelecionada($id)";
 
-//call RespostaSelecionada(2)
-
-//$query = "SELECT * FROM respostas WHERE id=$id";
-
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
