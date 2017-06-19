@@ -78,7 +78,7 @@ Ext.define('TrackIT.view.main.Main', {
 
     items: [{
         title: 'Tickets',
-        iconCls: 'fa-eye',
+        iconCls: 'fa-home',
         items: [{
             xtype: 'mainlisttickets'
         }]

@@ -12,6 +12,7 @@ while($res = mysqli_fetch_array($result))
 	$password = $res['pass'];
 }
 //getting id of the data from url
+
 $id = $_COOKIE['cookieID'];
 
 $state = mysqli_query($mysqli, "Call MudaGrupo($id)");

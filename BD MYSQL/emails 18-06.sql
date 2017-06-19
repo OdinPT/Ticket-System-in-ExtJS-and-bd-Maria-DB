@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Jun-2017 às 15:52
+-- Generation Time: 18-Jun-2017 às 23:24
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -116,7 +116,7 @@ INSERT INTO funcionario
             _TP);
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirHistoricoDepartamentos` (IN `IdTicket` INT(11), IN `IDDepart` INT(11), IN `IDFunc` INT(11))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirHistoricoDepartamentos` (IN `IdTicket` INT(11), IN `IDDepart` INT(11), IN `IDFunc` VARCHAR(100))  NO SQL
 BEGIN
 
     INSERT INTO historicodepartamentos 
@@ -130,9 +130,11 @@ BEGIN
         IdTicket,
         Now(),
         IDDepart,
-        IDFunc);
-        
-END$$
+         retornaIdMail(IDFunc));
+   
+   update  emails set emails.id_departamento_emails=IDDepart where id=IdTicket;
+  
+  End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
 
@@ -239,7 +241,7 @@ Begin
 
 SELECT `id_resp`,`subject_resp`,`body_resp`,`datea_resp`,`id_email`
 FROM `respostas` 
-WHERE `id_email`=_id;
+WHERE id_resp=_id;
 
 End$$
 
@@ -353,6 +355,14 @@ FROM funcionario, departamento,tipoutilizador
 
 where (`id_departamento_funcionarios`= id_departamento) and `Tipo_Funcionario`= ID_TipoUtilizador and id_funcionario=_id
 ORDER BY id_funcionario;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerHistoricoDepartamento` (IN `_id` INT(11))  NO SQL
+BEGIN
+
+select `idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `IDDepartamentoDep`, `IDFuncEstado` from historicodepartamentos
+where (IdTicketDep=_id);
 
 End$$
 
@@ -518,6 +528,22 @@ CREATE TABLE `emails` (
   `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+(1, 'void@phpclasses.org', 'void@phpclasses.org', 'No reply at this address (was: res)', '2017-06-16 14:50:56', '', 3, 1, 1),
+(2, 'testetrackit@gmail.com', 'Track IT Testes <testetrackit@gmail.com>', 'sexta', '2017-06-16 14:51:21', 'Sexta feira\r\n\r\ntestetrackit\r\n\r\n', 3, 1, 1),
+(3, 'list-newsletter@phpclasses.org', 'PHP Classes Newsletter <list-newsletter@phpclasses.org>', '[PHP Classes] Weekly PHP Classes newsletter of Thursday - 2017-06-08', '2017-06-16 14:51:22', 'teste this is the Weekly PHP Classes newsletter of Thursday - 2017-06-08\r\n\r\n---------------------------------------------------------------------------\r\nYou are getting this message as free service for being a user of the PHP\r\nClasses site to which you registered voluntarily.\r\n\r\nTo unsubscribe see the instructions at the bottom of this message.\r\n---------------------------------------------------------------------------\r\n\r\n    Contents\r\n\r\n  o PHP Classes site tip of the day\r\n  o Latest PHP specialists forum threads\r\n  o Latest PHP Classes blog posts\r\n  o Innovation award results\r\n  o Latest support forum threads\r\n  o Latest package entries\r\n  o Latest news\r\n\r\n--------------------------------', 3, 1, 1),
+(4, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'depois limpar algumas cenas do codigo', '2017-06-16 14:51:23', 'asasasas\r\n\r\n--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 3, 1, 1),
+(5, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'Fwd: Prepare-se para este veraÌƒo', '2017-06-16 14:51:23', '---------- Mensagem encaminhada ----------\r\nDe: TomTom Promotional \r\nData: 7 de junho de 2017 ÃƒÂ s 05:12\r\nAssunto: Prepare-se para este verÃƒÂ£o\r\nPara: leonardo.almeidavieira@gmail.com\r\n\r\n\r\nConsidere substituir jÃƒÂ¡ o seu equipamento de navegaÃƒÂ§ÃƒÂ£o\r\nConsidere substituir jÃƒÂ¡ o seu equipamento de navegaÃƒÂ§ÃƒÂ£o\r\nEstÃƒÂ¡ com dificuldade em visualizar a mensagem\r\nde correio electrÃƒÂ³nico abaixo?\r\nClique aqui para ler a versÃƒÂ£o online.\r\n\r\n[image: TomTom]\r\n\r\nCONSIDERE SUBSTITUIR JÃƒÂ O SEU EQUIPAMENTO DE NAVEGAÃƒÂ‡ÃƒÂƒO\r\nNo passado mÃƒÂªs de novembro, deixÃƒÂ¡mos de oferecer os mapas mais recentes e\r\noutros conteÃƒÂºdos para os nossos equipamentos de primeira geraÃƒÂ§ÃƒÂ£o. Clique\r\naq', 2, 2, 1),
+(6, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'Fwd: Workshops | Teatro.', '2017-06-16 14:51:24', '/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIf\r\nIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7\r\nOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAA9ALkDASIA\r\nAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA\r\nAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3\r\nODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm\r\np6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA\r\nAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx\r\nBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK', 2, 1, 1),
+(7, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'fotos', '2017-06-16 14:51:25', '4 fotos-- __Leonardo Almeida\r\n\r\n', 2, 1, 1),
+(8, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', 'aaa', '2017-06-16 14:51:25', 'abc\r\n\r\n--\r\n*__*\r\n\r\n*Leonardo Almeida*\r\n', 2, 1, 1),
+(9, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP PostgreSQL Session Handler', '2017-06-16 14:51:25', '*teste, a PHP package is considered Notable when it does something\r\ndifferent that is worth noting.*\r\n\r\nIf you have also written Notable packages, contribute them to the PHP\r\nClasses site to get your work more exposure.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\nIf your notable package is innovative, you may also earn prizes and\r\nrecognition in the PHP Innovation Award.\r\n\r\nhttps://www.phpclasses.org/winners/\r\n\r\nTry the *new package submission* interface. It is faster, takes less steps,\r\nless instructions to read, show instructions on how to import packages from\r\nGit or other repository type, and works on mobile devices.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\no Package\r\n\r\n  PH', 4, 1, 2),
+(10, 'noreply@youtube.com', 'YouTube <noreply@youtube.com>', 'Matt Davies: \"THE ULTIMATE TWEAKING TOOL - Prepar3D Tweaking Assistant (PTA)\"', '2017-06-18 22:16:40', 'Tem aqui os vÃ­deos mais recentes de cada uma das suas subscriÃ§Ãµes. Para  \r\nalterar as subscriÃ§Ãµes relativamente Ã s quais recebe actualizaÃ§Ãµes, ou para  \r\ndesativar as actualizaÃ§Ãµes, aceda Ã s suas opÃ§Ãµes de email:\r\nhttp://www.youtube.com/account_notifications?feature=em-subs_digest\r\n----------------------------------------------------------------\r\nÃšltimas atualizaÃ§Ãµes de subscriÃ§Ã£o\r\n----------------------------------------------------------------\r\nhttp://youtu.be/XHWt_KEzZVw?em\r\nTHE ULTIMATE TWEAKING TOOL - Prepar3D Tweaking Assistant (PTA)\r\npor Matt Davies\r\n----------------------------------------------------------------Achamos que  \r\nvai gostar de...\r\n---------------------', 2, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -577,8 +603,7 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
-(41, 'callcenter', 'callcenter', 1, 3),
-(43, '21', '12', 2, 4);
+(41, 'callcenter', 'callcenter', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -614,6 +639,21 @@ CREATE TABLE `historicodepartamentos` (
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `historicodepartamentos`
+--
+
+INSERT INTO `historicodepartamentos` (`idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `IDDepartamentoDep`, `IDFuncEstado`) VALUES
+(1, 1, '2017-06-16 14:52:42', 4, 41),
+(2, 2, '2017-06-16 15:16:55', 0, 41),
+(3, 3, '2017-06-16 15:18:30', 0, 41),
+(4, 4, '2017-06-16 15:20:23', 3, 41),
+(5, 9, '2017-06-16 15:25:02', 2, 41),
+(6, 4, '2017-06-16 15:26:09', 2, 41),
+(7, 4, '2017-06-16 15:33:29', 2, 41),
+(8, 6, '2017-06-16 17:28:13', 3, 41),
+(9, 5, '2017-06-18 22:12:55', 2, 41);
+
 -- --------------------------------------------------------
 
 --
@@ -628,6 +668,14 @@ CREATE TABLE `historicoestados` (
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `historicoestados`
+--
+
+INSERT INTO `historicoestados` (`idHistoricoEstados`, `HoraAtribuicaoEstado`, `IdTicketEstado`, `IDEstadoEstado`, `IDFuncEstado`) VALUES
+(1, '2017-06-16 16:20:29', 1, 4, 41),
+(2, '2017-06-17 19:35:17', 4, 2, 41);
+
 -- --------------------------------------------------------
 
 --
@@ -641,6 +689,17 @@ CREATE TABLE `respostas` (
   `datea_resp` datetime DEFAULT CURRENT_TIMESTAMP,
   `id_email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `respostas`
+--
+
+INSERT INTO `respostas` (`id_resp`, `subject_resp`, `body_resp`, `datea_resp`, `id_email`) VALUES
+(1, 'sabado', 're', '2017-06-17 19:49:23', 5),
+(2, 'sabado', 're', '2017-06-17 19:49:36', 5),
+(3, 'z', 'z', '2017-06-17 19:53:58', 5),
+(4, 'aaa', 'aaaaaaaaaaaaaaaaaaaaaa', '2017-06-18 15:27:50', 8),
+(5, 'aaa', 'aaaaaaaaaaaaaaaaaaaaaa', '2017-06-18 15:27:51', 8);
 
 -- --------------------------------------------------------
 
@@ -786,7 +845,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -801,7 +860,7 @@ ALTER TABLE `ficheiro`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -811,17 +870,17 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT for table `historicodepartamentos`
 --
 ALTER TABLE `historicodepartamentos`
-  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `historicoestados`
 --
 ALTER TABLE `historicoestados`
-  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_resp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tipoutilizador`
 --

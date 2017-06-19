@@ -3,7 +3,7 @@ include("config.php");
 //IdTicketEstado
 
 $IdTicketEstado = $_COOKIE['cookieID'];
-$IDEDep = $_POST['id_departamentos'];
+$IDEDep = $_POST['id_departamento'];
 $IDFuncEstado =  $_COOKIE['cookieEmail'];
 
 //$IdTicketEstado = $_COOKIE['cookieID'];
