@@ -1,6 +1,6 @@
 Ext.define('TrackIT.store.TipoDepartamentoMD.TipoDepartamentoMD', {
     extend: 'Ext.data.ArrayStore',
-    model: 'TrackIT.model.TipoDepartamento',
+    model: 'TrackIT.model.Departamento',
     alias: 'store.TipoDepartamentoMD',
     storeId: 'TipoDepartamentoMD',
     autoLoad: true,

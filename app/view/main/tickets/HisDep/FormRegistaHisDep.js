@@ -29,13 +29,13 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
             store: {
                 type: 'TipoDepartamentoMD'
             },
-            valueField: 'id_departamentos',
-            displayField: 'nome_departamentos',
+            valueField: 'id_departamento',
+            displayField: 'nome_departamento',
             typeAhead: true,
             queryMode: 'local',
             id: 'id_departamento2',
             submitValue:true,
-            hiddenName : 'id_departamentos',
+            hiddenName : 'id_departamento',
             allowBlank: false,
             emptyText: 'Seleccione um novo estado...'
 

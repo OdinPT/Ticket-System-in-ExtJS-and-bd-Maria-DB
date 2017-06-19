@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-<?php
-=======
+
 ﻿<?php
 error_reporting(0);
->>>>>>> 1cd79b484298f2a0a78de3d5f2320b674b7f8d55
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
@@ -96,7 +93,7 @@ $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
-mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
+mysqli_query($mysqli, "INSERT INTO respostas(subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo2','$id')");
 mysqli_close($mysqli);
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )
