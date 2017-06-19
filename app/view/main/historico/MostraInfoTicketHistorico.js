@@ -45,7 +45,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'statee',
+            id: 'Descricao_Estadoo',
             readOnly: true
         },
         {

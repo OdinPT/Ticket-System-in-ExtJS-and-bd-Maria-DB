@@ -16,7 +16,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
-    title: 'Tickets Historico',
+    title: 'Historico',
 
     store: {
         type: 'ticketshistorico'
@@ -26,14 +26,14 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         ptype: 'gridfilters'
     }],
     columns: [
-        {text: 'ID ',  dataIndex: 'id', flex: 0.5,filter: {
+        {text: 'ID ',  dataIndex: 'id', flex: 0.4,filter: {
             type: 'string'
         }},
-        { text: 'DE',  dataIndex: 'fromaddress', flex: 1.2,
+        { text: 'DE',  dataIndex: 'fromaddress', flex: 1.6,
             filter: {
                 type: 'string'
             }},
-        { text: 'ASSUNTO', dataIndex: 'subject', flex: 1.5,
+        { text: 'ASSUNTO', dataIndex: 'subject', flex: 2.2,
             filter: {
                 type: 'string'
             }},
@@ -45,11 +45,11 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'state',flex: 1.5,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1,
             filter: {
                 type: 'string'
             }},
-        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
+        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.5,
             filter: {
                 type: 'string'
             }}
@@ -109,7 +109,7 @@ Ext.MessageBox.hide();
                                 var a =  Ext.getCmp('idd').setValue(record.data.id);
                                 var a =  Ext.getCmp('emaill').setValue(record.data.email);
                                 var b = Ext.getCmp('dateaa').setValue(record.data.datea);
-                                var c = Ext.getCmp('statee').setValue(record.data.state);
+                                var c = Ext.getCmp('Descricao_Estadoo').setValue(record.data.Descricao_Estado);
                                 var d = Ext.getCmp('departmentt').setValue(record.data.nome_departamento);
                                 var e =  Ext.getCmp('subjectt').setValue(record.data.subject);
                                 var f = Ext.getCmp('bodyy').setValue(record.data.body);

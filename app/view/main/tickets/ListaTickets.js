@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'DATA', dataIndex: 'datea', flex: 1.2,
+        { text: 'DATA', dataIndex: 'datea', flex: 1.5,
             filter: {
                 type: 'string'
             }
@@ -48,7 +48,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.2,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1,
             filter: {
                 type: 'string'
             },
