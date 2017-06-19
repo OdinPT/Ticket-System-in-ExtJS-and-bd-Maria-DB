@@ -48,7 +48,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
   },
     listeners: {
         itemclick: function(view, record, item, index, e) {
-            var id = record.get('ID');
+            var id = record.get('id_resp');
             Ext.util.Cookies.set('cookieIDanswer', id);
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Respostas',
