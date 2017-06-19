@@ -22,7 +22,7 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
     },
 
     items: [
-        {
+        /*{
             xtype: 'textfield',
             fieldLabel: 'ID(opcional):',
             id: 'id_departamento4',
@@ -30,7 +30,7 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
             emptyText : 'Insira o ID do departamento',
             allowBlank: true
 
-        },
+        },*/
         {
             xtype: 'textfield',
             fieldLabel: 'Nome de Departamento:',

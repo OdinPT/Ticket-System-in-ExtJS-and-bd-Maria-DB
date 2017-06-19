@@ -8,8 +8,8 @@ Ext.define('TrackIT.store.TipoEstado.TipoEstado', {
         [1, "Aberto"],
         [2, 'Lido'],
         [4, 'Atribuido'],
-        [5, 'Fechado'],
-        [5, 'Reaberto']
+        [5, 'Fechado']
+
     ]
 
 
