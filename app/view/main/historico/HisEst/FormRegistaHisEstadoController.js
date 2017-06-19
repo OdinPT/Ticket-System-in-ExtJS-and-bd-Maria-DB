@@ -1,4 +1,4 @@
-Ext.define('TrackIT.view.main.tickets.HisEst.FormRegistaHisEstadoController', {
+Ext.define('TrackIT.view.admin.FormRegistaHisEstadoController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.registahisestado',
 
