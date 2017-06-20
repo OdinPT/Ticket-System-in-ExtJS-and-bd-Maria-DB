@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jun-2017 às 13:28
+-- Generation Time: 20-Jun-2017 às 15:11
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -360,13 +360,13 @@ ORDER BY id_funcionario;
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerHistoricoDepartamento` (IN `_id` INT(11))  NO SQL
-BEGIN
+Begin
+select `idHistoricoDep`,`IdTicketDep`,`HoraAtribuicaoDep`,`HoraAtribuicaoDep`,`nome_departamento`,`username`
+from historicodepartamentos,departamento,funcionario
 
-select `idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `nome_departamento`, `username`
-from historicodepartamentos
-where  (IDDepartamentoDep=id_departamento) and (IDFuncEstado=id_funcionario)and (IdTicketDep=_id);
+where IDDepartamentoDep=id_departamento and `IDFuncEstado`= id_funcionario and IdTicketDep= _id; 
 
-End$$
+end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
@@ -530,6 +530,16 @@ CREATE TABLE `emails` (
   `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+(1, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', '19-06 TPSI', '2017-06-20 12:40:15', 'Atividades realizadas hoje:\r\n\r\nÃ¢Â€Â‹=&gt; Registar e efetuar alteraÃƒÂ§ÃƒÂ£o de departamento de um ticket.\r\n\r\n=&gt; ResoluÃƒÂ§ÃƒÂ£o do bug de mudar ao mudar o ticket para histÃƒÂ³rico.\r\n\r\n=&gt;ResoluÃƒÂ§ÃƒÂ£o de problemas de quando era seleccionada uma resposta dentro de\r\num ticket.\r\nÃ¢Â€Â‹\r\nLeonardo e Rui\r\n', 5, 1, 2),
+(2, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP Language Info', '2017-06-20 12:40:16', '*teste, a PHP package is considered Notable when it does something\r\ndifferent that is worth noting.*\r\n\r\nIf you have also written Notable packages, contribute them to the PHP\r\nClasses site to get your work more exposure.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\nIf your notable package is innovative, you may also earn prizes and\r\nrecognition in the PHP Innovation Award.\r\n\r\nhttps://www.phpclasses.org/winners/\r\n\r\nTry the *new package submission* interface. It is faster, takes less steps,\r\nless instructions to read, show instructions on how to import packages from\r\nGit or other repository type, and works on mobile devices.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\no Package\r\n\r\n  PH', 2, 1, 1),
+(3, 'testetrackit@gmail.com', 'TrackIT <testetrackit@gmail.com>', 'z', '2017-06-20 12:40:16', 'Mensagem em texto\r\n\r\n', 5, 1, 2),
+(4, 'void@phpclasses.org', 'void@phpclasses.org', 'No reply at this address (was: res)', '2017-06-20 12:40:42', '', 5, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -624,6 +634,17 @@ CREATE TABLE `historicodepartamentos` (
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `historicodepartamentos`
+--
+
+INSERT INTO `historicodepartamentos` (`idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `IDDepartamentoDep`, `IDFuncEstado`) VALUES
+(1, 4, '2017-06-20 12:43:29', 1, 41),
+(2, 3, '2017-06-20 12:48:48', 1, 41),
+(3, 1, '2017-06-20 12:50:45', 1, 41),
+(4, 1, '2017-06-20 12:51:00', 1, 41),
+(5, 2, '2017-06-20 12:52:13', 1, 41);
+
 -- --------------------------------------------------------
 
 --
@@ -637,6 +658,16 @@ CREATE TABLE `historicoestados` (
   `IDEstadoEstado` int(11) DEFAULT NULL,
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `historicoestados`
+--
+
+INSERT INTO `historicoestados` (`idHistoricoEstados`, `HoraAtribuicaoEstado`, `IdTicketEstado`, `IDEstadoEstado`, `IDFuncEstado`) VALUES
+(1, '2017-06-20 12:42:45', 4, 4, 41),
+(2, '2017-06-20 12:48:41', 3, 2, 41),
+(3, '2017-06-20 12:50:31', 1, 1, 41),
+(4, '2017-06-20 12:52:06', 2, 2, 41);
 
 -- --------------------------------------------------------
 
@@ -796,7 +827,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -821,12 +852,12 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT for table `historicodepartamentos`
 --
 ALTER TABLE `historicodepartamentos`
-  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `historicoestados`
 --
 ALTER TABLE `historicoestados`
-  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `respostas`
 --
