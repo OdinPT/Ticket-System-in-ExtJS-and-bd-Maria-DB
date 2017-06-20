@@ -1,21 +1,26 @@
 <?php
 include("config.php");
-//getting id from url
+
+//Caso o estado esteja a ser visualizado mostra mensagem a dizer que o ticket está a ser usado
+
 $id = $_COOKIE['cookieID'];
+$IDFuncEstadox = $_COOKIE['cookieEmail'];
 
-
-//Caso o estado esteja a er visualizado mostra mensagem a dizer que o ticket está a ser usado
 
 
 $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'");
 
 while($res = mysqli_fetch_array($result))
 {
+
 	$state = $res['state'];
 }
+
 if($state != 3 )
 {
-    $insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+         //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+
+    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
     echo "Sucesso";
 }
 else
@@ -25,3 +30,4 @@ else
 }
 
 ?>
+
