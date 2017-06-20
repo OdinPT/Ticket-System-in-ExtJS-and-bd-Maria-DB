@@ -4,7 +4,7 @@ Ext.define('TrackIT.view.main.historico.HisDep.GridMostraDep', {
     id: 'gridhisdep',
     xtype: 'mainlisthistoricoDep',
     requires: [
-        'TrackIT.store.TipoDepartamentoMD.Departamentos',
+        'TrackIT.store.TipoDepartamentoMD.Departamentoshistorico',
         'Ext.toolbar.Paging'],
 
 
@@ -21,7 +21,7 @@ Ext.define('TrackIT.view.main.historico.HisDep.GridMostraDep', {
         type: 'form'
     },
     store: {
-        type: 'Departamentos'
+        type: 'Departamentosh'
     },
 
     columns: [
