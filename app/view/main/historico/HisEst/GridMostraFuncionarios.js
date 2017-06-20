@@ -1,10 +1,10 @@
 
-Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
+Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
     extend: 'Ext.grid.Panel',
     id: 'gridhisest',
-    xtype: 'mainlisthistoricoest',
+    xtype: 'mainlisthistoricoesthist',
     requires: [
-        'TrackIT.store.HistoricoEstados.HistoricoEstado',
+        'TrackIT.store.HistoricoEstados.HistoricoEstadohistorico',
         'Ext.toolbar.Paging'],
 
 
@@ -21,7 +21,7 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
         type: 'form'
     },
     store: {
-        type: 'HistoricoEstados'
+        type: 'HistoricoEstadohistorico'
     },
 
     columns: [

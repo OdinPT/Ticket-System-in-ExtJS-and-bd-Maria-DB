@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
             title: 'Historico dos Estados',
             items: [
                 {
-                    xtype: 'mainlisthistoricoest'
+                    xtype: 'mainlisthistoricoesthist'
                 }
             ]
 
