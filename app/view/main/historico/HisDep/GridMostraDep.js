@@ -1,10 +1,10 @@
 
-Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
+Ext.define('TrackIT.view.main.historico.HisDep.GridMostraDep', {
     extend: 'Ext.grid.Panel',
-    id: 'gridhisest',
-    xtype: 'mainlisthistoricoest',
+    id: 'gridhisdep',
+    xtype: 'mainlisthistoricoDep',
     requires: [
-        'TrackIT.store.HistoricoEstados.HistoricoEstado',
+        'TrackIT.store.TipoDepartamentoMD.Departamentoshistorico',
         'Ext.toolbar.Paging'],
 
 
@@ -21,15 +21,15 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
         type: 'form'
     },
     store: {
-        type: 'HistoricoEstados'
+        type: 'Departamentosh'
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'idHistoricoEstados', flex: 0.1},
-        { text: 'Hora de atribuição ',  dataIndex: 'HoraAtribuicaoEstado', flex: 0.5},
-        { text: 'Id Ticket', dataIndex: 'IdTicketEstado', flex: 0.2},
-        { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.3},
-        { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.7}
+        { text: 'ID',  dataIndex: 'idHistoricoDep', flex: 0.1},
+        { text: 'ID ticket ',  dataIndex: 'IdTicketDep', flex: 1.3},
+        { text: 'Hora de atribuição', dataIndex: 'HoraAtribuicaoDep', flex: 2.4},
+        { text: 'ID Departamento', dataIndex: 'IDDepartamentoDep', flex: 2.1},
+        { text: 'ID funcionario', dataIndex: 'IDFuncEstado', flex: 4}
     ],
 
     tbar: {
@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostraHistoricoEstados', {
             {
                 text: 'Refresh!',
                 handler: function() {
-                    Ext.getCmp('gridhisest').store.reload();
+                    Ext.getCmp('gridhisdep').store.reload();
                 }
             }]
     },

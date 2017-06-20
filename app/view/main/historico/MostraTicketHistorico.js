@@ -24,8 +24,8 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
         title: 'Conteúdo do Ticket',
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: [{
-                  xtype: 'infotickethistorico'
-              },
+            xtype: 'infotickethistorico'
+        },
             {
                 xtype: 'mainlistanexos'
             },
@@ -34,6 +34,25 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
             }
 
         ]
+    },
+        {
+            title: 'Historico dos Estados',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoesthist'
+                }
+            ]
 
-    }]
+        },
+        {
+            title: 'Historico dos Departamentos',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoDep'
+                }
+            ]
+
+        }
+
+    ]
 });

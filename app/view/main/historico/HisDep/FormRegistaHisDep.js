@@ -1,13 +1,12 @@
-Ext.define('TrackIT.view.main.tickets.HistEst.FormRegistaHisEstado', {
+Ext.define('TrackIT.view.main.historico.HisDep.FormRegistaHisDep', {
     extend: 'Ext.form.Panel',
     extend:'Ext.panel.Panel',
-    xtype: 'registahisestado',
-    controller: 'registahisestado',
+    xtype: 'registahisDep',
+    controller: 'TipoDepartamentoMD',
     requires: [
-        'TrackIT.view.main.tickets.HisEst.FormRegistaHisEstadoController'
-
+        'TrackIT.view.main.historico.HisDep.FormRegistaHisDepController'
     ],
-    id: 'formregistahisEstado',
+    id: 'formregistahisDep',
     frame: false,
 
     layout: {
@@ -26,23 +25,31 @@ Ext.define('TrackIT.view.main.tickets.HistEst.FormRegistaHisEstado', {
         {
 
             xtype: 'combobox',
-            fieldLabel: 'Atribuir novo Estado',
+            fieldLabel: 'Atribuir novo Departamento',
             store: {
-                type: 'TipoEstado'
+                type: 'TipoDepartamentoMD'
             },
-            valueField: 'ID_Estado',
-            displayField: 'Descricao_Estado',
+            valueField: 'id_departamento',
+            displayField: 'nome_departamento',
             typeAhead: true,
             queryMode: 'local',
-            id: 'ID_Estado',
+            id: 'id_departamento2',
             submitValue:true,
-            hiddenName : 'ID_Estado',
+            hiddenName : 'id_departamento',
             allowBlank: false,
             emptyText: 'Seleccione um novo estado...'
 
         }
+        /*{
+            xtype: 'textfield',
+            fieldLabel: 'ID departamento:',
 
-
+            id: 'id_departamentos',
+            name: 'pass',
+            emptyText : 'Insira a password',
+            allowBlank: false,
+            blankText: 'Campo obrigatório'
+        },*/
 
     ],
     dockedItems: {
@@ -55,7 +62,7 @@ Ext.define('TrackIT.view.main.tickets.HistEst.FormRegistaHisEstado', {
                 formBind: true,
                 listeners: {
 
-                    click: 'onClickRegistarEstado'
+                    click: 'onClickRegistardep'
                 }
 
             }

@@ -1,10 +1,10 @@
-Ext.define('TrackIT.view.main.tickets.HistEst.FormRegistaHisEstado', {
+Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     extend: 'Ext.form.Panel',
     extend:'Ext.panel.Panel',
     xtype: 'registahisestado',
     controller: 'registahisestado',
     requires: [
-        'TrackIT.view.main.tickets.HisEst.FormRegistaHisEstadoController'
+        'TrackIT.view.admin.FormRegistaHisEstadoController'
 
     ],
     id: 'formregistahisEstado',
