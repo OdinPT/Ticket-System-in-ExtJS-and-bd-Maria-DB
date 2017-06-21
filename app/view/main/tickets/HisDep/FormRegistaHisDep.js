@@ -40,16 +40,7 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
             emptyText: 'Seleccione um novo estado...'
 
         }
-        /*{
-            xtype: 'textfield',
-            fieldLabel: 'ID departamento:',
 
-            id: 'id_departamentos',
-            name: 'pass',
-            emptyText : 'Insira a password',
-            allowBlank: false,
-            blankText: 'Campo obrigatório'
-        },*/
 
     ],
     dockedItems: {
@@ -70,14 +61,3 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
     }
 });
 
-/*
-
- listeners: {
- load: function () {
- //this sets the default value to USA after the store loads
- var combo = Ext.getCmp('countrySearchBox');
- combo.setValue("USA");
- }
- }
-
- */

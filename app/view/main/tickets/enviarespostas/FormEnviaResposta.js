@@ -66,12 +66,18 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
                                 url: 'app/view/main/tickets/enviarespostas/EnviaMail/mandarmail.php',
                                 waitMsg: 'Enviando...',
                                 params: {
-                            assuntoresposta: Ext.getCmp('assuntoresposta').getValue(),
+                             assuntoresposta: Ext.getCmp('assuntoresposta').getValue(),
                                 conteudoresposta: Ext.getCmp('conteudoresposta').getValue()
                         }});
-                        Ext.MessageBox.alert('Sucesso','Enviado!');
+                            Ext.MessageBox.alert('Sucesso','Enviado!');
+                            function hide_message() {
+                                Ext.defer(function() {
+                                    Ext.MessageBox.hide();
+                             }, 2300);
                         }
-                    }
+                        hide_message();
+                }
+            }
         ]
     }
 });
