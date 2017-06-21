@@ -45,7 +45,7 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
                 type: 'TipoD'
             },
             valueField: 'id_departamento',
-            displayField: 'Descricao_TipoUtilizador',
+            displayField: 'nome_departamento',
             typeAhead: true,
             queryMode: 'local',
             emptyText: 'Seleciona  departamento...',
@@ -55,7 +55,7 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
             allowBlank: false,
             blankText: 'Selecione um departamento'
 
-        },
+        },,
 
         {
             xtype: 'combobox',
