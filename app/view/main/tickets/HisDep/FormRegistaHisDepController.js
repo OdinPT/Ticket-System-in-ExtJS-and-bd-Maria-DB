@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController', {
 
                 success: function (response, opts) {
                     Ext.MessageBox.alert('Sucesso', 'alteraçao Registada');
-                    //Ext.getCmp('gridhisest').getStore().load();
+                    Ext.getCmp('gridhisdep').store.reload();
                 },
 
 
