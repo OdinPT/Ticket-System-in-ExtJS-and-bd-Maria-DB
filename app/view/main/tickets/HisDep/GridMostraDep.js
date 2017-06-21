@@ -8,9 +8,8 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
         'Ext.toolbar.Paging'],
 
 
+//    width: 630,
 
-    width: 630,
-    autoLoad: true,
     config: {
         autoLoad: true,
         scroll:false,

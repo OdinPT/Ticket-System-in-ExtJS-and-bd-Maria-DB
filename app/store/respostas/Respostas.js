@@ -3,7 +3,7 @@ Ext.define('TrackIT.store.respostas.Respostas', {
     model: 'TrackIT.model.Respostas',
     alias: 'store.respostas',
 	storeId: 'StagingRespostas',
-	autoLoad: false,
+	autoLoad: true,
 	proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/loadrespostas.php',

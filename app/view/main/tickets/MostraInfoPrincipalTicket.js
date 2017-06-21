@@ -130,6 +130,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                           items: {
                               xtype: 'registahisDep'
                           }
+
                       });
                       myWin.show();
                   }

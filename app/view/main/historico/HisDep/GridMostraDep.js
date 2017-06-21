@@ -13,7 +13,7 @@ Ext.define('TrackIT.view.main.historico.HisDep.GridMostraDep', {
     autoLoad: true,
     config: {
         autoLoad: true,
-        scroll:false,
+        scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {
