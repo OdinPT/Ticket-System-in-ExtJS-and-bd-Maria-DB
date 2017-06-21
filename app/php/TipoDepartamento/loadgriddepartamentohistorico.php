@@ -15,8 +15,8 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 $row_array['idHistoricoDep'] = $row['idHistoricoDep'];
 $row_array['IdTicketDep'] = $row['IdTicketDep'];
 $row_array['HoraAtribuicaoDep'] = $row['HoraAtribuicaoDep'];
-$row_array['IDDepartamentoDep'] = $row['IDDepartamentoDep'];
-$row_array['IDFuncEstado'] = $row['IDFuncEstado'];
+$row_array['Descricao_Estado'] = $row['IDDepartamentoDep'];
+$row_array['username'] = $row['IDFuncEstado'];
 
     array_push($return_arr,$row_array);
 }

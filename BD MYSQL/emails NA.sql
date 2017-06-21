@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Jun-2017 às 15:44
+-- Generation Time: 20-Jun-2017 às 15:11
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -131,8 +131,10 @@ BEGIN
         Now(),
         IDDepart,
          retornaIdMail(IDFunc));
-        
-END$$
+   
+   update  emails set emails.id_departamento_emails=IDDepart where id=IdTicket;
+  
+  End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
 
@@ -230,7 +232,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `MudaGrupo` (IN `_id` INT(11))  BEGI
 
 UPDATE emails 
 
-SET id_grupo_emails = MudaGrupoTicket(id_grupo_emails), state = MudaEstado(`state`) where id=_id;
+SET id_grupo_emails = MudaGrupoTicket(id_grupo_emails), state = 5 where id=_id;
 
    END$$
 
@@ -239,14 +241,15 @@ Begin
 
 SELECT `id_resp`,`subject_resp`,`body_resp`,`datea_resp`,`id_email`
 FROM `respostas` 
-WHERE `id_email`=_id;
+WHERE id_email=_id;
 
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
-SELECT id,email,fromaddress,body,subject,datea,state,nome_departamento
-FROM emails,departamento,grupo 
-WHERE id_departamento_emails=id_departamento and id_grupo_emails=id_grupo and id=_id;
+SELECT id,email,fromaddress,body,subject,datea,Descricao_Estado,nome_departamento
+FROM emails,departamento,grupo,estado 
+
+WHERE id_departamento_emails=id_departamento and id_grupo_emails=id_grupo  and state=ID_Estado and id=_id;
 
    END$$
 
@@ -357,12 +360,13 @@ ORDER BY id_funcionario;
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerHistoricoDepartamento` (IN `_id` INT(11))  NO SQL
-BEGIN
+Begin
+select `idHistoricoDep`,`IdTicketDep`,`HoraAtribuicaoDep`,`HoraAtribuicaoDep`,`nome_departamento`,`username`
+from historicodepartamentos,departamento,funcionario
 
-select `idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `IDDepartamentoDep`, `IDFuncEstado` from historicodepartamentos
-where (IdTicketDep=_id);
+where IDDepartamentoDep=id_departamento and `IDFuncEstado`= id_funcionario and IdTicketDep= _id; 
 
-End$$
+end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
@@ -377,9 +381,11 @@ order by id asc;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicketHistorico` ()  BEGIN
-	select`id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`,`state`,`nome_departamento`,`nome_grupo` 
-from emails, departamento, grupo
-	where (`id_departamento_emails`=id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Historico')Order by id asc;
+	select`id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`,`Descricao_Estado`,`nome_departamento`,`nome_grupo` 
+
+from emails, departamento, grupo,estado
+
+where (`id_departamento_emails`=id_departamento) and (state=ID_Estado) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Historico')Order by id asc;
     
    END$$
 
@@ -502,11 +508,9 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(5, 'asas'),
-(6, 'teste'),
-(7, 'teste13'),
-(22, '0153'),
-(33, 'teste13');
+(5, 'teste3'),
+(6, 'teste1'),
+(7, 'teste13');
 
 -- --------------------------------------------------------
 
@@ -525,6 +529,16 @@ CREATE TABLE `emails` (
   `id_departamento_emails` int(11) DEFAULT '3',
   `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
+(1, 'leonardo.almeidavieira@gmail.com', 'Leonardo Almeida <leonardo.almeidavieira@gmail.com>', '19-06 TPSI', '2017-06-20 12:40:15', 'Atividades realizadas hoje:\r\n\r\nÃ¢Â€Â‹=&gt; Registar e efetuar alteraÃƒÂ§ÃƒÂ£o de departamento de um ticket.\r\n\r\n=&gt; ResoluÃƒÂ§ÃƒÂ£o do bug de mudar ao mudar o ticket para histÃƒÂ³rico.\r\n\r\n=&gt;ResoluÃƒÂ§ÃƒÂ£o de problemas de quando era seleccionada uma resposta dentro de\r\num ticket.\r\nÃ¢Â€Â‹\r\nLeonardo e Rui\r\n', 5, 1, 2),
+(2, 'list-notable@phpclasses.org', 'PHP Classes Notable <list-notable@phpclasses.org>', '[PHP Classes] Notable PHP package: PHP Language Info', '2017-06-20 12:40:16', '*teste, a PHP package is considered Notable when it does something\r\ndifferent that is worth noting.*\r\n\r\nIf you have also written Notable packages, contribute them to the PHP\r\nClasses site to get your work more exposure.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\nIf your notable package is innovative, you may also earn prizes and\r\nrecognition in the PHP Innovation Award.\r\n\r\nhttps://www.phpclasses.org/winners/\r\n\r\nTry the *new package submission* interface. It is faster, takes less steps,\r\nless instructions to read, show instructions on how to import packages from\r\nGit or other repository type, and works on mobile devices.\r\n\r\nhttps://www.phpclasses.org/contribute.html\r\n\r\no Package\r\n\r\n  PH', 2, 1, 1),
+(3, 'testetrackit@gmail.com', 'TrackIT <testetrackit@gmail.com>', 'z', '2017-06-20 12:40:16', 'Mensagem em texto\r\n\r\n', 5, 1, 2),
+(4, 'void@phpclasses.org', 'void@phpclasses.org', 'No reply at this address (was: res)', '2017-06-20 12:40:42', '', 5, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -604,8 +618,7 @@ CREATE TABLE `grupo` (
 
 INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 (1, 'Ticket'),
-(2, 'Histórico'),
-(3, 'Recuperado');
+(2, 'Histórico');
 
 -- --------------------------------------------------------
 
@@ -621,6 +634,17 @@ CREATE TABLE `historicodepartamentos` (
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `historicodepartamentos`
+--
+
+INSERT INTO `historicodepartamentos` (`idHistoricoDep`, `IdTicketDep`, `HoraAtribuicaoDep`, `IDDepartamentoDep`, `IDFuncEstado`) VALUES
+(1, 4, '2017-06-20 12:43:29', 1, 41),
+(2, 3, '2017-06-20 12:48:48', 1, 41),
+(3, 1, '2017-06-20 12:50:45', 1, 41),
+(4, 1, '2017-06-20 12:51:00', 1, 41),
+(5, 2, '2017-06-20 12:52:13', 1, 41);
+
 -- --------------------------------------------------------
 
 --
@@ -634,6 +658,16 @@ CREATE TABLE `historicoestados` (
   `IDEstadoEstado` int(11) DEFAULT NULL,
   `IDFuncEstado` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `historicoestados`
+--
+
+INSERT INTO `historicoestados` (`idHistoricoEstados`, `HoraAtribuicaoEstado`, `IdTicketEstado`, `IDEstadoEstado`, `IDFuncEstado`) VALUES
+(1, '2017-06-20 12:42:45', 4, 4, 41),
+(2, '2017-06-20 12:48:41', 3, 2, 41),
+(3, '2017-06-20 12:50:31', 1, 1, 41),
+(4, '2017-06-20 12:52:06', 2, 2, 41);
 
 -- --------------------------------------------------------
 
@@ -657,7 +691,7 @@ CREATE TABLE `respostas` (
 
 CREATE TABLE `tipoutilizador` (
   `ID_TipoUtilizador` int(11) NOT NULL,
-  `Descricao_TipoUtilizador` varchar(20) NOT NULL
+  `Descricao_TipoUtilizador` varchar(26) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -668,7 +702,7 @@ INSERT INTO `tipoutilizador` (`ID_TipoUtilizador`, `Descricao_TipoUtilizador`) V
 (1, 'Normal'),
 (2, 'Admin'),
 (3, 'Super User'),
-(4, 'EmailDeDepartamento');
+(4, 'Email De Departamento');
 
 -- --------------------------------------------------------
 
@@ -788,12 +822,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -813,17 +847,17 @@ ALTER TABLE `funcionario`
 -- AUTO_INCREMENT for table `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `historicodepartamentos`
 --
 ALTER TABLE `historicodepartamentos`
-  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoDep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `historicoestados`
 --
 ALTER TABLE `historicoestados`
-  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistoricoEstados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `respostas`
 --

@@ -1,25 +1,26 @@
 
-Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
+Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
     extend: 'Ext.grid.Panel',
-    id: 'gridhisest2',
-    xtype: 'mainlisthistoricoest',
+    id: 'gridhisest',
+    xtype: 'mainlisthistoricoesthist',
     requires: [
-        'TrackIT.store.HistoricoEstados.HistoricoEstado',
+        'TrackIT.store.HistoricoEstados.HistoricoEstadohistorico',
         'Ext.toolbar.Paging'],
 
-    //width: 630,
+    width: 630,
 
     config: {
         autoLoad: true,
-        scroll:true,
+        scroll:false,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {
         align: 'fit',
         type: 'form'
     },
+
     store: {
-        type: 'HistoricoEstados'
+        type: 'HistoricoEstadohistorico'
     },
 
     columns: [
@@ -33,14 +34,35 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
     tbar: {
         defaultButtonUI: 'default',
 
-        items: [
+       /* items: [
             {
                 text: 'Refresh!',
                 handler: function() {
                     Ext.getCmp('gridhisest').store.reload();
                 }
-            }]
+            }]*/
     },
+    /*listeners: {
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('id_funcionario');
+            Ext.util.Cookies.set('cookieIDfuncionario', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Funcionário',
+                modal: true,
+                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+                width: 500,
+                height: 345,
+                items: [{
+                    xtype: 'fieldfuncionario'
+                }]
+            });
+            myWin.show();
+        }
+    */
+    //},
+
+
+
 
 
     onGridAfterRender: function(gridhisest){

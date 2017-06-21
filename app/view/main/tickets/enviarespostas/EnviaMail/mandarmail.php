@@ -1,13 +1,15 @@
-
-﻿<?php
+﻿﻿<?php
 error_reporting(0);
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
+
 $assunto = $_POST['assuntoresposta'];
 $conteudo = $_POST['conteudoresposta'];
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
+//$IDFuncEstadox = $_COOKIE['cookieEmail'];
+
 $fileName = $_FILES['anexo']['name'];
 $tmpName  = $_FILES['anexo']['tmp_name'];
 $fileSize = $_FILES['anexo']['size'];
@@ -78,9 +80,10 @@ $PHPMailer->Body = $conteudo;
 
 // corpo da mensagem em modo texto
 $PHPMailer->AltBody = 'Mensagem em texto';
-
 $cookieID = $_COOKIE['cookieID'];
+
 //selecting data associated with this particular id
+
 $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))
@@ -88,15 +91,20 @@ while($res = mysqli_fetch_array($result))
   $fromaddress = $res['email'];
 }
 echo $fromaddress;
+
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
 mysqli_query($mysqli, "INSERT INTO respostas(subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo2','$id')");
+
+$insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',5,'$cookieEmail')");
+
 mysqli_close($mysqli);
 // verifica se enviou corretamente
-if ( $PHPMailer->Send() )
+
+if ( $PHPMailer->Send())
 {
 echo "Enviado com sucesso";
 }

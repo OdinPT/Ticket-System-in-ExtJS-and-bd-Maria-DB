@@ -49,7 +49,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.5,
             filter: {
                 type: 'string'
             },
@@ -130,8 +130,10 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
-                        width: 1100,
-                        height: 550,
+
+                         width: 1100,
+                         height: 550,
+
                         items: [{
                             xtype: 'maintabtickets'
                         }],
@@ -193,7 +195,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                         title: 'Tickets',
                         modal: true,
                         width: 1100,
-                        height: 550,
+                        height: 600,
                         items: [{
                             xtype: 'maintabtickets'
                         }],
