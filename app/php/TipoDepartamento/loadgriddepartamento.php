@@ -1,8 +1,9 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 include("config.php");
 
-$id = $_COOKIE['cookieIDhistorico'];
+//$id = $_COOKIE['cookieIDhistorico'];
+$id = $_COOKIE['cookieID'];
 
 $return_arr = array();
 

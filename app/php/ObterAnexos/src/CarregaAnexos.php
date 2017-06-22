@@ -1,10 +1,14 @@
 <?php
+error_reporting(0);
 include("config.php");
+
 $id = $_COOKIE['cookieID'];
 set_time_limit(3000);
+
 /* connect to gmail with your credentials */
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 $cookieEmail = $_COOKIE['cookieEmail'];
+
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 

@@ -64,7 +64,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
                             form_action=1;
                             Ext.getCmp('formenviaresposta').getForm().submit({
                                 url: 'app/view/main/tickets/enviarespostas/EnviaMail/mandarmail.php',
-                                waitMsg: 'Enviando...',
+                                //waitMsg: 'Enviando...',
                                 params: {
                              assuntoresposta: Ext.getCmp('assuntoresposta').getValue(),
                                 conteudoresposta: Ext.getCmp('conteudoresposta').getValue()

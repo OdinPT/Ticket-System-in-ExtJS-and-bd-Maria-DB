@@ -1,15 +1,11 @@
 <?php
+error_reporting(0);
 include("config.php");
-//IdTicketEstado
+
 
 $IdTicketEstado = $_COOKIE['cookieID'];
 $IDEDep = $_POST['id_departamento'];
 $IDFuncEstado =  $_COOKIE['cookieEmail'];
-
-//$IdTicketEstado = $_COOKIE['cookieID'];
-//$IDEDep = $_POST['ID_Dep'];
-//$IDFuncEstado =  $_COOKIE['cookieEmail'];
-
 
 $insere = mysqli_query($mysqli, "call InserirHistoricoDepartamentos('$IdTicketEstado','$IDEDep','$IDFuncEstado');");
 
