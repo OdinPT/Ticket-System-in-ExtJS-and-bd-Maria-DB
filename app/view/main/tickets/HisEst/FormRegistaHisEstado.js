@@ -1,12 +1,13 @@
-Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
+Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     extend: 'Ext.form.Panel',
     extend:'Ext.panel.Panel',
-    xtype: 'registahisDep',
-    controller: 'TipoDepartamentoMD',
+    xtype: 'registahisestado',
+    controller: 'registahisestado',
     requires: [
-        'TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController'
+        'TrackIT.view.admin.FormRegistaHisEstadoController'
+
     ],
-    id: 'formregistahisDep',
+    id: 'formregistahisEstado',
     frame: false,
 
     layout: {
@@ -25,21 +26,22 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
         {
 
             xtype: 'combobox',
-            fieldLabel: 'Atribuir novo Departamento',
+            fieldLabel: 'Atribuir novo Estado',
             store: {
-                type: 'TipoDepartamentoMD'
+                type: 'TipoEstado'
             },
-            valueField: 'id_departamento',
-            displayField: 'nome_departamento',
+            valueField: 'ID_Estado',
+            displayField: 'Descricao_Estado',
             typeAhead: true,
             queryMode: 'local',
-            id: 'id_departamento2',
+            id: 'ID_Estado',
             submitValue:true,
-            hiddenName : 'id_departamento',
+            hiddenName : 'ID_Estado',
             allowBlank: false,
             emptyText: 'Seleccione um novo estado...'
 
         }
+
 
 
     ],
@@ -53,7 +55,7 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDep', {
                 formBind: true,
                 listeners: {
 
-                    click: 'onClickRegistardep'
+                    click: 'onClickRegistarEstado'
                 }
 
             }

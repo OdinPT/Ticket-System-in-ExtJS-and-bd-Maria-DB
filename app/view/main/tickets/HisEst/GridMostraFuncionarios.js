@@ -37,7 +37,7 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
             {
                 text: 'Refresh!',
                 handler: function() {
-                    Ext.getCmp('gridhisest').store.reload();
+                    Ext.getCmp('gridhisest2').store.reload();
                 }
             }]
     },

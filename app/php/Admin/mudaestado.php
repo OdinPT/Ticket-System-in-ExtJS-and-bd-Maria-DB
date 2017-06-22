@@ -13,15 +13,19 @@ while($res = mysqli_fetch_array($result))
 	$state = $res['state'];
 }
 echo $state;
-if($state == '3')
-{
-      $muda = mysqli_query($mysqli, "call inserirhistoricoestados('$id',2,'$IDFuncEstadox')");
 
-}
-else
-{
+//$sleep ($100)
 
-}
+
+        if($state == '3')
+        {
+            $muda = mysqli_query($mysqli, "call inserirhistoricoestados('$id',2,'$IDFuncEstadox')");
+
+        }
+        else
+        {
+
+        }
 
 
 ?>

@@ -1,17 +1,21 @@
 <?php
+error_reporting(0);
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
+
 $assunto = $_POST['assuntoresposta2'];
 $conteudo = $_POST['conteudoresposta2'];
+
 $email = $_POST['email'];
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
+
 $fileName = $_FILES['anexo2']['name'];
 $tmpName  = $_FILES['anexo2']['tmp_name'];
 $fileSize = $_FILES['anexo2']['size'];
 $fileType = $_FILES['anexo2']['type'];
-$fp      = fopen($tmpName, 'r');
+$fp = fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
     fclose($fp);
@@ -25,6 +29,7 @@ while($res = mysqli_fetch_array($result))
 {
   $departamento = $res['id_departamento_funcionarios'];
 }
+
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(mysqli_error($mysqli));
 
@@ -73,12 +78,14 @@ $PHPMailer->AltBody = 'Mensagem em texto';
 $cookieID = $_COOKIE['cookieID'];
 //selecting data associated with this particular id
 // adiciona destinatário (pode ser chamado inúmeras vezes)
+
 $PHPMailer->AddReplyTo($email, 'Nome do visitante');
 $PHPMailer->AddAddress($email);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
-mysqli_query($mysqli, "INSERT INTO respostas (subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo','$id')");
+mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
 mysqli_close($mysqli);
+
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )
 {
@@ -88,6 +95,5 @@ else
 {
 echo 'Erro do PHPMailer: ' . $PHPMailer->ErrorInfo;
 }
-
 
 ?>

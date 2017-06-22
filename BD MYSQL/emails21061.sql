@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Jun-2017 às 10:13
+-- Generation Time: 22-Jun-2017 às 01:56
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -297,7 +297,7 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelec` (IN `_id` INT(11))  NO SQL
 BEGIN
  
-SELECT `id`,`fromaddress`,`subject`,`datea`,`body`,`Descricao_Estado`,`email`,nome_departamento
+SELECT `id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %H:%i') as datea,`body`,`Descricao_Estado`,`email`,nome_departamento
 FROM emails, departamento , estado
 WHERE `id_departamento_emails`=id_departamento and (`state`=ID_Estado) and (id=_id); 
   
@@ -370,7 +370,7 @@ end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
-select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`, `Descricao_Estado`,`nome_departamento`
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y   %H:%i') As datea,`body`, `Descricao_Estado`,`nome_departamento`
 
 from emails, departamento, grupo, estado
 
@@ -529,13 +529,6 @@ CREATE TABLE `emails` (
   `id_departamento_emails` int(11) DEFAULT '3',
   `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `emails`
---
-
-INSERT INTO `emails` (`id`, `email`, `fromaddress`, `subject`, `datea`, `body`, `state`, `id_departamento_emails`, `id_grupo_emails`) VALUES
-(2, 'void@phpclasses.org', 'void@phpclasses.org', 'No reply at this address (was: res)', '2017-06-21 09:13:00', '', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -803,7 +796,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT for table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `estado`
 --

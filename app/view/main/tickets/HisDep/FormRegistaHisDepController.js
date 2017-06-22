@@ -9,10 +9,17 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController', {
                 url: 'app/php/HistDep/registaHisDep.php',
 
                 success: function (response, opts) {
-                    Ext.MessageBox.alert('Sucesso', 'alteraçao Registada');
+                    Ext.MessageBox.alert('Sucesso', 'Departamento alterado');
                     Ext.getCmp('gridhisdep').store.reload();
-                },
 
+                function hide_message() {
+                        Ext.defer(function() {
+                        Ext.MessageBox.hide();
+                            }, 2500);
+                    }
+                    hide_message();
+
+                },
 
 
                 failure: function () {
