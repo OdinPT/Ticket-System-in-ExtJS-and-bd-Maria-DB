@@ -6,3 +6,126 @@
    white-space: nowrap;
    text-overflow: ellipsis;
 }
+.x-panel, .x-plain {
+   text-align: center;
+}
+.x-tab-bar-navigation {
+    background-color: #fffdfd;
+}
+.x-panel-header-navigation-vertical {
+    background-color: #ffffff;
+}
+.x-tab.x-tab-active.x-tab-navigation {
+    border-color: #fff;
+    background-color: #75f925;
+}
+.x-tab-focus.x-tab-active.x-tab-navigation {
+    border-color: #fff;
+    background-color: #7cfb38;
+}
+.x-tab-bar-plain .x-tab.x-tab-active.x-tab-navigation .x-tab-icon-el {
+    color: #63ec24;
+}
+.x-progress-default .x-progress-bar-default {
+    background-image: none;
+    background-color: #10fb4f;
+}
+/* C:/xampp/htdocs/testetrackit/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-btn-default-small {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    padding: 7px 7px 7px 7px;
+    border-width: 0px;
+    border-style: solid;
+    background-color: #b1adad;
+    color:black
+}
+.x-btn-over.x-btn-default-small {
+    border-color: #518bbd;
+    background-image: none;
+    background-color: #bcc0c3;
+}
+.x-btn.x-btn-menu-active.x-btn-default-small,
+.x-btn.x-btn-pressed.x-btn-default-small {
+    border-color: #42719a;
+    background-image: none;
+    background-color: #3bc8d8;
+}
+/* C:/xampp/htdocs/testetrackit/ext/classic/theme-neutral/sass/src/window/Window.scss:305 */
+.x-window-header-title-default {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+    line-height: 20px;
+}
+.x-grid-item-selected {
+    color: #404040;
+    background-color: #e3e4d6;
+}
+.x-window-header-default-top {
+     -moz-border-radius-topleft: 0;
+     -webkit-border-top-left-radius: 0;
+     border-top-left-radius: 0;
+     -moz-border-radius-topright: 0;
+     -webkit-border-top-right-radius: 0;
+     border-top-right-radius: 0;
+     -moz-border-radius-bottomright: 0;
+     -webkit-border-bottom-right-radius: 0;
+     border-bottom-right-radius: 0;
+     -moz-border-radius-bottomleft: 0;
+     -webkit-border-bottom-left-radius: 0;
+     border-bottom-left-radius: 0;
+     padding: 10px 14px 10px 14px;
+
+     border-width: 2px 2px 2px 2px;
+     border-style:hidden;
+     background-color: #b8b9b9;
+ }
+.x-window-header-default .x-tool-img {
+    background-color: #b8b9b9;
+}
+.x-tab-bar-default {
+    background-color: #b8b9b9;
+}
+
+.x-window-default {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 0 0 0;
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgba(188, 188, 188, 0.3);
+}
+/* C:/xampp/htdocs/testetrackit/ext/classic/theme-neutral/sass/src/panel/Panel.scss:387 */
+.x-panel-header-title-default {
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+    line-height: 20px;
+    background-color: #0caddb;
+}
+/* C:/xampp/htdocs/testetrackit/ext/classic/theme-neutral/sass/src/panel/Panel.scss:400 */
+.x-panel-header-title-default > .x-title-text-default {
+    text-transform: none;
+    padding: 0;
+    background: #0caddb;
+}
+.x-panel-header-default {
+    background-image: none;
+    background-color: #0caddb   ;
+}

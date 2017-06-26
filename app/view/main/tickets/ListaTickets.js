@@ -16,7 +16,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     config: {
         autoLoad: true,
         scroll:true,
-        style:{overflow: 'auto',overflowX: 'hidden'}
+        style:{overflow: 'auto',overflowX: 'hidden', align:'left'}
     },
 
     title: 'Tickets',
@@ -29,10 +29,10 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     }],
 
     columns: [
-        {text: 'ID ',  dataIndex: 'id', flex: 0.4,filter: {
+        {text: 'ID ',  dataIndex: 'id', flex: 0.10,filter: {
             type: 'string'
         }},
-        { text: 'DE',  dataIndex: 'fromaddress', flex: 1.4,
+        { text: 'Remetente',  dataIndex: 'fromaddress', flex: 1.6,
             filter: {
                 type: 'string'
             }},
@@ -45,11 +45,11 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                 type: 'string'
             }
         },
-        { text: 'Corpo', dataIndex: 'body', flex: 5,
+        { text: 'Corpo', dataIndex: 'body', flex: 4.5,
             filter: {
                 type: 'string'
             }},
-        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.5,
+        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.0,
             filter: {
                 type: 'string'
             },
