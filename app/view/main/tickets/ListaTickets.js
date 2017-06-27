@@ -16,7 +16,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     config: {
         autoLoad: true,
         scroll:true,
-        style:{overflow: 'auto',overflowX: 'hidden', align:'left'}
+        style:{overflow: 'auto',overflowX: 'hidden',}
     },
 
     title: 'Tickets',
