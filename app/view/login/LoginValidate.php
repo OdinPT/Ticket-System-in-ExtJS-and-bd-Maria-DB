@@ -28,3 +28,23 @@ else {
 }
 mysqli_close($connection); // Closing Connection
 ?>
+
+const transport = nodemailer.createTransport({
+ host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    auth: {
+        user: 'testetrackit@gmail.com',
+        pass: 'testetrackit123',
+    },
+});
+var imap = {
+      user: "testetrackit@gmail.com",
+      password: "testetrackit123",
+      host: "imap.gmail.com",
+      port: 993,
+      tls: true,
+      tlsOptions: { rejectUnauthorized: false }
+};
+
+

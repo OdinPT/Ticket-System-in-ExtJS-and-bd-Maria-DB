@@ -74,7 +74,7 @@ Ext.define('TrackIT.view.login.Login', {
 function hide_message() {
     Ext.defer(function() {
         Ext.MessageBox.hide();
-    }, 2000);
+    }, 1000);
 }
 hide_message();
                         }
