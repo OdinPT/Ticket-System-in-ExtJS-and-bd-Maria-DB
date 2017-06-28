@@ -13,13 +13,24 @@ while($res = mysqli_fetch_array($result))
 	$state = $res['state'];
 }
 
+$veadmin = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFuncEstadox'");
+while($resi = mysqli_fetch_array($veadmin))
+{
+	$tipo = $resi['Tipo_Funcionario'];
+}
+
+if($tipo == 3)
+{
+    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+    echo "Sucesso";
+    exit(0);
+}
 if($state != 3 )
 {
     //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
 
     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
     echo "Sucesso";
-
 }
 else
 {

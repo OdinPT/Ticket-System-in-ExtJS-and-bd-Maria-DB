@@ -105,15 +105,15 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               }
           },
           {
-              text: 'Mudar estado',
+              text: 'Atribuir Funcionário',
               glyph: 43,
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Mudar estado',
+                          title: 'Atribuir Funcionário',
                           modal: true,
                           items: {
-                              xtype: 'registahisestado'
+                              xtype: 'atribuifuncionario'
                           }
                       });
                       myWin.show();
