@@ -6,8 +6,6 @@ include("config.php");
 $id = $_COOKIE['cookieIDhistorico'];
 
 //deleting the row from table
-//$kappa = mysqli_query($mysqli, "DELETE FROM historico WHERE id=$id");
-
 $kappa = mysqli_query($mysqli, " Call ApagarEmails($id)");
 
 //redirecting to the display page (index.php in our case)

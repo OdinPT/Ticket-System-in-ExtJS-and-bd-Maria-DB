@@ -1,5 +1,6 @@
 ﻿﻿<?php
 error_reporting(0);
+
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
@@ -90,16 +91,15 @@ while($res = mysqli_fetch_array($result))
 {
   $fromaddress = $res['email'];
 }
-echo $fromaddress;
+//echo $fromaddress;
 
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
-mysqli_query($mysqli, "INSERT INTO respostas(subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo2','$id')");
-
-$insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',5,'$cookieEmail')");
+mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo2','$id')");
+mysqli_query($mysqli, "call inserirhistoricoestados('$id',5,'$cookieEmail')");
 
 mysqli_close($mysqli);
 // verifica se enviou corretamente

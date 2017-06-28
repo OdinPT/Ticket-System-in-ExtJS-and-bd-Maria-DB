@@ -18,12 +18,12 @@ while($rese = mysqli_fetch_array($escolhe))
   $username = $rese['username'];
   $password = $rese['pass'];
 }
+
 /* try to connect */
 $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Tiriyo: ' . imap_last_error());
-//echo $inbox;
+
 /* grab emails */
 $emails = imap_search($inbox,'UNSEEN');
-
 
 /* if emails are returned, cycle through each... */
 if($emails) {

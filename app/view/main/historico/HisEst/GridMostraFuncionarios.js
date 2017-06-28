@@ -32,17 +32,7 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
         { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.7}
     ],
 
-    tbar: {
-        defaultButtonUI: 'default',
 
-       /* items: [
-            {
-                text: 'Refresh!',
-                handler: function() {
-                    Ext.getCmp('gridhisest').store.reload();
-                }
-            }]*/
-    },
 
     onGridAfterRender: function(gridhisest){
         setInterval(function(){

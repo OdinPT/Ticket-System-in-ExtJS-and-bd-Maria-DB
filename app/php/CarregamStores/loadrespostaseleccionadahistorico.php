@@ -2,7 +2,6 @@
 include("config.php");
 error_reporting('0');
 
-//$id = $_COOKIE['cookieIDanswer'];
 
 $id = $_COOKIE['cookieIDhistorico'];
 

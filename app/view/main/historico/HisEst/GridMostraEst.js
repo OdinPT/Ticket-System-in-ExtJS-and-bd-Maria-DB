@@ -31,39 +31,6 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
         { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.7}
     ],
 
-    tbar: {
-        defaultButtonUI: 'default',
-
-       /* items: [
-            {
-                text: 'Refresh!',
-                handler: function() {
-                    Ext.getCmp('gridhisest').store.reload();
-                }
-            }]*/
-    },
-    /*listeners: {
-        itemclick: function(view, record, item, index, e) {
-            var id = record.get('id_funcionario');
-            Ext.util.Cookies.set('cookieIDfuncionario', id);
-            var myWin = Ext.create("Ext.window.Window", {
-                title: 'Funcionário',
-                modal: true,
-                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
-                width: 500,
-                height: 345,
-                items: [{
-                    xtype: 'fieldfuncionario'
-                }]
-            });
-            myWin.show();
-        }
-    */
-    //},
-
-
-
-
 
     onGridAfterRender: function(gridhisest){
         setInterval(function(){

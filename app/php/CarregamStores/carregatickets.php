@@ -2,20 +2,8 @@
 error_reporting(0);
 include("config.php");
 $return_arr = array();
+
 $cookieEmail = $_COOKIE['cookieEmail'];
-
-/*
-//selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
-
-while($res = mysqli_fetch_array($result))
-{
-  $iddepartamento = $res['id_departamento_funcionarios'];
-}
-
-  $query = "Call VerTicket($iddepartamento)";
-  */
-
 
   //selecting data associated with this particular id
     $result = mysqli_query($mysqli, "SELECT id_departamento_funcionarios FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
