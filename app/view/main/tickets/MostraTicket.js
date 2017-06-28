@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     layout: 'border',
 
     width: 1100,
-    height: 700,
+    height: 500,
 
     store: {
         type: 'ticketselectedd'
@@ -63,8 +63,8 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
 
         }
 
-],
-
+]
+/*
     dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
@@ -78,5 +78,5 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
 
         }
       ]
-    }
+    }*/
 });
