@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Jun-2017 às 13:10
+-- Generation Time: 28-Jun-2017 às 15:44
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -177,7 +177,7 @@ BEGIN
         _id_email) ; 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHAR(100), IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100))  BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHAR(100), IN `_from` VARCHAR(150), IN `_subject` VARCHAR(250), IN `_message` VARCHAR(700), IN `_user` VARCHAR(100), IN `u1` VARCHAR(100))  BEGIN 
 
 
     INSERT INTO emails
@@ -188,7 +188,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHA
            subject,
            datea,
            body,
-           id_departamento_emails)
+           id_departamento_emails,
+         id_func_emails)
            
     VALUES 
          ( 
@@ -197,7 +198,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHA
              _subject, 
           Now(),
         _message,
-        MostraIdDepartamento(_user)) ; 
+        MostraIdDepartamento(_user),
+         retornaIdMail(u1)) ; 
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaHistorico` ()  NO SQL
@@ -370,7 +372,7 @@ end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
-select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y   %H:%i') As datea,`body`, `Descricao_Estado`,`nome_departamento`
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y   %H:%i') As datea,`body`, `Descricao_Estado`,id_func_emails,`nome_departamento`
 
 from emails, departamento, grupo, estado
 
@@ -443,7 +445,7 @@ BEGIN
  
 END$$
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `retornaIdMail` (`mail` VARCHAR(100)) RETURNS INT(100) BEGIN
+CREATE DEFINER=`root`@`localhost` FUNCTION `retornaIdMail` (`mail` VARCHAR(200)) RETURNS INT(100) BEGIN
 declare temp int(11);
 
 SELECT `id_funcionario` INTO temp FROM funcionario WHERE username like mail;
@@ -504,7 +506,8 @@ CREATE TABLE `emails` (
   `body` varchar(700) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `state` int(10) NOT NULL DEFAULT '1',
   `id_departamento_emails` int(11) DEFAULT '3',
-  `id_grupo_emails` int(11) NOT NULL DEFAULT '1'
+  `id_grupo_emails` int(11) NOT NULL DEFAULT '1',
+  `id_func_emails` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -540,8 +543,8 @@ CREATE TABLE `funcionario` (
   `id_funcionario` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `pass` varchar(100) NOT NULL,
-  `id_departamento_funcionarios` int(11) NOT NULL,
-  `Tipo_Funcionario` int(11) NOT NULL
+  `id_departamento_funcionarios` int(11) DEFAULT NULL,
+  `Tipo_Funcionario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
@@ -600,7 +603,8 @@ CREATE TABLE `historicoestados` (
   `HoraAtribuicaoEstado` datetime DEFAULT NULL,
   `IdTicketEstado` int(11) DEFAULT NULL,
   `IDEstadoEstado` int(11) DEFAULT NULL,
-  `IDFuncEstado` int(30) DEFAULT NULL
+  `IDFuncEstado` int(30) DEFAULT NULL,
+  `IdFuncAtri` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -753,7 +757,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

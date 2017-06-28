@@ -45,11 +45,21 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                 type: 'string'
             }
         },
-        { text: 'Corpo', dataIndex: 'body', flex: 4.5,
+        { text: 'Corpo', dataIndex: 'body', flex: 3.5,
             filter: {
                 type: 'string'
             }},
         { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.0,
+            filter: {
+                type: 'string'
+            },
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }
+        },
+        {
+            text: 'Atribuiçao do Ticket ', dataIndex: 'id_func_emails', flex: 1.0,
             filter: {
                 type: 'string'
             },
