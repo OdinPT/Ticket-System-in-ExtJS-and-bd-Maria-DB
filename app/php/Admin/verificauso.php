@@ -11,32 +11,170 @@ $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'");
 while($res = mysqli_fetch_array($result))
 {
 	$state = $res['state'];
+	$func = $res['id_func_emails'];
 }
 
-$veadmin = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFuncEstadox'");
-while($resi = mysqli_fetch_array($veadmin))
+$kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFuncEstadox'");
+
+while($res = mysqli_fetch_array($kappa))
 {
-	$tipo = $resi['Tipo_Funcionario'];
+	$tipo = $res['Tipo_Funcionario'];
 }
 
-if($tipo == 3)
-{
-    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-    echo "Sucesso";
-    exit(0);
-}
-if($state != 3 )
-{
-    //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+if($state == 1)
+ {
+ if($func == $IDFuncEstadox)
+ {
+ $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
+ }
+ else if($tipo == 3)
+ {
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+         echo "Sucesso";
+ }
+ else if($state != 3 && $state != 4)
+ {
+     //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
 
-    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-    echo "Sucesso";
-}
-else
-{
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
 
-    header("HTTP/1.0 404 Not Found");
-    header('HTTP', true, 500);
-}
+ }
+ else
+ {
+
+     header("HTTP/1.0 404 Not Found");
+     header('HTTP', true, 500);
+ }
+ }
+ if($state == 2)
+ {
+ if($func == $IDFuncEstadox)
+ {
+ $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
+ }
+ else if($tipo == 3)
+ {
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+         echo "Sucesso";
+ }
+ else if($state != 3 && $state != 4)
+ {
+     //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
+
+ }
+ else
+ {
+
+     header("HTTP/1.0 404 Not Found");
+     header('HTTP', true, 500);
+ }
+ }
+ if($state == 3)
+ {
+ if($func == $IDFuncEstadox)
+ {
+ $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
+ }
+ else if($tipo == 3)
+ {
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+         echo "Sucesso";
+ }
+ else if($state != 3 && $state != 4)
+ {
+     //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+
+     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+     echo "Sucesso";
+
+ }
+ else
+ {
+
+     header("HTTP/1.0 404 Not Found");
+     header('HTTP', true, 500);
+ }
+ }
+ if($state == 4)
+   {
+   if($func == $IDFuncEstadox)
+   {
+       echo "Sucesso";
+   }
+   else if($tipo == 3)
+   {
+           echo "Sucesso";
+   }
+   else if($state != 3 && $state != 4)
+   {
+       //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+       echo "Sucesso";
+
+   }
+   else
+   {
+
+       header("HTTP/1.0 404 Not Found");
+       header('HTTP', true, 500);
+   }
+   }
+    if($state == 5)
+     {
+     if($func == $IDFuncEstadox)
+     {
+         echo "Sucesso";
+     }
+     else if($tipo == 3)
+     {
+             echo "Sucesso";
+     }
+     else if($state != 3 && $state != 4)
+     {
+         //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+         echo "Sucesso";
+
+     }
+     else
+     {
+
+         header("HTTP/1.0 404 Not Found");
+         header('HTTP', true, 500);
+     }
+     }
+     if($state == 6)
+      {
+      if($func == $IDFuncEstadox)
+      {
+      $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+          echo "Sucesso";
+      }
+      else if($tipo == 3)
+      {
+          $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+              echo "Sucesso";
+      }
+      else if($state != 3 && $state != 4)
+      {
+          //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+
+          $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+          echo "Sucesso";
+
+      }
+      else
+      {
+
+          header("HTTP/1.0 404 Not Found");
+          header('HTTP', true, 500);
+      }
+      }
+
 
 ?>

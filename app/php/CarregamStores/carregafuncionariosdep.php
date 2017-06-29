@@ -7,9 +7,9 @@ $return_arr = array();
 $vedepfunc = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$funcionario'");
 while($resi = mysqli_fetch_array($vedepfunc))
 {
-	$tipo = $resi['Tipo_Funcionario'];
+	$tipo = $resi['id_departamento_funcionarios'];
 }
-$query = "SELECT * FROM funcionario WHERE Tipo_Funcionario='$tipo'";
+$query = "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$tipo'";
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 

@@ -3,6 +3,7 @@ Ext.define('TrackIT.view.admin.FormAtribuiFuncionario', {
     extend:'Ext.panel.Panel',
     xtype: 'atribuifuncionario',
     id: 'formregistahisFuncionario',
+    controller: 'atribuifunc',
     requires: [
         'TrackIT.store.funcionario.FuncionariosDep'
     ],
@@ -27,7 +28,7 @@ Ext.define('TrackIT.view.admin.FormAtribuiFuncionario', {
             store: {
                 type: 'FuncionariosDep'
             },
-            valueField: 'id_funcionario',
+            valueField: 'usernamefunc',
             displayField: 'usernamefunc',
             typeAhead: true,
             queryMode: 'local',

@@ -11,7 +11,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.MostraTicket',
         'TrackIT.store.tickets.TicketSelected',
-        'TrackIT.view.main.tickets.enviaemail.FormEnviaEmail'
+        'TrackIT.view.main.tickets.enviaemail.FormEnviaEmail',
+        'TrackIT.view.main.tickets.MockMostraTicket'
     ],
     config: {
         autoLoad: true,
@@ -247,9 +248,18 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
 
                 },
                 failure: function () {
-                    alert('Sendo resolvido ...');
-                    var gridtt = Ext.ComponentQuery.query('gridticket')[0];
-                    gridtt.getStore().load();
+
+                    var MockmyWin = Ext.create("Ext.window.Window", {
+                        title: 'Tickets',
+                        modal: true,
+                        width: 1100,
+                        height: 600,
+                        items: [{
+                            xtype: 'mockmaintabtickets'
+                        }]
+
+                    });
+                    MockmyWin.show();
                 }
 
 
