@@ -4,6 +4,7 @@ Ext.define('TrackIT.store.HistoricoDepartamento.HistoricoDepartamento', {
     model: 'TrackIT.model.HistoricoDepartamentos',
     alias: 'store.HistoricoDepartamentos',
 	storeId: 'Staging',
+    pagesize:200,
 	autoLoad: true,
 	proxy: {
         type: 'ajax',

@@ -4,6 +4,7 @@ Ext.define('TrackIT.store.HistoricoEstados.HistoricoEstadohistorico', {
     model: 'TrackIT.model.HistoricoEstados',
     alias: 'store.HistoricoEstadohistorico',
 	storeId: 'Staging',
+    pagesize:200,
 	autoLoad: true,
 	proxy: {
         type: 'ajax',
