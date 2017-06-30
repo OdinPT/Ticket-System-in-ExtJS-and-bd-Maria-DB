@@ -17,7 +17,7 @@ $row_array['HoraAtribuicaoEstado'] = $row['HoraAtribuicaoEstado'];
 $row_array['IdTicketEstado'] = $row['IdTicketEstado'];
 $row_array['Descricao_Estado'] = $row['Descricao_Estado'];
 $row_array['username'] = $row['username'];
-$row_array['username2'] = $row['username2'];
+$row_array['DesTipoRes'] = $row['DesTipoRes'];
 
 
     array_push($return_arr,$row_array);

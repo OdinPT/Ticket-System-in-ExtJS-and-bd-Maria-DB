@@ -44,14 +44,41 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         { text: 'Corpo', dataIndex: 'body', flex: 5,
             filter: {
                 type: 'string'
-            }},
-        { text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1,
+            }},{ text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.0,
             filter: {
                 type: 'string'
-            }},
-        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.5,
+            },
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }
+        },
+        { text: 'Resolução', dataIndex: 'DesTipoRes',flex: 1.0,
             filter: {
                 type: 'string'
+            },
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }
+        },
+        {
+            text: 'Atribuido a : ', dataIndex: 'id_func_emails', flex: 1.0,
+            filter: {
+                type: 'string'
+            },
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }
+        },
+        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 1.2,
+            filter: {
+                type: 'string'
+            },
+            editor: {
+                allowBlank: false,
+                maxLength: 49
             }}
     ],
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Jun-2017 às 14:54
+-- Generation Time: 30-Jun-2017 às 16:05
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -154,7 +154,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTic
         retornaIdMail(IDFuncEst));
         
 update  emails set emails.state=IDEstado where id=IdTicket;
-
+update emails set emails.id_Res_Ticket=idREs where id =IdTicket;
 
 END$$
 
@@ -400,11 +400,16 @@ order by id asc;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicketHistorico` ()  BEGIN
-	select`id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %h:%i') As datea,`body`,`Descricao_Estado`,`nome_departamento`,`nome_grupo` 
+	
+   
+select `id`,`email`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y   %H:%i') As datea,`body`, `Descricao_Estado`,DesTipoRes,id_func_emails,`nome_departamento`
 
-from emails, departamento, grupo,estado
+from emails, departamento, grupo, estado,tipo_resolucao
 
-where (`id_departamento_emails`=id_departamento) and (state=ID_Estado) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Historico')Order by id asc;
+where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Historico')  and (`state`=ID_Estado) and (id_Res_Ticket=IdTipoRes)
+
+order by id asc; 
+    
     
    END$$
 
