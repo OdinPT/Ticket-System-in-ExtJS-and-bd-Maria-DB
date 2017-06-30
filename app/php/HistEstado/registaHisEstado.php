@@ -3,10 +3,10 @@ error_reporting(0);
 include("config.php");
 
 $IdTicketEstado = $_COOKIE['cookieID'];
-$IDEstadoEstado = $_POST['ID_Estado'];
+$IdTipoRes = $_POST['IdTipoRes'];
 $IDFuncEstadox =  $_COOKIE['cookieEmail'];
 
-$insere = mysqli_query($mysqli, "call inserirhistoricoestados('$IdTicketEstado','$IDEstadoEstado','$IDFuncEstadox');");
+$insere = mysqli_query($mysqli, "call inserirhistoricoestados2('$IdTicketEstado','$IDFuncEstadox','$IdTipoRes');");
 
 mysqli_close($mysqli);
 

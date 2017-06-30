@@ -5,12 +5,10 @@ Ext.define('TrackIT.store.TipoEstado.TipoEstado', {
     storeId: 'TipoEstados',
 
     data: [
-        [1, "Aberto"],
-        [2, 'Lido'],
-        [4, 'Atribuido'],
-        [5, 'Fechado']
-
+        [1, "Not solved"],
+        [2, 'duplicate'],
+        [3, 'Incomplete'],
+        [4, 'Not applicable'],
+        [5, 'Can not be solved']
     ]
-
-
 });

@@ -135,6 +135,23 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       myWin.show();
                   }
               }
+          },
+          {
+              text: 'Mudar Estado de resoluçao',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar Estado de resoluçao',
+                          modal: true,
+                          items: {
+                              xtype: 'registahisestado'
+                          }
+
+                      });
+                      myWin.show();
+                  }
+              }
           }
 
 

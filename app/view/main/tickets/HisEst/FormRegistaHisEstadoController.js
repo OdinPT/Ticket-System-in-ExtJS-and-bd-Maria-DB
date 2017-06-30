@@ -27,7 +27,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstadoController', {
                 },
                 params: {
 
-                    ID_Estado: Ext.getCmp('ID_Estado').getValue()
+                    IdTipoRes: Ext.getCmp('IdTipoRes').getValue()
 
                 }
 

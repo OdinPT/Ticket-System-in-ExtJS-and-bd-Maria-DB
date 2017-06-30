@@ -30,13 +30,13 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             store: {
                 type: 'TipoEstado'
             },
-            valueField: 'ID_Estado',
-            displayField: 'Descricao_Estado',
+            valueField: 'IdTipoRes',
+            displayField: 'DesTipoRes',
             typeAhead: true,
             queryMode: 'local',
-            id: 'ID_Estado',
+            id: 'IdTipoRes',
             submitValue:true,
-            hiddenName : 'ID_Estado',
+            hiddenName : 'IdTipoRes',
             allowBlank: false,
             emptyText: 'Seleccione um novo estado...'
 

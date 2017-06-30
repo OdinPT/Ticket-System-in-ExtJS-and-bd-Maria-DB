@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Jun-2017 às 11:07
+-- Generation Time: 30-Jun-2017 às 14:54
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -156,6 +156,25 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTic
 update  emails set emails.state=IDEstado where id=IdTicket;
 
 
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados2` (IN `IdTicket` INT, IN `IDFuncEstado` VARCHAR(100), IN `idREs` INT)  NO SQL
+Begin
+ 
+ INSERT INTO historicoestados
+         (
+			HoraAtribuicaoEstado,
+         	IdTicketEstado,
+			IDFuncEstado,
+        	IdResTicket)
+    VALUES 
+         ( 
+          Now(),
+         IdTicket,
+        retornaIdMail(IDFuncEstado),
+         idREs);
+        
+        update emails set emails.id_Res_Ticket= idREs where id =IdTicket;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRespostas` (IN `_subject` VARCHAR(100), IN `_body` VARCHAR(230), IN `_id_email` INT(11))  NO SQL
@@ -602,7 +621,7 @@ CREATE TABLE `historicoestados` (
   `idHistoricoEstados` int(11) NOT NULL,
   `HoraAtribuicaoEstado` datetime DEFAULT NULL,
   `IdTicketEstado` int(11) DEFAULT NULL,
-  `IDEstadoEstado` int(11) DEFAULT NULL,
+  `IDEstadoEstado` int(11) DEFAULT '2',
   `IDFuncEstado` int(30) DEFAULT NULL,
   `IdResTicket` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
