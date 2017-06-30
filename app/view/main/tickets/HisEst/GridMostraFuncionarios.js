@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
         { text: 'Id Ticket', dataIndex: 'IdTicketEstado', flex: 0.2},
         { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.3},
         { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.5},
-        { text: 'Utilizador atribuido', dataIndex: 'username2', flex: 0.5}
+        { text: 'Estado de Resoluçao', dataIndex: 'DesTipoRes', flex: 0.5}
     ],
 
     tbar: {

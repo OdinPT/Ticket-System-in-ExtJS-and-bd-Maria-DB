@@ -99,7 +99,7 @@ $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
 mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo2','$id')");
-mysqli_query($mysqli, "call inserirhistoricoestados('$id',5,'$cookieEmail')");
+mysqli_query($mysqli, "call inserirhistoricoestados('$id',2,'$cookieEmail')");
 
 mysqli_close($mysqli);
 // verifica se enviou corretamente
