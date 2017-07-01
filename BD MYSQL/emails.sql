@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Jun-2017 às 16:05
+-- Generation Time: 01-Jul-2017 às 19:34
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -641,7 +641,7 @@ CREATE TABLE `respostas` (
   `id_resp` int(11) NOT NULL,
   `subject_resp` varchar(150) CHARACTER SET latin1 NOT NULL,
   `body_resp` varchar(700) NOT NULL,
-  `datea_resp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `datea_resp` datetime DEFAULT NULL,
   `id_email` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -796,7 +796,7 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `emails`
 --
