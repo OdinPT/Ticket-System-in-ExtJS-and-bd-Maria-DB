@@ -214,7 +214,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
-                        width: 1100,
+                       // width: 1100,
                         height: 600,
                         items: [{
                             xtype: 'maintabtickets'

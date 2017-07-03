@@ -6,7 +6,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     id: 'grid4',
     xtype: 'mainlistrespostas',
 
-    width: 1074,
+    width: 1050,
     height: 500,
 
 
@@ -16,7 +16,6 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.respostas.MostraResposta',
         'TrackIT.store.respostas.RespostaSeleccionada'
-        // 'TrackIT.view.main.AnswerController'
     ],
     config: {
         autoLoad: true
