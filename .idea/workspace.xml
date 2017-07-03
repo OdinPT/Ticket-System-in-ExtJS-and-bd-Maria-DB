@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="91d7fb00-caaf-4e43-a00b-18a53d073dd8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/php/Apagar/delete.php" afterPath="$PROJECT_DIR$/app/php/Apagar/delete.php" />
+=======
+    <list default="true" id="ef32546f-4932-408d-b598-a02fa6a94ff8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/Main.js" afterPath="$PROJECT_DIR$/app/view/main/Main.js" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js" afterPath="$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js" />
+>>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,28 +30,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="showEmailAnswerForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/php/showEmailAnswerForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+<<<<<<< HEAD
       <file leaf-file-name="filterimap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/php/filterimap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+            <state relative-caret-position="204">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teste" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/teste">
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/php/Apagar/delete.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/php/Apagar/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -50,8 +61,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testee" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testee">
+      <file leaf-file-name="carregainfohistoricoticket.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfohistoricoticket.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -60,73 +71,111 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MostraInfoPrincipalTicket.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
+      <file leaf-file-name="carregainfoticket.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfoticket.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+=======
+      <file leaf-file-name="carregainfohistoricoticket.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfohistoricoticket.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+>>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListaTicketsHistorico.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/ListaTicketsHistorico.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="86" column="1" lean-forward="false" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
               <folding>
-                <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
-                <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
-                <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
-                <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
+                <marker date="1494973292433" expanded="true" signature="517:525" ph="[...]" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MostraInfoPrincipalTicketController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicketController.js">
+      <file leaf-file-name="MostraInfoHistoricoTicketController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraInfoHistoricoTicketController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
-                <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
-                <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
-                <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
-              </folding>
+            <state relative-caret-position="-211">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListaTickets.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/main/tickets/ListaTickets.js">
+      <file leaf-file-name="MostraInfoTicketHistorico.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraInfoTicketHistorico.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-500">
+              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MostraOutraInfoHistorico.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraOutraInfoHistorico.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-262">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="45" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MostraOutraInfoHistoricoController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraOutraInfoHistoricoController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MostraTicketHistorico.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/main/MainModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
-                <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
-                <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
-                <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
-                <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
-                <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
-                <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
-                <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
-                <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
-                <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
-                <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
-                <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
-                <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
-                <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
-                <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
-                <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
-                <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
-                <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
-                <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/main/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,6 +192,12 @@
         <option value="$PROJECT_DIR$/app/php/CarregamStores/carregatickets.php" />
         <option value="$PROJECT_DIR$/app/php/Encoding.php" />
         <option value="$PROJECT_DIR$/app/php/filterimap.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/app/php/Apagar/delete.php" />
+=======
+        <option value="$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js" />
+        <option value="$PROJECT_DIR$/app/view/main/Main.js" />
+>>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
       </list>
     </option>
   </component>
@@ -156,7 +211,10 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -173,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -185,10 +244,125 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CarregamStores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testetrackit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Apagar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,7 +464,8 @@
       <workItem from="1494864772798" duration="1512000" />
       <workItem from="1494922865329" duration="17888000" />
       <workItem from="1494952759826" duration="15000" />
-      <workItem from="1495008735409" duration="1267000" />
+      <workItem from="1495008735409" duration="1293000" />
+      <workItem from="1495010114926" duration="4537000" />
     </task>
     <task id="LOCAL-00001" summary="nv">
       <created>1494865635784</created>
@@ -313,11 +488,40 @@
       <option name="project" value="LOCAL" />
       <updated>1495010030406</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dia 17 rui v3">
+      <created>1495010040137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1495010040137</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dia 17 rui v3">
+      <created>1495010193447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1495010193447</updated>
+    </task>
+    <task id="LOCAL-00006" summary="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto">
+      <created>1495015490441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1495015490441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20682000" />
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="26064000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="25245000" />
+=======
+    <option name="totallyTimeSpent" value="24575000" />
+>>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,28 +533,61 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27286246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.029968454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.029968454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27286246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -386,14 +623,61 @@
     <MESSAGE value="dia 16 rui" />
     <MESSAGE value="dia 17 rui" />
     <MESSAGE value="dia 17 rui v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="dia 17 rui v3" />
+    <MESSAGE value="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto" />
+    <option name="LAST_COMMIT_MESSAGE" value="=&gt;Ticket e histório sem outras informações&#10;&#10;=&gt; Recuperados Oculto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/php/showEmailAnswerForm.php">
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfoprincipalticketrecuperado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/Apagar/deleterecuperado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfoprincipalticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/ListaTickets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1197">
+          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicketController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/loadrespostashistorico.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -401,16 +685,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/loadticketSeleccionadoHistorico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregaticketshistorico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/loadrespostaseleccionadahistorico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/filterimap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/showEmailAnswerForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/filterimap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teste" />
     <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding>
-            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
-            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
-          </folding>
+        <state relative-caret-position="918">
+          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -418,12 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -431,38 +751,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
-            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
-            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
-            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
-            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
-            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
-            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
-            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testee" />
+    <entry file="file://$PROJECT_DIR$/app/php/showEmailAnswerForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/MostraInfoPrincipalTicketController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/tickets/ListaTickets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -478,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -486,12 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding>
-            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
-            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -499,12 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -512,38 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
-            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
-            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
-            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
-            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
-            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
-            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
-            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -581,38 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903559" expanded="true" signature="104:3060" ph="{&quot;extend&quot;: 'Ext.grid.Panel'...}" />
-            <marker date="1495009903559" expanded="true" signature="488:1305" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="543:662" ph="{&quot;text&quot;: 'DE'...}" />
-            <marker date="1495009903559" expanded="true" signature="605:661" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="670:789" ph="{&quot;text&quot;: 'ASSUNTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="732:788" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="797:911" ph="{&quot;text&quot;: 'DATA'...}" />
-            <marker date="1495009903559" expanded="true" signature="854:910" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="919:1033" ph="{&quot;text&quot;: 'CORPO'...}" />
-            <marker date="1495009903559" expanded="true" signature="976:1032" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1041:1157" ph="{&quot;text&quot;: 'ESTADO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1100:1156" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1165:1299" ph="{&quot;text&quot;: 'DEPARTAMENTO'...}" />
-            <marker date="1495009903559" expanded="true" signature="1242:1298" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1318:2191" ph="{&quot;defaultButtonUI&quot;: 'default'...}" />
-            <marker date="1495009903559" expanded="true" signature="1372:2185" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="1386:1828" ph="{&quot;text&quot;: 'Refresh!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1454:1822" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1557:1819" ph="{&quot;url&quot;: 'app/php/filterimap.php'...}" />
-            <marker date="1495009903559" expanded="true" signature="1664:1813" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="1834:2022" ph="{&quot;text&quot;: 'Limpar!'...}" />
-            <marker date="1495009903559" expanded="true" signature="1914:2016" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2024:2174" ph="//..." />
-            <marker date="1495009903559" expanded="true" signature="2209:2933" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2262:2927" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="2460:2862" ph="{&quot;title&quot;: 'Tickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2759:2840" ph="[...]" />
-            <marker date="1495009903559" expanded="true" signature="2760:2839" ph="{&quot;xtype&quot;: 'maintabtickets'...}" />
-            <marker date="1495009903559" expanded="true" signature="2978:3058" ph="{...}" />
-            <marker date="1495009903559" expanded="true" signature="3009:3048" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,12 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-          <folding>
-            <marker date="1495009903568" expanded="true" signature="688:689" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2418" ph="{&quot;text&quot;: 'Move p/ Historico'...}" />
-            <marker date="1495009903568" expanded="true" signature="2411:2424" ph="[...]" />
-            <marker date="1495009903568" expanded="true" signature="2411:2428" ph="{&quot;dock&quot;: 'bottom'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,25 +866,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495009903575" expanded="true" signature="210:825" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="284:820" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="342:812" ph="{...}" />
-            <marker date="1495009903575" expanded="true" signature="989:1157" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/php/Encoding.php" />
+    <entry file="file://$PROJECT_DIR$/teste" />
+    <entry file="file://$PROJECT_DIR$/testee" />
+    <entry file="file://$PROJECT_DIR$/0i1xjy35.ct4.txt" />
+    <entry file="file://$PROJECT_DIR$/workspace.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/php/filterimap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+        <state relative-caret-position="-888">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teste">
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfohistorico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfohistoricoticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/ListaTicketsHistorico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="86" column="1" lean-forward="false" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+          <folding>
+            <marker date="1494973292433" expanded="true" signature="517:525" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraInfoHistoricoTicketController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraInfoTicketHistorico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraOutraInfoHistorico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraOutraInfoHistoricoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/historico/MostraTicketHistorico.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/main/MainModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -659,10 +970,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testee">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfohistoricoticket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/CarregamStores/carregainfoticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/filterimap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/Apagar/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/php/Apagar/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/view/main/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="323">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+=======
+        <state relative-caret-position="425">
+          <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+>>>>>>> fdf8ab01d1a4ca84cb0b3c7f5e2929c73e1815bb
+>>>>>>> 709aca66eea41edd60f370494cda496409066d7e
           <folding />
         </state>
       </provider>

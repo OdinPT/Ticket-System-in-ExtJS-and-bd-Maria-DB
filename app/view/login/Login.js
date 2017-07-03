@@ -11,7 +11,7 @@ Ext.define('TrackIT.view.login.Login', {
 
     controller: 'login',
     bodyPadding: 10,
-    title: 'Sistema de Tickets - Login',
+    title: 'Sistema de Tickets',
     closable: false,
     autoShow: true,
 
@@ -62,34 +62,22 @@ Ext.define('TrackIT.view.login.Login', {
                           // Remove Login Window
                           var wind = Ext.WindowManager.getActive();
 
-    if(wind){
-         wind.close();
-    }
+                    if(wind){
+                            wind.close();
+                        }
 
                           // Add the main view to the viewport
                           Ext.create({
                               xtype: 'app-main'
                           });
-                          Ext.Msg.alert('Sucesso!', 'Autenticado! Seja bem-vindo.');
-function hide_message() {
-    Ext.defer(function() {
-        Ext.MessageBox.hide();
-    }, 2000);
-}
-hide_message();
+                            Ext.toast('Autenticado!');
                         }
                         else {
-                          Ext.Msg.alert('Erro!', 'Dados incorrectos, por favor verifique as suas credenciais.');
-                          function hide_message() {
-                              Ext.defer(function() {
-                                  Ext.MessageBox.hide();
-                              }, 3500);
-                          }
-                          hide_message();
+                            Ext.toast('Dados incorrectos, tente de novo ou contacte um administrador!');
                         }
 		         },
              failure: function() {
-               Ext.MessageBox.alert('Status!', 'Erro no servidor, por favor tente mais tarde');
+               Ext.MessageBox.alert('Status!', 'Erro no servidor, tente mais tarde');
              }
 
                   });

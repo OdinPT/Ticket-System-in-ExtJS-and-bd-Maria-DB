@@ -2,80 +2,88 @@
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 include_once("config.php");
 //getting id from url
+
 $cookieEmail = $_COOKIE['cookieEmail'];
-echo $id;
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM admin WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
 while($res = mysqli_fetch_array($result))
 {
-  $username = $res['username'];
-	$password = $res['pass'];
+  $iddepartamento = $res['id_departamento_funcionarios'];
+}
+$escolhe = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(mysqli_error($mysqli));
+while($rese = mysqli_fetch_array($escolhe))
+{
+  $username = $rese['username'];
+  $password = $rese['pass'];
 }
 
-$inbox = imap_open($hostname,$username,$password, NULL, 1, array('DISABLE_AUTHENTICATOR' => 'GSSAPI')) or die('Cannot connect to server: ' . imap_last_error());
+/* try to connect */
+$inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Tiriyo: ' . imap_last_error());
 
-$emails = imap_search($inbox,'ALL');
+/* grab emails */
+$emails = imap_search($inbox,'UNSEEN');
 
+/* if emails are returned, cycle through each... */
 if($emails) {
-    $output = '';
 
-    foreach($emails as $email_number) {
-        $overview = imap_fetch_overview($inbox,$email_number,0);
-        $structure = imap_fetchstructure($inbox, $email_number);
+  /* begin output var */
+  $output = '';
 
-        if(isset($structure->parts) && is_array($structure->parts) && isset($structure->parts[1])) {
-            $part = $structure->parts[1];
-            $message = imap_fetchbody($inbox,$email_number,2);
+  /* put the newest emails on top */
+  rsort($emails);
 
-            if($part->encoding == 3) {
-                $message = imap_base64($message);
-            } else if($part->encoding == 1) {
-                $message = imap_8bit($message);
-            } else if($part->encoding == 2) {
-                $message = imap_binary($message);
+  /* for every email... */
+  foreach($emails as $email_number) {
+    $overview = imap_fetch_overview($inbox,$email_number,0);
+            $structure = imap_fetchstructure($inbox, $email_number);
+            $header = imap_header($inbox, $email_number);
+            $frome = $header->from;
+            foreach ($frome as $ide => $object) {
+                $fromaddress = $object->mailbox . "@" . $object->host;
             }
-            else if($part->encoding == 4){
-              $message = utf8_encode(quoted_printable_decode($message));
-            }
-            else if($part->encoding == 5)
-            {
-              $message = $message;
-            } else {
-                $message = imap_qprint($message);
-            }
+    if(isset($structure->parts) && is_array($structure->parts) && isset($structure->parts[1])) {
+        $part = $structure->parts[0];
+        $message = quoted_printable_decode(imap_fetchbody($inbox,$email_number,"1.2"));
+        if(empty($message))
+        {
+          $message = imap_fetchbody($inbox,$email_number,1);
         }
-        $from = quoted_printable_decode(imap_utf8($overview[0]->from));
+        if($part->encoding == 3) {
+            $message = imap_base64($message);
+        } else if($part->encoding == 1) {
+            $message = imap_8bit($message);
+            echo $message;
+        } else if($part->encoding == 2) {
+            $message = imap_binary($message);
+        }
+        else if($part->encoding == 4){
+          $message = utf8_encode(quoted_printable_decode($message));
+        }
+        else if($part->encoding == 5)
+        {
+          $message = $message;
+        } else {
+            $message = imap_qprint($message);
+        }
+    }
+    $from = quoted_printable_decode(imap_utf8($overview[0]->from));
         $date = utf8_decode(imap_utf8($overview[0]->date));
-        $subject = utf8_decode(imap_utf8($overview[0]->subject));
-         $subject = str_replace('c?', 'ç', $subject);
-         $subject = str_replace('C?', 'Ç', $subject);
-        $conn= mysqli_connect("localhost","root","","emails");
+        $message = nl2br($message);
+        $subject = quoted_printable_decode(imap_utf8($overview[0]->subject));
         $message = strip_tags($message);
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
-        $message = str_replace('Ã§Ã£', 'çã', $message);
-        $message = str_replace('Ã§Ãµ', 'çõ', $message);
-        $message = str_replace('Ã§Ãµ', 'çõ', $message);
-        $message = str_replace('Ãº', 'ú', $message);
-        $message = str_replace('Â', ' ', $message);
-        $message = str_replace('Ã', 'Ç', $message);
+    echo $message;
+    $conn= mysqli_connect("localhost","root","","emails");
 
-        echo $message;
-        // echo "<br>";
-        // echo "<br>";
-				    //save to MySQL
 
-                mysqli_query($conn, "Call InserirTickets2('$from', '$subject', '$message','$cookieEmail')");
-				mysqli_close($conn);
-    }
-
-    echo $output;
+    mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
+	    mysqli_close($conn);
+  }
 }
 
+/* close the connection */
 imap_close($inbox);
 ?>
-
-<script>
-   window.history.back();
-</script>

@@ -8,19 +8,20 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
       'TrackIT.view.main.historico.MostraInfoHistoricoTicketController'
     ],
     id: 'paginainfohistoricoticket',
-    frame: true,
     title: 'Informação Principal',
-    width: 1080,
-    height: 400,
-    bodyPadding: 10,
+
+    width: 1050,
+    height: 450,
+
+    autoScroll: true,
     layout: {
-            type: 'form',
-            align: 'stretch'
-        },
-        defaults: {
-            layout: 'form',
-            margin: 20
-        },
+        type: 'form',
+        align: 'stretch'
+    },
+    defaults: {
+        layout: 'form',
+        margin: 0
+    },
 
     config:{stores: ['tickethistoricoseleccionado']},
 
@@ -28,46 +29,51 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         {
             xtype: 'textfield',
             fieldLabel: 'ID:',
-            id: 'idd'
+            id: 'idd',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Email:',
+            id: 'emaill',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'dateaaa'
+            id: 'dateaa',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'stateee'
+            id: 'Descricao_Estadoo',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
-            id: 'departmenttt'
+            id: 'departmentt',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Assunto:',
-            id: 'subjectt'
+            id: 'subjectt',
+            readOnly: true
         },
         {
             xtype: 'textareafield',
             id: 'bodyy',
-            fieldLabel: 'Corpo:'
-        },
+            fieldLabel: 'Corpo:',
+            readOnly: true
+        }
   ],
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
       items: [
-      {
-        text: 'Carregar Informações',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterInfoHistorico'
-        }
 
-      },
       {
         text: 'Apagar',
         glyph: 43,
@@ -76,10 +82,10 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         }
       },
       {
-      text: 'Mover p/ Recuperados',
+      text: 'Mover para Ticket',
       glyph: 43,
       listeners: {
-        click: 'onClickMoveParaRecuperados'
+        click: 'onClickMoveParaTickets'
       }
     }
     ]

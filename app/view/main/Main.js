@@ -1,14 +1,7 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
+
 Ext.define('TrackIT.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
@@ -17,7 +10,7 @@ Ext.define('TrackIT.view.main.Main', {
         'TrackIT.view.main.MainModel',
         'TrackIT.view.main.tickets.ListaTickets',
         'TrackIT.view.main.historico.ListaTicketsHistorico',
-        'TrackIT.view.main.recuperados.ListaTicketsRecuperados'
+        'TrackIT.view.main.MainWidget'
     ],
 
     controller: 'main',
@@ -35,11 +28,12 @@ Ext.define('TrackIT.view.main.Main', {
         },
         title: {
             bind: {
-                text: '{name}'
+               /// text: '{name}'
             },
             flex: 0
         },
-        iconCls: 'fa-cloud',
+//        iconCls: 'fa-cloud',
+        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
         items: [{
             xtype: 'button',
             text: 'Logout',
@@ -85,7 +79,7 @@ Ext.define('TrackIT.view.main.Main', {
 
     items: [{
         title: 'Tickets',
-        iconCls: 'fa-eye',
+        iconCls: 'fa-home',
         items: [{
             xtype: 'mainlisttickets'
         }]
@@ -95,12 +89,26 @@ Ext.define('TrackIT.view.main.Main', {
         items: [{
             xtype: 'mainlisthistorico'
         }]
-    }, {
-        title: 'Recuperados',
-        iconCls: 'fa-eye',
-        items: [{
-            xtype: 'mainlistrecuperados'
-        }]
+    },
+        {
+            title: 'Administração',
+            id: 'admin',
+            iconCls: 'fa-eye',
+            items: [{
+                xtype: 'mainwidget'
+            }]
+}],
+    listeners: {
+        'afterrender': function () {
+            {
+                method:'POST',
+                    myRequest1 = Ext.Ajax.request({
+                        url: 'app/php/Admin/verificaadmin.php',
+                        success: function (response, opts){Ext.getCmp('admin').setDisabled(false);},
+                        failure: function (){Ext.getCmp('admin').setDisabled(true);}
+                    });
+            }
+
+        }
     }
-  ]
 });

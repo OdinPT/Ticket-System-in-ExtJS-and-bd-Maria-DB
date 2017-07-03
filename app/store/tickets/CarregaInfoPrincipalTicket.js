@@ -5,7 +5,7 @@ Ext.define('TrackIT.store.tickets.CarregaInfoPrincipalTicket', {
     xtype: 'ticketseleccionado2',
 	storeId: 'ticketseleccionado2',
 	autoLoad: true,
-  autoSync: true,
+    autoSync: true,
 	proxy: {
         type: 'ajax',
         url: 'app/php/carregamstores/carregainfoprincipalticket.php',

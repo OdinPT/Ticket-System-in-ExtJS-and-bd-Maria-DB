@@ -5,16 +5,21 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     extend: 'Ext.grid.Panel',
     id: 'grid4',
     xtype: 'mainlistrespostas',
-    width: 1074,
-    height: 600,
+
+    width: 1050,
+    height: 500,
+
+
+
     requires: [
         'TrackIT.store.respostas.Respostas',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.respostas.MostraResposta',
         'TrackIT.store.respostas.RespostaSeleccionada'
-        // 'TrackIT.view.main.AnswerController'
     ],
-
+    config: {
+        autoLoad: true
+    },
     title: 'Respostas',
 
     store: {
@@ -22,26 +27,11 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     },
 
     columns: [
-      { text: 'ID',  dataIndex: 'id_resp', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    } },
-      { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
-      { text: 'RESPOSTA', dataIndex: 'datea_resp', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
-      { text: 'ID TICKET', dataIndex: 'id_email', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }}
+      { text: 'ID',  dataIndex: 'id_resp', flex: 0.1},
+      { text: 'ASSUNTO',  dataIndex: 'subject_resp', flex: 1.6},
+      { text: 'DATA', dataIndex: 'datea_resp', flex: 1},
+        { text: 'CORPO', dataIndex: 'body_resp', flex: 3},
+      { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8}
     ],
 
     tbar: {
@@ -49,43 +39,29 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
 
         items: [
             {
-              text: 'Refresh!',
+              text: 'Atualizar',
               handler: function() {
     Ext.getCmp('grid4').store.reload();
 }
-    },
-    {
-      text: 'Apagar Respostas!',
-      id: 'apagar',
-      handler: function(){
-        myRequest = Ext.Ajax.request({
-          url: 'app/php/Limpar/limparespostas.php',
-          method: 'POST',
-          success: function(response, opts) {
-  Ext.getCmp('grid4').store.reload();
-  }
-        })
-      }
     }]
   },
-
     listeners: {
- itemclick: function(view, record, item, index, e) {
-  var id = record.get('ID');
-  Ext.util.Cookies.set('cookieIDanswer', id);
-                    var myWin = Ext.create("Ext.window.Window", {
-                        title: 'Respostas',
-                        modal: true,
-                        // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
-                        width: 1100,
-                        height: 550,
-                        items: [{
-                            xtype: 'maintabresposta'
-                        }]
-                    });
-                    myWin.show();
-  // console.log(record);
- }
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('id_resp');
+            Ext.util.Cookies.set('cookieIDanswer', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Respostas',
+                modal: true,
+                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+                width: 1100,
+                height: 550,
+                items: [{
+                    xtype: 'maintabresposta'
+                }]
+            });
+            myWin.show();
+        }
+
     },
     onGridAfterRender: function(gridticket){
        setInterval(function(){

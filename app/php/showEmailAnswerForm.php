@@ -12,7 +12,11 @@ if(isset($_POST['submit'])){
     $message = $_POST['message'];
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
-    mysqli_query($mysqli, "INSERT INTO respostas (subject, answer, IDticket) VALUES ('$subject', '$message', '$id')");
+
+    //mysqli_query($mysqli, "INSERT INTO respostas (subject, answer, IDticket) VALUES ('$subject', '$message', '$id')");
+
+    mysqli_query($mysqli, "Call InserirRespostas('$message', '$id')");
+
 
     mysqli_close($mysqli);
     mail($to,$subject,$message,$headers);

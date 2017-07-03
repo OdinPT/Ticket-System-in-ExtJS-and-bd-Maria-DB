@@ -33,8 +33,11 @@ Ext.define('TrackIT.view.main.MainController', {
         Ext.util.Cookies.clear('email');
         Ext.util.Cookies.clear('cookieID');
         Ext.util.Cookies.clear('cookieIDhistorico');
-        Ext.util.Cookies.clear('cookieIDrecovered');
         Ext.util.Cookies.clear('cookieIDanswer');
         Ext.util.Cookies.clear('cookieIDemail');
+        Ext.util.Cookies.clear('cookieIDemail');
+        Ext.util.Cookies.clear('cookieIDfuncionario');
+        Ext.util.Cookies.clear('cookieIDdepartamento');
+
     }
 });

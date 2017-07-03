@@ -1,18 +1,19 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     extend: 'Ext.grid.Panel',
     id: 'grid5',
     xtype: 'mainlistrespostashistorico',
+
+
     width: 1074,
     height: 600,
+    autoLoad: true,
+
     requires: [
         'TrackIT.store.respostas.RespostasHistorico',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.historico.respostas.MostraRespostaHistorico',
         'TrackIT.store.respostas.RespostaSeleccionadaHistorico'
-        // 'TrackIT.view.main.AnswerController'
+
     ],
 
     title: 'Respostas',
@@ -22,28 +23,27 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     },
 
     columns: [
-      { text: 'ID',  dataIndex: 'ID', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    } },
-      { text: 'ASSUNTO',  dataIndex: 'subject', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
-      { text: 'RESPOSTA', dataIndex: 'answer', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }},
-      { text: 'IDTICKET', dataIndex: 'IDticket', flex: 1,
-    editor: {
-        allowBlank: false,
-        maxLength: 49
-    }}
+        { text: 'ID',  dataIndex: 'id_resp', flex: 1,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            } },
+        { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }},
+        { text: 'DATA', dataIndex: 'datea_resp', flex: 1,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }},
+        { text: 'ID TICKET', dataIndex: 'id_email', flex: 1,maxWidth: 150,
+            editor: {
+                allowBlank: false,
+                maxLength: 49
+            }}
     ],
-
     tbar: {
         defaultButtonUI: 'default',
 

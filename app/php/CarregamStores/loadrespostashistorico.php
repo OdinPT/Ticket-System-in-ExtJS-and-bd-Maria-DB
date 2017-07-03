@@ -1,10 +1,11 @@
 <?php
+error_reporting(0);
 include("config.php");
-$id = $_COOKIE['cookieID'];
+
+$id = $_COOKIE['cookieIDhistorico'];
 $return_arr = array();
 
 $query = "Call ShowRespostasHistorico($id)";
-//$query = "SELECT * FROM respostas WHERE id=$id";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

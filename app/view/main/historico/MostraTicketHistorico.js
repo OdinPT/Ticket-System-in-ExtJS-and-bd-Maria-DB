@@ -23,22 +23,37 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
     items: [{
         title: 'Conteúdo do Ticket',
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
-        items: [{
-                  xtype: 'infotickethistorico'
-              }]
+        items: [
+            {
+                xtype: 'infotickethistorico'
+            },
+            {
+                xtype: 'mainlistanexos'
+            },
+            {
+                xtype: 'mainlistrespostas'
+            }
 
+        ]
     },
-    {
-        title: 'Outras Informações',
-        items: {
-                  xtype: 'infohistorico'
-              }
+        {
+            title: 'Historico dos Estados',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoesthist'
+                }
+            ]
 
-    },
-  {
-    title: 'Respostas',
-    items: {
-      xtype: 'mainlistrespostas'
-    }
-  }]
+        },
+        {
+            title: 'Historico dos Departamentos',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoDep'
+                }
+            ]
+
+        }
+
+    ]
 });
