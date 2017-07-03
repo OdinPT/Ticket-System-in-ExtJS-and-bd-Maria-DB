@@ -62,6 +62,12 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
+            fieldLabel: 'Tipo Resolução mock:',
+            id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
             fieldLabel: 'Assunto:',
             id: 'subjectt',
             readOnly: true
@@ -83,6 +89,7 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
                     var h = Ext.getCmp('emaill').setValue(record.data.email);
                     var c = Ext.getCmp('dateaa').setValue(record.data.datea);
                     var d = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
+                    var e = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
                     var e = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
                     var e = Ext.getCmp('subjectt').setValue(record.data.subject);
                     var e = Ext.getCmp('bodyy').setValue(record.data.body);
