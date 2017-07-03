@@ -27,7 +27,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
         { text: 'Nome de Departamento',  dataIndex: 'nome_departamento', flex: 1}
     ],
 
-    tbar: {
+    /*tbar: {
         defaultButtonUI: 'default',
 
         items: [
@@ -37,7 +37,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
                     Ext.getCmp('griddepartamentos').store.reload();
                 }
             }]
-    },
+    },*/
     listeners: {
         itemclick: function(view, record, item, index, e) {
             var id = record.get('id_departamento');

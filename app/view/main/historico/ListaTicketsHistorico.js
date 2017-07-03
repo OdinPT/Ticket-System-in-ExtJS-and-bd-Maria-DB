@@ -11,6 +11,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         'TrackIT.view.main.historico.MostraTicketHistorico',
         'TrackIT.view.main.historico.TicketControllerHistorico'
     ],
+
     config: {
         autoLoad: true,
         scroll:true,
@@ -122,8 +123,8 @@ Ext.MessageBox.hide();
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Historico do Ticket',
                 modal: true,
-                width: 1100,
-                height: 550,
+                //  width: 1100,
+                height: 600,
                 items: [{
                     xtype: 'maintabsss'
                 }], // add funcion ther

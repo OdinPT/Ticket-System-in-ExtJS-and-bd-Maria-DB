@@ -8,11 +8,9 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
         'Ext.toolbar.Paging'],
 
 
-//    width: 630,
-
     config: {
         autoLoad: true,
-        scroll:false,
+        scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {
@@ -27,43 +25,9 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
         { text: 'ID',  dataIndex: 'idHistoricoDep', flex: 0.1},
         { text: 'ID ticket ',  dataIndex: 'IdTicketDep', flex: 1.3},
         { text: 'Hora de atribuição', dataIndex: 'HoraAtribuicaoDep', flex: 2.4},
-        { text: 'ID Departamento', dataIndex: 'IDDepartamentoDep', flex: 2.1},
-        { text: 'ID funcionario', dataIndex: 'IDFuncEstado', flex: 4}
+        { text: 'Nome do departamento Atribuido', dataIndex: 'IDDepartamentoDep', flex: 2.3},
+        { text: 'Nome do funcionario', dataIndex: 'IDFuncEstado', flex: 4}
     ],
-
-    tbar: {
-        defaultButtonUI: 'default',
-
-        items: [
-            {
-                text: 'Refresh!',
-                handler: function() {
-                    Ext.getCmp('gridhisdep').store.reload();
-                }
-            }]
-    },
-    /*listeners: {
-        itemclick: function(view, record, item, index, e) {
-            var id = record.get('id_funcionario');
-            Ext.util.Cookies.set('cookieIDfuncionario', id);
-            var myWin = Ext.create("Ext.window.Window", {
-                title: 'Funcionário',
-                modal: true,
-                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
-                width: 500,
-                height: 345,
-                items: [{
-                    xtype: 'fieldfuncionario'
-                }]
-            });
-            myWin.show();
-        }
-    */
-    //},
-
-
-
-
 
     onGridAfterRender: function(gridhisest){
         setInterval(function(){

@@ -110,7 +110,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Atribuir Funcionário',
+                          title: 'Atribuir novo Funcionário',
                           modal: true,
                           items: {
                               xtype: 'atribuifuncionario'
@@ -125,7 +125,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Mudar Departamento',
+                          title: 'Mudar Departamento do Ticket',
                           modal: true,
                           items: {
                               xtype: 'registahisDep'
@@ -137,13 +137,14 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               }
           },
           {
-              text: 'Mudar Estado de resoluçao',
+              text: 'Mudar Estado de resolução ',
               glyph: 43,
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Mudar Estado de resoluçao',
+                          title: 'Mudar Estado de resolução do Ticket',
                           modal: true,
+                          width: 400,
                           items: {
                               xtype: 'registahisestado'
                           }
