@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Jul-2017 às 19:34
+-- Generation Time: 03-Jul-2017 às 15:17
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -510,8 +510,7 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(5, 'teste3'),
-(6, 'teste1');
+(9, 'New');
 
 -- --------------------------------------------------------
 
@@ -581,7 +580,8 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
 (41, 'callcenter', 'callcenter', 1, 3),
-(43, 'normal', 'normal', 1, 1);
+(43, 'teste', 'teste', 3, 3),
+(46, 'trackit093@gmail.com', '123teste123', 3, 4);
 
 -- --------------------------------------------------------
 
@@ -796,7 +796,7 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -811,7 +811,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -866,6 +866,13 @@ ALTER TABLE `emails`
 ALTER TABLE `funcionario`
   ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `historicodepartamentos`
+--
+ALTER TABLE `historicodepartamentos`
+  ADD CONSTRAINT `historicodepartamentos_fk_departamento` FOREIGN KEY (`IDDepartamentoDep`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicodepartamentos_fk_funcionario` FOREIGN KEY (`IDFuncEstado`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `historicoestados`
