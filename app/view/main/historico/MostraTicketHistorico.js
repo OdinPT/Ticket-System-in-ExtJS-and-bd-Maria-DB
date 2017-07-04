@@ -23,9 +23,10 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
     items: [{
         title: 'Conteúdo do Ticket',
         // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
-        items: [{
-            xtype: 'infotickethistorico'
-        },
+        items: [
+            {
+                xtype: 'infotickethistorico'
+            },
             {
                 xtype: 'mainlistanexos'
             },

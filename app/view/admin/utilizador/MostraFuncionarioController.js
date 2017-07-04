@@ -8,9 +8,12 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionarioController', {
             url: 'app/php/Apagar/apagarfuncionario.php',
             method: 'POST',
             success: function(response, opts) {
-                Ext.MessageBox.alert('title','Sucesso');
+                Ext.MessageBox.alert('Funcionario Apagado',' com Sucesso');
                 Ext.getCmp('gridfuncionarios').getStore().load();
-            }
+            },
+            failure: function (){alert('Erro...');
+                Ext.MessageBox.alert('Utilizador Não Apagado','Sem Sucesso!');
+            },
         })
     },
     onClickEditaFuncionario: function()

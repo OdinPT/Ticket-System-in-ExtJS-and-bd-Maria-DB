@@ -1,18 +1,19 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     extend: 'Ext.grid.Panel',
     id: 'grid5',
     xtype: 'mainlistrespostashistorico',
+
+
     width: 1074,
     height: 600,
+    autoLoad: true,
+
     requires: [
         'TrackIT.store.respostas.RespostasHistorico',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.historico.respostas.MostraRespostaHistorico',
         'TrackIT.store.respostas.RespostaSeleccionadaHistorico'
-        // 'TrackIT.view.main.AnswerController'
+
     ],
 
     title: 'Respostas',

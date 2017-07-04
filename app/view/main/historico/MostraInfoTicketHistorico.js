@@ -9,8 +9,10 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
     ],
     id: 'paginainfohistoricoticket',
     title: 'Informação Principal',
-    width: 1380,
-    height: 440,
+
+    width: 1050,
+    height: 450,
+
     autoScroll: true,
     layout: {
         type: 'form',

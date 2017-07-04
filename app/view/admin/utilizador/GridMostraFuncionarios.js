@@ -11,7 +11,7 @@ Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
     ],
     config: {
         autoLoad: true,
-        scroll:false,
+        scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {
@@ -29,7 +29,7 @@ Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
         { text: 'Tipo de Funcionário', dataIndex: 'Descricao_TipoUtilizador', flex: 0.7}
     ],
 
-    tbar: {
+    /*tbar: {
         defaultButtonUI: 'default',
 
         items: [
@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
                     Ext.getCmp('gridfuncionarios').store.reload();
                 }
             }]
-    },
+    },*/
     listeners: {
         itemclick: function(view, record, item, index, e) {
             var id = record.get('id_funcionario');

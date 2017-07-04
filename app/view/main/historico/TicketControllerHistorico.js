@@ -7,7 +7,7 @@ Ext.define('TrackIT.view.main.historico.TicketControllerHistorico', {
           url: 'app/php/Apagar/HistoricoDeleteOne.php',
     method: 'POST'
   })
-  Ext.MessageBox.alert('title','Sucesso');
+  Ext.MessageBox.alert('Ticket Movido',' com Sucesso');
   Ext.getCmp('grid2').getStore().load();
   Ext.getCmp('grid2').getStore().load();
 },

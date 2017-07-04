@@ -10,10 +10,8 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
     id: 'mockpaginainfoprincipalticket',
     title: 'Informação Principal',
 
-    //width: 1100,
-
     width: 1000,
-    height: 450,
+    height: 550,
     autoScroll: true,
 
 
@@ -62,6 +60,18 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
+            fieldLabel: 'Tipo Resolução :',
+            id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Funcionário Atribuido:',
+            id: 'id_func_emails',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
             fieldLabel: 'Assunto:',
             id: 'subjectt',
             readOnly: true
@@ -83,9 +93,12 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
                     var h = Ext.getCmp('emaill').setValue(record.data.email);
                     var c = Ext.getCmp('dateaa').setValue(record.data.datea);
                     var d = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
+                    var e = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
                     var e = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
                     var e = Ext.getCmp('subjectt').setValue(record.data.subject);
                     var e = Ext.getCmp('bodyy').setValue(record.data.body);
+                    var l = Ext.getCmp('id_func_emails').setValue(record.data.id_func_emails);
+
                 }
             });
         }

@@ -7,9 +7,6 @@ Ext.define('TrackIT.view.main.historico.HisDep.GridMostraDep', {
         'TrackIT.store.TipoDepartamentoMD.Departamentoshistorico',
         'Ext.toolbar.Paging'],
 
-
-
-    width: 630,
     autoLoad: true,
     config: {
         autoLoad: true,

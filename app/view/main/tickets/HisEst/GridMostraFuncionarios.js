@@ -29,19 +29,6 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
         { text: 'Estado de Resoluçao', dataIndex: 'DesTipoRes', flex: 0.5}
     ],
 
-    /*tbar: {
-        defaultButtonUI: 'default',
-
-        /*items: [
-            {
-                text: 'Refresh!',
-                handler: function() {
-                    Ext.getCmp('gridhisest2').store.reload();
-                }
-            }]
-    },*/
-
-
     onGridAfterRender: function(gridhisest){
         setInterval(function(){
             grid.store.load();

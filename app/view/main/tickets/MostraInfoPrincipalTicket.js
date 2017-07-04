@@ -13,8 +13,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
 
     //width: 1100,
 
-    width: 1000,
-    height: 450,
+    width: 1050,
+    height: 550,
     autoScroll: true,
 
 
@@ -59,6 +59,18 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
             id: 'nome_departamentoo',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Tipo Resolução nor:',
+            id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Funcionário Atribuido:',
+            id: 'id_func_emails',
             readOnly: true
         },
         {
@@ -110,7 +122,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Atribuir Funcionário',
+                          title: 'Atribuir novo Funcionário',
                           modal: true,
                           items: {
                               xtype: 'atribuifuncionario'
@@ -125,7 +137,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Mudar Departamento',
+                          title: 'Mudar Departamento do Ticket',
                           modal: true,
                           items: {
                               xtype: 'registahisDep'
@@ -137,13 +149,14 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
               }
           },
           {
-              text: 'Mudar Estado de resoluçao',
+              text: 'Mudar Estado de resolução ',
               glyph: 43,
               listeners: {
                   click: function(){
                       var myWin = Ext.create("Ext.window.Window", {
-                          title: 'Mudar Estado de resoluçao',
+                          title: 'Mudar Estado de resolução do Ticket',
                           modal: true,
+                          width: 400,
                           items: {
                               xtype: 'registahisestado'
                           }
@@ -155,6 +168,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
           }
 
 
-      ]
+      ],
+
   }
   });

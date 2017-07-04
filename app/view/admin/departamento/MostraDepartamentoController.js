@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
             url: 'app/php/Apagar/apagardepartamento.php',
             method: 'POST',
             success: function(response, opts) {
-                Ext.MessageBox.alert('title','Sucesso');
+                Ext.MessageBox.alert('Departamento Apagado',' com Sucesso');
                 Ext.getCmp('griddepartamentos').getStore().load();
             },
 
