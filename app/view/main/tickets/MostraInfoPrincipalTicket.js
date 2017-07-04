@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     //width: 1100,
 
     width: 1050,
-    height: 450,
+    height: 550,
     autoScroll: true,
 
 
@@ -65,6 +65,12 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             xtype: 'textfield',
             fieldLabel: 'Tipo Resolução nor:',
             id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Funcionário Atribuido:',
+            id: 'id_func_emails',
             readOnly: true
         },
         {

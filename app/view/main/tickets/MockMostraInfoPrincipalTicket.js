@@ -10,10 +10,8 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
     id: 'mockpaginainfoprincipalticket',
     title: 'Informação Principal',
 
-    //width: 1100,
-
     width: 1000,
-    height: 450,
+    height: 550,
     autoScroll: true,
 
 
@@ -62,8 +60,14 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Tipo Resolução mock:',
+            fieldLabel: 'Tipo Resolução :',
             id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Funcionário Atribuido:',
+            id: 'id_func_emails',
             readOnly: true
         },
         {
@@ -93,6 +97,8 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
                     var e = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
                     var e = Ext.getCmp('subjectt').setValue(record.data.subject);
                     var e = Ext.getCmp('bodyy').setValue(record.data.body);
+                    var l = Ext.getCmp('id_func_emails').setValue(record.data.id_func_emails);
+
                 }
             });
         }
