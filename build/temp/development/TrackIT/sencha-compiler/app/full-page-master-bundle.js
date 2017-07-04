@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\xampp\htdocs\testetrackit\app.js
+// @require /var/www/html/testetrackit/app.js
