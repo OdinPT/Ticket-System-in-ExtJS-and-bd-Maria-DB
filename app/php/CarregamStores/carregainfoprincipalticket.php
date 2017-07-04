@@ -17,6 +17,8 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
   $row_array['body'] = $row['body'];
   $row_array['DesTipoRes'] = $row['DesTipoRes'];
   $row_array['nome_departamento'] = $row['nome_departamento'];
+  $row_array['id_func_emails'] = $row['id_func_emails'];
+
 
   array_push($return_arr,$row_array);
 }

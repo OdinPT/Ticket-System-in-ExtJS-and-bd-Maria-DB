@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Jul-2017 às 15:17
+-- Generation Time: 04-Jul-2017 às 11:03
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -316,9 +316,10 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelec` (IN `_id` INT(11))  NO SQL
 BEGIN
  
-SELECT `id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %H:%i') as datea,`body`,`Descricao_Estado`,`email`,nome_departamento
-FROM emails, departamento , estado
-WHERE `id_departamento_emails`=id_departamento and (`state`=ID_Estado) and (id=_id); 
+SELECT `id`,`fromaddress`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %H:%i') as `datea`,`body`,`Descricao_Estado`,`email`,nome_departamento,DesTipoRes,`id_func_emails`
+
+FROM emails, departamento , estado,tipo_resolucao
+WHERE `id_departamento_emails`=id_departamento and (`state`=ID_Estado)  and (id_Res_Ticket=`IdTipoRes`) and (id=_id);
   
  END$$
 
@@ -574,14 +575,15 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departamento_funcionarios`, `Tipo_Funcionario`) VALUES
-(36, 'teste2', 'teste2', 2, 3),
+(36, 'teste2', '2', 2, 1),
 (37, 'testetrackit@gmail.com', 'testetrackit123', 1, 4),
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
 (41, 'callcenter', 'callcenter', 1, 3),
-(43, 'teste', 'teste', 3, 3),
-(46, 'trackit093@gmail.com', '123teste123', 3, 4);
+(43, 'teste', 'teste', 1, 2),
+(46, 'trackit093@gmail.com', '123teste123', 3, 4),
+(49, 'normal', 'normal', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -811,7 +813,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
