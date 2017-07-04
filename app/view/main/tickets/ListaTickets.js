@@ -170,7 +170,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                                         var d = Ext.getCmp('dateaa').setValue(record.data.datea);
                                         var e = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
                                         var f = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
-
+                                        var h = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
                                         var gridt = Ext.ComponentQuery.query('gridticket')[0];
                                         gridt.getStore().load();
                                     }
@@ -231,6 +231,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                                         var c = Ext.getCmp('bodyy').setValue(record.data.body);
                                         var d = Ext.getCmp('dateaa').setValue(record.data.datea);
                                         var e = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
+
+                                        var h = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
                                         var f = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
 
                                         var gridt = Ext.ComponentQuery.query('gridticket')[0];
