@@ -4,7 +4,7 @@ include("config.php");
 $id = $_COOKIE['cookieIDdepartamento'];
 $return_arr = array();
 
-$query = "SELECT * FROM departamento WHERE id_departamento=$id";
+$query = "call CarregaDepSelec($id)";
 
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

@@ -3,7 +3,7 @@ error_reporting(0);
 include("config.php");
 $return_arr = array();
 
-    $query = "SELECT `ID_Estado`,`Descricao_Estado` FROM estado";
+    $query = "call CarregaEstados()";
 
 
 $result = mysqli_query($mysqli, $query);

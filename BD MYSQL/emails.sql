@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Jul-2017 às 11:03
+-- Generation Time: 05-Jul-2017 às 18:25
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -24,6 +24,13 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarDepartamento` (IN `_id` INT)  NO SQL
+BEGIN
+
+DELETE FROM departamento WHERE id_departamento=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarEmails` (IN `_id` INT(10))  NO SQL
 BEGIN
 
@@ -35,6 +42,63 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagaResposta` (IN `_id` INT(11))  
 BEGIN
 
 DELETE FROM respostas where id_resp=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaDepartamento` (IN `_iddepartamento2` INT, IN `_nome` VARCHAR(200), IN `_id` INT)  NO SQL
+BEGIN
+
+
+UPDATE departamento 
+SET id_departamento=_iddepartamento2, nome_departamento=_nome WHERE id_departamento=_id;
+
+   END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaFuncionario` (IN `_user` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_iddep` INT, IN `_tf` INT, IN `_id` INT)  NO SQL
+Begin
+
+UPDATE funcionario SET username=_username, pass=_pass, id_departamento_funcionarios=_iddep, Tipo_Funcionario=_tf WHERE id_funcionario=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaDepartamentos` ()  NO SQL
+Begin
+
+SELECT * FROM departamento ORDER BY id_departamento;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaDepSelec` (IN `_id` INT)  NO SQL
+BEGIN
+
+SELECT * FROM departamento WHERE id_departamento=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaEstados` ()  NO SQL
+BEGIN
+
+SELECT `ID_Estado`,`Descricao_Estado` FROM estado;
+
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncionarios` ()  NO SQL
+BEGIN
+SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador ORDER BY id_funcionario;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncionariosDepart` (IN `_func` VARCHAR(230))  NO SQL
+Begin
+
+SELECT * FROM funcionario WHERE username like _func;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncSelec` (IN `_id` INT)  NO SQL
+BEGIN
+
+SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador and id_funcionario=_id;
 
 End$$
 
@@ -57,12 +121,20 @@ WHERE id_departamento_emails=id_departamento and id=_id;
 
 end$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConCat` (IN `_pa` VARCHAR(700))  READS SQL DATA
-    COMMENT 'Procura por Palavras chave inseridas'
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaRespostaSelecionada` (IN `_id` INT)  NO SQL
 Begin
-Call VerDicionario();
 
-select body from emails where body like CONCAT('%',_pa,'%') ;
+SELECT * FROM respostas WHERE id_resp=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaTiposResolução` ()  NO SQL
+SELECT * FROM `tipo_resolucao`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaTiposUtilizador` ()  NO SQL
+BEGIN
+
+SELECT * FROM tipoutilizador ORDER BY ID_TipoUtilizador;
 
 End$$
 
@@ -78,26 +150,6 @@ TRUNCATE table historicodepartamentos;
 
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirCliente` (IN `_NC` VARCHAR(150), IN `_EC` VARCHAR(100), IN `_DNC` DATE, IN `_CC` INT(10))  NO SQL
-BEGIN 
-
-
-    INSERT INTO cliente
-         (
-           Nome_Cliente,
-           Email_Cliente,
-           DataNasc_Cliente,
-           Contribuinte_Cliente)
-           
-    VALUES 
-         ( 
-           
-        _NC, 
-        _EC, 
-       _DNC,
-        _CC) ; 
-END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirFuncionario` (IN `_name` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_idDepar` INT(11), IN `_TP` INT(11))  NO SQL
 Begin
@@ -224,11 +276,6 @@ BEGIN
 DELETE FROM emails where (`id_grupo_emails` = 2);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaRecuperados` ()  NO SQL
-BEGIN
-DELETE FROM emails where (`id_grupo_emails` = 3);
-END$$
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaRespostas` ()  NO SQL
 Begin
 truncate respostas;
@@ -313,6 +360,13 @@ Begin
 
 End$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `teste` (IN `_funcionario` VARCHAR(100), IN `_id` INT)  NO SQL
+BEGIN
+
+UPDATE emails SET id_func_emails= _funcionario WHERE id=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelec` (IN `_id` INT(11))  NO SQL
 BEGIN
  
@@ -332,36 +386,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT
  
    END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecRecovered` (IN `_id` INT)  BEGIN
-	SELECT id, fromaddress, subject, datea ,body ,`state`,`nome_departamento`,nome_grupo
-    
-		FROM emails,departamento, grupo 
-	where (id_departamento_emails=id_departamento) and nome_grupo="Recuperado" and  (id=_id); 
-   END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClientes` ()  NO SQL
-BEGIN
-select * from cliente;
-end$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerClienteSelecionado` (IN `mail` INT(100))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerDepFunc` (IN `_tipo` INT)  NO SQL
 BEGIN
 
-SELECT `id_funcionario`,`username`,`pass`,nome_departamento,Descricao_TipoUtilizador AS Tipo_Utilizador
-
-FROM funcionario, departamento,tipoutilizador
-
-where (`id_departamento_funcionarios`= id_departamento) and (Tipo_Funcionario= ID_TipoUtilizador) and(id_funcionario =mail)
-ORDER BY id_funcionario;
-
-
-End$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerFuncionario` ()  NO SQL
-BEGIN
-SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,`Descricao_TipoUtilizador` 
-FROM funcionario, departamento, tipoutilizador
-where (id_departamento_funcionarios= id_departamento) and Tipo_Funcionario= ID_TipoUtilizador;
+SELECT * FROM funcionario WHERE id_departamento_funcionarios=_tipo;
 
 End$$
 
@@ -388,6 +416,19 @@ where IDDepartamentoDep=id_departamento and `IDFuncEstado`= id_funcionario and I
 
 end$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerificaAdmin` (IN `email` VARCHAR(100))  NO SQL
+BEGIN
+
+SELECT * FROM funcionario WHERE username=email;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verificausoEmail` (IN `_id` INT)  NO SQL
+BEGIN
+
+SELECT * FROM emails WHERE id=_id;
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerTicket` (IN `_iddep` INT(11))  BEGIN
 
 
@@ -413,16 +454,6 @@ order by id asc;
     
     
    END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `VerticketRecuperado` ()  NO SQL
-BEGIN
-
-select `id`,`fromaddress`,`subject`,`datea`,`body`, `state`,`nome_departamento`
-from emails, departamento, grupo
-where (`id_departamento_emails`= id_departamento) and (id_grupo_emails=id_grupo) and (nome_grupo= 'Recuperado')order by id asc;
-   
-   
-END$$
 
 --
 -- Functions
@@ -476,6 +507,15 @@ return temp;
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `RetornaMail` (`id` INT(100)) RETURNS VARCHAR(100) CHARSET latin1 NO SQL
+BEGIN
+declare temp varchar(200);
+
+SELECT `username` INTO temp FROM funcionario WHERE id_funcionario=id;
+return temp;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` FUNCTION `VerificaClienteExiste` (`_email` VARCHAR(100)) RETURNS TINYINT(1) NO SQL
 Begin
 declare temp bool;
@@ -511,7 +551,7 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(9, 'New');
+(5, 'teste2');
 
 -- --------------------------------------------------------
 
@@ -581,7 +621,7 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
 (41, 'callcenter', 'callcenter', 1, 3),
-(43, 'teste', 'teste', 1, 2),
+(43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
 (49, 'normal', 'normal', 1, 1);
 
@@ -813,7 +853,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
