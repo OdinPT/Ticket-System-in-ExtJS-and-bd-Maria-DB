@@ -1,13 +1,13 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 include("config.php");
 //$id = $_COOKIE['cookieIDCliente'];
 $return_arr = array();
 
 $query = "call VerClientes()";
 
-$result = mysqli_query($mysqli, $query);
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+$result = sqlsrv_query($mysqli, $query);
+while($row = sqlsrv_fetch_array($result, SQLSRV_ASSOC))
 {
   $row_array['Id_Cliente'] = $row['Id_Cliente'];
   $row_array['Nome_Cliente'] = $row['Nome_Cliente'];

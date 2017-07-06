@@ -6,9 +6,9 @@ $return_arr = array();
 
 $query = "Call ShowBody($id)";
 
-$result = mysqli_query($mysqli, $query);
+$result = sqlsrv_query($mysqli, $query);
 
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+while($row = sqlsrv_fetch_array($result, SQLSRV_ASSOC))
 {
   $row_array['id'] = $row['id'];
   $row_array['datea'] = $row['datea'];

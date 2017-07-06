@@ -6,23 +6,23 @@ onClickApagaTicketDoHistorico: function()
 {
   myRequest1 = Ext.Ajax.request({
     url: 'app/php/Apagar/HistoricoDeleteOne.php',
-method: 'POST',
-success: function(response, opts) {
-  Ext.MessageBox.alert('title','Sucesso');
-  var grid = Ext.ComponentQuery.query('gridticket')[0]
-  grid.getStore().load();
+    method: 'POST',
+    success: function(response, opts) {
+      Ext.MessageBox.alert('Ticket Apagado','Com Sucesso');
+      var grid = Ext.ComponentQuery.query('gridticket')[0]
+      grid.getStore().load();
   Ext.getCmp('grid2').getStore().load();
 }
 })
 },
 
-onClickMoveParaRecuperados: function()
+onClickMoveParaTickets: function()
 {
   myRequest1 = Ext.Ajax.request({
     url: 'app/php/Mover/AlterarEstado.php',
 method: 'POST',
 success: function(response, opts) {
-  Ext.MessageBox.alert('title','Sucesso');
+  Ext.MessageBox.alert('Ticket Movido','Com Sucesso');
   var grid = Ext.ComponentQuery.query('gridticket')[0]
   grid.getStore().load();
   Ext.getCmp('grid2').getStore().load();

@@ -2,6 +2,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     extend: 'Ext.form.Panel',
     xtype: 'infoticketprincipal',
     controller: 'infoticketprincipal',
+
     requires: [
       'TrackIT.store.tickets.CarregaInfoPrincipalTicket',
       'TrackIT.view.main.tickets.MostraInfoPrincipalTicketController',
@@ -9,8 +10,11 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     ],
     id: 'paginainfoprincipalticket',
     title: 'Informação Principal',
-    width: 1080,
-    height: 440,
+
+    //width: 1100,
+
+    width: 1050,
+    height: 450,
     autoScroll: true,
 
 
@@ -48,13 +52,19 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'statee',
+            id: 'Descricao_Estado',
             readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
             id: 'nome_departamentoo',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Tipo Resolução nor:',
+            id: 'DesTipoRes',
             readOnly: true
         },
         {
@@ -81,6 +91,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
           click: 'onClickMoveParaHistorico'
         }
       },
+
           {
               text: 'Responder',
               glyph: 43,
@@ -98,8 +109,60 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                       myWin.show();
                   }
               }
+          },
+          {
+              text: 'Atribuir Funcionário',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Atribuir novo Funcionário',
+                          modal: true,
+                          items: {
+                              xtype: 'atribuifuncionario'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
+          },{
+              text: 'Mudar Departamento',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar Departamento do Ticket',
+                          modal: true,
+                          items: {
+                              xtype: 'registahisDep'
+                          }
+
+                      });
+                      myWin.show();
+                  }
+              }
+          },
+          {
+              text: 'Mudar Estado de resolução ',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Mudar Estado de resolução do Ticket',
+                          modal: true,
+                          width: 400,
+                          items: {
+                              xtype: 'registahisestado'
+                          }
+
+                      });
+                      myWin.show();
+                  }
+              }
           }
 
-    ]
+
+      ],
+
   }
   });

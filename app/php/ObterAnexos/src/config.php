@@ -1,5 +1,4 @@
 <?php
-error_reporting(0);
 /*
 // mysql_connect("database-host", "username", "password")
 $conn = mysql_connect("localhost","root","root")
@@ -19,6 +18,6 @@ $databaseName = 'emails';
 $databaseUsername = 'root';
 $databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+$mysqli = sqlsrv_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
 ?>

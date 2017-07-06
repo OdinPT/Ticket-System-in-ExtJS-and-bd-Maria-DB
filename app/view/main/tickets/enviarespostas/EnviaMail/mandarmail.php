@@ -1,32 +1,49 @@
-﻿<?php
+﻿﻿<?php
+error_reporting(0);
+
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
+
 $assunto = $_POST['assuntoresposta'];
 $conteudo = $_POST['conteudoresposta'];
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
+//$IDFuncEstadox = $_COOKIE['cookieEmail'];
+
 $fileName = $_FILES['anexo']['name'];
 $tmpName  = $_FILES['anexo']['tmp_name'];
 $fileSize = $_FILES['anexo']['size'];
 $fileType = $_FILES['anexo']['type'];
-$fp      = fopen($tmpName, 'r');
+$fp= fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
-    fclose($fp);
+  fclose($fp);
     if(!get_magic_quotes_gpc()){
         $fileName = addslashes($fileName);
     }
-    $insee = mysqli_query($mysqli, "INSERT INTO upload(nome, content) VALUES ('$fileName', '$content')");
 
+$result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
 
+while($res = sqlsrv_fetch_array($result))
+{
+  $departamento = $res['id_departamento_funcionarios'];
+}
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+$result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(sqlsrv_error($mysqli));
 
-while($res = mysqli_fetch_array($result))
+while($res = sqlsrv_fetch_array($result))
 {
   $username = $res['username'];
-	$password = $res['pass'];
+  $password = $res['pass'];
+}
+
+$result = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id='$id'") or die(sqlsrv_error($mysqli));
+
+
+while($res = sqlsrv_fetch_array($result))
+{
+    $sender = $res['fromaddress'];
 }
 $PHPMailer = new PHPMailer();
 
@@ -49,38 +66,45 @@ $PHPMailer->Password = $password;
 
 // E-Mail do remetente (deve ser o mesmo de quem fez a autenticação
 // nesse caso seu_login@gmail.com)
-$PHPMailer->From = 'testetrackit@gmail.com';
+$PHPMailer->From = $username;
 
 // Nome do rementente
-$PHPMailer->FromName = 'teste trackit';
-
+$PHPMailer->FromName = 'TrackIT';
+$conteudo2 = $conteudo;
 // assunto da mensagem
 $PHPMailer->Subject = $assunto;
+
+$conteudo = str_replace('%conteudo2%', $conteudo2, file_get_contents('action.html'));
 
 // corpo da mensagem
 $PHPMailer->Body = $conteudo;
 
 // corpo da mensagem em modo texto
 $PHPMailer->AltBody = 'Mensagem em texto';
-
 $cookieID = $_COOKIE['cookieID'];
-//selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(mysqli_error($mysqli));
 
-while($res = mysqli_fetch_array($result))
+//selecting data associated with this particular id
+
+$result = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(sqlsrv_error($mysqli));
+
+while($res = sqlsrv_fetch_array($result))
 {
   $fromaddress = $res['email'];
 }
-echo $fromaddress;
+//echo $fromaddress;
+
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
+$PHPMailer->addAttachment($tmpName, $fileName);
 
+sqlsrv_query($mysqli, "call InserirRespostas('$assunto', '$conteudo2','$id')");
+sqlsrv_query($mysqli, "call inserirhistoricoestados('$id',2,'$cookieEmail')");
 
-mysqli_query($mysqli, "INSERT INTO respostas (subject_resp, body_resp, id_email) VALUES ('$assunto', '$conteudo','$id')");
-mysqli_close($mysqli);
+sqlsrv_close($mysqli);
 // verifica se enviou corretamente
-if ( $PHPMailer->Send() )
+
+if ( $PHPMailer->Send())
 {
 echo "Enviado com sucesso";
 }

@@ -5,14 +5,17 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     extend: 'Ext.grid.Panel',
     id: 'grid4',
     xtype: 'mainlistrespostas',
-    width: 1074,
-    height: 600,
+
+    width: 1050,
+    height: 500,
+
+
+
     requires: [
         'TrackIT.store.respostas.Respostas',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.respostas.MostraResposta',
         'TrackIT.store.respostas.RespostaSeleccionada'
-        // 'TrackIT.view.main.AnswerController'
     ],
     config: {
         autoLoad: true
@@ -44,7 +47,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
   },
     listeners: {
         itemclick: function(view, record, item, index, e) {
-            var id = record.get('ID');
+            var id = record.get('id_resp');
             Ext.util.Cookies.set('cookieIDanswer', id);
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Respostas',

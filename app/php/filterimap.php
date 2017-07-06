@@ -2,26 +2,28 @@
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 include_once("config.php");
 //getting id from url
+
 $cookieEmail = $_COOKIE['cookieEmail'];
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
-while($res = mysqli_fetch_array($result))
+$result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
+
+while($res = sqlsrv_fetch_array($result))
 {
   $iddepartamento = $res['id_departamento_funcionarios'];
 }
-$escolhe = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(mysqli_error($mysqli));
-while($rese = mysqli_fetch_array($escolhe))
+$escolhe = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(sqlsrv_error($mysqli));
+while($rese = sqlsrv_fetch_array($escolhe))
 {
   $username = $rese['username'];
   $password = $rese['pass'];
 }
+
 /* try to connect */
 $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Tiriyo: ' . imap_last_error());
-//echo $inbox;
+
 /* grab emails */
 $emails = imap_search($inbox,'UNSEEN');
-
 
 /* if emails are returned, cycle through each... */
 if($emails) {
@@ -68,14 +70,17 @@ if($emails) {
     }
     $from = quoted_printable_decode(imap_utf8($overview[0]->from));
         $date = utf8_decode(imap_utf8($overview[0]->date));
+        $message = nl2br($message);
         $subject = quoted_printable_decode(imap_utf8($overview[0]->subject));
         $message = strip_tags($message);
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
     echo $message;
-    $conn= mysqli_connect("localhost","root","","emails");
-    mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
-	    mysqli_close($conn);
+    $conn= sqlsrv_connect("localhost","root","","emails");
+
+
+    sqlsrv_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
+	    sqlsrv_close($conn);
   }
 }
 

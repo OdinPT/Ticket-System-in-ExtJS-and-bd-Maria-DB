@@ -7,12 +7,14 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
       'TrackIT.store.respostas.RespostaSeleccionada',
       'TrackIT.view.main.tickets.respostas.RespostaController'
     ],
+
     id: 'staticPageForm',
     frame: true,
     title: 'Resposta',
     width: 1080,
     height: 450,
     bodyPadding: 10,
+    autoLoad: true,
     layout: {
             type: 'form',
             align: 'stretch'
@@ -56,14 +58,6 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
       xtype: 'toolbar',
       items: [
       {
-        text: 'Carregar',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterResposta'
-        }
-
-      },
-      {
         text: 'Apagar',
         glyph: 43,
         listeners: {
@@ -72,5 +66,20 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
 
       }
     ]
-  }
+  },
+    listeners: {
+        afterrender: function () {
+            var store = Ext.getStore('respostaseleccionada');
+            store.load({
+                callback: function (records, operation, success) {
+                    var record = store.getAt(0);
+                    var a = Ext.getCmp('id_resp').setValue(record.data.id_resp);
+                    var b = Ext.getCmp('body_resp').setValue(record.data.body_resp);
+                    var c = Ext.getCmp('datea_resp').setValue(record.data.datea_resp);
+                    var d = Ext.getCmp('id_email').setValue(record.data.id_email);
+                    var e = Ext.getCmp('subject_resp').setValue(record.data.subject_resp);
+                }
+            });
+        }
+    }
   });

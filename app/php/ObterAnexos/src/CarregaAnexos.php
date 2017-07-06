@@ -1,20 +1,29 @@
 <?php
+error_reporting(0);
 include("config.php");
+
 $id = $_COOKIE['cookieID'];
 set_time_limit(3000);
+
 /* connect to gmail with your credentials */
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
 $cookieEmail = $_COOKIE['cookieEmail'];
-//selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
-while($res = mysqli_fetch_array($result))
+//selecting data associated with this particular id
+$result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
+
+while($res = sqlsrv_fetch_array($result))
 {
-  $username = $res['username'];
-	$password = $res['pass'];
+  $iddepartamento = $res['id_departamento_funcionarios'];
 }
-$buscaassunto = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
-while($res = mysqli_fetch_array($buscaassunto))
+$escolhe = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(sqlsrv_error($mysqli));
+while($rese = sqlsrv_fetch_array($escolhe))
+{
+  $username = $rese['username'];
+  $password = $rese['pass'];
+}
+$buscaassunto = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id=$id");
+while($res = sqlsrv_fetch_array($buscaassunto))
 {
  	$subject = $res['subject'];
  }
@@ -120,7 +129,8 @@ if($emails) {
         $data = fread($fp, filesize($filename));
         $data = addslashes($data);
         fclose($fp);
-        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
+        $filename = quoted_printable_decode(imap_utf8($filename));
+        $insere = sqlsrv_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
             }
         }
     }

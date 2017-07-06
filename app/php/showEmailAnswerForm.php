@@ -1,8 +1,8 @@
 <?php
 include_once("config.php");
 $id = $_COOKIE['cookieID'];
-$query = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
-while($res = mysqli_fetch_array($query))
+$query = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id=$id");
+while($res = sqlsrv_fetch_array($query))
 {
   $to = $res['fromaddress'];
 }
@@ -15,10 +15,10 @@ if(isset($_POST['submit'])){
 
     //mysqli_query($mysqli, "INSERT INTO respostas (subject, answer, IDticket) VALUES ('$subject', '$message', '$id')");
 
-    mysqli_query($mysqli, "Call InserirRespostas('$message', '$id')");
+    sqlsrv_query($mysqli, "Call InserirRespostas('$message', '$id')");
 
 
-    mysqli_close($mysqli);
+    sqlsrv_close($mysqli);
     mail($to,$subject,$message,$headers);
     echo "Resposta enviada";
     // You can also use header('Location: thank_you.php'); to redirect to another page.

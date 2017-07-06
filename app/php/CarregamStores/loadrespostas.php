@@ -5,10 +5,9 @@ $id = $_COOKIE['cookieID'];
 $return_arr = array();
 
     $query = "Call ShowRespostasTicket($id)";
-  //$query = "SELECT * FROM respostas WHERE IDticket=$id";
 
-$result = mysqli_query($mysqli, $query);
-while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+$result = sqlsrv_query($mysqli, $query);
+while ($row = sqlsrv_fetch_array($result, SQLSRV_ASSOC)) {
 
 $row_array['id_resp'] = $row['id_resp'];
 $row_array['subject_resp'] = $row['subject_resp'];

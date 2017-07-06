@@ -1,5 +1,7 @@
 Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     extend: 'Ext.tab.Panel',
+    //extend: 'Ext.tab.Panel',
+
     xtype: 'maintabtickets',
     controller: 'ticketzz',
     requires: [
@@ -8,8 +10,11 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
         'TrackIT.view.main.tickets.TicketController',
         'TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta'
     ],
+
+    layout: 'border',
+
     width: 1100,
-    height: 700,
+    height: 500,
 
     store: {
         type: 'ticketselectedd'
@@ -18,38 +23,48 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     defaults: {
         bodyPadding: 10,
         scrollable: true,
-        closable: true
+        closable: true,
+        collapsible: true,
+        split: true
+
     },
 
     items: [{
         title: 'Conteúdo do Ticket',
-        // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
-        items: [{
-                  xtype: 'infoticketprincipal'
-              },
+        items: [
+            {
+                xtype: 'infoticketprincipal'
+            },
             {
                 xtype: 'mainlistanexos'
-
             },
             {
 
-            }]
-
+                xtype: 'mainlistrespostas'
+            }
+            ]
     },
-  /*{
-    title: 'Outras Informações',
-    items: [{
-        xtype: 'infoticket'
-    }]
-  },*/
-  {
-    title: 'Respostas',
-    items: [{
-        xtype: 'mainlistrespostas'
-    }]
-  }
-],
+        {
+            title: 'Historico dos Estados',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoest'
+                }
+            ]
 
+        },
+        {
+            title: 'Historico dos Departamentos',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoDep'
+                }
+            ]
+
+        }
+
+]
+/*
     dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
@@ -63,5 +78,5 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
 
         }
       ]
-    }
+    }*/
 });

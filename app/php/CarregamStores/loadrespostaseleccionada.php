@@ -1,18 +1,13 @@
 <?php
 include("config.php");
-//$id = $_COOKIE['cookieIDanswer'];
-$id = $_COOKIE['cookieID'];
+$id = $_COOKIE['cookieIDanswer'];
 
 $return_arr = array();
 
-$query = "call RespostaSelecionada($id)";
+$query = "SELECT * FROM respostas WHERE id_resp=$id";
 
-//call RespostaSelecionada(2)
-
-//$query = "SELECT * FROM respostas WHERE id=$id";
-
-$result = mysqli_query($mysqli, $query);
-while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+$result = sqlsrv_query($mysqli, $query);
+while ($row = sqlsrv_fetch_array($result, SQLSRV_ASSOC)) {
 
 $row_array['id_resp'] = $row['id_resp'];
 $row_array['subject_resp'] = $row['subject_resp'];

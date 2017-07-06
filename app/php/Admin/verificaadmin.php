@@ -1,12 +1,15 @@
 <?php
 include_once("config.php");
+error_reporting(0);
 //getting id from url
+
 $email = $_COOKIE['cookieEmail'];
 
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$email'");
 
-while($res = mysqli_fetch_array($result))
+$result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$email'");
+
+while($res = sqlsrv_fetch_array($result))
 {
 	$tipo = $res['Tipo_Funcionario'];
 }

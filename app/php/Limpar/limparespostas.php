@@ -1,4 +1,4 @@
 <?php
 include("config.php");
-$kappa = mysqli_query($mysqli, "TRUNCATE TABLE respostas");
+$kappa = sqlsrv_query($mysqli, "TRUNCATE TABLE respostas");
 ?>
