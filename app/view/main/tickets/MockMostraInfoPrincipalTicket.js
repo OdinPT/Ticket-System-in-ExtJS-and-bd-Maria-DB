@@ -10,15 +10,10 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
     id: 'mockpaginainfoprincipalticket',
     title: 'Informação Principal',
 
-<<<<<<< HEAD
     //width: 1100,
 
     width: 1000,
     height: 450,
-=======
-    width: 1000,
-    height: 550,
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
     autoScroll: true,
 
 
@@ -67,25 +62,12 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
-<<<<<<< HEAD
             fieldLabel: 'Tipo Resolução mock:',
-=======
-            fieldLabel: 'Tipo Resolução :',
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
             id: 'DesTipoRes',
             readOnly: true
         },
         {
             xtype: 'textfield',
-<<<<<<< HEAD
-=======
-            fieldLabel: 'Funcionário Atribuido:',
-            id: 'id_func_emails',
-            readOnly: true
-        },
-        {
-            xtype: 'textfield',
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
             fieldLabel: 'Assunto:',
             id: 'subjectt',
             readOnly: true
@@ -111,11 +93,6 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
                     var e = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
                     var e = Ext.getCmp('subjectt').setValue(record.data.subject);
                     var e = Ext.getCmp('bodyy').setValue(record.data.body);
-<<<<<<< HEAD
-=======
-                    var l = Ext.getCmp('id_func_emails').setValue(record.data.id_func_emails);
-
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
                 }
             });
         }

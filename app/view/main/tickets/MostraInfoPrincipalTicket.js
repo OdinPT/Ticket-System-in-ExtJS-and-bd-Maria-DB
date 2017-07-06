@@ -14,11 +14,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     //width: 1100,
 
     width: 1050,
-<<<<<<< HEAD
     height: 450,
-=======
-    height: 550,
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
     autoScroll: true,
 
 
@@ -72,15 +68,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             readOnly: true
         },
         {
-<<<<<<< HEAD
-=======
-            xtype: 'textfield',
-            fieldLabel: 'Funcionário Atribuido:',
-            id: 'id_func_emails',
-            readOnly: true
-        },
-        {
->>>>>>> a24fcc125feea59199f412789f438675a17b8613
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
         id: 'subjectt',
