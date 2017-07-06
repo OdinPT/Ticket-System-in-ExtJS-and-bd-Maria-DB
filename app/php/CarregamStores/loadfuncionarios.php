@@ -4,7 +4,12 @@ include("config.php");
 $id = $_COOKIE['cookieIDfuncionario'];
 $return_arr = array();
 
+<<<<<<< HEAD
     $query = "SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador ORDER BY id_funcionario";
+=======
+    $query = "call CarregaFuncionarios()";
+
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 
 $result = sqlsrv_query($mysqli, $query);

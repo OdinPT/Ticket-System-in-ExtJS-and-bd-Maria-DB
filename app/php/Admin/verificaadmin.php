@@ -6,6 +6,11 @@ error_reporting(0);
 $email = $_COOKIE['cookieEmail'];
 
 //selecting data associated with this particular id
+<<<<<<< HEAD
+=======
+
+$result = mysqli_query($mysqli, "call VerificaAdmin('$email')");
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$email'");
 

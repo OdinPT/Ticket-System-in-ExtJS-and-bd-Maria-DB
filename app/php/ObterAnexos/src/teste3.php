@@ -41,12 +41,21 @@ if($emails) {
         $subject = utf8_decode(imap_utf8($overview[0]->subject));
 
 
+<<<<<<< HEAD
         $conn= sqlsrv_connect("localhost","root","","emails");
         echo $message;
 				//save to MySQL
 				sqlsrv_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
 
 				sqlsrv_close($conn);
+=======
+        $conn= mysqli_connect("localhost","root","","emails");
+        echo $message;
+				//save to MySQL
+				mysqli_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
+
+				mysqli_close($conn);
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
     }
 
     echo $output;

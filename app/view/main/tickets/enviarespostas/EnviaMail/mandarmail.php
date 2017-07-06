@@ -23,14 +23,24 @@ $fp= fopen($tmpName, 'r');
         $fileName = addslashes($fileName);
     }
 
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
 
 while($res = sqlsrv_fetch_array($result))
+=======
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 {
   $departamento = $res['id_departamento_funcionarios'];
 }
 //selecting data associated with this particular id
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(sqlsrv_error($mysqli));
+=======
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(mysqli_error($mysqli));
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 while($res = sqlsrv_fetch_array($result))
 {
@@ -38,10 +48,17 @@ while($res = sqlsrv_fetch_array($result))
   $password = $res['pass'];
 }
 
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id='$id'") or die(sqlsrv_error($mysqli));
 
 
 while($res = sqlsrv_fetch_array($result))
+=======
+$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'") or die(mysqli_error($mysqli));
+
+
+while($res = mysqli_fetch_array($result))
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 {
     $sender = $res['fromaddress'];
 }
@@ -84,6 +101,11 @@ $PHPMailer->AltBody = 'Mensagem em texto';
 $cookieID = $_COOKIE['cookieID'];
 
 //selecting data associated with this particular id
+<<<<<<< HEAD
+=======
+
+$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(mysqli_error($mysqli));
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 $result = sqlsrv_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or die(sqlsrv_error($mysqli));
 
@@ -98,10 +120,17 @@ $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
 $PHPMailer->AddAddress($fromaddress);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
+<<<<<<< HEAD
 sqlsrv_query($mysqli, "call InserirRespostas('$assunto', '$conteudo2','$id')");
 sqlsrv_query($mysqli, "call inserirhistoricoestados('$id',2,'$cookieEmail')");
 
 sqlsrv_close($mysqli);
+=======
+mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo2','$id')");
+mysqli_query($mysqli, "call inserirhistoricoestados('$id',2,'$cookieEmail')");
+
+mysqli_close($mysqli);
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 // verifica se enviou corretamente
 
 if ( $PHPMailer->Send())

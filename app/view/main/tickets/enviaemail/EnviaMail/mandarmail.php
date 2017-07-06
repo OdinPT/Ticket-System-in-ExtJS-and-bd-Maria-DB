@@ -23,17 +23,29 @@ $fp = fopen($tmpName, 'r');
         $fileName = addslashes($fileName);
     }
 
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
 
 while($res = sqlsrv_fetch_array($result))
+=======
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 {
   $departamento = $res['id_departamento_funcionarios'];
 }
 
 //selecting data associated with this particular id
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(sqlsrv_error($mysqli));
 
 while($res = sqlsrv_fetch_array($result))
+=======
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE id_departamento_funcionarios='$departamento' AND Tipo_Funcionario=4") or die(mysqli_error($mysqli));
+
+while($res = mysqli_fetch_array($result))
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 {
   $username = $res['username'];
   $password = $res['pass'];
@@ -83,8 +95,13 @@ $PHPMailer->AddReplyTo($email, 'Nome do visitante');
 $PHPMailer->AddAddress($email);
 $PHPMailer->addAttachment($tmpName, $fileName);
 
+<<<<<<< HEAD
 sqlsrv_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
 sqlsrv_close($mysqli);
+=======
+mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
+mysqli_close($mysqli);
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 // verifica se enviou corretamente
 if ( $PHPMailer->Send() )

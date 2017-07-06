@@ -6,8 +6,14 @@ $return_arr = array();
 $cookieEmail = $_COOKIE['cookieEmail'];
 
   //selecting data associated with this particular id
+<<<<<<< HEAD
     $result = sqlsrv_query($mysqli, "SELECT id_departamento_funcionarios FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
     $res = sqlsrv_fetch_array($result);
+=======
+    $result = mysqli_query($mysqli, "SELECT id_departamento_funcionarios FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+    $res = mysqli_fetch_array($result);
+
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
     $iddepartamento = $res['id_departamento_funcionarios'];
 
     $query = "Call VerTicket($iddepartamento)";

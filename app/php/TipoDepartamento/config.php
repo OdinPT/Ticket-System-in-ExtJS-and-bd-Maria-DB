@@ -18,6 +18,10 @@ $databaseName = 'emails';
 $databaseUsername = 'root';
 $databasePassword = '';
 
+<<<<<<< HEAD
 $mysqli = sqlsrv_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+=======
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 ?>

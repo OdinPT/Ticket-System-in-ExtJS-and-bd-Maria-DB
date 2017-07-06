@@ -6,8 +6,13 @@ $return_arr = array();
 
 $query = "Call TicketSelecHistorico($id)";
 
+<<<<<<< HEAD
 $result = sqlsrv_query($mysqli, $query);
 while ($row = sqlsrv_fetch_array($result, SQLSRV_ASSOC)) {
+=======
+$result = mysqli_query($mysqli, $query);
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
   $row_array['id'] = $row['id'];
   $row_array['fromaddress'] = $row['fromaddress'];

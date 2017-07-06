@@ -5,6 +5,11 @@ include_once("config.php");
 
 $cookieEmail = $_COOKIE['cookieEmail'];
 //selecting data associated with this particular id
+<<<<<<< HEAD
+=======
+
+$result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 $result = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(sqlsrv_error($mysqli));
 
@@ -76,11 +81,19 @@ if($emails) {
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
     echo $message;
+<<<<<<< HEAD
     $conn= sqlsrv_connect("localhost","root","","emails");
 
 
     sqlsrv_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
 	    sqlsrv_close($conn);
+=======
+    $conn= mysqli_connect("localhost","root","","emails");
+
+
+    mysqli_query($conn, "Call InserirTickets2('$fromaddress','$from', '$subject', '$message','$cookieEmail')");
+	    mysqli_close($conn);
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
   }
 }
 

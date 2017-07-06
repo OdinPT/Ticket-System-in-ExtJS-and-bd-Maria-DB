@@ -46,7 +46,11 @@ if($emails) {
         echo $message;
         echo "<br>";
 				//save to MySQL
+<<<<<<< HEAD:app/php/ObterAnexos/src/teste3(1).php
 				sqlsrv_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
+=======
+				mysqli_query($conn, "INSERT INTO emails (fromaddress, subject, datea, body) VALUES ('$from', '$subject', '$date', '$message')");
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613:app/php/ObterAnexos/src/teste3(1).php
 
     }
 

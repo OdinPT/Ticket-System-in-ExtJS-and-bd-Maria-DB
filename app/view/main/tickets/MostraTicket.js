@@ -14,7 +14,11 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     layout: 'border',
 
     width: 1100,
+<<<<<<< HEAD
     height: 500,
+=======
+    height: 900,
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
     store: {
         type: 'ticketselectedd'

@@ -19,6 +19,14 @@ while($res = sqlsrv_fetch_array($result))
 $escolhe = sqlsrv_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(sqlsrv_error($mysqli));
 while($rese = sqlsrv_fetch_array($escolhe))
 {
+<<<<<<< HEAD
+=======
+  $iddepartamento = $res['id_departamento_funcionarios'];
+}
+$escolhe = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(mysqli_error($mysqli));
+while($rese = mysqli_fetch_array($escolhe))
+{
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
   $username = $rese['username'];
   $password = $rese['pass'];
 }
@@ -130,7 +138,11 @@ if($emails) {
         $data = addslashes($data);
         fclose($fp);
         $filename = quoted_printable_decode(imap_utf8($filename));
+<<<<<<< HEAD
         $insere = sqlsrv_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
+=======
+        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
             }
         }
     }

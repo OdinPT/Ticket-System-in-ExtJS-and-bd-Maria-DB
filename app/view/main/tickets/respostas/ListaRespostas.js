@@ -7,7 +7,11 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     xtype: 'mainlistrespostas',
 
     width: 1050,
+<<<<<<< HEAD
     height: 500,
+=======
+    height: 700,
+>>>>>>> a24fcc125feea59199f412789f438675a17b8613
 
 
 
