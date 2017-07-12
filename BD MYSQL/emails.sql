@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Jul-2017 às 18:25
+-- Generation Time: 06-Jul-2017 às 10:20
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -102,6 +102,12 @@ SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtil
 
 End$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaGridDepartamentoHistorico` (IN `_id` INT)  NO SQL
+begin
+select `idHistoricoDep`,`IdTicketDep`,`HoraAtribuicaoDep`,`HoraAtribuicaoDep`,`IDDepartamentoDep`,`IDFuncEstado` from historicodepartamentos where IdTicketDep= _id;
+
+end$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaHistoricoEstado` (IN `_id` INT)  NO SQL
 Begin
 
@@ -149,6 +155,25 @@ TRUNCATE table historicodepartamentos;
 
 
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirDepartamento` (IN `_iddepartamento4` INT, IN `_nomedepartamento4` VARCHAR(100))  NO SQL
+Begin
+
+INSERT INTO departamento
+					(id_departamento, 
+			 		nome_departamento) 
+ 
+ 			VALUES (_iddepartamento4,_nomedepartamento4);
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirFicheiro` (IN `_file` VARCHAR(100), IN `_data` MEDIUMBLOB, IN `_id` INT)  NO SQL
+Begin
+INSERT INTO upload
+		(nome, content, id_ticket) VALUES (_file, _data,_id);
+
+
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirFuncionario` (IN `_name` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_idDepar` INT(11), IN `_TP` INT(11))  NO SQL
@@ -291,6 +316,12 @@ BEGIN
 select * 
 from funcionario 
 where username = _username and pass = _password;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `MudaEstado` (IN `_id` INT)  NO SQL
+Begin
+UPDATE emails SET state='6',id_grupo_emails=1 WHERE id=_id;
 
 End$$
 
@@ -838,7 +869,7 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -853,7 +884,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

@@ -1,7 +1,8 @@
 <?php
 include_once("config.php");
 $id = $_COOKIE['cookieID'];
-$query = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
+
+$query = mysqli_query($mysqli, "call TicketSelec($id)");
 while($res = mysqli_fetch_array($query))
 {
   $to = $res['fromaddress'];
@@ -12,8 +13,6 @@ if(isset($_POST['submit'])){
     $message = $_POST['message'];
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
-
-    //mysqli_query($mysqli, "INSERT INTO respostas (subject, answer, IDticket) VALUES ('$subject', '$message', '$id')");
 
     mysqli_query($mysqli, "Call InserirRespostas('$message', '$id')");
 
