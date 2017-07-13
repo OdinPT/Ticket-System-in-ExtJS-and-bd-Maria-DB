@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
     extend: 'Ext.grid.Panel',
     id: 'grid2',
@@ -124,7 +121,7 @@ Ext.MessageBox.hide();
                 title: 'Historico do Ticket',
                 modal: true,
                 //  width: 1100,
-                height: 600,
+                //height: 600,
                 items: [{
                     xtype: 'maintabsss'
                 }], // add funcion ther

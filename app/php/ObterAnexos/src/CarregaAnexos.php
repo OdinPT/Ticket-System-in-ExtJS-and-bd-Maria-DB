@@ -22,9 +22,7 @@ while($rese = mysqli_fetch_array($escolhe))
   $username = $rese['username'];
   $password = $rese['pass'];
 }
-
 $buscaassunto = mysqli_query($mysqli, "SELECT * FROM emails WHERE id=$id");
-
 while($res = mysqli_fetch_array($buscaassunto))
 {
  	$subject = $res['subject'];
@@ -132,9 +130,7 @@ if($emails) {
         $data = addslashes($data);
         fclose($fp);
         $filename = quoted_printable_decode(imap_utf8($filename));
-
-        $insere = mysqli_query($mysqli, "call InserirFicheiro('$filename','$data','$id')");
-
+        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
             }
         }
     }

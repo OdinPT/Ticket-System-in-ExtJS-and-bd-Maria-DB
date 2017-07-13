@@ -20,7 +20,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
     },
     defaults: {
         layout: 'form',
-        margin: 0
+        margin: 1
     },
 
     config:{stores: ['tickethistoricoseleccionado']},

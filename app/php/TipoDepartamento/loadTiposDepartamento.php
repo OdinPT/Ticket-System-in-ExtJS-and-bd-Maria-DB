@@ -3,7 +3,7 @@ error_reporting(0);
 include("config.php");
 $return_arr = array();
 
-    $query = "call CarregaDepartamentos()";
+    $query = "SELECT `id_departamento`,`nome_departamento` FROM departamento";
 
 
 $result = mysqli_query($mysqli, $query);

@@ -13,10 +13,6 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
     width: 1050,
     height: 520,
 
-
-
-    //width: 1050,
-
     autoScroll: true,
 
 

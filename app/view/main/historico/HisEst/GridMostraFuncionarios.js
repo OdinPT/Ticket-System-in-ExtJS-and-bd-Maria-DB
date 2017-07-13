@@ -7,13 +7,10 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
         'TrackIT.store.HistoricoEstados.HistoricoEstadohistorico',
         'Ext.toolbar.Paging'],
 
-
-
-
     
     config: {
         autoLoad: true,
-        scroll:false,
+        scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {

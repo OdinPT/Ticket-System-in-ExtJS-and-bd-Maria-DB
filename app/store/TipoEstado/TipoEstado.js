@@ -9,6 +9,7 @@ Ext.define('TrackIT.store.TipoEstado.TipoEstado', {
         [2, 'duplicate'],
         [3, 'Incomplete'],
         [4, 'Not applicable'],
-        [5, 'Can not be solved']
+        [5, 'Can not be solved'],
+        [6, 'Resolved']
     ]
 });

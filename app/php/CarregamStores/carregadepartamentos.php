@@ -6,7 +6,7 @@ include("config.php");
 
 $return_arr = array();
 
-    $query = "call CarregaDepartamentos()";
+    $query = "SELECT * FROM departamento ORDER BY id_departamento";
 
 
 $result = mysqli_query($mysqli, $query);

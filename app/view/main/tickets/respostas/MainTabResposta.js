@@ -7,9 +7,9 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabResposta', {
         'TrackIT.view.main.tickets.respostas.RespostaController',
         'TrackIT.view.main.tickets.respostas.MostraResposta'
     ],
-    autoLoad: true,
+
     width: 1100,
-    height: 600,
+    height: 610,
 
     store: {
         type: 'respostaseleccionada'

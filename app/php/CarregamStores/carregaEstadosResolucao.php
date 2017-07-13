@@ -4,7 +4,7 @@ include("config.php");
 
 $return_arr = array();
 
-    $query = "call CarregaTiposResolução()";
+    $query = "SELECT * FROM `tipo_resolucao`";
 
 
 $result = mysqli_query($mysqli, $query);

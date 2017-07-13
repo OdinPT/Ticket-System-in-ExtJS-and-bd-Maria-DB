@@ -91,7 +91,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
       xtype: 'toolbar',
       items: [
           {
-        text: 'Reciclar',
+        text: 'Mover Ticket Para Histórico',
         glyph: 43,
         listeners: {
           click: 'onClickMoveParaHistorico'
@@ -169,7 +169,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
 
 
       ],
-
 
   }
   });

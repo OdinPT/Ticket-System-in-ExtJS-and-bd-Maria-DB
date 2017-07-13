@@ -3,7 +3,7 @@ error_reporting(0);
 include("config.php");
 $return_arr = array();
 
-    $query = "call CarregaTiposUtilizador()";
+    $query = "SELECT `ID_TipoUtilizador`,`Descricao_TipoUtilizador` FROM tipoutilizador";
 
 
 $result = mysqli_query($mysqli, $query);

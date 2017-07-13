@@ -6,7 +6,7 @@ $id = $_COOKIE['cookieIDhistorico'];
 
 $return_arr = array();
 
-    $query = "call CarregaGridDepartamentoHistorico($id)";
+    $query = "select `idHistoricoDep`,`IdTicketDep`,`HoraAtribuicaoDep`,`HoraAtribuicaoDep`,`IDDepartamentoDep`,`IDFuncEstado` from historicodepartamentos where IdTicketDep= $id ";
 
 
 $result = mysqli_query($mysqli, $query);
