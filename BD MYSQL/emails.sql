@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: 06-Jul-2017 às 10:20
+=======
 -- Generation Time: 04-Jul-2017 às 11:03
+>>>>>>> 712afb7bc5ca7c6568339be064191c6e92e937e8
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -38,6 +42,72 @@ DELETE FROM respostas where id_resp=_id;
 
 End$$
 
+<<<<<<< HEAD
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaDepartamento` (IN `_iddepartamento2` INT, IN `_nome` VARCHAR(200), IN `_id` INT)  NO SQL
+BEGIN
+
+
+UPDATE departamento 
+SET id_departamento=_iddepartamento2, nome_departamento=_nome WHERE id_departamento=_id;
+
+   END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaFuncionario` (IN `_user` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_iddep` INT, IN `_tf` INT, IN `_id` INT)  NO SQL
+Begin
+
+UPDATE funcionario SET username=_username, pass=_pass, id_departamento_funcionarios=_iddep, Tipo_Funcionario=_tf WHERE id_funcionario=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaDepartamentos` ()  NO SQL
+Begin
+
+SELECT * FROM departamento ORDER BY id_departamento;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaDepSelec` (IN `_id` INT)  NO SQL
+BEGIN
+
+SELECT * FROM departamento WHERE id_departamento=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaEstados` ()  NO SQL
+BEGIN
+
+SELECT `ID_Estado`,`Descricao_Estado` FROM estado;
+
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncionarios` ()  NO SQL
+BEGIN
+SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador ORDER BY id_funcionario;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncionariosDepart` (IN `_func` VARCHAR(230))  NO SQL
+Begin
+
+SELECT * FROM funcionario WHERE username like _func;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaFuncSelec` (IN `_id` INT)  NO SQL
+BEGIN
+
+SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador and id_funcionario=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaGridDepartamentoHistorico` (IN `_id` INT)  NO SQL
+begin
+select `idHistoricoDep`,`IdTicketDep`,`HoraAtribuicaoDep`,`HoraAtribuicaoDep`,`IDDepartamentoDep`,`IDFuncEstado` from historicodepartamentos where IdTicketDep= _id;
+
+end$$
+
+=======
+>>>>>>> 712afb7bc5ca7c6568339be064191c6e92e937e8
 CREATE DEFINER=`root`@`localhost` PROCEDURE `CarregaHistoricoEstado` (IN `_id` INT)  NO SQL
 Begin
 
@@ -79,6 +149,26 @@ TRUNCATE table historicodepartamentos;
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
 
+<<<<<<< HEAD
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirDepartamento` (IN `_iddepartamento4` INT, IN `_nomedepartamento4` VARCHAR(100))  NO SQL
+Begin
+
+INSERT INTO departamento
+					(id_departamento, 
+			 		nome_departamento) 
+ 
+ 			VALUES (_iddepartamento4,_nomedepartamento4);
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirFicheiro` (IN `_file` VARCHAR(100), IN `_data` MEDIUMBLOB, IN `_id` INT)  NO SQL
+Begin
+INSERT INTO upload
+		(nome, content, id_ticket) VALUES (_file, _data,_id);
+
+
+end$$
+=======
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirCliente` (IN `_NC` VARCHAR(150), IN `_EC` VARCHAR(100), IN `_DNC` DATE, IN `_CC` INT(10))  NO SQL
 BEGIN 
 
@@ -98,6 +188,7 @@ BEGIN
        _DNC,
         _CC) ; 
 END$$
+>>>>>>> 712afb7bc5ca7c6568339be064191c6e92e937e8
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirFuncionario` (IN `_name` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_idDepar` INT(11), IN `_TP` INT(11))  NO SQL
 Begin
@@ -244,6 +335,12 @@ BEGIN
 select * 
 from funcionario 
 where username = _username and pass = _password;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `MudaEstado` (IN `_id` INT)  NO SQL
+Begin
+UPDATE emails SET state='6',id_grupo_emails=1 WHERE id=_id;
 
 End$$
 
@@ -798,7 +895,7 @@ ALTER TABLE `upload`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `emails`
 --

@@ -4,7 +4,7 @@ $id = $_COOKIE['cookieIDanswer'];
 
 $return_arr = array();
 
-$query = "SELECT * FROM respostas WHERE id_resp=$id";
+$query = "call CarregaRespostaSelecionada($id)";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

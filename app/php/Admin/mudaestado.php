@@ -6,16 +6,13 @@ include("config.php");
 $id = $_COOKIE['cookieID'];
 $IDFuncEstadox = $_COOKIE['cookieEmail'];
 
-$result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'");
+$result = mysqli_query($mysqli, "SELECT state FROM emails WHERE id='$id'");
 
 while($res = mysqli_fetch_array($result))
 {
 	$state = $res['state'];
 }
 echo $state;
-
-//$sleep ($100)
-
 
         if($state == '3')
         {

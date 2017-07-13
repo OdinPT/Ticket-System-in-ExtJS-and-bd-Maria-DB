@@ -4,7 +4,7 @@ $id = $_COOKIE['cookieIDfuncionario'];
 
 $return_arr = array();
 
-$query = "SELECT `id_funcionario`,`username`,`pass`,`nome_departamento`,Descricao_TipoUtilizador FROM funcionario,departamento,tipoutilizador  where `id_departamento_funcionarios`=id_departamento and Tipo_Funcionario= ID_TipoUtilizador and id_funcionario=$id";
+$query = "call CarregaFuncSelec($id)";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
