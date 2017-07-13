@@ -13,15 +13,16 @@ Ext.define('TrackIT.view.main.tickets.MockMostraTicket', {
 
     layout: 'border',
 
-    width: 1100,
-    height: 700,
+
+     width: 1100,
+     height: 640,
 
     store: {
         type: 'ticketselectedd'
     },
 
     defaults: {
-        bodyPadding: 10,
+        bodyPadding: 1,
         scrollable: true,
         closable: true,
         collapsible: true,

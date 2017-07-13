@@ -5,7 +5,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     alias: 'widget.gridticket',
     xtype: 'mainlisttickets',
 
-    height: 600,
+    height: 700,
     requires: [
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
@@ -152,7 +152,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                         modal: true,
 
                          width: 1100,
-                         height: 550,
+                        height: 650,
 
                         items: [{
                             xtype: 'maintabtickets'
@@ -216,8 +216,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
                         modal: true,
-
-                        height: 600,
+                        height: 650,
                         items: [{
                             xtype: 'maintabtickets'
                         }],
@@ -267,7 +266,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                         title: 'Tickets',
                         modal: true,
                         width: 1100,
-                        height: 600,
+                        height: 650,
                         items: [{
                             xtype: 'mockmaintabtickets'
                         }]

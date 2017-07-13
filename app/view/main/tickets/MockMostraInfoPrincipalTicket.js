@@ -10,8 +10,13 @@ Ext.define('TrackIT.view.main.tickets.MockMostraInfoPrincipalTicket', {
     id: 'mockpaginainfoprincipalticket',
     title: 'Informação Principal',
 
-    width: 1000,
-    height: 550,
+    width: 1050,
+    height: 520,
+
+
+
+    //width: 1050,
+
     autoScroll: true,
 
 

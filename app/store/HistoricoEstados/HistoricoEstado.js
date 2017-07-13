@@ -5,6 +5,9 @@ Ext.define('TrackIT.store.HistoricoEstados.HistoricoEstado', {
     alias: 'store.HistoricoEstados',
 	storeId: 'Staging',
 	autoLoad: true,
+
+    pageSize: 400,
+    currentPage: 1,
 	proxy: {
         type: 'ajax',
         url: 'app/php/CarregamStores/carregahistoricoestado.php',

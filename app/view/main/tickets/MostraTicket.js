@@ -14,14 +14,14 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     layout: 'border',
 
     width: 1100,
-    height: 900,
+    height: 610,
 
     store: {
         type: 'ticketselectedd'
     },
 
     defaults: {
-        bodyPadding: 10,
+        bodyPadding: 1,
         scrollable: true,
         closable: true,
         collapsible: true,
