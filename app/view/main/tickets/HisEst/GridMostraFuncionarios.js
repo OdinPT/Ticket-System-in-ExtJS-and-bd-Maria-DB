@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.tickets.HisEst.GridMostrafuncionarios', {
     config: {
         autoLoad: true,
         scroll:true,
-        style:{overflow: 'auto',overflowX: 'hidden'},
+        style:{overflow: 'auto',overflowX: 'hidden'}
 
     },
     layout: {

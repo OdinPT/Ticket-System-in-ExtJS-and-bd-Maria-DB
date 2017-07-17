@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Jul-2017 às 16:37
+-- Generation Time: 17-Jul-2017 às 15:17
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -152,10 +152,26 @@ truncate table upload;
 truncate table respostas;
 truncate TABLE historicoestados;
 TRUNCATE table historicodepartamentos;
+TRUNCATE table Comentarios;
 
 
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
 end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirComentario` (IN `idTicket` INT(11), IN `comet` TEXT, IN `func` VARCHAR(100))  NO SQL
+Begin
+
+INSERT INTO comentarios(
+    `ID_Ticket`,
+    `Data_comentario`,
+    `Comentario`,
+    `ID_Utilizador`) 
+    
+    VALUES (idTicket,
+            Now(),
+            comet,
+            RetornaIdMail(func));
+End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirDepartamento` (IN `_iddepartamento4` INT, IN `_nomedepartamento4` VARCHAR(100))  NO SQL
 Begin
@@ -420,6 +436,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT
  
    END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `VerComentarioTicket` (IN `_id` INT)  NO SQL
+BEGIN
+SELECT `ID_Comentario`,`ID_Ticket`,`Data_comentario`,`Comentario`,RetornaMail(`ID_Utilizador`) as ID_Utilizador FROM `comentarios` WHERE `ID_Ticket` =_id ;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerDepFunc` (IN `_tipo` INT)  NO SQL
 BEGIN
 
@@ -551,6 +573,20 @@ return temp;
 END$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `ID_Comentario` int(11) NOT NULL,
+  `ID_Ticket` int(11) NOT NULL,
+  `Data_comentario` datetime NOT NULL,
+  `Comentario` varchar(700) NOT NULL,
+  `ID_Utilizador` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -771,6 +807,14 @@ CREATE TABLE `upload` (
 --
 
 --
+-- Indexes for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`ID_Comentario`),
+  ADD KEY `funcionarios_FK_comentarios` (`ID_Utilizador`),
+  ADD KEY `comentarios_FK_ticket` (`ID_Ticket`) USING BTREE;
+
+--
 -- Indexes for table `departamento`
 --
 ALTER TABLE `departamento`
@@ -858,6 +902,11 @@ ALTER TABLE `upload`
 --
 
 --
+-- AUTO_INCREMENT for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `ID_Comentario` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
@@ -915,6 +964,13 @@ ALTER TABLE `upload`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Limitadores para a tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_FK_ticket` FOREIGN KEY (`ID_Ticket`) REFERENCES `emails` (`id`),
+  ADD CONSTRAINT `funcionarios_FK_comentarios` FOREIGN KEY (`ID_Utilizador`) REFERENCES `funcionario` (`id_funcionario`);
 
 --
 -- Limitadores para a tabela `emails`

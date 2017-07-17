@@ -183,7 +183,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
           }
 
 
-      ],
+      ]
 
   }
   });

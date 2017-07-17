@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
         title: 'Comentarios',
-        width: 1050,
+        width: 1050
 
     },
     layout: {
