@@ -73,7 +73,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
                             function hide_message() {
                                 Ext.defer(function() {
                                     Ext.MessageBox.hide();
-                             }, 2300);
+                             }, 230);
                         }
                         hide_message();
                 }

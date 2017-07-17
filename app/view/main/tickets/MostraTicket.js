@@ -61,6 +61,15 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 }
             ]
 
+        },
+        {
+            title: 'Historico dos Comentários ',
+            items: [
+                {
+                    xtype: 'mainlisthistoricocoment'
+                }
+            ]
+
         }
 
 ]
