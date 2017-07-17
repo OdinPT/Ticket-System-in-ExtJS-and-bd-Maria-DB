@@ -15,6 +15,9 @@ onClickMoveParaHistorico: function()
             function hide_message() {
                 Ext.defer(function() {
                     Ext.MessageBox.hide();
+
+                    var grid = Ext.ComponentQuery.query('gridticket')[0]
+                    grid.getStore().load();
                     Ext.getCmp('grid2').getStore().load();
                     Ext.getCmp('gridhisdep').store.reload();
                 }, 1200);
@@ -22,8 +25,7 @@ onClickMoveParaHistorico: function()
             hide_message();
         //},
 
-        var grid = Ext.ComponentQuery.query('gridticket')[0]
-        grid.getStore().load();
+
 
 }
 })
