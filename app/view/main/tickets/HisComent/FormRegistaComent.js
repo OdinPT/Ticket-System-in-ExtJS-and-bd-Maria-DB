@@ -4,7 +4,11 @@ Ext.define('TrackIT.view.tickets.HisComent.FormRegistaComent', {
     xtype: 'registacoment',
     id: 'formregistacoment',
     controller: 'regisctacoment',
+
     frame: false,
+    width: 700,
+    height: 160,
+    border: false,
 
     layout: {
         type: 'form',
@@ -13,21 +17,20 @@ Ext.define('TrackIT.view.tickets.HisComent.FormRegistaComent', {
     defaults: {
 
         layout: 'form',
-        margin: 20,
-        border: 'true'
+        margin: 0,
+        border: 'false'
     },
 
     items: [
-
         {
-            xtype: 'textfield',
+            xtype: 'textareafield',
             fieldLabel: 'Comentário:',
             id: 'comentario',
             allowBlank: false,
-            blankText: 'Insira um assunto'
+            autoScroll: true,
+            blankText: 'Insira um comentário'
+
         }
-
-
 
     ],
     dockedItems: {
@@ -38,6 +41,7 @@ Ext.define('TrackIT.view.tickets.HisComent.FormRegistaComent', {
                 text: 'Registar',
                 glyph: 43,
                 formBind: true,
+
                 listeners: {
 
                     click: 'onClickRegistaComent'

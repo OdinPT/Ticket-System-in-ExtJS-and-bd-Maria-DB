@@ -1,6 +1,5 @@
 ﻿﻿<?php
 error_reporting(0);
-
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';

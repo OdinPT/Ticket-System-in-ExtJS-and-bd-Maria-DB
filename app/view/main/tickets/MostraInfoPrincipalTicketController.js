@@ -9,11 +9,22 @@ onClickMoveParaHistorico: function()
     url: 'app/php/Apagar/delete.php',
     method: 'POST',
         success: function(response, opts) {
+
         Ext.MessageBox.alert('Ticket Movido ',' com Sucesso');
+
+            function hide_message() {
+                Ext.defer(function() {
+                    Ext.MessageBox.hide();
+                    Ext.getCmp('grid2').getStore().load();
+                    Ext.getCmp('gridhisdep').store.reload();
+                }, 1200);
+            }
+            hide_message();
+        //},
+
         var grid = Ext.ComponentQuery.query('gridticket')[0]
         grid.getStore().load();
-    Ext.getCmp('grid2').getStore().load();
-            Ext.getCmp('gridhisdep').store.reload();
+
 }
 })
 }

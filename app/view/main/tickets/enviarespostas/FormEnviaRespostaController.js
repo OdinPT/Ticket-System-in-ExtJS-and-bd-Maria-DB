@@ -9,7 +9,17 @@ Ext.define('TrackIT.view.main.tickets.enviarespostas.FormEnviaRespostaController
             myRequest1 = Ext.Ajax.request({
                 url: 'app/view/main/tickets/enviarespostas/EnviaMail/mandarmail.php',
                 success: function (response, opts) {
+
                     Ext.MessageBox.alert('Sucesso', 'Enviado!');
+
+                    function hide_message() {
+                        Ext.defer(function() {
+                            Ext.MessageBox.hide();
+
+                        }, 1200);
+                    }
+                    hide_message();
+                //},
                 },
                 failure: function () {
                     alert('Erro...');

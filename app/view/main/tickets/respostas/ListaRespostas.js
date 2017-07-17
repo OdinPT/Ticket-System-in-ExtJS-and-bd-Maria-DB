@@ -1,6 +1,3 @@
-/**
- * This view is an example list of people.
- */
 Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     extend: 'Ext.grid.Panel',
     id: 'grid4',
@@ -61,9 +58,13 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
         }
 
     },
-    onGridAfterRender: function(gridticket){
+    onGridAfterRender: function(grid4){
        setInterval(function(){
           grid.store.load();
-       }, 1);
+       }, 100);
    }
+
+
+
+
 });
