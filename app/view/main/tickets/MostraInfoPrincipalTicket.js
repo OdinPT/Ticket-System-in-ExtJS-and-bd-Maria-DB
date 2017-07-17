@@ -132,6 +132,21 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
                   }
               }
           },{
+              text: 'Registar comentário',
+              glyph: 43,
+              listeners: {
+                  click: function(){
+                      var myWin = Ext.create("Ext.window.Window", {
+                          title: 'Registar comentário',
+                          modal: true,
+                          items: {
+                              xtype: 'registacoment'
+                          }
+                      });
+                      myWin.show();
+                  }
+              }
+          },{
               text: 'Mudar Departamento',
               glyph: 43,
               listeners: {

@@ -3,6 +3,7 @@ Ext.Loader.setPath('Ext.ux', '../ux/');
 Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.gridticket',
+    id: 'gridticket',
     xtype: 'mainlisttickets',
 
     height: 700,

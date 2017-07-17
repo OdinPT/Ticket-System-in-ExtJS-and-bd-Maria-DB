@@ -36,6 +36,9 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 xtype: 'infoticketprincipal'
             },
             {
+                xtype:'mainlisthistoricocoment'
+            },
+            {
                 xtype: 'mainlistanexos'
             },
             {
@@ -61,8 +64,8 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 }
             ]
 
-        },
-        {
+        }
+    /*        {
             title: 'Historico dos Comentários ',
             items: [
                 {
@@ -70,7 +73,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                 }
             ]
 
-        }
+        }*/
 
 ]
 /*

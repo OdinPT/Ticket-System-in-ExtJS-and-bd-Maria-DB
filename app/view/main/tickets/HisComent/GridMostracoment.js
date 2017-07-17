@@ -8,11 +8,14 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
         'Ext.toolbar.Paging'],
 
 
+
     config: {
         autoLoad: true,
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
         title: 'Comentarios',
+        width: 1050,
+
     },
     layout: {
         align: 'fit',
