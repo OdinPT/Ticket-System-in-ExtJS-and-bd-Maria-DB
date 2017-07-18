@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Jul-2017 às 18:42
+-- Generation Time: 18-Jul-2017 às 16:31
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -229,7 +229,7 @@ BEGIN
   
   End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(30))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `inserirhistoricoestados` (IN `IdTicket` INT, IN `IDEstado` INT, IN `IDFuncEst` VARCHAR(100))  BEGIN
 
     INSERT INTO historicoestados
          (
@@ -362,11 +362,11 @@ WHERE id_email=_id;
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
-SELECT id,email,fromaddress,body,subject,datea,Descricao_Estado,nome_departamento
-FROM emails,departamento,grupo,estado 
+ 
+SELECT `id`,`email`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %H:%i') as `datea`,`body`,`Descricao_Estado`,`email`,nome_departamento,DesTipoRes,`id_func_emails`
 
-WHERE id_departamento_emails=id_departamento and id_grupo_emails=id_grupo  and state=ID_Estado and id=_id;
-
+FROM emails, departamento , estado,tipo_resolucao
+WHERE `id_departamento_emails`=id_departamento and (`state`=ID_Estado)  and (id_Res_Ticket=`IdTipoRes`) and (id=_id);
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBodyDetailsHis` (IN `_id` INT)  BEGIN
@@ -410,10 +410,10 @@ Begin
 
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `teste` (IN `_funcionario` VARCHAR(100), IN `_id` INT)  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `teste` (IN `_funcionario` VARCHAR(100), IN `_id` INT, IN `IDEstado` INT)  NO SQL
 BEGIN
 
-UPDATE emails SET id_func_emails= _funcionario WHERE id=_id;
+UPDATE emails SET id_func_emails= _funcionario, state=IDEstado WHERE id=_id;
 
 End$$
 
@@ -868,8 +868,7 @@ ALTER TABLE `historicoestados`
   ADD PRIMARY KEY (`idHistoricoEstados`),
   ADD KEY `IdTicketEstado_idx` (`IdTicketEstado`),
   ADD KEY `IDEstadoEstado_idx` (`IDEstadoEstado`),
-  ADD KEY `IDFuncEstado_idx` (`IDFuncEstado`),
-  ADD KEY `historicodepartamentos_fk_tipoReslucao` (`IdResTicket`);
+  ADD KEY `IDFuncEstado_idx` (`IDFuncEstado`);
 
 --
 -- Indexes for table `respostas`
@@ -999,7 +998,6 @@ ALTER TABLE `historicodepartamentos`
 -- Limitadores para a tabela `historicoestados`
 --
 ALTER TABLE `historicoestados`
-  ADD CONSTRAINT `historicodepartamentos_fk_tipoReslucao` FOREIGN KEY (`IdResTicket`) REFERENCES `tipo_resolucao` (`IdTipoRes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoestados_FK_funcionario` FOREIGN KEY (`IDFuncEstado`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoestados_ibfk_1` FOREIGN KEY (`IdTicketEstado`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoestados_ibfk_2` FOREIGN KEY (`IDEstadoEstado`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;

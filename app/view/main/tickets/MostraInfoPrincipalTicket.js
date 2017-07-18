@@ -63,7 +63,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Tipo Resolução nor:',
+            fieldLabel: 'Tipo Resolução:',
             id: 'DesTipoRes',
             readOnly: true
         },

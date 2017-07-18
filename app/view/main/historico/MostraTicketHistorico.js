@@ -8,16 +8,17 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
         'TrackIT.view.main.historico.respostas.ListaRespostasHistorico'
     ],
     width: 1100,
-    height: 500,
+    height: 610,
 
     store: {
         type: 'tickethistoricoseleccionado'
     },
 
     defaults: {
-        bodyPadding: 10,
+        bodyPadding: 1,
         scrollable: true,
-        closable: true
+        closable: true,
+        margin:0
     },
 
     items: [{
@@ -26,6 +27,9 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
         items: [
             {
                 xtype: 'infotickethistorico'
+            },
+            {
+                xtype: 'mainlisthistoricocomenthistorico'
             },
             {
                 xtype: 'mainlistanexos'
@@ -45,6 +49,7 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
             ]
 
         },
+
         {
             title: 'Historico dos Departamentos',
             items: [

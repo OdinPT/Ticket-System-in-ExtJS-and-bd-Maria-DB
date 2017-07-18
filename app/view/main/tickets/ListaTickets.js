@@ -34,7 +34,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
         {text: 'ID ',  dataIndex: 'id', flex: 0.10,filter: {
             type: 'string'
         }},
-        { text: 'Remetente',  dataIndex: 'fromaddress', flex: 1.7,
+        { text: 'Remetente',  dataIndex: 'fromaddress', flex: 1.6,
             filter: {
                 type: 'string'
             }},
@@ -42,12 +42,12 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             filter: {
                 type: 'string'
             }},
-        { text: 'DATA', dataIndex: 'datea', flex: 1.4,
+        { text: 'DATA', dataIndex: 'datea', flex: 1.5,
             filter: {
                 type: 'string'
             }
         },
-        { text: 'Corpo', dataIndex: 'body', flex: 2.5,
+        { text: 'Corpo', dataIndex: 'body', flex: 3.7,
             filter: {
                 type: 'string'
             }},

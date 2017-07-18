@@ -15,7 +15,8 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
     },
     layout: {
         align: 'fit',
-        type: 'form'
+        type: 'form',
+        width: 1090
     },
     store: {
         type: 'HistoricoEstadohistorico'

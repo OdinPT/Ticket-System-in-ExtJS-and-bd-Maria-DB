@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
         'Ext.toolbar.Paging'],
 
     //width: 630,
-
+    width: 1000,
     config: {
         autoLoad: true,
         scroll:true,
@@ -17,6 +17,7 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
     layout: {
         align: 'fit',
         type: 'form'
+
     },
 
     store: {

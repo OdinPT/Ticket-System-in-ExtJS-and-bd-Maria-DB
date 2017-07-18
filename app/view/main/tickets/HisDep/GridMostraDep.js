@@ -11,7 +11,8 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
     config: {
         autoLoad: true,
         scroll:true,
-        style:{overflow: 'auto',overflowX: 'hidden'}
+        style:{overflow: 'auto',overflowX: 'hidden'},
+        width: 1090
     },
     layout: {
         align: 'fit',

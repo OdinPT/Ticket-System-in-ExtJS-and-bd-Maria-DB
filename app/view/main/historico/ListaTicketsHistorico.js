@@ -9,6 +9,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         'TrackIT.view.main.historico.TicketControllerHistorico'
     ],
 
+    height: 700,
     config: {
         autoLoad: true,
         scroll:true,
@@ -27,7 +28,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
         {text: 'ID ',  dataIndex: 'id', flex: 0.4,filter: {
             type: 'string'
         }},
-        { text: 'DE',  dataIndex: 'fromaddress', flex: 1.6,
+        { text: 'Remetente',  dataIndex: 'fromaddress', flex: 1.6,
             filter: {
                 type: 'string'
             }},
@@ -39,7 +40,7 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
             filter: {
                 type: 'string'
             }},
-        { text: 'Corpo', dataIndex: 'body', flex: 5,
+        { text: 'Corpo', dataIndex: 'body', flex: 3.7,
             filter: {
                 type: 'string'
             }},{ text: 'Estado', dataIndex: 'Descricao_Estado',flex: 1.0,
@@ -120,8 +121,8 @@ Ext.MessageBox.hide();
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Historico do Ticket',
                 modal: true,
-                //  width: 1100,
-                //height: 600,
+                width: 1100,
+                height: 650,
                 items: [{
                     xtype: 'maintabsss'
                 }], // add funcion ther
@@ -131,13 +132,17 @@ Ext.MessageBox.hide();
                         store.load({
                             callback: function(records, operation, success) {
                                 var record=store.getAt(0);
+                                var record=store.getAt(0);
                                 var a =  Ext.getCmp('idd').setValue(record.data.id);
-                                var a =  Ext.getCmp('emaill').setValue(record.data.email);
-                                var b = Ext.getCmp('dateaa').setValue(record.data.datea);
-                                var c = Ext.getCmp('Descricao_Estadoo').setValue(record.data.Descricao_Estado);
-                                var d = Ext.getCmp('departmentt').setValue(record.data.nome_departamento);
-                                var e =  Ext.getCmp('subjectt').setValue(record.data.subject);
-                                var f = Ext.getCmp('bodyy').setValue(record.data.body);
+                                var b =  Ext.getCmp('emaill').setValue(record.data.email);
+                                var b =  Ext.getCmp('subjectt').setValue(record.data.subject);
+                                var c = Ext.getCmp('bodyy').setValue(record.data.body);
+                                var d = Ext.getCmp('dateaa').setValue(record.data.datea);
+                                var e = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
+                                var f = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
+                                var h = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
+                                var i = Ext.getCmp('id_func_emails').setValue(record.data.id_func_emails);
+
 
                             }
                         });

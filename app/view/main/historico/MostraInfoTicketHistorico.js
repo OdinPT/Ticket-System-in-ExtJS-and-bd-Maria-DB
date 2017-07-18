@@ -11,9 +11,11 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
     title: 'Informação Principal',
 
     width: 1050,
-    height: 450,
+    height: 550,
 
     autoScroll: true,
+
+
     layout: {
         type: 'form',
         align: 'stretch'
@@ -23,6 +25,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         margin: 1
     },
 
+
     config:{stores: ['tickethistoricoseleccionado']},
 
     items: [
@@ -31,6 +34,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
             fieldLabel: 'ID:',
             id: 'idd',
             readOnly: true
+
         },
         {
             xtype: 'textfield',
@@ -47,13 +51,25 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         {
             xtype: 'textfield',
             fieldLabel: 'Estado:',
-            id: 'Descricao_Estadoo',
+            id: 'Descricao_Estado',
             readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Departamento:',
-            id: 'departmentt',
+            id: 'nome_departamentoo',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Tipo Resolução:',
+            id: 'DesTipoRes',
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Funcionário Atribuido:',
+            id: 'id_func_emails',
             readOnly: true
         },
         {

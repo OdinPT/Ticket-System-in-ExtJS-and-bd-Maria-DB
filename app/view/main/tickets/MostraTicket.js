@@ -63,24 +63,8 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                     xtype: 'mainlisthistoricoDep'
                 }
             ]
-
         }
-
 
 ]
-/*
-    dockedItems: {
-        dock: 'bottom',
-        xtype: 'toolbar',
-        items: [
-        {
-          text: 'M/ historico',
-          glyph: 43,
-          listeners: {
-             click: 'onClickMoveToHistorico'
-          }
 
-        }
-      ]
-    }*/
 });

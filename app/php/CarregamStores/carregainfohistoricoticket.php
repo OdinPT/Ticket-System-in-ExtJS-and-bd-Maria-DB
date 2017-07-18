@@ -9,13 +9,16 @@ $query = "Call ShowBody($id)";
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
+
   $row_array['id'] = $row['id'];
   $row_array['email'] = $row['email'];
-  $row_array['datea'] = $row['datea'];
-  $row_array['Descricao_Estado'] = $row['Descricao_Estado'];
-  $row_array['nome_departamento'] = $row['nome_departamento'];
   $row_array['subject'] = $row['subject'];
+  $row_array['datea'] = $row['datea'];
   $row_array['body'] = $row['body'];
+  $row_array['Descricao_Estado'] = $row['Descricao_Estado'];
+  $row_array['DesTipoRes'] = $row['DesTipoRes'];
+  $row_array['id_func_emails'] = $row['id_func_emails'];
+  $row_array['nome_departamento'] = $row['nome_departamento'];
 
   array_push($return_arr,$row_array);
 }
