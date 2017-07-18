@@ -14,5 +14,9 @@ Ext.define('TrackIT.store.historico.CarregaInfoHistorico', {
         	rootProperty: 'data'
         }
     },
-
+    listeners: {
+    	load: function(){
+    		console.log('loaded');
+    	}
+    }
 });

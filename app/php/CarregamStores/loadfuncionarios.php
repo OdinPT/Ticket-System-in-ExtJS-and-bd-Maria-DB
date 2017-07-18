@@ -4,8 +4,7 @@ include("config.php");
 $id = $_COOKIE['cookieIDfuncionario'];
 $return_arr = array();
 
-    $query = "call CarregaFuncionarios";
-
+$query = "call CarregaFuncionarios()";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

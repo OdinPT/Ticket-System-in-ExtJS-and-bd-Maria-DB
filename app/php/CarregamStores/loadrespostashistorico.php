@@ -5,7 +5,7 @@ include("config.php");
 $id = $_COOKIE['cookieIDhistorico'];
 $return_arr = array();
 
-$query = "Call ShowRespostasHistorico($id)";
+$query = "call ShowRespostasHistorico($id)";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

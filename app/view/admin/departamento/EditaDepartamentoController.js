@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamentoController', {
                 failure: function (){alert('Erro...');
                     Ext.MessageBox.alert('Departamento Editado ','Sem Sucesso');
                 },
-                params: {nome_departamento2: Ext.getCmp('nome_departamento2').getValue()}
+                params: { id_departamento2: Ext.getCmp('id_departamento2').getValue(), nome_departamento2: Ext.getCmp('nome_departamento2').getValue()}
             });
     }
 

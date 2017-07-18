@@ -1,8 +1,9 @@
 <?php
 //including the database connection file
 include("config.php");
-
 $cookieEmail = $_COOKIE['cookieEmail'];
+
+//selecting data associated with this particular id
 
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 

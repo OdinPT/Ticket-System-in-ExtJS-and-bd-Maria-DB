@@ -5,6 +5,7 @@ $id = $_COOKIE['cookieIDhistorico'];
 
 
 $return_arr = array();
+
 //$query = "Call ShowBody(5)";
 
 $result = mysqli_query($mysqli, $query);

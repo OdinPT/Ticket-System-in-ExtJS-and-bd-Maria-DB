@@ -12,6 +12,7 @@ $cookieEmail = $_COOKIE['cookieEmail'];
 
     $query = "Call VerTicket($iddepartamento)";
 
+
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 

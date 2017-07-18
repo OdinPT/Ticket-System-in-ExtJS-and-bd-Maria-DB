@@ -14,6 +14,7 @@ $row_array['usernamefunc'] = $row['username'];
 $row_array['nome_departamento'] = $row['nome_departamento'];
 $row_array['Descricao_TipoUtilizador'] = $row['Descricao_TipoUtilizador'];
 
+
     array_push($return_arr,$row_array);
 }
 

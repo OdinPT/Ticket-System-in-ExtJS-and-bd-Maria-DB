@@ -27,6 +27,17 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
         { text: 'Nome de Departamento',  dataIndex: 'nome_departamento', flex: 1}
     ],
 
+    /*tbar: {
+        defaultButtonUI: 'default',
+
+        items: [
+            {
+                text: 'Refresh!',
+                handler: function() {
+                    Ext.getCmp('griddepartamentos').store.reload();
+                }
+            }]
+    },*/
     listeners: {
         itemclick: function(view, record, item, index, e) {
             var id = record.get('id_departamento');
@@ -35,7 +46,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
                 title: 'Departamento',
                 modal: true,
                 width: 500,
-                height: 200,
+                height: 345,
                 items: [{
                     xtype: 'fielddepartamento'
                 }]
