@@ -5,8 +5,7 @@ $id = $_COOKIE['cookieIDhistorico'];
 
 
 $return_arr = array();
-$query = "Call ShowBody(5)";
-//$query = "Call ShowBody($id)";
+//$query = "Call ShowBody(5)";
 
 $result = mysqli_query($mysqli, $query);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

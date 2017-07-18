@@ -6,7 +6,6 @@ error_reporting(0);
 $email = $_COOKIE['cookieEmail'];
 
 //selecting data associated with this particular id
-
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$email'");
 
 while($res = mysqli_fetch_array($result))

@@ -3,7 +3,7 @@ error_reporting(0);
 include("config.php");
 $return_arr = array();
 
-    $query = "SELECT * FROM tipoutilizador ORDER BY ID_TipoUtilizador";
+    $query = "call CarregaTiposUtilizador";
 
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

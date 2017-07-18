@@ -7,7 +7,8 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
     ],
     id: 'formregistadepartamento',
     frame: false,
-    height: 320,
+    width: 500,
+    height: 180,
     border: false,
 
 
