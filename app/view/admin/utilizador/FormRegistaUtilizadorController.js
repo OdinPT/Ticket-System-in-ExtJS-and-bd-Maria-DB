@@ -9,7 +9,16 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizadorController', {
                 url: 'app/php/Registar/registarutilizador.php',
                 success: function (response, opts){
                     Ext.MessageBox.alert('Utilizador Registado','Com Sucesso!');
-                    Ext.getCmp('gridfuncionarios').store.reload();
+
+                    function hide_message() {
+                        Ext.defer(function() {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('gridfuncionarios').store.reload();
+                        }, 1100);
+                    }
+                    hide_message();
+
                     },
 
                 failure: function (){alert('Erro...');

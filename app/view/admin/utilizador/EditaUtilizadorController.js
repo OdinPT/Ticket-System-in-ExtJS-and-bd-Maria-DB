@@ -9,7 +9,15 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizadorController', {
                 url: 'app/php/Editar/editautilizador.php',
                 success: function (response, opts){
                     Ext.MessageBox.alert('Utilizador Editado','Com Sucesso!');
-                    Ext.getCmp('gridfuncionarios').getStore().load();
+
+                    function hide_message() {
+                        Ext.defer(function() {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('gridfuncionarios').getStore().load();
+                        }, 1100);
+                    }
+                    hide_message();
                 },
                 failure: function (){alert('Erro...');
                     Ext.MessageBox.alert('Utilizador Não Editado','Sem Sucesso!');
