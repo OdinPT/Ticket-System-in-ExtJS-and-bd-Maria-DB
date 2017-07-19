@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
     },
 
     defaults: {
-        bodyPadding: 1,
+        bodyPadding: 0,
         scrollable: true,
         closable: true,
         margin:0
@@ -23,7 +23,6 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
 
     items: [{
         title: 'Conteúdo do Ticket',
-        // var index = Ext.StoreMgr.lookup("ticketselectedd").findExact('id',id);
         items: [
             {
                 xtype: 'infotickethistorico'
@@ -35,7 +34,7 @@ Ext.define('TrackIT.view.main.historico.MostraTicketHistorico', {
                 xtype: 'mainlistanexos'
             },
             {
-                xtype: 'mainlistrespostas'
+                xtype: 'mainlistrespostashistorico'
             }
 
         ]

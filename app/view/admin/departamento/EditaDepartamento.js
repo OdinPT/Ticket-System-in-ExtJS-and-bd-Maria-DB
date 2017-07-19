@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamento', {
     id: 'formeditadepartamento',
     frame: true,
     width: 500,
-    height: 300,
+    height: 100,
     border: false,
 
 
@@ -23,14 +23,6 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamento', {
     },
 
     items: [
-        {
-            xtype: 'textfield',
-            fieldLabel: 'ID(opcional):',
-            id: 'id_departamento2',
-            name: 'id_departamento2',
-            allowBlank: true
-
-        },
         {
             xtype: 'textfield',
             fieldLabel: 'Nome de Departamento:',

@@ -1,6 +1,5 @@
 Ext.define('TrackIT.view.main.tickets.MostraTicket', {
     extend: 'Ext.tab.Panel',
-    //extend: 'Ext.tab.Panel',
 
     xtype: 'maintabtickets',
     controller: 'ticketzz',

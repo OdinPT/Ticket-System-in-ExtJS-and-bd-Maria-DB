@@ -7,31 +7,31 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
         'TrackIT.store.HistoricoEstados.HistoricoEstadohistorico',
         'Ext.toolbar.Paging'],
 
-    
     config: {
         autoLoad: true,
         scroll:true,
-        style:{overflow: 'auto',overflowX: 'hidden'}
+        style:{overflow: 'auto',overflowX: 'hidden'},
+        width: 1070,
+        height: 550
     },
     layout: {
         align: 'fit',
         type: 'form',
-        width: 1090
+        margin: 1
     },
+
     store: {
         type: 'HistoricoEstadohistorico'
     },
 
     columns: [
         { text: 'ID',  dataIndex: 'idHistoricoEstados', flex: 0.1},
-        { text: 'Hora de atribuição ',  dataIndex: 'HoraAtribuicaoEstado', flex: 0.5},
-        { text: 'Id Ticket', dataIndex: 'IdTicketEstado', flex: 0.2},
-        { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.3},
-        { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.5},
+        { text: 'ID do Ticket', dataIndex: 'IdTicketEstado', flex: 0.1},
+        { text: 'Hora de atribuição ',  dataIndex: 'HoraAtribuicaoEstado', flex: 0.2},
+        { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.2},
+        { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.2},
         { text: 'Estado de Resoluçao', dataIndex: 'DesTipoRes', flex: 0.5}
     ],
-
-
 
     onGridAfterRender: function(gridhisest){
         setInterval(function(){

@@ -7,6 +7,7 @@ Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
 
     ],
     xtype: 'departamentoprincipal',
+
     width: 500,
     height: 400,
 

@@ -11,9 +11,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
     ],
     config: {
         autoLoad: true,
-        width: 1050,
-//        height: 500
-
+        width: 1050
     },
     title: 'Respostas',
 

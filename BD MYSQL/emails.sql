@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Jul-2017 às 16:31
+-- Generation Time: 19-Jul-2017 às 13:12
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -45,19 +45,26 @@ DELETE FROM respostas where id_resp=_id;
 
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaDepartamento` (IN `_iddepartamento2` INT, IN `_nome` VARCHAR(200), IN `_id` INT)  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarFuncionario` (IN `_id` INT)  NO SQL
+BEGIN
+
+DELETE FROM funcionario WHERE id_funcionario=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaDepartamento` (IN `_nome` VARCHAR(200), IN `_id` INT)  NO SQL
 BEGIN
 
 
 UPDATE departamento 
-SET id_departamento=_iddepartamento2, nome_departamento=_nome WHERE id_departamento=_id;
+SET nome_departamento=_nome WHERE id_departamento=_id;
 
    END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaFuncionario` (IN `_user` VARCHAR(100), IN `_pass` VARCHAR(100), IN `_iddep` INT, IN `_tf` INT, IN `_id` INT)  NO SQL
 Begin
 
-UPDATE funcionario SET username=_username, pass=_pass, id_departamento_funcionarios=_iddep, Tipo_Funcionario=_tf WHERE id_funcionario=_id;
+UPDATE funcionario SET username=_user, pass=_pass, id_departamento_funcionarios=_iddep, Tipo_Funcionario=_tf WHERE id_funcionario=_id;
 
 End$$
 
@@ -173,14 +180,13 @@ INSERT INTO comentarios(
             RetornaIdMail(func));
 End$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirDepartamento` (IN `_iddepartamento4` INT, IN `_nomedepartamento4` VARCHAR(100))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirDepartamento` (IN `_nomedepartamento4` VARCHAR(100))  NO SQL
 Begin
 
 INSERT INTO departamento
-					(id_departamento, 
-			 		nome_departamento) 
+					(nome_departamento) 
  
- 			VALUES (_iddepartamento4,_nomedepartamento4);
+ 			VALUES (_nomedepartamento4);
 
 End$$
 
@@ -322,11 +328,11 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaRespostas` ()  NO SQL
 Begin
-truncate respostas;
+truncate table respostas;
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaTickets` ()  BEGIN
-DELETE FROM emails where (`id_grupo_emails` = 1);
+truncate TABLE emails;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Login` (IN `_username` VARCHAR(100), IN `_password` VARCHAR(100))  NO SQL
@@ -397,8 +403,8 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowRespostasHistorico` (IN `_ID_Ticket` INT(11))  NO SQL
 Begin
 
- SELECT `id_resp`,`body_resp`,`datea_resp`,`datea_resp`,`id_email` 
- FROM emails,respostas where id_email=id and(`id_email`=_ID_Ticket);
+SELECT `id_resp`,`body_resp`,`datea_resp`,`datea_resp`,`id_email`,nome_grupo 
+ FROM emails,respostas,grupo where id_email=id and id_grupo=2 and (`id_email`=_ID_Ticket);
 
 End$$
 
@@ -432,9 +438,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `TicketSelecHistorico` (IN `_id` INT
  
  FROM emails,grupo, departamento
  
- where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and nome_grupo="Historico" and  (id=_id); 
+ where (id_departamento_emails=id_departamento) and (`id_grupo_emails`=id_grupo) and id_grupo=2 and  (id=_id); 
  
    END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `TiposResolucao` ()  NO SQL
+BEGIN
+SELECT * FROM `tipo_resolucao`;
+End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VerComentarioTicket` (IN `_id` INT)  NO SQL
 BEGIN
@@ -608,7 +619,8 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(5, 'teste2');
+(5, 'Teste A'),
+(6, 'Teste B');
 
 -- --------------------------------------------------------
 
@@ -672,7 +684,6 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departamento_funcionarios`, `Tipo_Funcionario`) VALUES
-(36, 'teste2', '2', 2, 1),
 (37, 'testetrackit@gmail.com', 'testetrackit123', 1, 4),
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
@@ -681,7 +692,8 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
 (49, 'normal', 'normal', 1, 1),
-(52, 'Odin', 'Odin', 1, 3);
+(52, 'Odin', 'Odin', 1, 3),
+(55, 'dev', 'dev', 4, 3);
 
 -- --------------------------------------------------------
 
@@ -700,7 +712,7 @@ CREATE TABLE `grupo` (
 
 INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 (1, 'Ticket'),
-(2, 'Histórico');
+(2, 'Historico');
 
 -- --------------------------------------------------------
 
@@ -909,7 +921,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -924,7 +936,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

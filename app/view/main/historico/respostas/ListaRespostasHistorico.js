@@ -4,15 +4,15 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     xtype: 'mainlistrespostashistorico',
 
 
-    width: 1074,
-    height: 600,
+    width: 1050,
+    // height: 500
     autoLoad: true,
 
     requires: [
         'TrackIT.store.respostas.RespostasHistorico',
         'Ext.toolbar.Paging',
-        'TrackIT.view.main.historico.respostas.MostraRespostaHistorico',
-        'TrackIT.store.respostas.RespostaSeleccionadaHistorico'
+        'TrackIT.view.main.historico.respostas.MostraRespostaHistorico'
+        //'TrackIT.store.respostas.RespostaSeleccionadaHistorico'
 
     ],
 
@@ -23,22 +23,22 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id_resp', flex: 1,
+        { text: 'ID',  dataIndex: 'id_resp', flex: 0.2,
             editor: {
                 allowBlank: false,
                 maxLength: 49
             } },
-        { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 1,
+        { text: 'ASSUNTO',  dataIndex: 'body_resp', flex: 4,
             editor: {
                 allowBlank: false,
                 maxLength: 49
             }},
-        { text: 'DATA', dataIndex: 'datea_resp', flex: 1,
+        { text: 'DATA', dataIndex: 'datea_resp', flex: 0.8,
             editor: {
                 allowBlank: false,
                 maxLength: 49
             }},
-        { text: 'ID TICKET', dataIndex: 'id_email', flex: 1,maxWidth: 150,
+        { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.4,
             editor: {
                 allowBlank: false,
                 maxLength: 49
@@ -69,24 +69,6 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     }]
   },
 
-    listeners: {
- itemclick: function(view, record, item, index, e) {
-  var id = record.get('ID');
-  Ext.util.Cookies.set('cookieIDanswer', id);
-                    var myWin = Ext.create("Ext.window.Window", {
-                        title: 'Respostas',
-                        modal: true,
-                        // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
-                        width: 1100,
-                        height: 550,
-                        items: [{
-                            xtype: 'maintabrespostahistorico'
-                        }]
-                    });
-                    myWin.show();
-  // console.log(record);
- }
-    },
     onGridAfterRender: function(grid5){
        setInterval(function(){
           grid.store.load();

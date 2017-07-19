@@ -6,7 +6,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     id: 'gridticket',
     xtype: 'mainlisttickets',
 
-    height: 700,
+    height: 600,
     requires: [
         'TrackIT.store.tickets.Tickets',
         'Ext.toolbar.Paging',
@@ -178,11 +178,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                                         gridt.getStore().load();
                                     }
                                 });
-
                             }
-
                         }
-
                     });
                     myWin.show();
                     myWin.on("close", function() {
@@ -202,8 +199,6 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     var gridtt = Ext.ComponentQuery.query('gridticket')[0];
                     gridtt.getStore().load();
                 }
-
-
             })
         },
         itemclick: function(view, record, item, index, e) {
@@ -234,19 +229,15 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                                         var d = Ext.getCmp('dateaa').setValue(record.data.datea);
                                         var e = Ext.getCmp('Descricao_Estado').setValue(record.data.Descricao_Estado);
                                         var e = Ext.getCmp('id_func_emails').setValue(record.data.id_func_emails);
-
                                         var h = Ext.getCmp('DesTipoRes').setValue(record.data.DesTipoRes);
                                         var f = Ext.getCmp('nome_departamentoo').setValue(record.data.nome_departamento);
-
                                         var gridt = Ext.ComponentQuery.query('gridticket')[0];
                                         gridt.getStore().load();
                                     }
                                 });
 
                             }
-
                         }
-
                     });
                     myWin.show();
                     myWin.on("close", function() {
@@ -271,12 +262,9 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                         items: [{
                             xtype: 'mockmaintabtickets'
                         }]
-
                     });
                     MockmyWin.show();
                 }
-
-
             })
         }
     },

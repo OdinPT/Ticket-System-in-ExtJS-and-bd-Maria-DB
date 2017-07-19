@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
         'Ext.toolbar.Paging'],
 
     //width: 630,
-    width: 1000,
+    width: 900,
     config: {
         autoLoad: true,
         scroll:true,
@@ -29,7 +29,7 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraEst', {
         { text: 'Hora de atribuição ',  dataIndex: 'HoraAtribuicaoEstado', flex: 0.5},
         { text: 'Id Ticket', dataIndex: 'IdTicketEstado', flex: 0.2},
         { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.3},
-        { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.7}
+        { text: 'Nome de utilizador X   ', dataIndex: 'username', flex: 0.7}
     ],
 
 

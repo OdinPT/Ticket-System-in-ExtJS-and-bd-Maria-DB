@@ -1,4 +1,3 @@
-
 Ext.define('TrackIT.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
@@ -32,7 +31,7 @@ Ext.define('TrackIT.view.main.Main', {
             },
             flex: 0
         },
-//        iconCls: 'fa-cloud',
+            //iconCls: 'fa-cloud',
         html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
         items: [{
             xtype: 'button',

@@ -81,38 +81,6 @@ Ext.define('TrackIT.view.main.historico.ListaTicketsHistorico', {
             }}
     ],
 
-    tbar: {
-        defaultButtonUI: 'default',
-
-        items: [
-            {
-              text: 'Atualizar',
-              handler: function() {
-                Ext.MessageBox.wait('A carregar tickets...');
-          myRequest = Ext.Ajax.request({
-            url: 'app/php/CarregamStores/carregaticketshistorico.php',
-      method: 'POST',
-      success: function(response, opts) {
-        Ext.MessageBox.updateProgress(1);
-Ext.MessageBox.hide();
-      Ext.getCmp('grid2').store.reload();
-    }
-    })
-}
-    },
-    {
-      text: 'Limpar',
-      handler: function(){
-        myRequest = Ext.Ajax.request({
-          url: 'app/php/Limpar/limpaticketshistorico.php',
-          method: 'POST'
-        }),
-        Ext.getCmp('grid2').store.reload();
-      }
-    }
-        ]
-    },
-
     listeners: {
         itemclick: function (view, record, item, index, e) {
             var id = record.get('id');

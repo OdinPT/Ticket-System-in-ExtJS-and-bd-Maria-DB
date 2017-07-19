@@ -19,15 +19,11 @@ onClickMoveParaHistorico: function()
                     var grid = Ext.ComponentQuery.query('gridticket')[0]
                     grid.getStore().load();
                     Ext.getCmp('grid2').getStore().load();
-                    Ext.getCmp('gridhisdep').store.reload();
+                    Ext.getCmp('gridhisdep').getStore().load();
                 }, 1200);
             }
             hide_message();
-        //},
-
-
-
-}
+    }
 })
 }
 
