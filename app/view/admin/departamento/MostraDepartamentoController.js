@@ -8,8 +8,17 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
             url: 'app/php/Apagar/apagardepartamento.php',
             method: 'POST',
             success: function(response, opts) {
+
                 Ext.MessageBox.alert('Departamento Apagado',' com Sucesso');
-                Ext.getCmp('griddepartamentos').getStore().load();
+
+                function hide_message() {
+                    Ext.defer(function () {
+                        Ext.MessageBox.hide();
+                        Ext.getCmp('griddepartamentos').getStore().load();
+                    }, 1200);
+                }
+                hide_message();
+
             },
 
             failure: function (){alert('Erro...');},
@@ -21,7 +30,6 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
         var myWin2 = Ext.create("Ext.window.Window", {
             title: 'Departamento',
             modal: true,
-            // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
             width: 500,
             height: 140,
             items: [{

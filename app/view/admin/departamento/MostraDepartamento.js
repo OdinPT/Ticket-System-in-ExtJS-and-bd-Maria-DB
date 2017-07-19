@@ -7,10 +7,11 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
         'TrackIT.view.admin.departamento.MostraDepartamentoController'
     ],
     id: 'staticDepartamentoForm',
+
     frame: true,
     width: 500,
     height: 150,
-    bodyPadding: 0,
+    bodyPadding: 10,
 
     layout: {
         type: 'form',
@@ -18,9 +19,8 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
     },
     defaults: {
         layout: 'form',
-        margin: 10
+        margin: 20
     },
-
     config:{stores: ['departamentoseleccionado']},
 
 

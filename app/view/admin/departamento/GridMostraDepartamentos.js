@@ -9,14 +9,16 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
         'TrackIT.view.admin.departamento.MostraDepartamento',
         'TrackIT.store.admin.DepartamentoSeleccionado'
     ],
+
     config: {
         autoLoad: true,
-        scroll:false,
+        scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     layout: {
         align: 'fit',
-        type: 'form'
+        type: 'form',
+        width: 580
 
     },
     store: {
@@ -25,7 +27,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
 
     columns: [
         { text: 'ID',  dataIndex: 'id_departamento', flex: 0.2},
-        { text: 'Nome de Departamento',  dataIndex: 'nome_departamento', flex: 1}
+        { text: 'Nome de Departamento X',  dataIndex: 'nome_departamento', flex: 1}
     ],
 
     listeners: {
@@ -45,9 +47,6 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
         }
 
     },
-
-
-
 
     onGridAfterRender: function(griddepartamentos){
         setInterval(function(){

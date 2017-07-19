@@ -7,10 +7,21 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamentoController', {
         method:'POST',
             myRequest1 = Ext.Ajax.request({
                 url: 'app/php/Editar/editadepartamento.php',
-                success: function (response, opts){
-                    Ext.MessageBox.alert('Departamento Editado ','com Sucesso');
-                    Ext.getCmp('griddepartamentos').getStore().load();
-                    },
+
+                success: function (response, opts) {
+                    Ext.MessageBox.alert('Departamento Editado ', 'com Sucesso');
+
+                    function hide_message() {
+                        Ext.defer(function () {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('griddepartamentos').getStore().load();
+                        }, 1200);
+                    }
+
+                    hide_message();
+                },
+
                 failure: function (){alert('Erro...');
                     Ext.MessageBox.alert('Departamento Editado ','Sem Sucesso');
                 },

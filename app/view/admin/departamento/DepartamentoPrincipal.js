@@ -8,16 +8,14 @@ Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
     ],
     xtype: 'departamentoprincipal',
 
-    width: 500,
-    height: 400,
-
     layout: {
         type: 'hbox',
         pack: 'start',
-        align: 'stretch'
-    },
+        align: 'stretch',
+        width: 500,
+        height: 400
 
-    bodyPadding: 10,
+    },
 
     defaults: {
         frame: true,
@@ -43,5 +41,4 @@ Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
             }]
         }
     ]
-
 });

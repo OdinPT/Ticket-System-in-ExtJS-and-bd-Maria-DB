@@ -10,20 +10,20 @@ onClickMoveParaHistorico: function()
     method: 'POST',
         success: function(response, opts) {
 
-        Ext.MessageBox.alert('Ticket Movido ',' com Sucesso');
+          Ext.MessageBox.alert('Ticket Movido ',' com Sucesso');
 
-            function hide_message() {
-                Ext.defer(function() {
-                    Ext.MessageBox.hide();
+          function hide_message() {
+              Ext.defer(function() {
+                  Ext.MessageBox.hide();
 
-                    var grid = Ext.ComponentQuery.query('gridticket')[0]
-                    grid.getStore().load();
-                    Ext.getCmp('grid2').getStore().load();
-                    Ext.getCmp('gridhisdep').getStore().load();
-                }, 1200);
-            }
-            hide_message();
-    }
+                  var grid = Ext.ComponentQuery.query('gridticket')[0]
+                  grid.getStore().load();
+                  Ext.getCmp('grid2').getStore().load();
+                  Ext.getCmp('gridhisdep').getStore().load();
+              }, 1200);
+          }
+          hide_message();
+      }
 })
 }
 
