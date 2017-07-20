@@ -26,7 +26,8 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.TipoDepartamentoMD.TipoDepartamentoMD',
         'TrackIT.store.funcionario.FuncionariosDep',
         'TrackIT.store.HistoricoComentarios.Comentario',
-        'TrackIT.store.HistoricoComentariosHistorico.Comentario'
+        'TrackIT.store.HistoricoComentariosHistorico.Comentario',
+        'TrackIT.store.HistoricoAtribuicoes.atribuicoesticket'
     ],
     views: [
       'TrackIT.view.login.Login',

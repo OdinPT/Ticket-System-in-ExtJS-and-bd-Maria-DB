@@ -12,14 +12,11 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
         autoLoad: true,
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
-
-        width: 1050,
-        height: 550
+        width: 1090
     },
     layout: {
         align: 'fit',
-        type: 'form',
-        margin: 1
+        type: 'form'
     },
     store: {
         type: 'Departamentos'

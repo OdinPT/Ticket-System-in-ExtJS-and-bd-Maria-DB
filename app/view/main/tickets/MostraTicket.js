@@ -62,6 +62,15 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
                     xtype: 'mainlisthistoricoDep'
                 }
             ]
+        },
+        {
+            title: 'Historico Atribuição',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoatribuica'
+                }
+            ]
+
         }
 
 ]

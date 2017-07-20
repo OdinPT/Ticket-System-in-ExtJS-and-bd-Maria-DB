@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Jul-2017 às 13:12
+-- Generation Time: 20-Jul-2017 às 15:03
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -160,6 +160,7 @@ truncate table respostas;
 truncate TABLE historicoestados;
 TRUNCATE table historicodepartamentos;
 TRUNCATE table Comentarios;
+truncate table historicoatribuicao;
 
 
 SET GLOBAL FOREIGN_KEY_CHECKS=1;
@@ -213,6 +214,28 @@ INSERT INTO funcionario
             _pass,
             _idDepar,
             _TP);
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirHistoricoAtribuicao` (IN `_funcionarioAtribui` VARCHAR(200), IN `funcionario` VARCHAR(200), IN `_id` INT)  NO SQL
+Begin
+
+INSERT INTO `historicoatribuicao` (
+    `ID_Atribuicao`,
+    `ID_Func_Atribuidor`,
+    `DataAtribuicao`,
+    `ID_DepAtribuicao`,
+    `ID_Func_Atribuido`,
+    `ID_Ticket_atribuicao`)
+    VALUES (
+        NULL,
+        retornaIdMail(_funcionarioAtribui),
+        Now(),
+        MostraIdDepartamento(_funcionarioAtribui), 
+        retornaIdMail(funcionario),
+        _id);
+
+UPDATE emails SET id_func_emails= funcionario, state=4 WHERE id=_id;
+
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirHistoricoDepartamentos` (IN `IdTicket` INT(11), IN `IDDepart` INT(11), IN `IDFunc` VARCHAR(100))  NO SQL
@@ -364,6 +387,17 @@ Begin
 SELECT `id_resp`,`subject_resp`,`body_resp`,`datea_resp`,`id_email`
 FROM `respostas` 
 WHERE id_email=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RetornaAtriSelec` (IN `_id` INT)  NO SQL
+Begin
+
+SELECT `ID_Atribuicao`,username as ID_Func_Atribuidor,`DataAtribuicao`,`nome_departamento` as ID_DepAtribuicao,RetornaMail(`ID_Func_Atribuido`) as ID_Func_Atribuido ,id 
+
+FROM `historicoatribuicao`,emails,funcionario,departamento
+
+WHERE `ID_Func_Atribuidor`= id_funcionario and `ID_DepAtribuicao`=id_departamento  and `ID_Ticket_atribuicao`= _id and`ID_Ticket_atribuicao`=id order by ID_Atribuicao  desc;
 
 End$$
 
@@ -534,6 +568,15 @@ return temp;
 
 End$$
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `MostraIdDepartamento_id` (`_id` INT) RETURNS INT(11) NO SQL
+Begin
+declare temp int(11);
+
+SELECT `id_departamento_funcionarios` INTO temp FROM funcionario WHERE id_funcionario=_id;
+return temp;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` FUNCTION `MudaEstado` (`_estado` INT(11)) RETURNS INT(12) BEGIN
     DECLARE a int (10);
  
@@ -618,9 +661,7 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (1, 'Call Center'),
 (2, 'Operations'),
 (3, 'N/D'),
-(4, 'Devellopers'),
-(5, 'Teste A'),
-(6, 'Teste B');
+(4, 'Devellopers');
 
 -- --------------------------------------------------------
 
@@ -688,7 +729,7 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
 (40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
-(41, 'callcenter', 'callcenter', 1, 3),
+(41, 'callcenter', 'callcenter', 1, 1),
 (43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
 (49, 'normal', 'normal', 1, 1),
@@ -713,6 +754,21 @@ CREATE TABLE `grupo` (
 INSERT INTO `grupo` (`id_grupo`, `nome_grupo`) VALUES
 (1, 'Ticket'),
 (2, 'Historico');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `historicoatribuicao`
+--
+
+CREATE TABLE `historicoatribuicao` (
+  `ID_Atribuicao` int(11) NOT NULL,
+  `ID_Func_Atribuidor` int(11) DEFAULT NULL,
+  `DataAtribuicao` datetime DEFAULT NULL,
+  `ID_DepAtribuicao` int(11) DEFAULT NULL,
+  `ID_Func_Atribuido` int(11) DEFAULT NULL,
+  `ID_Ticket_atribuicao` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -864,6 +920,16 @@ ALTER TABLE `grupo`
   ADD PRIMARY KEY (`id_grupo`);
 
 --
+-- Indexes for table `historicoatribuicao`
+--
+ALTER TABLE `historicoatribuicao`
+  ADD PRIMARY KEY (`ID_Atribuicao`),
+  ADD KEY `historicoAtribuicao_Dep` (`ID_DepAtribuicao`),
+  ADD KEY `historicoatribuicao_FK_funcionarios` (`ID_Func_Atribuidor`),
+  ADD KEY `historicoatribuicao_FK_funcionarioAtribuido` (`ID_Func_Atribuido`),
+  ADD KEY `historicoatribuicao_fk_ticket` (`ID_Ticket_atribuicao`);
+
+--
 -- Indexes for table `historicodepartamentos`
 --
 ALTER TABLE `historicodepartamentos`
@@ -921,7 +987,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -942,6 +1008,11 @@ ALTER TABLE `funcionario`
 --
 ALTER TABLE `grupo`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `historicoatribuicao`
+--
+ALTER TABLE `historicoatribuicao`
+  MODIFY `ID_Atribuicao` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `historicodepartamentos`
 --
@@ -998,6 +1069,15 @@ ALTER TABLE `emails`
 ALTER TABLE `funcionario`
   ADD CONSTRAINT `funcionario_fk_TP` FOREIGN KEY (`Tipo_Funcionario`) REFERENCES `tipoutilizador` (`ID_TipoUtilizador`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_departamento_funcionarios`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `historicoatribuicao`
+--
+ALTER TABLE `historicoatribuicao`
+  ADD CONSTRAINT `historicoAtribuicao_Dep` FOREIGN KEY (`ID_DepAtribuicao`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoatribuicao_FK_funcionarioAtribuido` FOREIGN KEY (`ID_Func_Atribuido`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoatribuicao_FK_funcionarios` FOREIGN KEY (`ID_Func_Atribuidor`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoatribuicao_fk_ticket` FOREIGN KEY (`ID_Ticket_atribuicao`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `historicodepartamentos`

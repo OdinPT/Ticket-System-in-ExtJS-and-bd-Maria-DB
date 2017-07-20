@@ -62,7 +62,17 @@ Ext.define('TrackIT.view.main.tickets.MockMostraTicket', {
                 }
             ]
 
+        },
+        {
+            title: 'Historico Atribuição',
+            items: [
+                {
+                    xtype: 'mainlisthistoricoatribuica'
+                }
+            ]
+
         }
 
+        //mainlisthistoricoatribuica
     ]
 });
