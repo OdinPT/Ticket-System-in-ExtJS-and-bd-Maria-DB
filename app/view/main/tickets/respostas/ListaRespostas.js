@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
       { text: 'ASSUNTO',  dataIndex: 'subject_resp', flex: 1.6},
       { text: 'DATA', dataIndex: 'datea_resp', flex: 1},
         { text: 'CORPO', dataIndex: 'body_resp', flex: 3},
-      { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8}
+      { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8, hidden:true}
     ],
 
     tbar: {

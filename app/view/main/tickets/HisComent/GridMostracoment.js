@@ -33,6 +33,26 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
         { text: 'Nome de utilizador', dataIndex: 'ID_Utilizador', flex: 0.5}
 
     ],
+
+    listeners: {
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('ID_Comentario');
+            Ext.util.Cookies.set('cookieIDComent', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Comentarios',
+                modal: true,
+                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
+                width: 1100,
+                height: 550,
+                items: [{
+                    xtype: 'maintabcoment'
+                }]
+            });
+            myWin.show();
+        }
+
+
+    },
     onGridAfterRender: function(gridhiscoment2){
         setInterval(function(){
             grid.store.load();

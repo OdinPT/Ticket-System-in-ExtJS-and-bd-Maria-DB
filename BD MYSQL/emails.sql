@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jul-2017 às 15:03
+-- Generation Time: 20-Jul-2017 às 17:17
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -401,6 +401,14 @@ WHERE `ID_Func_Atribuidor`= id_funcionario and `ID_DepAtribuicao`=id_departament
 
 End$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RetornaComentarioSelec` (IN `_id` INT)  NO SQL
+BEGIN
+
+
+SELECT `ID_Comentario`,`ID_Ticket`,`Data_comentario`,`Comentario`,`username` FROM `comentarios`,funcionario WHERE  `ID_Utilizador`=id_Funcionario and `ID_Comentario`=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowBody` (IN `_id` INT)  BEGIN
  
 SELECT `id`,`email`,`subject`,DATE_FORMAT(`datea`,'%d/%m/%Y %H:%i') as `datea`,`body`,`Descricao_Estado`,`email`,nome_departamento,DesTipoRes,`id_func_emails`
@@ -702,7 +710,7 @@ INSERT INTO `estado` (`ID_Estado`, `Descricao_Estado`) VALUES
 (1, 'Aberto'),
 (2, 'Lido'),
 (3, 'Sendo Lido'),
-(4, 'Atibuido'),
+(4, 'Atribuido'),
 (5, 'Fechado'),
 (6, 'Reaberto');
 

@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
     //width: 1100,
 
     width: 1050,
-    height: 550,
+    height: 500,
     autoScroll: true,
 
 
@@ -35,7 +35,6 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             fieldLabel: 'ID:',
             id: 'idd',
             readOnly: true
-
         },
         {
             xtype: 'textfield',
