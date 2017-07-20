@@ -11,7 +11,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
     title: 'Informação Principal',
 
     width: 1050,
-    height: 550,
+    height: 500,
 
     autoScroll: true,
 
@@ -33,7 +33,8 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
             xtype: 'textfield',
             fieldLabel: 'ID:',
             id: 'idd',
-            readOnly: true
+            readOnly: true,
+             hidden:true
 
         },
         {

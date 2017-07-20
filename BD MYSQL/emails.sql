@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jul-2017 às 17:54
+-- Generation Time: 20-Jul-2017 às 23:51
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -383,7 +383,7 @@ UPDATE emails
 
 SET id_grupo_emails = MudaGrupoTicket(id_grupo_emails), state = 5 where id=_id;
 
-   END$$
+  END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `RespostaSelecionada` (IN `_id` INT(11))  NO SQL
 Begin
@@ -740,13 +740,14 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (37, 'testetrackit@gmail.com', 'testetrackit123', 1, 4),
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (39, 'admin', 'admin', 2, 3),
-(40, 'odinpt21@gmail.com', 'abcd1995', 1, 3),
 (41, 'callcenter', 'callcenter', 1, 1),
 (43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
 (49, 'normal', 'normal', 1, 1),
 (52, 'Odin', 'Odin', 1, 3),
-(55, 'dev', 'dev', 4, 3);
+(55, 'dev', 'dev', 4, 3),
+(56, 'nd', 'nd', 3, 2),
+(57, 'odinpt21@gmail.com', 'abcd1995', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -1014,7 +1015,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

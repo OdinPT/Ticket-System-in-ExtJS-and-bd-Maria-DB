@@ -23,8 +23,8 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'idHistoricoDep', flex: 0.1},
-        { text: 'ID ticket ',  dataIndex: 'IdTicketDep', flex: 1.3},
+        { text: 'ID',  dataIndex: 'idHistoricoDep', flex: 0.1, hidden:true},
+        { text: 'ID ticket ',  dataIndex: 'IdTicketDep', flex: 1.3, hidden:true},
         { text: 'Hora de atribuição', dataIndex: 'HoraAtribuicaoDep', flex: 2.4},
         { text: 'Nome do departamento Atribuido', dataIndex: 'IDDepartamentoDep', flex: 2.3},
         { text: 'Nome do funcionario', dataIndex: 'IDFuncEstado', flex: 4}

@@ -22,7 +22,7 @@ Ext.define('TrackIT.view.main.historico.HisAtribuicoes.GridHisAtribuicaoHis', {
     },
 
     columns: [
-        { text: 'ID Atribuição',  dataIndex: 'ID_Atribuicao', flex: 0.5},
+        { text: 'ID Atribuição',  dataIndex: 'ID_Atribuicao', flex: 0.5, hidden:true},
         { text: 'Nome Remetente ',  dataIndex: 'ID_Func_Atribuidor', flex: 0.5},
         { text: 'Data de atribuição', dataIndex: 'DataAtribuicao', flex: 0.6},
         { text: 'Departamento do remetente', dataIndex: 'ID_DepAtribuicao', flex: 2.0},

@@ -25,8 +25,8 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'idHistoricoEstados', flex: 0.1},
-        { text: 'ID do Ticket', dataIndex: 'IdTicketEstado', flex: 0.1},
+        { text: 'ID',  dataIndex: 'idHistoricoEstados', flex: 0.1, hidden:true},
+        { text: 'ID do Ticket', dataIndex: 'IdTicketEstado', flex: 0.1, hidden:true},
         { text: 'Hora de atribuição ',  dataIndex: 'HoraAtribuicaoEstado', flex: 0.2},
         { text: 'Estado', dataIndex: 'Descricao_Estado', flex: 0.2},
         { text: 'Nome de utilizador', dataIndex: 'username', flex: 0.2},

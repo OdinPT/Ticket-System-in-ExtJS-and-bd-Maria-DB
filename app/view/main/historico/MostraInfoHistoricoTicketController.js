@@ -20,13 +20,23 @@ onClickMoveParaTickets: function()
 {
   myRequest1 = Ext.Ajax.request({
     url: 'app/php/Mover/AlterarEstado.php',
-method: 'POST',
-success: function(response, opts) {
+    method: 'POST',
+  success: function(response, opts) {
   Ext.MessageBox.alert('Ticket Movido','Com Sucesso');
-  var grid = Ext.ComponentQuery.query('gridticket')[0]
-  grid.getStore().load();
-  Ext.getCmp('grid2').getStore().load();
+
+      function hide_message() {
+          Ext.defer(function() {
+              Ext.MessageBox.hide();
+              var grid = Ext.ComponentQuery.query('gridticket')[0]
+              grid.getStore().load();
+
+              Ext.getCmp('grid2').getStore().load();
+          }, 1200);
+      }
+      hide_message();
+
+    }
+  })
 }
-})
-}
+
 });

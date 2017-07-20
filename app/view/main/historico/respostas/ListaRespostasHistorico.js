@@ -2,28 +2,24 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     extend: 'Ext.grid.Panel',
     id: 'grid5',
     xtype: 'mainlistrespostashistorico',
-
-
-    width: 1050,
-    // height: 500
-    autoLoad: true,
-
     requires: [
         'TrackIT.store.respostas.RespostasHistorico',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.historico.respostas.MostraRespostaHistorico'
         //'TrackIT.store.respostas.RespostaSeleccionadaHistorico'
-
     ],
 
     title: 'Respostas',
+    width: 1050,
+    height:300,
+    autoLoad: true,
 
     store: {
         type: 'respostashistorico'
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id_resp', flex: 0.2,
+        { text: 'ID',  dataIndex: 'id_resp', flex: 0.2,hidden:true,
             editor: {
                 allowBlank: false,
                 maxLength: 49
@@ -38,7 +34,7 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
                 allowBlank: false,
                 maxLength: 49
             }},
-        { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.4,
+        { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.4, hidden:true,
             editor: {
                 allowBlank: false,
                 maxLength: 49
