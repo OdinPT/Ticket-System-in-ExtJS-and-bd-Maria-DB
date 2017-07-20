@@ -22,9 +22,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
     },
 
     items: [
-
         {
-
             xtype: 'combobox',
             fieldLabel: 'Atribuir novo Estado',
             store: {
@@ -41,8 +39,6 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstado', {
             emptyText: 'Seleccione um novo estado...'
 
         }
-
-
 
     ],
     dockedItems: {

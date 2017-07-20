@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.admin.FormRegistaHisEstadoController', {
                     function hide_message() {
                         Ext.defer(function() {
                             Ext.MessageBox.hide();
-                        }, 2300);
+                        }, 1300);
                     }
                     hide_message();
                 },
