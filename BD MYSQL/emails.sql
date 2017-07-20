@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jul-2017 às 17:17
+-- Generation Time: 20-Jul-2017 às 17:54
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -298,6 +298,10 @@ Begin
         
         update emails set emails.id_Res_Ticket= idREs where id =IdTicket;
               IF (idREs = 5)  THEN
+ 		update emails set emails.state = 5 where id= IdTicket;
+             End IF;
+             
+               IF (idREs = 6)  THEN
  		update emails set emails.state = 5 where id= IdTicket;
              End IF;
 END$$

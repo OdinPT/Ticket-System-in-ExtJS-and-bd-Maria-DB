@@ -19,9 +19,9 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id', flex: 0.1},
+        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:true},
         { text: 'NOME',  dataIndex: 'nome', flex: 1},
-        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3}
+        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true}
     ],
 
     tbar: {

@@ -34,7 +34,8 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             xtype: 'textfield',
             fieldLabel: 'ID:',
             id: 'idd',
-            readOnly: true
+            readOnly: true,
+            hidden:true,
         },
         {
             xtype: 'textfield',
