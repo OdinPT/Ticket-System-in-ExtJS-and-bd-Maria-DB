@@ -14,7 +14,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.ComentController', {
                 var e = Ext.getCmp('ID_Utilizador').setValue(record.data.ID_Utilizador);
             }
         });
-    },
+    }
 
 
 });

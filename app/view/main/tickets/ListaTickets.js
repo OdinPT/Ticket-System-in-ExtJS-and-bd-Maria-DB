@@ -47,7 +47,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                 type: 'string'
             }
         },
-        { text: 'Corpo', dataIndex: 'body', flex: 3.7,
+        { text: 'Corpo', dataIndex: 'body', flex: 2.2,
             filter: {
                 type: 'string'
             }},
@@ -70,7 +70,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             }
         },
         {
-            text: 'Atribuido a : ', dataIndex: 'id_func_emails', flex: 1.0,
+            text: 'Atribuido:', dataIndex: 'id_func_emails', flex: 1.0,
             filter: {
                 type: 'string'
             },

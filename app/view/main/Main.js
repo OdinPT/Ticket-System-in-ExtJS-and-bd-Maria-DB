@@ -27,11 +27,9 @@ Ext.define('TrackIT.view.main.Main', {
         },
         title: {
             bind: {
-               /// text: '{name}'
             },
             flex: 0
         },
-            //iconCls: 'fa-cloud',
         html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
         items: [{
             xtype: 'button',

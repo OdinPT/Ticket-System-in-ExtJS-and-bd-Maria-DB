@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
     },
 
     columns: [
-        { text: 'ID Comentario',  dataIndex: 'ID_Comentario', flex: 0.5,hidden:true,},
+        { text: 'ID Comentario',  dataIndex: 'ID_Comentario', flex: 0.5,hidden:true},
         { text: 'ID do Ticket ',  dataIndex: 'ID_Ticket', flex: 0.5, hidden:true},
         { text: 'Data', dataIndex: 'Data_comentario', flex: 0.6},
         { text: 'Comentário', dataIndex: 'Comentario', flex: 2.0},

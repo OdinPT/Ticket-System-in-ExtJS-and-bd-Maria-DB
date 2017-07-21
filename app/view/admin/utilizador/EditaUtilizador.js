@@ -53,8 +53,7 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
             submitValue:true,
             hiddenName : 'id_departamento',
             allowBlank: false,
-            blankText: 'Selecione um departamento',
-
+            blankText: 'Selecione um departamento'
         },
         {
             xtype: 'combobox',

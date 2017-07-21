@@ -8,164 +8,158 @@ $IDFuncEstadox = $_COOKIE['cookieEmail'];
 
 $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$id'");
 
-while($res = mysqli_fetch_array($result))
-{
-	$state = $res['state'];
-	$func = $res['id_func_emails'];
-}
+        while($res = mysqli_fetch_array($result))
+        {
+	        $state = $res['state'];
+	        $func = $res['id_func_emails'];
+        }
 
 $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFuncEstadox'");
 
-while($res = mysqli_fetch_array($kappa))
-{
-	$tipo = $res['Tipo_Funcionario'];
-}
+        while($res = mysqli_fetch_array($kappa))
+        {
+	        $tipo = $res['Tipo_Funcionario'];
+        }
 
-if($state == 1)
- {
- if($func == $IDFuncEstadox)
- {
- $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
- }
- else if($tipo == 3)
- {
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-         echo "Sucesso";
- }
- else if($state != 3 && $state != 4)
- {
-     //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
+echo('Estado: ');
+echo($state);
+echo('</br>');
+echo($IDFuncEstadox);
+echo('</br>');
+echo('tipo funcionário: ');
+echo($tipo);
 
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
-
- }
- else
- {
-
-     header("HTTP/1.0 404 Not Found");
-     header('HTTP', true, 500);
- }
- }
- if($state == 2)
- {
- if($func == $IDFuncEstadox)
- {
- $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
- }
- else if($tipo == 3)
- {
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-         echo "Sucesso";
- }
- else if($state != 3 && $state != 4)
- {
-
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
-
- }
- else
- {
-
-     header("HTTP/1.0 404 Not Found");
-     header('HTTP', true, 500);
- }
- }
- if($state == 3)
- {
- if($func == $IDFuncEstadox)
- {
- $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
- }
- else if($tipo == 3)
- {
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-         echo "Sucesso";
- }
- else if($state != 3 && $state != 4)
- {
-     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-     echo "Sucesso";
-
- }
- else
- {
-
-     header("HTTP/1.0 404 Not Found");
-     header('HTTP', true, 500);
- }
- }
- if($state == 4)
-   {
-   if($func == $IDFuncEstadox)
-   {
-       echo "Sucesso";
-   }
-   else if($tipo == 3)
-   {
-           echo "Sucesso";
-   }
-   else if($state != 3 && $state != 4)
-   {
-       echo "Sucesso";
-
-   }
-   else
-   {
-
-       header("HTTP/1.0 404 Not Found");
-       header('HTTP', true, 500);
-   }
-   }
-    if($state == 5)
-     {
-     if($func == $IDFuncEstadox)
-     {
-         echo "Sucesso";
-     }
-     else if($tipo == 3)
-     {
-             echo "Sucesso";
-     }
-     else if($state != 3 && $state != 4)
-     {
-         echo "Sucesso";
-     }
-     else
-     {
-
-         header("HTTP/1.0 404 Not Found");
-         header('HTTP', true, 500);
-     }
-     }
-     if($state == 6)
-      {
-      if($func == $IDFuncEstadox)
-      {
-      $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-          echo "Sucesso";
-      }
+    if($state == 1)
+    {
+            if($func == $IDFuncEstadox)
+            {
+            $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                echo "Sucesso";
+            }
       else if($tipo == 3)
-      {
-          $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-              echo "Sucesso";
-      }
+            {
+                $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                    echo "Sucesso";
+            }
       else if($state != 3 && $state != 4)
-      {
-
-          $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-          echo "Sucesso";
-      }
+               {
+                $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                    echo "Sucesso";
+                }
       else
-      {
-
-          header("HTTP/1.0 404 Not Found");
-          header('HTTP', true, 500);
-      }
-      }
+            {
+               header("HTTP/1.0 404 Not Found");
+               header('HTTP', true, 500);
+            }
+   }
+      if($state == 2)
+        {
+            if($func == $IDFuncEstadox)
+                {
+                    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                    echo "Sucesso";
+                }
+                else if($tipo == 3)
+            {
+            $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+            echo "Sucesso";
+            }
+        else if($state != 3 && $state != 4)
+            {
+                $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                    echo "Sucesso";
+            }
+            else
+            {
+                header("HTTP/1.0 404 Not Found");
+                header('HTTP', true, 500);
+            }
+    }
+    if($state == 3)
+     {
+        if($func == $IDFuncEstadox)
+        {
+            $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                echo "Sucesso";
+        }
+        else if($tipo == 3)
+            {
+                $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                echo "Sucesso";
+            }
+            else if($state != 3 && $state != 4)
+            {
+                $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                echo "Sucesso";
+             }
+                else
+                {
+                    header("HTTP/1.0 404 Not Found");
+                    header('HTTP', true, 500);
+                }
+    }
+    if($state == 4)
+        {
+          if($func == $IDFuncEstadox)
+            {
+                echo "Sucesso";
+             }
+            else if($tipo == 3)
+            {
+                echo "Sucesso";
+            }
+            else if($state != 3 && $state != 4)
+            {
+                echo "Sucesso";
+            }
+          else
+            {
+                header("HTTP/1.0 404 Not Found");
+                header('HTTP', true, 500);
+            }
+        }
+        if($state == 5)
+            {
+                if($func == $IDFuncEstadox)
+               {
+                    echo "Sucesso";
+                 }
+            else if($tipo == 3)
+                {
+                 echo "Sucesso";
+                }
+            else if($state != 3 && $state != 4)
+                {
+                echo "Sucesso";
+                }
+                else
+                {
+                    header("HTTP/1.0 404 Not Found");
+                    header('HTTP', true, 500);
+                }
+            }
+       if($state == 6)
+            {
+              if($func == $IDFuncEstadox)
+                {
+                    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                         echo "Sucesso";
+                }
+                else if($tipo == 3)
+                {
+                    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                        echo "Sucesso";
+                }
+                else if($state != 3 && $state != 4)
+                {
+                    $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
+                        echo "Sucesso";
+                }
+                else
+                    {
+                        header("HTTP/1.0 404 Not Found");
+                        header('HTTP', true, 500);
+                    }
+            }
 
 ?>

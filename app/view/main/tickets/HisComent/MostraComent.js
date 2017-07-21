@@ -83,6 +83,6 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
 
             }
         ]
-    },
+    }
 
   });
