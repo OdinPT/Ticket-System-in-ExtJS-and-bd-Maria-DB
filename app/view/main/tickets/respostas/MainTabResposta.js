@@ -22,7 +22,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabResposta', {
     },
 
     items: [{
-        title: 'Conteúdo do Ticket',
+        title: 'Conteúdo da Resposta ',
         items: {
                   xtype: 'fieldresposta'
 }

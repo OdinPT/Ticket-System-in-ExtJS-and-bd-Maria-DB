@@ -15,6 +15,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
     height: 450,
     bodyPadding: 10,
     autoLoad: true,
+
     layout: {
             type: 'form',
             align: 'stretch'
@@ -38,22 +39,22 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
             id: 'ID_Ticket'
         },
         {
-            xtype: 'textareafield',
+            xtype: 'textfield',
             fieldLabel: 'Data :',
             id: 'Data_comentario'
         },
         {
-            xtype: 'textfield',
+            xtype: 'textareafield',
             fieldLabel: 'Comentário:',
             id: 'Comentario'
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Nome Utilizador:',
+            fieldLabel: 'Nome Utilizador: AA',
             id: 'username'
         }
     ],
-//`ID_Comentario``ID_Ticket``Data_comentario``Comentario``ID_Utilizador`
+
     listeners: {
         afterrender: function () {
             var store = Ext.getStore('comentarioselecionado');
@@ -68,6 +69,20 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
                 }
             });
         }
-    }
+    },
+    dockedItems: {
+        dock: 'bottom',
+        xtype: 'toolbar',
+        items: [
+            {
+                text: 'Apagar',
+                glyph: 43,
+                listeners: {
+                    click: 'onClickApagacoment'
+                }
+
+            }
+        ]
+    },
 
   });

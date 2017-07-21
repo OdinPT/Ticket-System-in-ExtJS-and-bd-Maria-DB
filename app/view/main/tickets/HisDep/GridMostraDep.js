@@ -7,7 +7,6 @@ Ext.define('TrackIT.view.main.tickets.HisDep.GridMostraDep', {
         'TrackIT.store.TipoDepartamentoMD.Departamentos',
         'Ext.toolbar.Paging'],
 
-
     config: {
         autoLoad: true,
         scroll:true,

@@ -25,6 +25,16 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
                 }
             })
         },
+    onClickApagacoment: function () {
+        myRequest1 = Ext.Ajax.request({
+            url: 'app/php/Apagar/apagarcoment.php',
+            method: 'POST',
+            success: function (response, opts) {
+                Ext.MessageBox.alert('title', 'Sucesso');
+                Ext.getCmp('gridhiscoment2').getStore().load();
+            }
+        })
+    },
     listeners: {
         itemclick: function (view, record, item, index, e) {
             var id = record.get('id');

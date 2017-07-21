@@ -53,20 +53,22 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
             id: 'id_email'
         }
     ],
-  dockedItems: {
-      dock: 'bottom',
-      xtype: 'toolbar',
-      items: [
-      {
-        text: 'Apagar',
-        glyph: 43,
-        listeners: {
-          click: 'onClickApagarResposta'
-        }
 
-      }
-    ]
-  },
+    dockedItems: {
+        dock: 'bottom',
+        xtype: 'toolbar',
+        items: [
+            {
+                text: 'Apagar',
+                glyph: 43,
+                listeners: {
+                    click: 'onClickApagarResposta'
+                }
+
+            }
+        ]
+    },
+
     listeners: {
         afterrender: function () {
             var store = Ext.getStore('respostaseleccionada');

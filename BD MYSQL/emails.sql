@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jul-2017 às 23:51
+-- Generation Time: 21-Jul-2017 às 13:58
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -24,6 +24,13 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarComentario` (IN `_id` INT)  NO SQL
+Begin
+
+DELETE FROM comentarios where `ID_Comentario`=_id;
+
+End$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarDepartamento` (IN `_id` INT)  NO SQL
 BEGIN
 

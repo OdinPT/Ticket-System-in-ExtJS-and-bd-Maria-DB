@@ -11,13 +11,11 @@ Ext.define('TrackIT.view.main.historico.HisEst.GridMostraFuncionarios', {
         autoLoad: true,
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
-        width: 1070,
-        height: 550
+        width: 1090
     },
     layout: {
         align: 'fit',
-        type: 'form',
-        margin: 1
+        type: 'form'
     },
 
     store: {
