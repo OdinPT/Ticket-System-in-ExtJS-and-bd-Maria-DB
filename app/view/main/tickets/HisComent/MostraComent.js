@@ -50,7 +50,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'Nome Utilizador: AA',
+            fieldLabel: 'Nome Utilizador: ',
             id: 'username'
         }
     ],

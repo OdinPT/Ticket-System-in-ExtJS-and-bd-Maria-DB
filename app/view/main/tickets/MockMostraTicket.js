@@ -37,6 +37,9 @@ Ext.define('TrackIT.view.main.tickets.MockMostraTicket', {
                 xtype: 'mockinfoticketprincipal'
             },
             {
+                xtype:'mainlisthistoricocoment'
+            },
+            {
                 xtype: 'mainlistanexos'
             },
             {
