@@ -16,7 +16,6 @@ echo $state;
 
 //$sleep ($100)
 
-
         if($state == '3')
         {
             $muda = mysqli_query($mysqli, "call inserirhistoricoestados('$id',2,'$IDFuncEstadox')");
@@ -26,6 +25,4 @@ echo $state;
         {
 
         }
-
-
 ?>

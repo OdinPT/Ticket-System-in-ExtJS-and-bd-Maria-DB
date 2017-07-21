@@ -133,9 +133,7 @@ if($state == 1)
      }
      else if($state != 3 && $state != 4)
      {
-         //$insere = mysqli_query($mysqli, "UPDATE emails SET state=3 WHERE id='$id'");
          echo "Sucesso";
-
      }
      else
      {
