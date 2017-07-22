@@ -28,7 +28,6 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController', {
                 params: {
 
                     id_departamento: Ext.getCmp('id_departamento2').getValue()
-
                 }
 
 

@@ -24,7 +24,6 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamentoController', 
                 failure: function (){alert('Erro...');},
                 params: { nome_departamento4:
                     Ext.getCmp('nome_departamento4').getValue()}
-
             });
 
     }

@@ -20,15 +20,18 @@ $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFun
         {
 	        $tipo = $res['Tipo_Funcionario'];
         }
-
-echo('Estado: ');
-echo($state);
+/*
+echo($id);
 echo('</br>');
+echo('=> Estado: ');
+echo($state);
+echo('</br>.=> Nome funcionario: ');
 echo($IDFuncEstadox);
 echo('</br>');
 echo('tipo funcionário: ');
 echo($tipo);
-
+echo('</br>');
+*/
     if($state == 1)
     {
             if($func == $IDFuncEstadox)
@@ -39,12 +42,12 @@ echo($tipo);
       else if($tipo == 3)
             {
                 $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                    echo "Sucesso";
+                    echo "Sucesso 1";
             }
       else if($state != 3 && $state != 4)
                {
                 $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                    echo "Sucesso";
+                    echo "Sucesso 2";
                 }
       else
             {
@@ -80,17 +83,17 @@ echo($tipo);
         if($func == $IDFuncEstadox)
         {
             $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                echo "Sucesso";
+                echo "Sucesso estado =3 ";
         }
-        else if($tipo == 3)
+        else if($tipo == 3 || $tipo == 2)
             {
                 $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                echo "Sucesso";
+                echo "Sucesso tipo 3 .1";
             }
             else if($state != 3 && $state != 4)
             {
                 $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                echo "Sucesso";
+                echo "Sucesso estado != 3 e 4";
              }
                 else
                 {
@@ -104,7 +107,7 @@ echo($tipo);
             {
                 echo "Sucesso";
              }
-            else if($tipo == 3)
+            else if($tipo == 3 || $tipo == 2)
             {
                 echo "Sucesso";
             }
