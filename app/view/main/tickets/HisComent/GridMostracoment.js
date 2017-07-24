@@ -41,7 +41,6 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Comentarios',
                 modal: true,
-                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
                 width: 1100,
                 height: 550,
                 items: [{
