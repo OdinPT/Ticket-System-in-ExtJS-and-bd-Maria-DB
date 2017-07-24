@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Jul-2017 às 13:58
+-- Generation Time: 24-Jul-2017 às 16:17
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -41,7 +41,8 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarEmails` (IN `_id` INT(10))  NO SQL
 BEGIN
 
-DELETE FROM emails WHERE (id=_id);
+DELETE FROM emails
+WHERE id=_id;
 
 end$$
 
@@ -680,7 +681,8 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (1, 'Call Center'),
 (2, 'Operations'),
 (3, 'N/D'),
-(4, 'Devellopers');
+(4, 'Devellopers'),
+(7, 'aaa');
 
 -- --------------------------------------------------------
 
@@ -746,7 +748,6 @@ CREATE TABLE `funcionario` (
 INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departamento_funcionarios`, `Tipo_Funcionario`) VALUES
 (37, 'testetrackit@gmail.com', 'testetrackit123', 1, 4),
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
-(39, 'admin', 'admin', 2, 3),
 (41, 'callcenter', 'callcenter', 1, 1),
 (43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
@@ -754,7 +755,8 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (52, 'Odin', 'Odin', 1, 3),
 (55, 'dev', 'dev', 4, 3),
 (56, 'nd', 'nd', 3, 2),
-(57, 'odinpt21@gmail.com', 'abcd1995', 2, 4);
+(57, 'odinpt21@gmail.com', 'abcd1995', 2, 4),
+(58, 'admin', 'admin', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -900,7 +902,11 @@ CREATE TABLE `upload` (
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`ID_Comentario`),
   ADD KEY `funcionarios_FK_comentarios` (`ID_Utilizador`),
-  ADD KEY `comentarios_FK_ticket` (`ID_Ticket`) USING BTREE;
+  ADD KEY `comentarios_FK_ticket` (`ID_Ticket`) USING BTREE,
+  ADD KEY `ID_Ticket` (`ID_Ticket`),
+  ADD KEY `ID_Ticket_2` (`ID_Ticket`),
+  ADD KEY `ID_Ticket_3` (`ID_Ticket`),
+  ADD KEY `ID_Ticket_4` (`ID_Ticket`);
 
 --
 -- Indexes for table `departamento`
@@ -917,7 +923,8 @@ ALTER TABLE `emails`
   ADD KEY `emails_FK_Departamento` (`id_departamento_emails`),
   ADD KEY `emails_FK_grupos` (`id_grupo_emails`),
   ADD KEY `emails_FK_estados` (`state`),
-  ADD KEY `emails_fk_tipoResolucao` (`id_Res_Ticket`);
+  ADD KEY `emails_fk_tipoResolucao` (`id_Res_Ticket`),
+  ADD KEY `id_Res_Ticket` (`id_Res_Ticket`);
 
 --
 -- Indexes for table `estado`
@@ -1007,7 +1014,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -1022,7 +1029,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -1071,7 +1078,7 @@ ALTER TABLE `upload`
 -- Limitadores para a tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarios_FK_ticket` FOREIGN KEY (`ID_Ticket`) REFERENCES `emails` (`id`),
+  ADD CONSTRAINT `comentarios_FK_ticket` FOREIGN KEY (`ID_Ticket`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `funcionarios_FK_comentarios` FOREIGN KEY (`ID_Utilizador`) REFERENCES `funcionario` (`id_funcionario`);
 
 --
@@ -1079,7 +1086,7 @@ ALTER TABLE `comentarios`
 --
 ALTER TABLE `emails`
   ADD CONSTRAINT `emails_FK_Departamento` FOREIGN KEY (`id_departamento_emails`) REFERENCES `departamento` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `emails_FK_estados` FOREIGN KEY (`state`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `emails_FK_estados` FOREIGN KEY (`state`) REFERENCES `estado` (`ID_Estado`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `emails_FK_grupos` FOREIGN KEY (`id_grupo_emails`) REFERENCES `grupo` (`id_grupo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `emails_fk_tipoResolucao` FOREIGN KEY (`id_Res_Ticket`) REFERENCES `tipo_resolucao` (`IdTipoRes`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -1097,7 +1104,7 @@ ALTER TABLE `historicoatribuicao`
   ADD CONSTRAINT `historicoAtribuicao_Dep` FOREIGN KEY (`ID_DepAtribuicao`) REFERENCES `departamento` (`id_departamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoatribuicao_FK_funcionarioAtribuido` FOREIGN KEY (`ID_Func_Atribuido`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `historicoatribuicao_FK_funcionarios` FOREIGN KEY (`ID_Func_Atribuidor`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoatribuicao_fk_ticket` FOREIGN KEY (`ID_Ticket_atribuicao`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `historicoatribuicao_fk_ticket` FOREIGN KEY (`ID_Ticket_atribuicao`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `historicodepartamentos`
@@ -1111,7 +1118,7 @@ ALTER TABLE `historicodepartamentos`
 --
 ALTER TABLE `historicoestados`
   ADD CONSTRAINT `historicoestados_FK_funcionario` FOREIGN KEY (`IDFuncEstado`) REFERENCES `funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `historicoestados_ibfk_1` FOREIGN KEY (`IdTicketEstado`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `historicoestados_ibfk_1` FOREIGN KEY (`IdTicketEstado`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `historicoestados_ibfk_2` FOREIGN KEY (`IDEstadoEstado`) REFERENCES `estado` (`ID_Estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

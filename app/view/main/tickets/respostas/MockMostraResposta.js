@@ -1,7 +1,7 @@
 
-Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
+Ext.define('TrackIT.view.main.tickets.respostas.MockMostraResposta', {
     extend: 'Ext.form.Panel',
-    xtype: 'fieldresposta',
+    xtype: 'Mockfieldresposta',
     controller: 'respostacont',
     requires: [
       'TrackIT.store.respostas.RespostaSeleccionada',
@@ -54,7 +54,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
         }
     ],
 
-   /* dockedItems: {
+  /*  dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
         items: [
@@ -67,8 +67,8 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
 
             }
         ]
-    },*/
-
+    },
+*/
     listeners: {
         afterrender: function () {
             var store = Ext.getStore('respostaseleccionada');

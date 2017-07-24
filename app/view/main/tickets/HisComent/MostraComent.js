@@ -70,7 +70,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
             });
         }
     },
-    dockedItems: {
+   /* dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
         items: [
@@ -83,6 +83,6 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
 
             }
         ]
-    }
+    }*/
 
   });
