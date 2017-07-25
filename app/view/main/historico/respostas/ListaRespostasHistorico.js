@@ -29,12 +29,12 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
         defaultButtonUI: 'default',
 
         items: [
-            {
+            /*{
               text: 'Refresh!',
               handler: function() {
     Ext.getCmp('grid5').store.reload();
 }
-    },
+    },*/
     {
       text: 'Apagar Respostas!',
       id: 'apagar',
