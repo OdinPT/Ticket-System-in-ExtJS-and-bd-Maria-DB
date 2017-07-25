@@ -21,6 +21,7 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.admin.FuncionarioSeleccionado',
         'TrackIT.store.admin.Funcionarios',
         'TrackIT.store.anexos.Anexos',
+        'TrackIT.store.anexos.Anexoshistorico',
         'TrackIT.store.admin.DepartamentoSeleccionado',
         'TrackIT.store.TipoDepartamento.TipoD',
         'TrackIT.store.TipoDepartamentoMD.TipoDepartamentoMD',

@@ -1,13 +1,13 @@
-Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
+Ext.define('TrackIT.view.main.historico.anexos.ListaAnexos', {
     extend: 'Ext.grid.Panel',
-    id: 'gridanexos',
-    xtype: 'mainlistanexos',
+    id: 'gridanexoshis',
+    xtype: 'mainlistanexoshistorico',
 
 
     width: 1050,
     //height: 350,
     requires: [
-        'TrackIT.store.anexos.Anexos',
+        'TrackIT.store.anexos.Anexoshistorico',
         'Ext.toolbar.Paging'
     ],
     config: {
@@ -15,13 +15,13 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     },
     title: 'Anexos',
     store: {
-        type: 'anexos'
+        type: 'anexoshistorico'
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id', flex: 0.1},
+        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:true},
         { text: 'NOME',  dataIndex: 'nome', flex: 1},
-        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3}
+        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true}
     ],
 
     tbar: {
@@ -36,7 +36,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
                         method: 'POST',
                         success: function (response, opts) {
                             Ext.MessageBox.alert('title', 'Sucesso');
-                            Ext.getCmp('gridanexos').getStore().load();
+                            Ext.getCmp('gridanexoshis').getStore().load();
                         }
                     })
                 }
@@ -68,7 +68,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
         }
 
     },
-    onGridAfterRender: function(gridanexos){
+    onGridAfterRender: function(gridanexoshis){
         setInterval(function(){
             grid.store.load();
         }, 1);
