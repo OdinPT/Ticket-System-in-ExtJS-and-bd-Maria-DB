@@ -27,36 +27,29 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'ide'
+        id: 'id_resp'
     },
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subjecte'
+        id: 'subject_resp'
     },
-    {
-        xtype: 'textareafield',
-        fieldLabel: 'Resposta:',
-        id: 'answere'
-    },
+
     {
         xtype: 'textfield',
-        fieldLabel: 'IDTicket:',
-        id: 'IDtickete'
-    }
+        fieldLabel: 'Corpo:',
+        id: 'body_resp'
+    },
+        {
+            xtype: 'textfield',
+            fieldLabel: 'Data:',
+            id: 'datea_resp'
+        }
   ],
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
       items: [
-      {
-        text: 'Carregar Resposta',
-        glyph: 43,
-        listeners: {
-           click: 'onClickObterResposta'
-        }
-
-      },
       {
         text: 'Apagar Resposta',
         glyph: 43,
@@ -66,5 +59,23 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
 
       }
     ]
-  }
+  },
+
+    listeners: {
+        afterrender: function () {
+            var store = Ext.getStore('respostaseleccionadahistorico');
+            store.load({
+                callback: function (records, operation, success) {
+                    var record = store.getAt(0);
+                    var a = Ext.getCmp('id_resp').setValue(record.data.id_resp);
+                    var b = Ext.getCmp('body_resp').setValue(record.data.body_resp);
+                    var cc = Ext.getCmp('subject_resp').setValue(record.data.subject_resp);
+                    var c = Ext.getCmp('datea_resp').setValue(record.data.datea_resp);
+                    var d = Ext.getCmp('id_email').setValue(record.data.id_email);
+                }
+                //subject_resp
+            });
+        }
+    }
+
   });

@@ -65,6 +65,24 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
     }]
   },
 
+    listeners: {
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('id_resp');
+            Ext.util.Cookies.set('cookieIDanswer', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Respostas Historico',
+                modal: true,
+
+                width: 1100,
+                height: 550,
+                items: [{
+                    xtype: 'maintabrespostahistorico'
+                }]
+            });
+            myWin.show();
+        }
+
+    },
     onGridAfterRender: function(grid5){
        setInterval(function(){
           grid.store.load();
