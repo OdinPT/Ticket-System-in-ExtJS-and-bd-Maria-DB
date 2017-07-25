@@ -1,6 +1,6 @@
-Ext.define('TrackIT.view.main.tickets.respostas.MainTabRespostaHistorico', {
+Ext.define('TrackIT.view.main.tickets.respostas.MockMainTabRespostaHistorico', {
     extend: 'Ext.tab.Panel',
-    xtype: 'maintabrespostahistorico',
+    xtype: 'mockmaintabrespostahistorico',
     controller: 'respostaconthistorico',
     requires: [
         'TrackIT.store.respostas.RespostaSeleccionadaHistorico',
@@ -23,7 +23,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabRespostaHistorico', {
     items: [{
         title: 'Conteúdo do Ticket',
         items: {
-                  xtype: 'fieldrespostahistorico'
+                  xtype: 'Mockfieldrespostahistorico'
 }
     }
 ],

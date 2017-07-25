@@ -1,10 +1,8 @@
 <?php
 include_once("config.php");
 //error_reporting(0);
-//getting id from url
 
-
-// verifica se o tipo que iniciou sess?o e admin
+// verifica se o tipo quem iniciou sessao e admin
 
 $email = $_COOKIE['cookieEmail'];
 

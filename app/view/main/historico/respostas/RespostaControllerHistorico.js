@@ -8,8 +8,8 @@ onClickApagarResposta: function()
     url: 'app/php/Apagar/apagaresposta.php',
 method: 'POST',
 success: function(response, opts) {
-  Ext.MessageBox.alert('title','Sucesso');
-  Ext.getCmp('grid4').getStore().load();
+  Ext.MessageBox.alert('Resposta apagada',' com Sucesso');
+  Ext.getCmp('grid5').getStore().load();
 }
 })
 }

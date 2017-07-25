@@ -254,6 +254,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     });
 
                 },
+
                 failure: function () {
 
                     var MockmyWin = Ext.create("Ext.window.Window", {

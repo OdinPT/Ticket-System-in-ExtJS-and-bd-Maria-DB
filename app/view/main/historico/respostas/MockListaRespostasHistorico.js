@@ -1,7 +1,7 @@
-Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
+Ext.define('TrackIT.view.main.historico.respostas.MockListaRespostasHistorico', {
     extend: 'Ext.grid.Panel',
-    id: 'grid5',
-    xtype: 'mainlistrespostashistorico',
+    id: 'grid501',
+    xtype: 'Mockmainlistrespostashistorico',
     requires: [
         'TrackIT.store.respostas.RespostasHistorico',
         'Ext.toolbar.Paging',
@@ -25,30 +25,8 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
         { text: 'CORPO', dataIndex: 'body_resp', flex: 3},
         { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8, hidden:true}
     ],
-    tbar: {
-        defaultButtonUI: 'default',
 
-        items: [
-            /*{
-              text: 'Refresh!',
-              handler: function() {
-            Ext.getCmp('grid5').store.reload();
-            }
-        },*/
-    {
-      text: 'Apagar Todas as Respostas!',
-      id: 'apagar',
-      handler: function(){
-        myRequest = Ext.Ajax.request({
-          url: 'app/php/Limpar/limparespostas.php',
-          method: 'POST',
-          success: function(response, opts) {
-  Ext.getCmp('grid5').store.reload();
-  }
-        })
-      }
-    }]
-  },
+
 
     listeners: {
         itemclick: function(view, record, item, index, e) {
@@ -61,14 +39,14 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
                 width: 1100,
                 height: 550,
                 items: [{
-                    xtype: 'maintabrespostahistorico'
+                    xtype: 'mockmaintabrespostahistorico'
                 }]
             });
             myWin.show();
         }
 
     },
-    onGridAfterRender: function(grid5){
+    onGridAfterRender: function(grid501){
        setInterval(function(){
           grid.store.load();
        }, 1);
