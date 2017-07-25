@@ -54,21 +54,6 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
         }
     ],
 
-   /* dockedItems: {
-        dock: 'bottom',
-        xtype: 'toolbar',
-        items: [
-            {
-                text: 'Apagar',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickApagarResposta'
-                }
-
-            }
-        ]
-    },*/
-
     listeners: {
         afterrender: function () {
             var store = Ext.getStore('respostaseleccionada');
