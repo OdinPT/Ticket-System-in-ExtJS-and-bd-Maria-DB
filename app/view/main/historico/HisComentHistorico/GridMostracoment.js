@@ -33,6 +33,26 @@ Ext.define('TrackIT.view.main.tickets.HisComentHistorico.GridMostracoment', {
         { text: 'Nome de utilizador', dataIndex: 'ID_Utilizador', flex: 0.5}
 
     ],
+
+
+    listeners: {
+        itemclick: function(view, record, item, index, e) {
+            var id = record.get('ID_Comentario');
+            Ext.util.Cookies.set('cookieIDComent', id);
+            var myWin = Ext.create("Ext.window.Window", {
+                title: 'Comentários',
+                modal: true,
+                width: 1102,
+                //height: 550,
+                height: 395,
+                items: [{
+                    xtype: 'maintabcomenthistorico'
+                }]
+            });
+            myWin.show();
+        }
+    },
+
     onGridAfterRender: function(gridhiscoment2historico){
         setInterval(function(){
             grid.store.load();

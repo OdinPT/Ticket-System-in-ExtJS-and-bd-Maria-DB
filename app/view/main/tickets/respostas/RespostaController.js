@@ -31,7 +31,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
             method: 'POST',
             success: function (response, opts) {
                 Ext.MessageBox.alert('title', 'Sucesso');
-                Ext.getCmp('gridhiscoment2').getStore().load();
+                Ext.getCmp('gridhiscoment2historico').getStore().load();
             }
         })
     },
