@@ -27,23 +27,27 @@ Ext.define('TrackIT.view.main.historico.respostas.MockMostraRespostaHistorico', 
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_resp'
+        id: 'id_resp',
+        readOnly:true
     },
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subject_resp'
+        id: 'subject_resp',
+        readOnly:true
     },
 
     {
         xtype: 'textfield',
         fieldLabel: 'Corpo:',
-        id: 'body_resp'
+        id: 'body_resp',
+        readOnly:true
     },
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'datea_resp'
+            id: 'datea_resp',
+            readOnly:true
         }
   ],
     listeners: {

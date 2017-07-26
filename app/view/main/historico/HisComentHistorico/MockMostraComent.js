@@ -30,27 +30,32 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MockMostraComent', {
             xtype: 'textfield',
             fieldLabel: 'ID Comentario:',
             id: 'ID_Comentario',
-            hidden:true
+            hidden:true,
+            readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'ID do Ticket do comentário :',
-            id: 'ID_Ticket'
+            id: 'ID_Ticket',
+            readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data :',
-            id: 'Data_comentario'
+            id: 'Data_comentario',
+            readOnly:true
         },
         {
             xtype: 'textareafield',
             fieldLabel: 'Comentário:',
-            id: 'Comentario'
+            id: 'Comentario',
+            readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Nome Utilizador que efetuou comentário: ',
-            id: 'username'
+            id: 'username',
+            readOnly:true
         }
     ],
 

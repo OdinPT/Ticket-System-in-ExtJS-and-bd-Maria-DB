@@ -21,17 +21,6 @@ $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFun
 	        $tipo = $res['Tipo_Funcionario'];
         }
 
-echo($id);
-echo('</br>');
-echo('=> Estado: ');
-echo($state);
-echo('</br>.=> Nome funcionario: ');
-echo($IDFuncEstadox);
-echo('</br>');
-echo('tipo funcionário: ');
-echo($tipo);
-echo('</br>');
-
     if($state == 1)
     {
             if($func == $IDFuncEstadox)
