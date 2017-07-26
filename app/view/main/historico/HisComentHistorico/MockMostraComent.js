@@ -1,7 +1,6 @@
-
-Ext.define('TrackIT.view.main.historico.HisComentHistorico.MostraComent', {
+Ext.define('TrackIT.view.main.historico.HisComentHistorico.MockMostraComent', {
     extend: 'Ext.form.Panel',
-    xtype: 'fieldComenthistorico',
+    xtype: 'mockfieldComenthistorico',
     controller: 'respostacont',
     requires: [
         'TrackIT.store.HistoricoComentariosHistorico.ComentarioSeleccionado',
@@ -14,7 +13,6 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MostraComent', {
 
     width: 1100,
     height: 308,
-    //bodyPadding: 10,
     autoLoad: true,
 
     layout: {
@@ -23,7 +21,6 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MostraComent', {
         },
         defaults: {
             layout: 'form'
-           // border:2
         },
 
     config:{stores: ['comentarioselecionadohistorico']},
@@ -72,19 +69,5 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MostraComent', {
             });
         }
     },
-    dockedItems: {
-        dock: 'bottom',
-        xtype: 'toolbar',
-        items: [
-            {
-                text: 'Apagar',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickApagacoment'
-                }
-
-            }
-        ]
-    }
 
   });

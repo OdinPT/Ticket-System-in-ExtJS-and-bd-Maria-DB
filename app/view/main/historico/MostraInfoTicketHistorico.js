@@ -103,8 +103,34 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
       glyph: 43,
       listeners: {
         click: 'onClickMoveParaTickets'
-      }
-    }
+            }
+      },
+          {
+              text: 'Apagar Todas as Respostas',
+              id: 'apagar2',
+              handler: function(){
+                  myRequest = Ext.Ajax.request({
+                      url: 'app/php/Limpar/limparespostas.php',
+                      method: 'POST',
+                      success: function(response, opts) {
+                          Ext.getCmp('grid5').store.reload();
+                      }
+                  })
+              }
+          },
+          {
+              text: 'Apagar Todos os comentários',
+              id: 'apagar3',
+              handler: function(){
+                  myRequest = Ext.Ajax.request({
+                      url: 'app/php/Limpar/limpacomentarios.php',
+                      method: 'POST',
+                      success: function(response, opts) {
+                          Ext.getCmp('gridhiscoment2historico').store.reload();
+                      }
+                  })
+              }
+          }
     ]
   }
   });

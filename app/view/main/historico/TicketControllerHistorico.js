@@ -21,7 +21,19 @@ Ext.define('TrackIT.view.main.historico.TicketControllerHistorico', {
   var grid = Ext.ComponentQuery.query('gridticket')[0]
   grid.getStore().load();
   Ext.getCmp('grid2').getStore().load();
-}
+},
+
+    onClickApagarResposta: function()
+    {
+        myRequest1 = Ext.Ajax.request({
+            url: 'app/php/Apagar/apagaresposta.php',
+            method: 'POST',
+            success: function(response, opts) {
+                Ext.MessageBox.alert('Resposta apagada',' com Sucesso');
+                Ext.getCmp('grid5').getStore().load();
+            }
+        })
+    }
 
 
 });

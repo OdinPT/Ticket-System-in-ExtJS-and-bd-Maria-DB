@@ -1,7 +1,8 @@
-Ext.define('TrackIT.view.main.historico.HisComentHistorico.GridMostracoment', {
+Ext.define('TrackIT.view.main.historico.HisComentHistorico.MockGridMostracoment', {
     extend: 'Ext.grid.Panel',
-    id: 'gridhiscoment2historico',
-    xtype: 'mainlisthistoricocomenthistorico',
+    id: 'gridhiscoment020historico',
+
+    xtype: 'mockmainlisthistoricocomenthistorico',
     requires: [
         'TrackIT.store.HistoricoComentariosHistorico.Comentario',
         'Ext.toolbar.Paging'],
@@ -45,14 +46,14 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.GridMostracoment', {
                 //height: 550,
                 height: 395,
                 items: [{
-                    xtype: 'maintabcomenthistorico'
+                    xtype: 'mockmaintabcomenthistorico'
                 }]
             });
             myWin.show();
         }
     },
 
-    onGridAfterRender: function(gridhiscoment2historico){
+    onGridAfterRender: function(gridhiscoment020historico){
         setInterval(function(){
             grid.store.load();
         }, 1);

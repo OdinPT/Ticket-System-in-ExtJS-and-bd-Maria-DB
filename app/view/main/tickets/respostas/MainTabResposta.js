@@ -8,15 +8,17 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabResposta', {
         'TrackIT.view.main.tickets.respostas.MostraResposta'
     ],
 
-    width: 1100,
-    height: 610,
+
+
+    width: 1180,
+    height: 410,
 
     store: {
         type: 'respostaseleccionada'
     },
 
     defaults: {
-        bodyPadding: 10,
+       // bodyPadding: 10,
         scrollable: true,
         closable: true
     },

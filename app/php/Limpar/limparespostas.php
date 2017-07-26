@@ -1,4 +1,5 @@
 <?php
 include("config.php");
-$kappa = mysqli_query($mysqli, "call LimpaRespostas");
+$id = $_COOKIE['cookieID'];
+$kappa = mysqli_query($mysqli, "call LimpaRespostas($id)");
 ?>

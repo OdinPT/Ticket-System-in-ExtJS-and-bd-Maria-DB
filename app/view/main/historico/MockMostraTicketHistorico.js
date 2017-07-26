@@ -29,7 +29,7 @@ Ext.define('TrackIT.view.main.historico.MockMostraTicketHistorico', {
                 xtype: 'mockinfotickethistorico'
             },
             {
-                xtype: 'mainlisthistoricocomenthistorico'
+                xtype: 'mockmainlisthistoricocomenthistorico'
             },
             {
                 xtype: 'mainlistanexoshistorico'

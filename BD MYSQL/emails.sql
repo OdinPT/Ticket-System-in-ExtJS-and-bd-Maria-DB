@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Jul-2017 às 16:17
+-- Generation Time: 26-Jul-2017 às 12:50
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -356,14 +356,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirTickets2` (IN `_mail` VARCHA
         MostraIdDepartamento(_user)) ; 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaComentarios` (IN `_id` INT)  NO SQL
+Begin
+DELETE FROM comentarios WHERE `ID_Ticket`=_id;
+end$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaHistorico` ()  NO SQL
 BEGIN
 DELETE FROM emails where (`id_grupo_emails` = 2);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaRespostas` ()  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaRespostas` (IN `_id` INT)  NO SQL
 Begin
-truncate table respostas;
+delete  from respostas where id_email=_id;
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LimpaTickets` ()  BEGIN
@@ -457,9 +462,9 @@ End$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowRespostasHistorico` (IN `_ID_Ticket` INT(11))  NO SQL
 Begin
 
-SELECT `id_resp`,`body_resp`,`datea_resp`,`datea_resp`,`id_email`,nome_grupo 
+SELECT `id_resp`,`subject_resp`,`body_resp`,`datea_resp`,`datea_resp`,`id_email`,nome_grupo 
  FROM emails,respostas,grupo where id_email=id and id_grupo=2 and (`id_email`=_ID_Ticket);
-
+ 
 End$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ShowRespostasTicket` (IN `_ID_Ticket` INT(11))  NO SQL
@@ -751,12 +756,13 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (41, 'callcenter', 'callcenter', 1, 1),
 (43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
-(49, 'normal', 'normal', 1, 1),
+(49, 'n', 'n', 1, 1),
 (52, 'Odin', 'Odin', 1, 3),
 (55, 'dev', 'dev', 4, 3),
 (56, 'nd', 'nd', 3, 2),
 (57, 'odinpt21@gmail.com', 'abcd1995', 2, 4),
-(58, 'admin', 'admin', 1, 2);
+(58, 'admin', 'admin', 1, 2),
+(59, 'normal', 'normal', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1029,7 +1035,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT for table `grupo`
 --
@@ -1125,7 +1131,7 @@ ALTER TABLE `historicoestados`
 -- Limitadores para a tabela `respostas`
 --
 ALTER TABLE `respostas`
-  ADD CONSTRAINT `respostas_fk_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `respostas_fk_emails` FOREIGN KEY (`id_email`) REFERENCES `emails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

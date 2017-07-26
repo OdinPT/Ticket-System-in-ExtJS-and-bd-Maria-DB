@@ -25,30 +25,6 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
         { text: 'CORPO', dataIndex: 'body_resp', flex: 3},
         { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8, hidden:true}
     ],
-    tbar: {
-        defaultButtonUI: 'default',
-
-        items: [
-            /*{
-              text: 'Refresh!',
-              handler: function() {
-            Ext.getCmp('grid5').store.reload();
-            }
-        },*/
-    {
-      text: 'Apagar Todas as Respostas!',
-      id: 'apagar',
-      handler: function(){
-        myRequest = Ext.Ajax.request({
-          url: 'app/php/Limpar/limparespostas.php',
-          method: 'POST',
-          success: function(response, opts) {
-  Ext.getCmp('grid5').store.reload();
-  }
-        })
-      }
-    }]
-  },
 
     listeners: {
         itemclick: function(view, record, item, index, e) {
@@ -58,8 +34,10 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
                 title: 'Respostas Historico',
                 modal: true,
 
-                width: 1100,
-                height: 550,
+                //width: 1100,
+                //height: 550,
+                width: 1085,
+                height: 395,
                 items: [{
                     xtype: 'maintabrespostahistorico'
                 }]

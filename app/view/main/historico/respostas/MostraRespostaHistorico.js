@@ -10,16 +10,19 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     id: 'staticPageForm',
     frame: true,
     title: 'Resposta',
+   // width: 1080,
+    //height: 450,
     width: 1080,
-    height: 450,
-    bodyPadding: 10,
+    height: 308,
+
+    bodyPadding: 1,
     layout: {
             type: 'form',
             align: 'stretch'
         },
         defaults: {
             layout: 'form',
-            margin: 20
+            //margin: 10
         },
 
     config:{stores: ['respostaseleccionadahistorico']},

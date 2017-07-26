@@ -11,17 +11,19 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
     id: 'staticPageForm',
     frame: true,
     title: 'Resposta',
-    width: 1080,
-    height: 450,
-    bodyPadding: 10,
+
+    width: 1180,
+    height: 320,
+
+    //bodyPadding: 10,
     autoLoad: true,
     layout: {
             type: 'form',
             align: 'stretch'
         },
         defaults: {
-            layout: 'form',
-            margin: 20
+            layout: 'form'
+          //  margin: 20
         },
 
     config:{stores: ['respostaseleccionada']},
