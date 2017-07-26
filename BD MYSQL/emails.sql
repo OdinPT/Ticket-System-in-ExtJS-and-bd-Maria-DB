@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Jul-2017 às 12:50
+-- Generation Time: 26-Jul-2017 às 16:55
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -57,6 +57,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ApagarFuncionario` (IN `_id` INT)  
 BEGIN
 
 DELETE FROM funcionario WHERE id_funcionario=_id;
+
+End$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AtualizaComentario` (IN `_comet` TEXT, IN `user` VARCHAR(200), IN `id` INT)  NO SQL
+BEGIN
+
+UPDATE comentarios
+SET `Comentario`=_comet , `ID_Utilizador`=(retornaIdMail(user)),`Data_comentario`=now() WHERE `ID_Comentario`=id;
 
 End$$
 
@@ -687,7 +695,7 @@ INSERT INTO `departamento` (`id_departamento`, `nome_departamento`) VALUES
 (2, 'Operations'),
 (3, 'N/D'),
 (4, 'Devellopers'),
-(7, 'aaa');
+(8, 'Falta pouco');
 
 -- --------------------------------------------------------
 
@@ -754,15 +762,13 @@ INSERT INTO `funcionario` (`id_funcionario`, `username`, `pass`, `id_departament
 (37, 'testetrackit@gmail.com', 'testetrackit123', 1, 4),
 (38, 'testetrackit2@gmail.com', 'testetrackit123', 2, 4),
 (41, 'callcenter', 'callcenter', 1, 1),
-(43, 'teste', 'teste', 1, 1),
 (46, 'trackit093@gmail.com', '123teste123', 3, 4),
-(49, 'n', 'n', 1, 1),
 (52, 'Odin', 'Odin', 1, 3),
 (55, 'dev', 'dev', 4, 3),
 (56, 'nd', 'nd', 3, 2),
 (57, 'odinpt21@gmail.com', 'abcd1995', 2, 4),
 (58, 'admin', 'admin', 1, 2),
-(59, 'normal', 'normal', 1, 1);
+(60, 'o', 'o', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -1020,7 +1026,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT for table `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_departamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `emails`
 --
@@ -1035,7 +1041,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `grupo`
 --

@@ -30,45 +30,35 @@ Ext.define('TrackIT.view.main.tickets.respostas.MockMostraResposta', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_resp'
+        id: 'id_resp',
+        readOnly: true
     },
         {
             xtype: 'textfield',
             fieldLabel: 'Assunto:',
-            id: 'subject_resp'
+            id: 'subject_resp',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'datea_resp'
+            id: 'datea_resp',
+            readOnly: true
         },
         {
             xtype: 'textareafield',
             fieldLabel: 'Corpo:',
-            id: 'body_resp'
+            id: 'body_resp',
+            readOnly: true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'ID Ticket:',
-            id: 'id_email'
+            id: 'id_email',
+            readOnly: true
         }
     ],
 
-  /*  dockedItems: {
-        dock: 'bottom',
-        xtype: 'toolbar',
-        items: [
-            {
-                text: 'Apagar',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickApagarResposta'
-                }
-
-            }
-        ]
-    },
-*/
     listeners: {
         afterrender: function () {
             var store = Ext.getStore('respostaseleccionada');

@@ -32,28 +32,30 @@ Ext.define('TrackIT.view.main.tickets.respostas.MostraResposta', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_resp'
-    },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Assunto:',
-            id: 'subject_resp'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: 'Data:',
-            id: 'datea_resp'
-        },
-        {
-            xtype: 'textareafield',
-            fieldLabel: 'Corpo:',
-            id: 'body_resp'
-        },
-        {
+        id: 'id_resp',
+        hidden:true
+    }, {
             xtype: 'textfield',
             fieldLabel: 'ID Ticket:',
-            id: 'id_email'
+            id: 'id_email',
+            readOnly: true
+       },{
+            xtype: 'textfield',
+            fieldLabel: 'Data:',
+            id: 'datea_resp',
+            readOnly: true
+        },{
+            xtype: 'textfield',
+            fieldLabel: 'Assunto:',
+            id: 'subject_resp',
+            readOnly: true
+        },{
+            xtype: 'textareafield',
+            fieldLabel: 'Corpo:',
+            id: 'body_resp',
+        readOnly: true
         }
+
     ],
 
     listeners: {

@@ -31,17 +31,20 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
         {
             xtype: 'textfield',
             fieldLabel: 'ID Comentario:',
-            id: 'ID_Comentario'
+            id: 'ID_Comentario',
+            readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'ID Ticket:',
-            id: 'ID_Ticket'
+            id: 'ID_Ticket',
+            readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'Data :',
-            id: 'Data_comentario'
+            id: 'Data_comentario',
+            readOnly:true
         },
         {
             xtype: 'textareafield',
@@ -51,7 +54,8 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
         {
             xtype: 'textfield',
             fieldLabel: 'Nome Utilizador: ',
-            id: 'username'
+            id: 'username',
+            readOnly:true
         }
     ],
 
@@ -70,19 +74,19 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
             });
         }
     },
-   /* dockedItems: {
+    dockedItems: {
         dock: 'bottom',
         xtype: 'toolbar',
         items: [
             {
-                text: 'Apagar',
+                text: 'Registar Alteração ao comentário',
                 glyph: 43,
                 listeners: {
-                    click: 'onClickApagacoment'
+                    click: 'onClickEditacoment'
                 }
 
             }
         ]
-    }*/
+    }
 
   });

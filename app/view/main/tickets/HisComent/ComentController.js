@@ -14,7 +14,37 @@ Ext.define('TrackIT.view.main.tickets.HisComent.ComentController', {
                 var e = Ext.getCmp('ID_Utilizador').setValue(record.data.ID_Utilizador);
             }
         });
+    },
+
+    //onClickEditacoment
+
+
+    onClickEditacoment: function() {
+        method:'POST',
+            myRequest1 = Ext.Ajax.request({
+                url: 'app/php/Editar/editacomentario.php',
+
+                success: function (response, opts) {
+                    Ext.MessageBox.alert('Departamento Editado ', 'com Sucesso');
+
+                    function hide_message() {
+                        Ext.defer(function () {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('gridhiscoment2').getStore().load();
+                        }, 1000);
+                    }
+
+                    hide_message();
+                },
+
+                failure: function (){alert('Erro...');
+                    Ext.MessageBox.alert('Departamento Editado ','Sem Sucesso');
+                },
+                params: {Comentario: Ext.getCmp('Comentario').getValue()}
+            });
     }
+
 
 
 });

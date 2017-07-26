@@ -46,9 +46,6 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Respostas',
                 modal: true,
-                // html: '<iframe src="app/php/mostraTicket.php" width="100%" height="100%" ></iframe>',
-                //width: 1180,
-                //height: 410,
                 width: 1180,
                 height: 410,
                 items: [{
