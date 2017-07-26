@@ -28,17 +28,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.ListaRespostas', {
       { text: 'ID TICKET', dataIndex: 'id_email', flex: 0.8, hidden:true}
     ],
 
-    tbar: {
-        defaultButtonUI: 'default',
 
-        items: [
-            {
-              text: 'Atualizar',
-              handler: function() {
-    Ext.getCmp('grid4').store.reload();
-}
-    }]
-  },
     listeners: {
         itemclick: function(view, record, item, index, e) {
             var id = record.get('id_resp');

@@ -30,7 +30,7 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MockMostraComent', {
             xtype: 'textfield',
             fieldLabel: 'ID Comentario:',
             id: 'ID_Comentario',
-            hidden:true,
+            hidden:true
         },
         {
             xtype: 'textfield',
@@ -68,6 +68,6 @@ Ext.define('TrackIT.view.main.historico.HisComentHistorico.MockMostraComent', {
                 }
             });
         }
-    },
+    }
 
   });

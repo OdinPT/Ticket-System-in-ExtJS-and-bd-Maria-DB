@@ -18,7 +18,7 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
     defaults: {
         layout: 'form',
         margin: 0,
-        border: 'false',
+        border: 'false'
 
     },
 
@@ -45,7 +45,7 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
                 glyph: 43,
                 formBind: true,
                 listeners: {
-                    click: 'onClickRegistarDepartamento',
+                    click: 'onClickRegistarDepartamento'
 
                 }
 

@@ -69,21 +69,6 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MockMostraComent', {
                 }
             });
         }
-    },
-
-   /* dockedItems: {
-        dock: 'bottom',
-        xtype: 'toolbar',
-        items: [
-            {
-                text: 'Apagar',
-                glyph: 43,
-                listeners: {
-                    click: 'onClickApagacoment'
-                }
-
-            }
-        ]
     }
-    */
+
   });

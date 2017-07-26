@@ -10,8 +10,6 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     id: 'staticPageForm',
     frame: true,
     title: 'Resposta',
-   // width: 1080,
-    //height: 450,
     width: 1080,
     height: 308,
 
@@ -21,8 +19,7 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
             align: 'stretch'
         },
         defaults: {
-            layout: 'form',
-            //margin: 10
+            layout: 'form'
         },
 
     config:{stores: ['respostaseleccionadahistorico']},
@@ -30,23 +27,27 @@ Ext.define('TrackIT.view.main.historico.respostas.MostraRespostaHistorico', {
     items: [{
         xtype: 'textfield',
         fieldLabel: 'ID:',
-        id: 'id_resp'
+        id: 'id_resp',
+        readOnly:true
     },
     {
         xtype: 'textfield',
         fieldLabel: 'Assunto:',
-        id: 'subject_resp'
+        id: 'subject_resp',
+        readOnly:true
     },
 
     {
         xtype: 'textfield',
         fieldLabel: 'Corpo:',
-        id: 'body_resp'
+        id: 'body_resp',
+        readOnly:true
     },
         {
             xtype: 'textfield',
             fieldLabel: 'Data:',
-            id: 'datea_resp'
+            id: 'datea_resp',
+            readOnly:true
         }
   ],
   dockedItems: {

@@ -31,11 +31,9 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
             var id = record.get('id_resp');
             Ext.util.Cookies.set('cookieIDanswer', id);
             var myWin = Ext.create("Ext.window.Window", {
-                title: 'Respostas Historico',
+                title: 'Historico',
                 modal: true,
 
-                //width: 1100,
-                //height: 550,
                 width: 1085,
                 height: 395,
                 items: [{
