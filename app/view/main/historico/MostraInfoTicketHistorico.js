@@ -86,6 +86,8 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
             readOnly: true
         }
   ],
+
+
   dockedItems: {
       dock: 'bottom',
       xtype: 'toolbar',
@@ -97,8 +99,7 @@ Ext.define('TrackIT.view.main.historico.MostraInfoTicketHistorico', {
         listeners: {
           click: 'onClickApagaTicketDoHistorico'
         }
-      },
-      {
+      }, {
       text: 'Mover para Ticket',
       glyph: 43,
       listeners: {

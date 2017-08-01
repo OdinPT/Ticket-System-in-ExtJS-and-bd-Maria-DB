@@ -1,8 +1,5 @@
-NV => Nova versão
+BD antes de dia 24-07
 
 
-VA => Versão Antiga
-
-
-emailsNV 13-03 1340
-se o ticket for mudado no histórico muda para os tickets.
+Alterações na Nova versão
+=> FK ligadas ao ticket em cascade

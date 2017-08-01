@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 include("config.php");
 
 $id = $_COOKIE['cookieID'];
@@ -32,6 +32,7 @@ while($res = mysqli_fetch_array($buscaassunto))
 $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
 
 $emails = imap_search($inbox, 'SUBJECT '.$subject.'');
+
 /* if any emails found, iterate through each email */
 if($emails) {
 

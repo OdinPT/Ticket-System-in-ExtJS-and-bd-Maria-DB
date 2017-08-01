@@ -1,5 +1,6 @@
 <?php
-	    include_once 'config.php';
+	    //include_once 'config.php';
+	    include("config.php");
 				     $id = $_COOKIE['cookieIDanexo'];
 				     $query = "SELECT * " .
 				             "FROM upload WHERE id = '$id'";
@@ -11,7 +12,7 @@
 				     ob_clean();
 				     flush();
 				     echo $content;
-				     mysqli_close($connection);
+				     mysqli_close($mysqli);
 				     exit;
 
 	       ?>
