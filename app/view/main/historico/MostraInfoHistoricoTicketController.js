@@ -9,9 +9,19 @@ onClickApagaTicketDoHistorico: function()
     method: 'POST',
     success: function(response, opts) {
       Ext.MessageBox.alert('Ticket Apagado','Com Sucesso');
-      var grid = Ext.ComponentQuery.query('gridticket')[0]
+
+        function hide_message() {
+            Ext.defer(function () {
+                Ext.MessageBox.hide();
+                Ext.getCmp('grid2').getStore().load();
+            }, 1500);
+
+        }
+        hide_message();
+
+        var grid = Ext.ComponentQuery.query('gridticket')[0]
       grid.getStore().load();
-  Ext.getCmp('grid2').getStore().load();
+
 }
 })
 },

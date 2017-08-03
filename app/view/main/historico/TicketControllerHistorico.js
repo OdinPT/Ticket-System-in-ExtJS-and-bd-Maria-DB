@@ -5,22 +5,36 @@ Ext.define('TrackIT.view.main.historico.TicketControllerHistorico', {
     onClickDeleteForever: function() {
         myRequest1 = Ext.Ajax.request({
           url: 'app/php/Apagar/HistoricoDeleteOne.php',
-    method: 'POST'
-  })
+             method: 'POST'
+            })
   Ext.MessageBox.alert('Ticket Movido',' com Sucesso');
-  Ext.getCmp('grid2').getStore().load();
-  Ext.getCmp('grid2').getStore().load();
-},
 
+        function hide_message() {
+            Ext.defer(function () {
+                Ext.MessageBox.hide();
+                Ext.getCmp('grid2').getStore().load();
+
+            }, 1500);
+        }
+        hide_message();
+
+},
     onClickMoveBack: function() {
       myRequest2 = Ext.Ajax.request({
         url: 'app/php/Mover/AlterarEstado.php',
-  method: 'POST'
-  })
-  Ext.MessageBox.alert('titles','Sucesso');
-  var grid = Ext.ComponentQuery.query('gridticket')[0]
+        method: 'POST'  })
+        Ext.MessageBox.alert('titles','Sucesso');
+
+        function hide_message() {
+            Ext.defer(function () {
+                Ext.MessageBox.hide();
+                var grid = Ext.ComponentQuery.query('gridticket')[0]
+                Ext.getCmp('grid2').getStore().load();
+            }, 1500);
+        }
+        hide_message();
+
   grid.getStore().load();
-  Ext.getCmp('grid2').getStore().load();
 },
 
     onClickApagarResposta: function()
@@ -30,7 +44,16 @@ Ext.define('TrackIT.view.main.historico.TicketControllerHistorico', {
             method: 'POST',
             success: function(response, opts) {
                 Ext.MessageBox.alert('Resposta apagada',' com Sucesso');
-                Ext.getCmp('grid5').getStore().load();
+
+                function hide_message() {
+                    Ext.defer(function () {
+                        Ext.MessageBox.hide();
+                        Ext.getCmp('grid5').getStore().load();
+                    }, 1500);
+
+                }
+                hide_message();
+
             }
         })
     }

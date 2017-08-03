@@ -30,8 +30,16 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
             url: 'app/php/Apagar/apagarcoment.php',
             method: 'POST',
             success: function (response, opts) {
-                Ext.MessageBox.alert('title', 'Sucesso');
-                Ext.getCmp('gridhiscoment2historico').getStore().load();
+                Ext.MessageBox.alert('Comentário Apagado', 'com Sucesso');
+
+                function hide_message() {
+                    Ext.defer(function () {
+                        Ext.MessageBox.hide();
+                        Ext.getCmp('gridhiscoment2historico').getStore().load();
+                    }, 1200);
+                }
+                hide_message();
+
             }
         })
     },
