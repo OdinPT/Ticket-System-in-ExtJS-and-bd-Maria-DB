@@ -120,7 +120,7 @@ if($emails) {
                 if(empty($filename)) $filename = $attachment['filename'];
 
                 if(empty($filename)) $filename = time() . ".dat";
-                $folder = "";
+                $folder = "Downloads Email Historico";
                 if(!is_dir($folder))
                 {
                      mkdir($folder);
