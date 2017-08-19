@@ -129,3 +129,12 @@
     background-image: none;
     background-color: #0caddb   ;
 }
+.x-body {
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 300;
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+
+    background-image: url("http://www.trackit.pt/images/bg_geral.jpg");
+
+}

@@ -8,12 +8,14 @@ $assunto = $_POST['assuntoresposta'];
 $conteudo = $_POST['conteudoresposta'];
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
+
 //$IDFuncEstadox = $_COOKIE['cookieEmail'];
 
 $fileName = $_FILES['anexo']['name'];
 $tmpName  = $_FILES['anexo']['tmp_name'];
 $fileSize = $_FILES['anexo']['size'];
 $fileType = $_FILES['anexo']['type'];
+
 $fp= fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
@@ -44,6 +46,7 @@ while($res = mysqli_fetch_array($result))
 {
     $sender = $res['fromaddress'];
 }
+
 $PHPMailer = new PHPMailer();
 
 // define que será usado SMTP
@@ -88,9 +91,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM emails WHERE id='$cookieID'") or 
 
 while($res = mysqli_fetch_array($result))
 {
-  $fromaddress = $res['email'];
+  $fromaddress = $res['fromaddress'];
 }
-//echo $fromaddress;
+echo $fromaddress;
 
 // adiciona destinatário (pode ser chamado inúmeras vezes)
 $PHPMailer->AddReplyTo($fromaddress, 'Nome do visitante');
