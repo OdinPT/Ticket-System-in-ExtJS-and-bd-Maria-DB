@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
 
     id: 'staticPageForm',
     frame: true,
-    title: 'Comentario',
+    title: 'Comentário',
     width: 1080,
     height: 450,
     bodyPadding: 10,
@@ -30,13 +30,15 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
     items: [
         {
             xtype: 'textfield',
-            fieldLabel: 'ID Comentario:',
+            fieldLabel: 'ID Comentário:',
             id: 'ID_Comentario',
+            hidden:true,
             readOnly:true
         },
         {
             xtype: 'textfield',
             fieldLabel: 'ID Ticket:',
+            hidden:true,
             id: 'ID_Ticket',
             readOnly:true
         },

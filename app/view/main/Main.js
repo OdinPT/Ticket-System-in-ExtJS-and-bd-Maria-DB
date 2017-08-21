@@ -81,7 +81,7 @@ Ext.define('TrackIT.view.main.Main', {
             xtype: 'mainlisttickets'
         }]
     }, {
-        title: 'Historico',
+        title: 'Histórico',
         iconCls: 'fa-eye',
         items: [{
             xtype: 'mainlisthistorico'

@@ -25,7 +25,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.ComentController', {
                 url: 'app/php/Editar/editacomentario.php',
 
                 success: function (response, opts) {
-                    Ext.MessageBox.alert('Departamento Editado ', 'com Sucesso');
+                    Ext.MessageBox.alert('Comentário Editado ', 'com Sucesso');
 
                     function hide_message() {
                         Ext.defer(function () {
@@ -39,7 +39,14 @@ Ext.define('TrackIT.view.main.tickets.HisComent.ComentController', {
                 },
 
                 failure: function (){alert('Erro...');
-                    Ext.MessageBox.alert('Departamento Editado ','Sem Sucesso');
+                    Ext.MessageBox.alert('Comentário Editado ','Sem Sucesso');
+                    function hide_message() {
+                        Ext.defer(function () {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('gridhiscoment2').getStore().load();
+                        }, 1000);
+                    }
                 },
                 params: {Comentario: Ext.getCmp('Comentario').getValue()}
             });

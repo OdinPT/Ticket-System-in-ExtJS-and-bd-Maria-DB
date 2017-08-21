@@ -28,7 +28,7 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
             fieldLabel: 'Nome de Departamento:',
             id: 'nome_departamento4',
             name: 'nome_departamento4',
-            emptyText : 'Insira o nome de departamento',
+            emptyText : 'Insira o nome do departamento',
             allowBlank: false,
             blankText: 'Campo obrigatório'
 

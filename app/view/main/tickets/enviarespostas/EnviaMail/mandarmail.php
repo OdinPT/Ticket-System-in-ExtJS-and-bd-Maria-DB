@@ -15,7 +15,6 @@ $fileName = $_FILES['anexo']['name'];
 $tmpName  = $_FILES['anexo']['tmp_name'];
 $fileSize = $_FILES['anexo']['size'];
 $fileType = $_FILES['anexo']['type'];
-
 $fp= fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
@@ -93,6 +92,8 @@ while($res = mysqli_fetch_array($result))
 {
   $fromaddress = $res['fromaddress'];
 }
+
+
 echo $fromaddress;
 
 // adiciona destinatário (pode ser chamado inúmeras vezes)

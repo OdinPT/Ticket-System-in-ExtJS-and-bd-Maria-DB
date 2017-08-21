@@ -13,7 +13,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
         autoLoad: true,
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
-        title: 'Comentarios',
+        title: 'Comentários',
         width: 1050
 
     },
@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
     },
 
     columns: [
-        { text: 'ID Comentario',  dataIndex: 'ID_Comentario', flex: 0.5,hidden:true},
+        { text: 'ID Comentario',  dataIndex: 'ID_Comentario', flex: 0.5, hidden:true},
         { text: 'ID do Ticket ',  dataIndex: 'ID_Ticket', flex: 0.5, hidden:true},
         { text: 'Data', dataIndex: 'Data_comentario', flex: 0.6},
         { text: 'Comentário', dataIndex: 'Comentario', flex: 2.0},
@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
             var id = record.get('ID_Comentario');
             Ext.util.Cookies.set('cookieIDComent', id);
             var myWin = Ext.create("Ext.window.Window", {
-                title: 'Comentarios',
+                title: 'Comentários',
                 modal: true,
                 width: 1100,
                 height: 550,

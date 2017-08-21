@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
 
     items: [
         {
-            title: 'Registo de Departamento',
+            title: 'Registo de Departamentos',
             flex: 1,
             margin: '0 10 0 0',
             items: [{

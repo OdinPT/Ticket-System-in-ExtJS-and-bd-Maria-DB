@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamento', {
 
         {
             xtype: 'textfield',
-            fieldLabel: 'Nome de Departamento:',
+            fieldLabel: 'Nome do Departamento:',
             id: 'nome_departamento2',
             name: 'nome_departamento2',
             allowBlank: false,

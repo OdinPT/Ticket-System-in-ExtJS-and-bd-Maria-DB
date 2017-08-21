@@ -13,7 +13,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MockGridMostracoment', {
         autoLoad: true,
         scroll:true,
         style:{overflow: 'auto',overflowX: 'hidden'},
-        title: 'Comentarios',
+        title: 'Comentários',
         width: 1050
 
     },
@@ -39,7 +39,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MockGridMostracoment', {
             var id = record.get('ID_Comentario');
             Ext.util.Cookies.set('cookieIDComent', id);
             var myWin = Ext.create("Ext.window.Window", {
-                title: 'Comentarios',
+                title: 'Comentários',
                 modal: true,
                 width: 1100,
                 height: 550,
