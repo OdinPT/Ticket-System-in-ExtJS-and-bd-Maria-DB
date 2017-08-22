@@ -107,6 +107,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                             Ext.MessageBox.hide();
                             var grid = Ext.ComponentQuery.query('gridticket')[0]
                             grid.getStore().load();
+                            Ext.getCmp('grid2').getStore().load();
+
                         }
                     })
                 }
