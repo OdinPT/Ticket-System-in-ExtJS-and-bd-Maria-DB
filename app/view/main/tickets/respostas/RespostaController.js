@@ -49,22 +49,30 @@ Ext.define('TrackIT.view.main.tickets.respostas.RespostaController', {
                 url: 'app/php/Editar/editacomentario.php',
 
                 success: function (response, opts) {
-                    Ext.MessageBox.alert('Departamento Editado ', 'com Sucesso');
+                    Ext.MessageBox.alert('Comentário Editado ', 'com Sucesso');
 
-                    //        function hide_message() {
-//                        Ext.defer(function () {
-//                            Ext.MessageBox.hide();
+                           function hide_message() {
+                        Ext.defer(function () {
+                            Ext.MessageBox.hide();
 
                             Ext.getCmp('gridhiscoment2').getStore().load();
-//                        }, 9100);
-//                    }
-
-//                    hide_message();
+                        }, 1000);
+                    }
+                    hide_message();
                 },
 
                 failure: function (){alert('Erro...');
-                    Ext.MessageBox.alert('Departamento Editado ','Sem Sucesso');
-                },
+                    Ext.MessageBox.alert('Comentário Editado ','Sem Sucesso');
+
+                    function hide_message() {
+                        Ext.defer(function () {
+                            Ext.MessageBox.hide();
+
+                            Ext.getCmp('gridhiscoment2').getStore().load();
+                        }, 1000);
+                    }
+                    hide_message();
+                    },
                 params: {
                     Comentario: Ext.getCmp('Comentario').getValue(),
                     username:Ext.getCmp('username').getValue()

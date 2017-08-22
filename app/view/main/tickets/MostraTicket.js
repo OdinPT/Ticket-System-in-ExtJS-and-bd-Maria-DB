@@ -47,7 +47,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             ]
     },
         {
-            title: 'Historico dos Estados',
+            title: 'Histórico dos Estados',
             items: [
                 {
                     xtype: 'mainlisthistoricoest'
@@ -56,7 +56,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
 
         },
         {
-            title: 'Historico dos Departamentos',
+            title: 'Histórico dos Departamentos',
             items: [
                 {
                     xtype: 'mainlisthistoricoDep'
@@ -64,7 +64,7 @@ Ext.define('TrackIT.view.main.tickets.MostraTicket', {
             ]
         },
         {
-            title: 'Historico Atribuição',
+            title: 'Histórico Atribuição',
             items: [
                 {
                     xtype: 'mainlisthistoricoatribuica'

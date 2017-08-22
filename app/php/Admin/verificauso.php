@@ -114,15 +114,23 @@ $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFun
             {
                 if($func == $IDFuncEstadox)
                {
-                    echo "Sucesso";
+                    echo "Sucesso ";
                  }
-            else if($tipo == 3)
+                else if($tipo == 3)
+                    {
+                         echo "Sucesso ";
+                     }
+
+                else if ($tipo == 1 || $tipo==4 and $func != $IDFuncEstadox)
                 {
-                 echo "Sucesso";
-                }
+                    header("HTTP/1.0 404 Not Found");
+                                header('HTTP', true, 500);
+
+                 }
+
             else if($state != 3 && $state != 4)
                 {
-                echo "Sucesso";
+                echo "Sucesso ";
                 }
                 else
                 {
@@ -153,5 +161,6 @@ $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFun
                         header('HTTP', true, 500);
                     }
             }
+
 
 ?>
