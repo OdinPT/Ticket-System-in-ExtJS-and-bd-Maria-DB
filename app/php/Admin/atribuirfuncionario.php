@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
+include "../config.php";
 
-include("config.php");
 $id = $_COOKIE['cookieID'];
 $funcionario = $_POST['id_funcionario'];
 $email = $_COOKIE['cookieEmail'];

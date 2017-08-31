@@ -1,5 +1,6 @@
 <?php
-include("config.php");
+include "../config.php";
+
 $id = $_COOKIE['cookieIDdepartamento'];
 $nome_departamento2 = $_POST['nome_departamento2'];
 

@@ -1,5 +1,5 @@
 <?php
-include_once("config.php");
+include "../config.php";
 //error_reporting(0);
 
 // verifica se o tipo quem iniciou sessao e admin

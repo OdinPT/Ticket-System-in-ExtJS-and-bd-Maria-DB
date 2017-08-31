@@ -1,13 +1,9 @@
-
-Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
+Ext.define('TrackIT.view.admin.departamento.GridMostraDepFunc', {
     extend: 'Ext.grid.Panel',
-    id: 'griddepartamentos',
-    xtype: 'mainlistdepartamentos',
+    id: 'gridfuncdep',
+    xtype: 'mainlistfuncdepartamentos',
     requires: [
-        'TrackIT.store.admin.Departamentos',
-        'Ext.toolbar.Paging',
-        'TrackIT.view.admin.departamento.MostraDepartamento',
-        'TrackIT.store.admin.DepartamentoSeleccionado'
+        'TrackIT.store.admin.FuncDep'
     ],
 
     config: {
@@ -18,26 +14,27 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
     layout: {
         align: 'fit',
         type: 'form',
-        width: 660
+        width: 690,
 
     },
     store: {
-        type: 'departamentos'
+        type: 'funcdepartamento'
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id_departamento', flex: 0.2},
-        { text: 'Nome de Departamento',  dataIndex: 'nome_departamento', flex: 1}
+        { text: 'username',  dataIndex: 'username', flex: 1},
+        { text: 'Tipo Utilizador',  dataIndex: 'Descricao_TipoUtilizador', flex: 1},
+        { text: 'Nome Departamento',  dataIndex: 'nome_departamento', flex: 1}
     ],
 
-    listeners: {
+/*    listeners: {
         itemclick: function(view, record, item, index, e) {
             var id = record.get('id_departamento');
             Ext.util.Cookies.set('cookieIDdepartamento', id);
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Departamento',
                 modal: true,
-                width: 660,
+                width: 500,
                 height: 190,
                 items: [{
                     xtype: 'fielddepartamento'
@@ -47,8 +44,8 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
         }
 
     },
-
-    onGridAfterRender: function(griddepartamentos){
+*/
+    onGridAfterRender: function(gridfuncdep){
         setInterval(function(){
             grid.store.load();
         }, 1);

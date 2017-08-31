@@ -25,13 +25,28 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
             params: {id_departamento3: Ext.getCmp('id_departamento3').getValue()}
         })
     },
+    //onClickMostraFuncDep
+    onClickMostraFuncDep: function()
+    {
+        var myWin2 = Ext.create("Ext.window.Window", {
+            title: 'Funcionários Dep',
+            modal: true,
+            width: 690,
+            height: 300,
+            items: [{
+                xtype: 'mainlistfuncdepartamentos'
+            }]
+        });
+        myWin2.show();
+    },
+
     onClickEditaDepartamento: function()
     {
         var myWin2 = Ext.create("Ext.window.Window", {
             title: 'Departamento',
             modal: true,
             width: 500,
-            height: 140,
+            height: 190,
             items: [{
                 xtype: 'editadepartamento'
             }]

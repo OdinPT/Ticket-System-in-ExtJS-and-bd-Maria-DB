@@ -48,6 +48,7 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizador', {
             store: {
                 type: 'TipoD'
             },
+
             valueField: 'id_departamento',
             displayField: 'nome_departamento',
             typeAhead: true,

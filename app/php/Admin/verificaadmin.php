@@ -1,6 +1,6 @@
 <?php
-include_once("config.php");
 error_reporting(0);
+include "../config.php";
 //getting id from url
 
 $email = $_COOKIE['cookieEmail'];

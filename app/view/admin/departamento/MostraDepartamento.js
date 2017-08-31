@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
     id: 'staticDepartamentoForm',
 
     frame: true,
-    width: 500,
+    width: 660,
     height: 150,
     bodyPadding: 10,
 
@@ -56,6 +56,14 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
                 glyph: 43,
                 listeners: {
                     click: 'onClickEditaDepartamento'
+                }
+
+            },
+            {
+                text: 'Funcionários do Departamento',
+                glyph: 43,
+                listeners: {
+                    click: 'onClickMostraFuncDep'
                 }
 
             }

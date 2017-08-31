@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include "../config.php";
 
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];

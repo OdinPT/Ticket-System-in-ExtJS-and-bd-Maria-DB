@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include "../config.php";
 
 $nome_departamento4 = $_POST['nome_departamento4'];
 

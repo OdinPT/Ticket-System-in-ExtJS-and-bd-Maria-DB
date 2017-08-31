@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include "../config.php";
 $id = $_COOKIE['cookieIDfuncionario'];
 
 $username = $_POST['user'];

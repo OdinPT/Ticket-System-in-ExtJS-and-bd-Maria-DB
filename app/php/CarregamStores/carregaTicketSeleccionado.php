@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
-include("config.php");
 $id = $_COOKIE['cookieID'],
+include "../config.php";
 $return_arr = array();
 
 $query = "Call TicketSelecHistorico($id)";

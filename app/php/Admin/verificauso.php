@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include "../config.php";
 
 //Caso o estado esteja a ser visualizado mostra mensagem a dizer que o ticket está a ser usado
 

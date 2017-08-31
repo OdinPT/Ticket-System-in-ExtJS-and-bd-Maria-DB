@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
-include("config.php");
+include "../config.php";
+
 $id = $_COOKIE['cookieID'];
 $return_arr = array();
 

@@ -1,6 +1,6 @@
 <?php
-
-	    include("config.php");
+error_reporting(0);
+include "../../config.php";
 				     $id = $_COOKIE['cookieIDanexo'];
 				     $query = "SELECT * " .
 				             "FROM upload WHERE id = '$id'";
