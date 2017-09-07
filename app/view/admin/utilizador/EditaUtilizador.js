@@ -8,7 +8,7 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
     id: 'formeditautilizador',
     frame: true,
     width: 500,
-    height: 300,
+    height: 230,
     border: false,
 
 

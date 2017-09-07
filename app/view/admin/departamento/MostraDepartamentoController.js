@@ -25,13 +25,14 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
             params: {id_departamento3: Ext.getCmp('id_departamento3').getValue()}
         })
     },
+
     //onClickMostraFuncDep
     onClickMostraFuncDep: function()
     {
         var myWin2 = Ext.create("Ext.window.Window", {
-            title: 'Funcionários Dep',
+            title: 'Funcionários do  Departamento',
             modal: true,
-            width: 690,
+            width: 750,
             height: 300,
             items: [{
                 xtype: 'mainlistfuncdepartamentos'
@@ -45,8 +46,9 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
         var myWin2 = Ext.create("Ext.window.Window", {
             title: 'Departamento',
             modal: true,
-            width: 500,
-            height: 190,
+
+            width: 660,
+            height: 140,
             items: [{
                 xtype: 'editadepartamento'
             }]

@@ -7,7 +7,7 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamento', {
     ],
     id: 'formeditadepartamento',
     frame: true,
-    width: 500,
+    width: 660,
     height: 100,
     border: false,
 

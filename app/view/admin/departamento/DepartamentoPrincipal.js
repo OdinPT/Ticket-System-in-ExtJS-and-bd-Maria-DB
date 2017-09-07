@@ -29,7 +29,7 @@ Ext.define('TrackIT.view.admin.departamento.DepartamentoPrincipal', {
             margin: '0 10 0 0',
             items: [{
                 xtype: 'registadepartamento'
-                //xtype:'mainlistfuncdepartamentos'
+
             }]
         },
         {

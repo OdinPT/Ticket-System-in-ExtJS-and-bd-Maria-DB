@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionario', {
     id: 'staticFuncionarioForm',
     frame: true,
     width: 500,
-    height: 300,
+    height: 200,
     bodyPadding: 10,
 
     layout: {
@@ -28,7 +28,8 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionario', {
         xtype: 'textfield',
         fieldLabel: 'ID:',
         id: 'id_funcionario',
-        readOnly: true
+        readOnly: true,
+        hidden:true
     },
         {
             xtype: 'textfield',
@@ -38,7 +39,7 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionario', {
         },
         {
             xtype: 'textfield',
-            fieldLabel: 'ID do Departamento:',
+            fieldLabel: 'Nome do Departamento:',
             id: 'nome_departamento',
             readOnly: true
         },

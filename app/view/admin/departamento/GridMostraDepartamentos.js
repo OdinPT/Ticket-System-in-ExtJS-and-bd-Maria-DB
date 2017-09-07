@@ -38,7 +38,8 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
                 title: 'Departamento',
                 modal: true,
                 width: 660,
-                height: 190,
+                height: 160,
+
                 items: [{
                     xtype: 'fielddepartamento'
                 }]

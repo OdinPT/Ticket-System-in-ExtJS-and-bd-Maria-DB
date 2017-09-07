@@ -19,7 +19,7 @@ header("HTTP/1.0 404 Not Found");
 
 }
 
-//$insere = mysqli_query($mysqli, " call AtualizaComentario('$Comentario','$idUtilizador',$idComent)");
+
 mysqli_close($mysqli);
 
 ?>

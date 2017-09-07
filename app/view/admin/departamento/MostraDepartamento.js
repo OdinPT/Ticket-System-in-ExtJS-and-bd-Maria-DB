@@ -10,7 +10,7 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
 
     frame: true,
     width: 660,
-    height: 150,
+    height: 120,
     bodyPadding: 10,
 
     layout: {
@@ -24,12 +24,14 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
     config:{stores: ['departamentoseleccionado']},
 
 
-    items: [{
+    items: [
+        {
         xtype: 'textfield',
         fieldLabel: 'ID:',
         id: 'id_departamento3',
-        readOnly: true
-    },
+        readOnly: true,
+        hidden: true
+        },
         {
             xtype: 'textfield',
             fieldLabel: 'Nome de Departamento:',
@@ -37,7 +39,6 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
             readOnly: true
         }
     ],
-
 
     dockedItems: {
         dock: 'bottom',

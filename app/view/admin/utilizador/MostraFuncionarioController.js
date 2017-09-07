@@ -21,7 +21,15 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionarioController', {
 
             },
             failure: function (){alert('Erro...');
-                Ext.MessageBox.alert('Utilizador Não Apagado','Sem Sucesso!');
+                Ext.MessageBox.alert('Atenção','Utilizador Não Apagado!');
+                function hide_message() {
+                    Ext.defer(function() {
+                        Ext.MessageBox.hide();
+
+                        Ext.getCmp('gridfuncionarios').getStore().load();
+                    }, 1100);
+                }
+                hide_message();
             }
         })
     },
