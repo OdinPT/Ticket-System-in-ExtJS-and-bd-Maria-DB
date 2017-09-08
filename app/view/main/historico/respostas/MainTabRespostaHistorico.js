@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.main.tickets.respostas.MainTabRespostaHistorico', {
     },
 
     defaults: {
-        //bodyPadding: 10,
+
         scrollable: true,
         closable: true
     },

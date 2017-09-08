@@ -42,7 +42,8 @@ Ext.define('TrackIT.view.main.tickets.HisComent.GridMostracoment', {
                 title: 'Comentários',
                 modal: true,
                 width: 1100,
-                height: 550,
+                //height: 550,
+                height: 400,
                 items: [{
                     xtype: 'maintabcoment'
                 }]

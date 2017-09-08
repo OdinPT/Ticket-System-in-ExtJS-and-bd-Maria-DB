@@ -12,7 +12,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MostraComent', {
     frame: true,
     title: 'Comentário',
     width: 1080,
-    height: 450,
+    height: 300,
     bodyPadding: 10,
     autoLoad: true,
 

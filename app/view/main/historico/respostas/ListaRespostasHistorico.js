@@ -35,7 +35,8 @@ Ext.define('TrackIT.view.main.historico.respostas.ListaRespostasHistorico', {
                 modal: true,
 
                 width: 1085,
-                height: 395,
+
+                height: 328,
                 items: [{
                     xtype: 'maintabrespostahistorico'
                 }]

@@ -11,6 +11,7 @@ Ext.define('TrackIT.view.main.tickets.HisComent.MainTabComent', {
     width: 1100,
     height: 610,
 
+
     store: {
         type: 'comentarioselecionado'
     },

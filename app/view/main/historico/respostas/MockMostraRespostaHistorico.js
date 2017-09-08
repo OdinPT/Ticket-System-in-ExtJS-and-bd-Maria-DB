@@ -11,7 +11,8 @@ Ext.define('TrackIT.view.main.historico.respostas.MockMostraRespostaHistorico', 
     frame: true,
     title: 'Resposta',
     width: 1080,
-    height: 450,
+
+    height: 218,
     bodyPadding: 10,
     layout: {
             type: 'form',
@@ -28,6 +29,7 @@ Ext.define('TrackIT.view.main.historico.respostas.MockMostraRespostaHistorico', 
         xtype: 'textfield',
         fieldLabel: 'ID:',
         id: 'id_resp',
+        hidden:true,
         readOnly:true
     },
     {

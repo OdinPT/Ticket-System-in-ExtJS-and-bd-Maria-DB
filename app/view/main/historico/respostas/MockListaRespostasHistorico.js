@@ -35,9 +35,9 @@ Ext.define('TrackIT.view.main.historico.respostas.MockListaRespostasHistorico', 
             var myWin = Ext.create("Ext.window.Window", {
                 title: 'Respostas Historico',
                 modal: true,
-
                 width: 1100,
-                height: 550,
+
+                height: 328,
                 items: [{
                     xtype: 'mockmaintabrespostahistorico'
                 }]
