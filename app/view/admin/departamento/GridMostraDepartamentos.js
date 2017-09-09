@@ -26,7 +26,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepartamentos', {
     },
 
     columns: [
-        { text: 'ID',  dataIndex: 'id_departamento', flex: 0.2},
+        { text: 'ID',  dataIndex: 'id_departamento', flex: 0.2, hidden:true},
         { text: 'Nome de Departamento',  dataIndex: 'nome_departamento', flex: 1}
     ],
 
