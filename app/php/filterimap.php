@@ -8,16 +8,17 @@ $cookieEmail = $_COOKIE['cookieEmail'];
 
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
 
-while($res = mysqli_fetch_array($result))
-{
-  $iddepartamento = $res['id_departamento_funcionarios'];
-}
+    while($res = mysqli_fetch_array($result))
+    {
+    $iddepartamento = $res['id_departamento_funcionarios'];
+    }
+
 $escolhe = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE Tipo_Funcionario=4 AND id_departamento_funcionarios=$iddepartamento") or die(mysqli_error($mysqli));
-while($rese = mysqli_fetch_array($escolhe))
-{
-  $username = $rese['username'];
-  $password = $rese['pass'];
-}
+    while($rese = mysqli_fetch_array($escolhe))
+    {
+    $username = $rese['username'];
+    $password = $rese['pass'];
+    }
 
 /* try to connect */
 $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Tiriyo: ' . imap_last_error());
