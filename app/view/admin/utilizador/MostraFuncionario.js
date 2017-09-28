@@ -9,7 +9,7 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionario', {
     id: 'staticFuncionarioForm',
     frame: true,
     width: 500,
-    height: 200,
+    height: 210,
     bodyPadding: 10,
 
     layout: {

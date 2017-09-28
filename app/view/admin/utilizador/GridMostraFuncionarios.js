@@ -38,7 +38,7 @@ Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
                 title: 'Funcionário',
                 modal: true,
                 width: 500,
-                height: 240,
+                height: 250,
                 items: [{
                     xtype: 'fieldfuncionario'
                 }]

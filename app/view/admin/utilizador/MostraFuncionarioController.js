@@ -39,8 +39,7 @@ Ext.define('TrackIT.view.admin.utilizador.MostraFuncionarioController', {
             title: 'Funcionário',
             modal: true,
             width: 500,
-
-            height: 270,
+            height: 310,
             items: [{
                 xtype: 'editautilizador'
             }]

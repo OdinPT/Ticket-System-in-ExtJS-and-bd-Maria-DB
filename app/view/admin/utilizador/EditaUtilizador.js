@@ -7,10 +7,7 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
     ],
     id: 'formeditautilizador',
     frame: true,
-    width: 500,
-    height: 230,
     border: false,
-
 
     layout: {
         type: 'form',
@@ -65,13 +62,26 @@ Ext.define('TrackIT.view.admin.utilizador.EditaUtilizador', {
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Select a state...',
+            emptyText: 'Select tipo funcionário...',
             id: 'tipo_funcionario2',
             submitValue:true,
             hiddenName : 'ID_TipoUtilizador',
             allowBlank: false,
             blankText: 'Selecione um departamento'
+        },
+        {
+            fieldLabel: 'Permitir login no SI :',
+            xtype: 'checkbox',
+            name: 'system',
+            iputValue: 'production',
+            id:'login2',
 
+            listeners: {
+                check: function (checkbox, isChecked) {
+                    var sample = Ext.getCmp('login2');
+                }
+
+            }
         }
     ],
     dockedItems: {
