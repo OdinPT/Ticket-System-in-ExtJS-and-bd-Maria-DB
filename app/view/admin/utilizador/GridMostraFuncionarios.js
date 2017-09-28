@@ -24,9 +24,10 @@ Ext.define('TrackIT.view.admin.utilizador.GridMostraFuncionarios', {
 
     columns: [
         { text: 'ID',  dataIndex: 'id_funcionario', flex: 0.1, hidden:true},
-        { text: 'Username',  dataIndex: 'usernamefunc', flex: 1},
-        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 0.9},
-        { text: 'Tipo de Funcionário', dataIndex: 'Descricao_TipoUtilizador', flex: 1.3}
+        { text: 'Username',  dataIndex: 'usernamefunc', flex: 1.4},
+        { text: 'Departamento', dataIndex: 'nome_departamento', flex: 0.8},
+        { text: 'Tipo de Funcionário', dataIndex: 'Descricao_TipoUtilizador', flex: 1.3},
+        { text: 'Login ?', dataIndex: 'Des_acesso', flex: 0.6},
     ],
 
     listeners: {
