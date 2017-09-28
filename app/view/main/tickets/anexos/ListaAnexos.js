@@ -2,10 +2,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     extend: 'Ext.grid.Panel',
     id: 'gridanexos',
     xtype: 'mainlistanexos',
-
-
     width: 1050,
-    //height: 350,
     requires: [
         'TrackIT.store.anexos.Anexos',
         'Ext.toolbar.Paging'
@@ -17,16 +14,13 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
     store: {
         type: 'anexos'
     },
-
     columns: [
         { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:true},
         { text: 'NOME',  dataIndex: 'nome', flex: 1},
         { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true}
     ],
-
     tbar: {
         defaultButtonUI: 'default',
-
         items: [
             {
                 text: 'Atualizar',
@@ -35,21 +29,17 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
                         url: 'app/php/ObterAnexos/src/CarregaAnexos.php',
                         method: 'POST',
                         success: function (response, opts) {
-
                             Ext.MessageBox.alert('Ficheiro obtido ', 'Com sucesso');
-
                             function hide_message() {
                                 Ext.defer(function () {
                                     Ext.MessageBox.hide();
                                     Ext.getCmp('gridanexos').getStore().load();
                                 }, 1500);
-
                             }
                             hide_message();
                         }
                     })
                 }
-
             }]
     },
     listeners: {

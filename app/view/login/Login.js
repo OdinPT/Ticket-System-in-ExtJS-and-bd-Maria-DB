@@ -66,7 +66,7 @@ Ext.define('TrackIT.view.login.Login', {
                             wind.close();
                         }
 
-                          // Add the main view to the viewport
+
                           Ext.create({
                               xtype: 'app-main'
                           });

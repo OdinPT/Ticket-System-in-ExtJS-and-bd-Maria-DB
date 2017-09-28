@@ -13,9 +13,7 @@ Ext.define('TrackIT.view.admin.departamento.GridMostraDepFunc', {
     },
     layout: {
         align: 'fit',
-        type: 'form',
-        //width: 530,
-
+        type: 'form'
     },
     store: {
         type: 'funcdepartamento'

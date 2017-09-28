@@ -1,4 +1,4 @@
-Ext.define('TrackIT.view.login.LoginController', {
+    Ext.define('TrackIT.view.login.LoginController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.login',
 

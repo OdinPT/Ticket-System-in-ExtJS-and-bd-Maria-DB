@@ -22,7 +22,6 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     },
 
     title: 'Tickets',
-
     store: {
         type: 'tickets'
     },

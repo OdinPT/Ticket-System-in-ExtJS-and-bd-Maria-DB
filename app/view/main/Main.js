@@ -4,7 +4,6 @@ Ext.define('TrackIT.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
         'TrackIT.view.main.MainController',
         'TrackIT.view.main.MainModel',
         'TrackIT.view.main.tickets.ListaTickets',
@@ -30,7 +29,8 @@ Ext.define('TrackIT.view.main.Main', {
             },
             flex: 0
         },
-        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
+        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',//coloca o logo da empresa conforme o do site.
+
         items: [{
             xtype: 'button',
             text: 'Logout',
@@ -55,7 +55,6 @@ Ext.define('TrackIT.view.main.Main', {
             headerPosition: 'left'
         }
     },
-
     defaults: {
         bodyPadding: 20,
         tabConfig: {
