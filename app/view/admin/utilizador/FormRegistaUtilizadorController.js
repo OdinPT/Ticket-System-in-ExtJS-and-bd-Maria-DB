@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizadorController', {
                 failure: function (){alert('Erro...');
                     Ext.MessageBox.alert('Utilizador Não Registado',' Sem sucesso');
                 },
-                params: { user: Ext.getCmp('user').getValue(), pass: Ext.getCmp('pass').getValue(), id_departamento: Ext.getCmp('id_departamento').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario').getValue()}
+                params: { user: Ext.getCmp('user').getValue(), pass: Ext.getCmp('pass').getValue(), id_departamento: Ext.getCmp('id_departamento').getValue(), tipo_funcionario: Ext.getCmp('tipo_funcionario').getValue(),login: Ext.getCmp('login').getValue()}
 
             });
 

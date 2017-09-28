@@ -72,15 +72,28 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizador', {
             displayField: 'Descricao_TipoUtilizador',
             typeAhead: true,
             queryMode: 'local',
-            emptyText: 'Select a state...',
+            emptyText: 'Select a type deployee...',
             id: 'tipo_funcionario',
             submitValue:true,
             hiddenName : 'ID_TipoUtilizador',
             allowBlank: false,
             blankText: 'Selecione um departamento'
 
-        }
+        },
+        {
+            fieldLabel: 'Permitir login no SI :',
+            xtype: 'checkbox',
+            name: 'system',
+            iputValue: 'production',
+            id:'login',
 
+            listeners: {
+                check: function (checkbox, isChecked) {
+                    var sample = Ext.getCmp('login');
+                }
+
+            }
+        }
 
     ],
     dockedItems: {
