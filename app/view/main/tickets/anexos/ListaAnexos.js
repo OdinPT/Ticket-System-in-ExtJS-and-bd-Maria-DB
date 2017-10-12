@@ -15,9 +15,10 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
         type: 'anexos'
     },
     columns: [
-        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:true},
+        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:false},
         { text: 'NOME',  dataIndex: 'nome', flex: 1},
-        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true}
+        { text: 'Localizacao',  dataIndex: 'localizacao', flex: 1},
+        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true},
     ],
     tbar: {
         defaultButtonUI: 'default',
@@ -54,7 +55,7 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
             });
             messageBox.confirm('Download', 'Pretende mesmo descarregar o ficheiro?', function(btn){
                 if(btn === 'yes'){
-                    window.location.assign('app/php/ObterAnexos/src/ObterAnexos.php');
+                    window.location.assign('app/php/ObterAnexos/src/obterAnexos.php');
                     messageBox.maskClickAction = this.getMaskClickAction();
                 }
                 else{

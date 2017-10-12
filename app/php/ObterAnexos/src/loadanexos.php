@@ -13,6 +13,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
   $row_array['id'] = $row['id'];
   $row_array['nome'] = $row['nome'];
+  $row_array['localizacao'] = $row['localizacao'];
   $row_array['id_ticket'] = $row['id_ticket'];
 
 
