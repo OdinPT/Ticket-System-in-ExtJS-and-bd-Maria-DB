@@ -114,23 +114,29 @@ if($emails) {
         {
             if($attachment['is_attachment'] == 1)
             {
-                $filename = $attachment['name'];
+                // $subject = quoted_printable_decode(imap_utf8($overview[0]->subject));
+
+                $filename = quoted_printable_decode(imap_utf8($attachment['name']));
                 if(empty($filename)) $filename = $attachment['filename'];
 
                 if(empty($filename)) $filename = time() . ".dat";
-                $folder = "Downloads Email";
+
+              $folder = "Downloads Email";
                 if(!is_dir($folder))
                 {
                      mkdir($folder);
                 }
                 $fp = fopen("./". $folder ."/". $filename, "w+");
+
                 fwrite($fp, $attachment['attachment']);
                 fclose($fp);
                 $fp = fopen($filename, 'r');
 
-    $localizacao = "./". $folder ."/". $filename;
+    $localizacao = "./". $folder ."/";
+                                //$localizacao = "./". $folder ."/". $filename;
 
-         //echo ($localizacao);
+         echo ($localizacao);
+
         $data = fread($fp, filesize($filename));
         $data = addslashes($data);
         fclose($fp);

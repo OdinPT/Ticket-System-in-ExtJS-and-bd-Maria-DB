@@ -77,6 +77,7 @@ if($emails) {
         $message = html_entity_decode($message);
         $message = htmlspecialchars($message);
     echo $message;
+
     $conn= mysqli_connect("localhost","root","","emails");
 
 
