@@ -127,11 +127,17 @@ if($emails) {
                 fwrite($fp, $attachment['attachment']);
                 fclose($fp);
                 $fp = fopen($filename, 'r');
+
+    $localizacao = "./". $folder ."/". $filename;
+
+         //echo ($localizacao);
         $data = fread($fp, filesize($filename));
         $data = addslashes($data);
         fclose($fp);
         $filename = quoted_printable_decode(imap_utf8($filename));
-        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, content, id_ticket) VALUES ('$filename','$data','$id')");
+
+
+        $insere = mysqli_query($mysqli, "INSERT INTO upload(nome, localizacao, id_ticket) VALUES ('$filename','$localizacao','$id')");
             }
         }
     }
