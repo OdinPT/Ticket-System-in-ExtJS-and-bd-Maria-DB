@@ -3,15 +3,24 @@ Ext.define('TrackIT.view.main.MainWidget', {
     xtype: 'mainwidget',
 
     activeTab: 0,
-    items: [{
+    items: [
+        {
         bodyPadding: 10,
         title: 'Administração de Utilizadores',
         xtype: 'adminprincipal'
-    }, {
+        },
+        {
         title: 'Administração de Departamentos',
         bodyPadding: 10,
         xtype: 'departamentoprincipal'
-    }]
+        },
+        {
+            bodyPadding: 10,
+            title: 'Gestão',
+            xtype: 'grafprincipal'
+        },
+
+        ]
 
 
 });
