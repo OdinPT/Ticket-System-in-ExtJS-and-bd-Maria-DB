@@ -15,10 +15,10 @@ Ext.define('TrackIT.view.main.tickets.anexos.ListaAnexos', {
         type: 'anexos'
     },
     columns: [
-        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:false},
+        { text: 'ID',  dataIndex: 'id', flex: 0.1,hidden:true},
         { text: 'NOME',  dataIndex: 'nome', flex: 1},
-        { text: 'Localizacao',  dataIndex: 'localizacao', flex: 1, hidden:false},
-        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:false},
+        { text: 'Localizacao',  dataIndex: 'localizacao', flex: 1, hidden:true},
+        { text: 'ID DO TICKET', dataIndex: 'id_ticket', flex: 0.3, hidden:true},
     ],
     tbar: {
         defaultButtonUI: 'default',

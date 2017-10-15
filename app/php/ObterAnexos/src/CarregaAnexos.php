@@ -3,7 +3,7 @@ error_reporting(0);
 include "../../config.php";
 
 $id = $_COOKIE['cookieID'];
-set_time_limit(3000);
+set_time_limit(5000);
 
 /* connect to gmail with your credentials */
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
@@ -121,6 +121,8 @@ if($emails) {
 
                 if(empty($filename)) $filename = time() . ".dat";
 
+            $filename = $id . "_" . $filename;
+
               $folder = "Downloads Email";
                 if(!is_dir($folder))
                 {
@@ -132,10 +134,10 @@ if($emails) {
                 fclose($fp);
                 $fp = fopen($filename, 'r');
 
-    $localizacao = "./". $folder ."/";
+    $localizacao = "./". $folder ."/". $filename;
                                 //$localizacao = "./". $folder ."/". $filename;
 
-         echo ($localizacao);
+                //echo ($localizacao);
 
         $data = fread($fp, filesize($filename));
         $data = addslashes($data);
