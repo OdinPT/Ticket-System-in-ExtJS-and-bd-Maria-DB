@@ -31,7 +31,8 @@ Ext.define('TrackIT.Application', {
         'TrackIT.store.HistoricoComentariosHistorico.Comentario',
         'TrackIT.store.HistoricoAtribuicoes.atribuicoesticket',
         'TrackIT.store.HistoricoComentarios.ComentarioSeleccionado',
-        'TrackIT.store.HistoricoComentariosHistorico.ComentarioSeleccionado'
+        'TrackIT.store.HistoricoComentariosHistorico.ComentarioSeleccionado',
+        'TrackIT.store.GestaoTickets.GT'
 
     ],
     views: [

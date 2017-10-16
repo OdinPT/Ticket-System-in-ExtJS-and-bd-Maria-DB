@@ -9,6 +9,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
     height: 600,
     requires: [
         'TrackIT.store.tickets.Tickets',
+        'TrackIT.store.GestaoTickets.GT',
         'Ext.toolbar.Paging',
         'TrackIT.view.main.tickets.MostraTicket',
         'TrackIT.store.tickets.TicketSelected',
@@ -104,9 +105,13 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                         success: function(response, opts) {
                             Ext.MessageBox.updateProgress(1);
                             Ext.MessageBox.hide();
+
                             var grid = Ext.ComponentQuery.query('gridticket')[0]
                             grid.getStore().load();
+
+                            //update grids
                             Ext.getCmp('grid2').getStore().load();
+                            Ext.getCmp('gridGT').getStore().load();
 
                         }
                     })

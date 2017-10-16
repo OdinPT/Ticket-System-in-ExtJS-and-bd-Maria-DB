@@ -29,7 +29,8 @@ Ext.define('TrackIT.view.main.Main', {
             },
             flex: 0
         },
-        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',//coloca o logo da empresa conforme o do site.
+        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
+        //coloca o logo da empresa conforme o do site.
 
         items: [{
             xtype: 'button',
