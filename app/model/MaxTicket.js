@@ -1,6 +1,6 @@
 Ext.define('TrackIT.model.MaxTicket', {
     extend: 'Ext.data.Model',
-    fields: ['MaxDev','MaxND','MaxOp','MaxCcenter']
+    fields: ['MaxTicketsDep','MaxDepartamentos','id_departamento','nome_departamento ']
 });
 
 

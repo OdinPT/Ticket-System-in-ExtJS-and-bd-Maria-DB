@@ -14,8 +14,8 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GestaoTicketPrincipal', {
         align: 'stretch',
         width: 500,
         height: 400
-
     },
+
 
     defaults: {
         frame: true,
@@ -24,7 +24,7 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GestaoTicketPrincipal', {
 
     items: [
         {
-            title: 'Gestao',
+            title: 'Total de Tickets  dos Departamento',
             flex: 1,
             margin: '0 10 0 0',
             items: [{

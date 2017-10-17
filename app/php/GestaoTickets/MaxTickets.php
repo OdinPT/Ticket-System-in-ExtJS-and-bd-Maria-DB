@@ -9,10 +9,13 @@ $return_arr = array();
 $result = mysqli_query($mysqli, $query);
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-$row_array['MaxDev'] = $row['MaxDev'];
-$row_array['MaxND'] = $row['MaxND'];
-$row_array['MaxOp'] = $row['MaxOp'];
-$row_array['MaxCcenter'] = $row['MaxCcenter'];
+$row_array['MaxTicketsDep'] = $row['MaxTicketsDep'];
+$row_array['MaxDepartamentos'] = $row['MaxDepartamentos'];
+$row_array['id_departamento'] = $row['id_departamento'];
+$row_array['nome_departamento'] = $row['nome_departamento'];
+
+
+//'MaxDev','MaxND','MaxOp','MaxCcenter'
 
     array_push($return_arr,$row_array);
 }

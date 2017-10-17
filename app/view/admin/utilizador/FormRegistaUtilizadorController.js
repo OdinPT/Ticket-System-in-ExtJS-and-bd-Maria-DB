@@ -13,7 +13,6 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizadorController', {
                     function hide_message() {
                         Ext.defer(function() {
                             Ext.MessageBox.hide();
-
                             Ext.getCmp('gridfuncionarios').store.reload();
                         }, 1100);
                     }

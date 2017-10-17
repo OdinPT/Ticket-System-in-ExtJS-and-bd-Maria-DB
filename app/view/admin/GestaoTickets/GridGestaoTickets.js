@@ -5,17 +5,15 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
 
     config: {
         autoLoad: true,
-        scroll:true
+        scroll:true,
+        style:{overflow: 'auto',overflowX: 'hidden'}
     },
     frame: false,
-    height: 100,
+    height: 500,
     border: false,
 
 
-    layout: {
-        type: 'form',
-        align: 'fit'
-    },
+
     defaults: {
         layout: 'form',
         margin: 0,
@@ -27,10 +25,10 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
     },
 
     columns: [
-        { text: 'Max Developpers',  dataIndex: 'MaxDev', flex: 1.1},
-        { text: 'Max ND',  dataIndex: 'MaxND', flex: 1.4},
-        { text: 'Max Operações', dataIndex: 'MaxOp', flex: 1.4},
-        { text: 'Max Call center ', dataIndex: 'MaxCcenter', flex: 1.4}
+        { text: 'Total de Tickets do Departamento',  dataIndex: 'MaxTicketsDep', flex: 1.1},
+        { text: 'Max ND',  dataIndex: 'MaxDepartamentos', flex: 1.4, hidden:true},
+        { text: 'Id Departamento', dataIndex: 'id_departamento', flex: 1.4, hidden:true},
+        { text: 'Nome Departamento ', dataIndex: 'nome_departamento', flex: 1.4}
     ],
 
     onGridAfterRender: function(gridGT){

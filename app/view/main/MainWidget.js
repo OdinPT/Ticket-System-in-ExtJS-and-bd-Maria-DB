@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.main.MainWidget', {
             xtype: 'departamentoprincipal'
         },
         {
-            title: 'Gestão',
+            title: 'Gestão de Tickets',
             xtype: 'GestaoTicketprincipal'
         }
         ]
