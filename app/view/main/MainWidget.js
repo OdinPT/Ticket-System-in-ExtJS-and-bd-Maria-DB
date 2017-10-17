@@ -16,7 +16,7 @@ Ext.define('TrackIT.view.main.MainWidget', {
         },
         {
             title: 'Gestão',
-            xtype: 'GridGTMax'
+            xtype: 'GestaoTicketprincipal'
         }
         ]
 

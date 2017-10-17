@@ -6,14 +6,20 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
     config: {
         autoLoad: true,
         scroll:true
-       // style:{overflow: 'auto',}
     },
+    frame: false,
+    height: 100,
+    border: false,
+
 
     layout: {
-        align: 'fit',
         type: 'form',
-        width: 50,
-        height: 400
+        align: 'fit'
+    },
+    defaults: {
+        layout: 'form',
+        margin: 0,
+        border: 'false'
 
     },
     store: {
