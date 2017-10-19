@@ -3,7 +3,8 @@ Ext.define('TrackIT.view.admin.departamento.EditaDepartamento', {
     xtype: 'editadepartamento',
     controller: 'editadepartamento',
     requires: [
-        'TrackIT.view.admin.departamento.EditaDepartamentoController'
+        'TrackIT.view.admin.departamento.EditaDepartamentoController',
+        'TrackIT.store.GestaoTickets.GT'
     ],
     id: 'formeditadepartamento',
     frame: true,

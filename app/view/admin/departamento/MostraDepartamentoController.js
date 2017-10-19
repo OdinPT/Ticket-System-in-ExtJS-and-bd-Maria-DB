@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamentoController', {
                     Ext.defer(function () {
                         Ext.MessageBox.hide();
                         Ext.getCmp('griddepartamentos').getStore().load();
-                        //Ext.getCmp('gridfuncionarios').store.reload();
+                        Ext.getCmp('gridGT').getStore().load();
                     }, 1200);
                 }
                 hide_message();

@@ -4,7 +4,8 @@ Ext.define('TrackIT.view.admin.departamento.MostraDepartamento', {
     controller: 'departamentocont',
     requires: [
         'TrackIT.store.admin.DepartamentoSeleccionado',
-        'TrackIT.view.admin.departamento.MostraDepartamentoController'
+        'TrackIT.view.admin.departamento.MostraDepartamentoController',
+        'TrackIT.store.GestaoTickets.GT'
     ],
     id: 'staticDepartamentoForm',
 

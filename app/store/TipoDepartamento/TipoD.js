@@ -4,6 +4,7 @@ Ext.define('TrackIT.store.TipoDepartamento.TipoD', {
     alias: 'store.TipoD',
     storeId: 'TipoDepartamento',
     autoLoad: true,
+    autoSync: true,
     proxy: {
         type: 'ajax',
         url: 'app/php/carregamStores/carregadepartamentos.php',

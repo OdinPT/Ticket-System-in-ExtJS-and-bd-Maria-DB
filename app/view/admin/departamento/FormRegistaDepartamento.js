@@ -3,7 +3,9 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamento', {
     xtype: 'registadepartamento',
     controller: 'registadepartamento',
     requires: [
-        'TrackIT.view.admin.departamento.FormRegistaDepartamentoController'
+        'TrackIT.view.admin.departamento.FormRegistaDepartamentoController',
+        'TrackIT.store.TipoDepartamento.TipoD',
+        'TrackIT.store.GestaoTickets.GT'
     ],
     id: 'formregistadepartamento',
     frame: false,

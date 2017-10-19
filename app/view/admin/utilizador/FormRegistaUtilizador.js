@@ -3,7 +3,8 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizador', {
     xtype: 'registautilizador',
     controller: 'registautilizador',
     requires: [
-        'TrackIT.view.admin.utilizador.FormRegistaUtilizadorController'
+        'TrackIT.view.admin.utilizador.FormRegistaUtilizadorController',
+        'TrackIT.store.TipoDepartamento.TipoD'
     ],
     id: 'formregistautilizador',
     frame: false,
