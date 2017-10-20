@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\xampp\htdocs\testetrackit_Mint\app.js
+// @require /home/odinpt/WebstormProjects/Vagrant/Projeto/Ticket-System-in-ExtJS-and-bd-Maria-DB/app.js
