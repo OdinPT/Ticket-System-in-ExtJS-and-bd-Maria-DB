@@ -9,7 +9,9 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     frame: false,
-    height: 500,
+    height: 200,
+    width: 500,
+
     border: false,
 
 
