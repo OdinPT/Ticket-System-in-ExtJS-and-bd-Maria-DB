@@ -74,7 +74,7 @@ Ext.define('TrackIT.view.main.tickets.enviaemail.FormEnviaEmail', {
                                 url: 'app/view/main/tickets/enviaemail/EnviaMail/mandarmail.php',
                                 waitMsg: 'Enviando...',
                                 params: {
-                            assuntoresposta2: Ext.getCmp('assuntoresposta2').getValue(),
+                                assuntoresposta2: Ext.getCmp('assuntoresposta2').getValue(),
                                 conteudoresposta2: Ext.getCmp('conteudoresposta2').getValue(),
                                 email: Ext.getCmp('email').getValue()
                         }});
