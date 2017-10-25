@@ -28,7 +28,8 @@ Ext.define('TrackIT.view.main.tickets.enviaemail.FormEnviaEmailController', {
                 },
                 params: {
                     assuntoresposta: Ext.getCmp('assuntoresposta').getValue(),
-                    conteudoresposta: Ext.getCmp('conteudoresposta').getValue()
+                    conteudoresposta: Ext.getCmp('conteudoresposta').getValue(),
+                    email: Ext.getCmp('email').getValue()
                 }
             });
 

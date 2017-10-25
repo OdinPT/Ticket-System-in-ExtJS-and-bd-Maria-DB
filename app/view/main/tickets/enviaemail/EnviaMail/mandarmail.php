@@ -6,8 +6,9 @@ require 'config.php';
 
 $assunto = $_POST['assuntoresposta2'];
 $conteudo = $_POST['conteudoresposta2'];
-
 $email = $_POST['email'];
+
+
 $cookieEmail = $_COOKIE['cookieEmail'];
 $id = $_COOKIE['cookieID'];
 
