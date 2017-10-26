@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
+
 require 'class.smtp.php';
 require 'class.phpmailer.php';
 require 'config.php';
@@ -16,6 +17,7 @@ $fileName = $_FILES['anexo2']['name'];
 $tmpName  = $_FILES['anexo2']['tmp_name'];
 $fileSize = $_FILES['anexo2']['size'];
 $fileType = $_FILES['anexo2']['type'];
+
 $fp = fopen($tmpName, 'r');
     $content = fread($fp, filesize($tmpName));
     $content = addslashes($content);
@@ -88,9 +90,10 @@ mysqli_query($mysqli, "call InserirRespostas('$assunto', '$conteudo','$id')");
 mysqli_close($mysqli);
 
 // verifica se enviou corretamente
+
 if ( $PHPMailer->Send() )
 {
-echo "Enviado com sucesso";
+//echo "Enviado com sucesso";
 }
 else
 {

@@ -9,8 +9,6 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
         style:{overflow: 'auto',overflowX: 'hidden'}
     },
     frame: false,
-    height: 200,
-    width: 500,
 
     border: false,
 
@@ -27,18 +25,28 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GridGestaoTickets', {
     },
 
     columns: [
-        { text: 'Total de Tickets do Departamento',  dataIndex: 'MaxTicketsDep', flex: 1.1},
-        { text: 'Max ND',  dataIndex: 'MaxDepartamentos', flex: 1.4, hidden:true},
+
+        { text: 'Nome Departamento', dataIndex: 'nome_departamento', flex: 1.4},
         { text: 'Id Departamento', dataIndex: 'id_departamento', flex: 1.4, hidden:true},
-        { text: 'Nome Departamento ', dataIndex: 'nome_departamento', flex: 1.4}
-    ],
 
-    onGridAfterRender: function(gridGT){
-        setInterval(function(){
-            grid.store.load();
-        }, 1);
-    }
+        { text: 'Novo', dataIndex: 'E_Novo', flex: 1.4},
+        { text: 'Lido', dataIndex: 'E_Lido', flex: 1.4},
+        { text: 'Sendo Lido', dataIndex: 'E_SLido', flex: 1.4},
+        { text: 'Atribuido', dataIndex: 'E_Atribuido', flex: 1.4},
+        { text: 'Fechado', dataIndex: 'E_Fechado', flex: 1.4},
+        { text: 'Reaberto', dataIndex: 'E_Reaberto', flex: 1.4},
+
+        { text: 'Max Tickets Departamentos ', dataIndex: 'MaxTicketsDep', flex: 1.9},
+
+],
+
 });
-
+//timer
+Ext.TaskManager.start({
+    run: function(){
+        Ext.getCmp('gridGT').getStore().load();
+    },
+    interval: 10000
+});
 
 

@@ -15,7 +15,7 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GestaoTicketPrincipal', {
 
 
         height: 300,
-        width: 500,
+        width: 500
     },
 
 
@@ -34,7 +34,7 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GestaoTicketPrincipal', {
 
             }]
         },
-        {
+        /*{
             title: 'Total de Tickets ',
             flex: 1,
             margin: '0 10 0 0',
@@ -42,7 +42,7 @@ Ext.define('TrackIT.view.admin.GestaoTickets.GestaoTicketPrincipal', {
                 xtype: 'mainlistgestesticket'
 
             }]
-        },
+        },*/
         //mainlistgestesticket
     ]
 });

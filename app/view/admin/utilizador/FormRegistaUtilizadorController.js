@@ -7,6 +7,7 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizadorController', {
         method:'POST',
             myRequest1 = Ext.Ajax.request({
                 url: 'app/php/Registar/registarutilizador.php',
+
                 success: function (response, opts){
                     Ext.MessageBox.alert('Utilizador Registado','Com Sucesso!');
 

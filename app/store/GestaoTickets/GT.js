@@ -19,5 +19,8 @@ Ext.define('TrackIT.store.GestaoTickets.GT', {
     	load: function(){
     		console.log('loaded Max Tickets');
     	}
-    }
+    },
+
+
+
 });
