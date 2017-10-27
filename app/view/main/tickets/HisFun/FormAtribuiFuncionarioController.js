@@ -17,6 +17,7 @@ Ext.define('TrackIT.view.main.tickets.HisFun.FormAtribuiFuncionarioController', 
                         Ext.defer(function() {
                             Ext.MessageBox.hide();
                             Ext.getCmp('gridticket').getStore().load();
+                            Ext.getCmp('gridGT').getStore().load();
                         }, 1200);
                     }
                     hide_message();

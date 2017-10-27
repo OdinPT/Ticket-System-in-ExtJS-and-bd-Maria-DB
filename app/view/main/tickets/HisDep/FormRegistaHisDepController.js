@@ -10,7 +10,9 @@ Ext.define('TrackIT.view.main.tickets.HisDep.FormRegistaHisDepController', {
 
                 success: function (response, opts) {
                     Ext.MessageBox.alert('Sucesso', 'Departamento alterado');
+
                     Ext.getCmp('gridhisdep').store.reload();
+                    Ext.getCmp('gridGT').getStore().load();
 
                 function hide_message() {
                         Ext.defer(function() {

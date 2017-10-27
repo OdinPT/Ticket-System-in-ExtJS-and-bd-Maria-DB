@@ -46,7 +46,7 @@ Ext.TaskManager.start({
     run: function(){
         Ext.getCmp('gridGT').getStore().load();
     },
-    interval: 10000
+    interval: 12000
 });
 
 

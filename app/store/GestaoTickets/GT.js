@@ -15,12 +15,10 @@ Ext.define('TrackIT.store.GestaoTickets.GT', {
         	rootProperty: 'data'
         }
     },
-    listeners: {
+    /*listeners: {
     	load: function(){
-    		console.log('loaded Max Tickets');
+    		console.log(' ');
     	}
-    },
-
-
+    },*/
 
 });

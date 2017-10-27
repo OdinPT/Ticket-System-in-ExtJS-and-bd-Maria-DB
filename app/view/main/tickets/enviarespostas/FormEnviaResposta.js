@@ -77,6 +77,7 @@ Ext.define('TrackIT.view.main.tickets.EnviaRespostas.FormEnviaResposta', {
                                 Ext.defer(function() {
                                     Ext.MessageBox.hide();
                                     Ext.getCmp('grid4').store.reload();
+
                              }, 1500);
                         }
 

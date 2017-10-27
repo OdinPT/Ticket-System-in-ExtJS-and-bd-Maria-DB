@@ -46,14 +46,18 @@ Ext.define('TrackIT.view.admin.utilizador.FormRegistaUtilizador', {
         {
             xtype: 'combobox',
             fieldLabel: 'Tipo de departamento',
+
             store: {
                 type: 'TipoD'
+
             },
+
+            queryMode: 'remote',
 
             valueField: 'id_departamento',
             displayField: 'nome_departamento',
             typeAhead: true,
-            queryMode: 'local',
+            //queryMode: 'local',
             emptyText: 'Seleciona  departamento...',
             id: 'id_departamento',
             submitValue:true,

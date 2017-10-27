@@ -16,7 +16,8 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamentoController', 
                             Ext.MessageBox.hide();
                             Ext.getCmp('griddepartamentos').getStore().load();
                             Ext.getCmp('gridGT').getStore().load();
-                            //TipoD
+                            
+
                         }, 1200);
                     }
 
@@ -31,3 +32,4 @@ Ext.define('TrackIT.view.admin.departamento.FormRegistaDepartamentoController', 
     }
 
 });
+

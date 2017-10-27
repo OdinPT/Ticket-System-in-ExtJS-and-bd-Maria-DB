@@ -184,6 +184,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
 
                                         var gridt = Ext.ComponentQuery.query('gridticket')[0];
                                         gridt.getStore().load();
+
                                     }
                                 });
                             }
@@ -197,6 +198,8 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                             success: function(response, opts) {
                                 var gridtt = Ext.ComponentQuery.query('gridticket')[0];
                                 gridtt.getStore().load();
+
+                                Ext.getCmp('gridGT').getStore().load();
                             }
                         })
                     });
@@ -206,6 +209,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                     alert('Sendo resolvido ...');
                     var gridtt = Ext.ComponentQuery.query('gridticket')[0];
                     gridtt.getStore().load();
+
                 }
             })
         },
