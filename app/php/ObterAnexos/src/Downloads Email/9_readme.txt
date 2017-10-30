@@ -1,1 +1,0 @@
-a remover RE se receber uma resposta

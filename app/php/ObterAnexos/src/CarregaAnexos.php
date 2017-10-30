@@ -134,7 +134,7 @@ if($emails) {
                 fclose($fp);
                 $fp = fopen($filename, 'r');
 
-    $localizacao = "./". $folder ."/". $filename;
+    $localizacao = "./". $folder ."/";
                                 //$localizacao = "./". $folder ."/". $filename;
 
                 //echo ($localizacao);
