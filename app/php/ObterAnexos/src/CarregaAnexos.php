@@ -3,11 +3,15 @@ error_reporting(0);
 include "../../config.php";
 
 $id = $_COOKIE['cookieID'];
+
+$id2 = $_COOKIE['cookieIDanexo'];
+$cookieEmail = $_COOKIE['cookieEmail'];
+
+
 set_time_limit(5000);
 
 /* connect to gmail with your credentials */
 $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
-$cookieEmail = $_COOKIE['cookieEmail'];
 
 //selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$cookieEmail'") or die(mysqli_error($mysqli));
@@ -135,7 +139,6 @@ if($emails) {
                 $fp = fopen($filename, 'r');
 
     $localizacao = "./". $folder ."/";
-                                //$localizacao = "./". $folder ."/". $filename;
 
                 //echo ($localizacao);
 

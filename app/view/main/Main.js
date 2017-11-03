@@ -15,29 +15,42 @@ Ext.define('TrackIT.view.main.Main', {
     viewModel: 'main',
     plugins: 'viewport',
     ui: 'navigation',
-
+    
     tabBarHeaderPosition: 1,
     titleRotation: 0,
     tabRotation: 0,
 
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
+    title:{
+        style:{
+            color: 'green !important',
+            font:' normal 50px  bold courier !important',
+            align: 'center'
             },
-            flex: 0
-        },
-        html:'<img src="http://www.trackit.pt/images/logo.png" height="100" width="180"/>',
-        //coloca o logo da empresa conforme o do site.
+
+
+
+    },
+
+        header: {
+            layout: {
+                align: 'stretchmax',
+            }
+            ,
+            title: {
+                bind: {
+                    text: 'SI',
+                },
+                flex: 0
+            },
 
         items: [{
+
             xtype: 'button',
             text: 'Logout',
             margin: '10 0',
             handler: 'onClickButton'
         }]
+
     },
 
     tabBar: {
