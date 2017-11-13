@@ -1,4 +1,15 @@
 # Tickets System
+EN
+
+Ticket system that will get the Tickets to the department email, and allows the management of the Ticket as well as respond to the ticket, change resolution states.
+It also allows to see the total of new Tickets, how many are being read, how many are treated etc.
+
+PT
+
+Sistema de Ticket que vai buscar os Tickets ao e-mail de departamento, e permite a gestão do Ticket assim como responder ao ticket, mudar estados de resolução.
+Permite ainda ver o total dos Tickets novos, quantos estão a ser lidos, quantos estão tratados etc
+
+______
 
 This folder is primarily a container for the top-level pieces of the application.
 While you can remove some files and folders that this application does not use,
