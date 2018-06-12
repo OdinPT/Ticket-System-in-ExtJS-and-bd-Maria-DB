@@ -27,7 +27,9 @@ Ext.define('TrackIT.view.main.tickets.MostraInfoPrincipalTicket', {
             margin: 0
         },
 
-    config:{stores: ['ticketseleccionado2']},
+    config:{
+        stores: ['ticketseleccionado2']
+    },
 
     items: [
         {

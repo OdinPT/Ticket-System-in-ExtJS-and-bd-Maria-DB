@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\xampp\htdocs\testetrackit_Mint\app.js
+// @require /var/www/html/Ticket-System-in-ExtJS-and-bd-Maria-DB-master/app.js

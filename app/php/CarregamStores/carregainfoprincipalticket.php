@@ -1,8 +1,12 @@
 <?php
+
 error_reporting(0);
 include "../config.php";
 
 $id = $_COOKIE['cookieID'];
+
+$mysqli->set_charset("utf8"); // Convert DATA to utf8
+
 $return_arr = array();
 
 $query = "call TicketSelec($id)";

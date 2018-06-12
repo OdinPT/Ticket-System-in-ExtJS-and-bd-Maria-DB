@@ -6,6 +6,7 @@ $funcionario = $_COOKIE['cookieEmail'];
 $return_arr = array();
 
 $vedepfunc = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$funcionario'");
+
 while($resi = mysqli_fetch_array($vedepfunc))
 {
 	$tipo = $resi['id_departamento_funcionarios'];

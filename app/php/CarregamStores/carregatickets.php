@@ -4,6 +4,8 @@ include "../config.php";
 
 $return_arr = array();
 
+$mysqli->set_charset("utf8"); // Convert DATA to utf8
+
 $cookieEmail = $_COOKIE['cookieEmail'];
 
   //selecting data associated with this particular id
