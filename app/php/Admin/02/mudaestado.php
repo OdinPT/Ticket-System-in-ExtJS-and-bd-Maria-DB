@@ -12,7 +12,6 @@ while($res = mysqli_fetch_array($result))
 {
 	$state = $res['state'];
 }
-//echo $id;
 echo $state;
 
         if($state == '3')
@@ -22,7 +21,6 @@ echo $state;
         }
         else
         {
-            header("HTTP/1.0 404 Not Found");
-            header('HTTP', true, 500);
+
         }
 ?>

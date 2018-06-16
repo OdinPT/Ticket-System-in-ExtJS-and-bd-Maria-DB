@@ -154,7 +154,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             var ide = index+1;
             Ext.util.Cookies.set('cookieIDe', ide);
             myRequest4 = Ext.Ajax.request({
-                url: 'app/php/admin/verificauso.php',
+                url: 'app/php/Admin/verificauso.php',
                 success: function (response, opts) {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
@@ -199,6 +199,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                                 var gridtt = Ext.ComponentQuery.query('gridticket')[0];
                                 gridtt.getStore().load();
 
+                                Ext.getCmp('gridticket').getStore().load();
                                 Ext.getCmp('gridGT').getStore().load();
                             }
                         })
@@ -219,7 +220,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
             var ide = index+1;
             Ext.util.Cookies.set('cookieIDe', ide);
             myRequest4 = Ext.Ajax.request({
-                url: 'app/php/admin/verificauso.php',
+                url: 'app/php/Admin/verificauso.php',
                 success: function (response, opts) {
                     var myWin = Ext.create("Ext.window.Window", {
                         title: 'Tickets',
@@ -251,7 +252,7 @@ Ext.define('TrackIT.view.main.tickets.ListaTickets', {
                             }
                         }
                     });
-                    myWin.show();
+                    myWin.show();               // só muda o estado se o o estado for como sendo lido #3
                     myWin.on("close", function() {
                         myRequest5 = Ext.Ajax.request({
                             url: 'app/php/Admin/mudaestado.php',

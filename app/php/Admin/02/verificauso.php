@@ -21,22 +21,6 @@ $kappa = mysqli_query($mysqli, "SELECT * FROM funcionario WHERE username='$IDFun
 	        $tipo = $res['Tipo_Funcionario'];
         }
 
-
-echo "id :". $id ."</br>";
-echo "username funcionario :". $IDFuncEstadox ."</br>";
-
-echo "<br>";
-echo "estado :". $state . "</br>";
-echo "<br>";
-
-echo "func email  :". $func ."</br>";
-echo "func tipo email  :". $tipo ."</br>";
-
-echo "</br>";
-
-
-
-
     if($state == 1)
     {
             if($func == $IDFuncEstadox)
@@ -52,7 +36,7 @@ echo "</br>";
       else if($state != 3 && $state != 4)
                {
                 $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                    echo "Sucesso  nem state 3 nem 4";
+                    echo "Sucesso 2";
                 }
       else
             {
@@ -65,7 +49,7 @@ echo "</br>";
             if($func == $IDFuncEstadox)
                 {
                     $insere = mysqli_query($mysqli, "call inserirhistoricoestados('$id',3,'$IDFuncEstadox')");
-                    echo "Sucesso LIDO ";
+                    echo "Sucesso";
                 }
                 else if($tipo == 3)
             {
